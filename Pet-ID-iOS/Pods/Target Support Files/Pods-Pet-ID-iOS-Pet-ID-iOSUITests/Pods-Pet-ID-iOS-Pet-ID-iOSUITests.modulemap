@@ -1,0 +1,6 @@
+framework module Pods_Pet_ID_iOS_Pet_ID_iOSUITests {
+  umbrella header "Pods-Pet-ID-iOS-Pet-ID-iOSUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

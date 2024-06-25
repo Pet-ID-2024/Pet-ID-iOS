@@ -1,0 +1,6 @@
+framework module Pods_Pet_ID_iOS {
+  umbrella header "Pods-Pet-ID-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
