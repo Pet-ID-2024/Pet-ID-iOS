@@ -32,10 +32,15 @@
 		0A4022052C189717007AA6D5 /* RegistrationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4022042C189717007AA6D5 /* RegistrationInfo.swift */; };
 		0A4022072C189C4A007AA6D5 /* RegistrationSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4022062C189C4A007AA6D5 /* RegistrationSuccess.swift */; };
 		0A55B92C2C0F371E00C98F16 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A55B92B2C0F371E00C98F16 /* UserInfo.swift */; };
-		0A5C71A62C1093850079849C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C71A52C1093850079849C /* MainView.swift */; };
 		0A5C71A82C1094590079849C /* PetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C71A72C1094590079849C /* PetInfo.swift */; };
 		0A66689E2C297E3F00EB6E8D /* HospitalSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A66689D2C297E3F00EB6E8D /* HospitalSuccess.swift */; };
 		A4E874B107B1664A92012414 /* Pods_Pet_ID_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4097EB07D4E5A1BD63E8863 /* Pods_Pet_ID_iOS.framework */; };
+		FA6E49E42C2C4EAA00F3C957 /* docs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49E32C2C4EAA00F3C957 /* docs.swift */; };
+		FA6E49E62C2C4F0100F3C957 /* RepositoryDocs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49E52C2C4F0100F3C957 /* RepositoryDocs.swift */; };
+		FA6E49E82C2C4F4100F3C957 /* CoreDocs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49E72C2C4F4100F3C957 /* CoreDocs.swift */; };
+		FA6E49EA2C2C4F7600F3C957 /* NetworkDocs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49E92C2C4F7600F3C957 /* NetworkDocs.swift */; };
+		FA6E49EC2C2C4FB200F3C957 /* PresentationDOcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49EB2C2C4FB200F3C957 /* PresentationDOcs.swift */; };
+		FA6E49F02C2C501D00F3C957 /* AppDocs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49EF2C2C501D00F3C957 /* AppDocs.swift */; };
 		FAC3E602CC3AF83E5A4D4182 /* Pods_Pet_ID_iOS_Pet_ID_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D68AD80FDAA2E59BBF504D45 /* Pods_Pet_ID_iOS_Pet_ID_iOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,7 +91,6 @@
 		0A4022062C189C4A007AA6D5 /* RegistrationSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationSuccess.swift; sourceTree = "<group>"; };
 		0A55B9292C0F2F5D00C98F16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0A55B92B2C0F371E00C98F16 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
-		0A5C71A52C1093850079849C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0A5C71A72C1094590079849C /* PetInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInfo.swift; sourceTree = "<group>"; };
 		0A66689D2C297E3F00EB6E8D /* HospitalSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalSuccess.swift; sourceTree = "<group>"; };
 		0AB4E1072C2B14BC006331B4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +103,12 @@
 		D68AD80FDAA2E59BBF504D45 /* Pods_Pet_ID_iOS_Pet_ID_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pet_ID_iOS_Pet_ID_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEED74CBC779A38F4454A521 /* Pods-Pet-ID-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet-ID-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Pet-ID-iOS/Pods-Pet-ID-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		F1F73F28EFDC14418EC7B5FA /* Pods-Pet-ID-iOS-Pet-ID-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet-ID-iOS-Pet-ID-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Pet-ID-iOS-Pet-ID-iOSUITests/Pods-Pet-ID-iOS-Pet-ID-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FA6E49E32C2C4EAA00F3C957 /* docs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = docs.swift; sourceTree = "<group>"; };
+		FA6E49E52C2C4F0100F3C957 /* RepositoryDocs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDocs.swift; sourceTree = "<group>"; };
+		FA6E49E72C2C4F4100F3C957 /* CoreDocs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDocs.swift; sourceTree = "<group>"; };
+		FA6E49E92C2C4F7600F3C957 /* NetworkDocs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDocs.swift; sourceTree = "<group>"; };
+		FA6E49EB2C2C4FB200F3C957 /* PresentationDOcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationDOcs.swift; sourceTree = "<group>"; };
+		FA6E49EF2C2C501D00F3C957 /* AppDocs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDocs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,11 +196,13 @@
 		0A21CEE12C0DE238005DD8E2 /* Pet-ID-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				0A6668992C297DE100EB6E8D /* HospitalReservation */,
-				0A1069F62C1746F00031E230 /* Pet */,
-				0A21CF1A2C0DEC48005DD8E2 /* SplashView */,
-				0A21CF152C0DEBDF005DD8E2 /* Onboarding */,
-				0A21CF0D2C0DE39D005DD8E2 /* AI */,
+				FA6E49EE2C2C500E00F3C957 /* App */,
+				FA6E49ED2C2C500800F3C957 /* Resources */,
+				FA6E49DC2C2C4E4300F3C957 /* Core */,
+				FA6E49DB2C2C4E4000F3C957 /* Data */,
+				FA6E49DA2C2C4E3E00F3C957 /* Network */,
+				FA6E49D92C2C4E3B00F3C957 /* Domain */,
+				FA6E49D82C2C4E3600F3C957 /* Presentation */,
 				0A21CEE22C0DE238005DD8E2 /* Pet_ID_iOSApp.swift */,
 				0A21CEE42C0DE238005DD8E2 /* ContentView.swift */,
 				0A21CF252C0DF131005DD8E2 /* UseApp.swift */,
@@ -198,7 +210,6 @@
 				0A21CEE62C0DE23A005DD8E2 /* Assets.xcassets */,
 				0A21CEE82C0DE23A005DD8E2 /* Pet_ID_iOS.entitlements */,
 				0A21CEE92C0DE23A005DD8E2 /* Preview Content */,
-				0A5C71A52C1093850079849C /* MainView.swift */,
 				0A21CF1D2C0DEFEB005DD8E2 /* LoginSuccess.swift */,
 				0AB4E1072C2B14BC006331B4 /* Info.plist */,
 			);
@@ -400,6 +411,106 @@
 				D0072C26B0F63C9B2179E748 /* Pods-Pet-ID-iOSTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA6E49D82C2C4E3600F3C957 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				FA6E49DD2C2C4E5B00F3C957 /* Splash */,
+				0A6668992C297DE100EB6E8D /* HospitalReservation */,
+				0A1069F62C1746F00031E230 /* Pet */,
+				0A21CF1A2C0DEC48005DD8E2 /* SplashView */,
+				0A21CF152C0DEBDF005DD8E2 /* Onboarding */,
+				0A21CF0D2C0DE39D005DD8E2 /* AI */,
+				FA6E49EB2C2C4FB200F3C957 /* PresentationDOcs.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		FA6E49D92C2C4E3B00F3C957 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				FA6E49DF2C2C4E7500F3C957 /* Repository */,
+				FA6E49DE2C2C4E7200F3C957 /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		FA6E49DA2C2C4E3E00F3C957 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FA6E49E92C2C4F7600F3C957 /* NetworkDocs.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FA6E49DB2C2C4E4000F3C957 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FA6E49E22C2C4E8400F3C957 /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FA6E49DC2C2C4E4300F3C957 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FA6E49E72C2C4F4100F3C957 /* CoreDocs.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		FA6E49DD2C2C4E5B00F3C957 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		FA6E49DE2C2C4E7200F3C957 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		FA6E49DF2C2C4E7500F3C957 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				FA6E49E02C2C4E7A00F3C957 /* Protocol */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		FA6E49E02C2C4E7A00F3C957 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				FA6E49E32C2C4EAA00F3C957 /* docs.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		FA6E49E22C2C4E8400F3C957 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				FA6E49E52C2C4F0100F3C957 /* RepositoryDocs.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		FA6E49ED2C2C500800F3C957 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FA6E49EE2C2C500E00F3C957 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FA6E49EF2C2C501D00F3C957 /* AppDocs.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -677,25 +788,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A5C71A62C1093850079849C /* MainView.swift in Sources */,
 				0A4022012C186CBD007AA6D5 /* Sign.swift in Sources */,
 				0A21CEE52C0DE238005DD8E2 /* ContentView.swift in Sources */,
+				FA6E49F02C2C501D00F3C957 /* AppDocs.swift in Sources */,
 				0A21CF262C0DF131005DD8E2 /* UseApp.swift in Sources */,
 				0A21CF1E2C0DEFEB005DD8E2 /* LoginSuccess.swift in Sources */,
+				FA6E49EA2C2C4F7600F3C957 /* NetworkDocs.swift in Sources */,
 				0A4022032C1891BA007AA6D5 /* Complete.swift in Sources */,
 				0A1069FC2C1750B70031E230 /* PetCaption.swift in Sources */,
 				0A4021FF2C186C44007AA6D5 /* InformationCheck.swift in Sources */,
 				0A5C71A82C1094590079849C /* PetInfo.swift in Sources */,
 				0A1069FA2C1747870031E230 /* PetCardStart.swift in Sources */,
 				0A21CF1C2C0DEF8D005DD8E2 /* SplashView.swift in Sources */,
+				FA6E49E42C2C4EAA00F3C957 /* docs.swift in Sources */,
+				FA6E49E82C2C4F4100F3C957 /* CoreDocs.swift in Sources */,
 				0A4022072C189C4A007AA6D5 /* RegistrationSuccess.swift in Sources */,
 				0A4022052C189717007AA6D5 /* RegistrationInfo.swift in Sources */,
+				FA6E49E62C2C4F0100F3C957 /* RepositoryDocs.swift in Sources */,
 				0A21CEE32C0DE238005DD8E2 /* Pet_ID_iOSApp.swift in Sources */,
 				0A21CF242C0DF0F6005DD8E2 /* OnboardingView.swift in Sources */,
 				0A21CF222C0DF0E6005DD8E2 /* OnboardingViewModel.swift in Sources */,
 				0A4021FD2C1868DF007AA6D5 /* ScanCheck.swift in Sources */,
 				0A55B92C2C0F371E00C98F16 /* UserInfo.swift in Sources */,
 				0A21CF0F2C0DE3AA005DD8E2 /* Test.swift in Sources */,
+				FA6E49EC2C2C4FB200F3C957 /* PresentationDOcs.swift in Sources */,
 				0A66689E2C297E3F00EB6E8D /* HospitalSuccess.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
