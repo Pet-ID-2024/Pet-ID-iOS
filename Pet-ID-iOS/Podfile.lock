@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (5.8.1)
+  - CocoaLumberjack/Core (3.8.5)
+  - CocoaLumberjack/Swift (3.8.5):
+    - CocoaLumberjack/Core
   - KakaoSDK (2.21.1):
     - KakaoSDKAuth (= 2.21.1)
     - KakaoSDKCert (= 2.21.1)
@@ -39,6 +42,10 @@ PODS:
     - KakaoSDKCommon/Common (= 2.21.1)
   - KakaoSDKUser (2.21.1):
     - KakaoSDKAuth (= 2.21.1)
+  - Moya/Combine (15.0.0):
+    - Moya/Core
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
   - TensorFlowLiteC (2.14.0):
     - TensorFlowLiteC/Core (= 2.14.0)
   - TensorFlowLiteC/Core (2.14.0)
@@ -46,14 +53,19 @@ PODS:
     - TensorFlowLiteSwift/Core (= 2.14.0)
   - TensorFlowLiteSwift/Core (2.14.0):
     - TensorFlowLiteC (= 2.14.0)
+  - Toast-Swift (5.1.1)
 
 DEPENDENCIES:
+  - CocoaLumberjack/Swift (~> 3.8)
   - KakaoSDK
+  - Moya/Combine (~> 15.0)
   - TensorFlowLiteSwift
+  - Toast-Swift (~> 5.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - CocoaLumberjack
     - KakaoSDK
     - KakaoSDKAuth
     - KakaoSDKCert
@@ -66,11 +78,14 @@ SPEC REPOS:
     - KakaoSDKTalk
     - KakaoSDKTemplate
     - KakaoSDKUser
+    - Moya
     - TensorFlowLiteC
     - TensorFlowLiteSwift
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
+  CocoaLumberjack: 6a459bc897d6d80bd1b8c78482ec7ad05dffc3f0
   KakaoSDK: 7e33103e55841143a6eb55e0b5566dcb8fc9cc55
   KakaoSDKAuth: 28343159dd60ee9bbb61ff25d45d9769fcef6b8c
   KakaoSDKCert: 05def2d8d5e1d1abc35a900a6dbf6de652b42f58
@@ -83,9 +98,11 @@ SPEC CHECKSUMS:
   KakaoSDKTalk: fba042148bf9dad0590a6ab7f175e2fe895fd488
   KakaoSDKTemplate: 4458958285d9fc97dff1483184b6f810a938a249
   KakaoSDKUser: 35608bb49bbc644f507561d8b8a33dec1c5eb360
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   TensorFlowLiteC: a836de9b6e6018665ccc349538bdd2c3b80dd7a5
   TensorFlowLiteSwift: f706b143b69d7bf433aba7b08049bdd11c321a10
+  Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
 
-PODFILE CHECKSUM: 0f94628dbe20bfb4ad253d2b37589706cc5201bd
+PODFILE CHECKSUM: 6eaf99eb28a9d67ccb9bc88019870fbcf2802ad8
 
 COCOAPODS: 1.15.2

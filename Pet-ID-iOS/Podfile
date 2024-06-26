@@ -1,22 +1,31 @@
-# Uncomment the next line to define a global platform for your project
- platform :ios, '15.0'
+def pods_networking
+	pod 'Moya/Combine', '~> 15.0' #
+end
+
+def pods_log
+	pod 'CocoaLumberjack/Swift', '~> 3.8' #
+end
+
+
+def pods_ui
+	pod 'Toast-Swift', '~> 5.0' #
+end
+
+def pods_socialLoginSDK
+  pod 'KakaoSDK'
+end
+
+def pods_AI
+  pod 'TensorFlowLiteSwift'
+end
+
+platform :ios, '15.0'
 
 target 'Pet-ID-iOS' do
-  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'TensorFlowLiteSwift'
-  pod 'KakaoSDK'
- 
-
-  # Pods for Pet-ID-iOS
-
-  target 'Pet-ID-iOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'Pet-ID-iOSUITests' do
-    # Pods for testing
-  end
-
+	pods_networking
+	pods_log
+	pods_ui
+	pods_socialLoginSDK
+	pods_AI
 end
