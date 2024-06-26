@@ -14,20 +14,17 @@
 
 import Foundation
 
-/// 카카오톡 채널 관계 목록 \
-/// List of the Kakao Talk Channel relationship
+/// 카카오톡 채널 추가상태 조회 API 응답 클래스입니다.
 /// ## SeeAlso
 /// - ``TalkApi/channels(publicIds:completion:)``
 public struct Channels : Codable {
     
     // MARK: Fields
     
-    /// 회원번호 \
-    /// Service user ID
+    /// 사용자 아이디
     public let userId: Int64?
     
-    /// 카카오톡 채널 관계 목록 \
-    /// List of the Kakao Talk Channel relationship
+    /// 사용자의 채널 추가상태 목록
     /// ## SeeAlso
     /// - ``Channel``
     public let channels: [Channel]?
@@ -39,40 +36,31 @@ public struct Channels : Codable {
 }
 
 
-/// 카카오톡 채널 관계 \
-/// Relationship with the Kakao Talk Channel
+/// 카카오톡 채널 추가상태 정보를 제공합니다.
 public struct Channel : Codable {
     
     // MARK: Enumerations
     
-    /// 카카오톡 채널 관계 \
-    /// Relationship with the Kakao Talk Channel
+    /// 카카오톡 채널과의 관계 열거형
     public enum Relation : String, Codable {
-        /// 카카오톡 채널이 추가된 상태 \
-        /// The user has added the channel
+        /// 추가된 상태
         case Added = "ADDED"
-        /// 카카오톡 채널이 추가되거나 차단된 적 없는 상태 \
-        /// The user has not either added or blocked the channel
+        /// 추가하지 않음
         case None = "NONE"
-        /// 카카오톡 채널이 차단된 상태 \
-        /// The user has blocked the channel
+        /// 차단 상태
         case Blocked = "BLOCKED"
     }
     
-    /// 카카오톡 채널 고유 ID \
-    /// Kakao Talk Channel unique ID
+    /// 채널의 UUID
     public let uuid: String
     
-    /// 카카오톡 채널 프로필 ID \
-    /// Kakao Talk Channel profile ID
+    /// 채널의 인코딩 된 아이디
     public let encodedId: String
     
-    /// 카카오톡 채널 관계 \
-    /// Relationship with the Kakao Talk Channel
+    /// 사용자의 채널 추가 상태
     public let relation: Relation
     
-    /// 최종 변경 일시 \
-    /// Last update time
+    /// 마지막 상태 변경 일시
     public let updatedAt: Date?
     
     enum CodingKeys : String, CodingKey {
@@ -83,15 +71,12 @@ public struct Channel : Codable {
     }
 }
 
-/// 카카오톡 채널 간편 추가하기 결과 \
-/// Result of Follow Kakao Talk Channel
+/// 카카오톡 간편 채널 추가 결과를 제공합니다.
 public struct FollowChannelResult: Codable {
-    /// 성공 여부 \
-    /// Success status
+    ///요청 결과
     public let success: Bool
     
-    /// 카카오톡 채널 프로필 ID \
-    /// Kakao Talk Channel's profile ID
+    ///요청한 채널의 public ID
     public let channelPublicId: String
     
     enum CodingKeys : String, CodingKey {

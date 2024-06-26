@@ -8315,8 +8315,7 @@
         "mangledName": "$s18KakaoSDKFriendCore29OpenPickerFriendRequestParamsC",
         "moduleName": "KakaoSDKFriendCore",
         "declAttributes": [
-          "AccessControl",
-          "RawDocComment"
+          "AccessControl"
         ]
       },
       {
@@ -12665,8 +12664,7 @@
             "mangledName": "$s18KakaoSDKFriendCore22PickerTabRequestParamsC06FriendfG0C",
             "moduleName": "KakaoSDKFriendCore",
             "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ]
           },
           {
@@ -12860,8 +12858,7 @@
             "mangledName": "$s18KakaoSDKFriendCore22PickerTabRequestParamsC04ChatfG0C",
             "moduleName": "KakaoSDKFriendCore",
             "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ]
           }
         ],
@@ -12981,8 +12978,7 @@
               "HasInitialValue",
               "Final",
               "HasStorage",
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "isLet": true,
             "hasStorage": true,
@@ -13178,7 +13174,7 @@
           {
             "kind": "Function",
             "name": "updateAuth",
-            "printedName": "updateAuth(accessToken:expiredAt:shouldUpdateAtTime:)",
+            "printedName": "updateAuth(accessToken:expiredAt:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -13214,18 +13210,11 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "hasDefaultArg": true,
-                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "s:18KakaoSDKFriendCore9PickerApiC10updateAuth11accessToken9expiredAt012shouldUpdateK4TimeySSSg_10Foundation4DateVSgSbtF",
-            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC10updateAuth11accessToken9expiredAt012shouldUpdateK4TimeySSSg_10Foundation4DateVSgSbtF",
+            "usr": "s:18KakaoSDKFriendCore9PickerApiC10updateAuth11accessToken9expiredAtySSSg_10Foundation4DateVSgtF",
+            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC10updateAuth11accessToken9expiredAtySSSg_10Foundation4DateVSgtF",
             "moduleName": "KakaoSDKFriendCore",
             "declAttributes": [
               "AccessControl",
@@ -17440,7 +17429,7 @@
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/model\/SelectedUser.swift",
       "kind": "IntegerLiteral",
-      "offset": 1780,
+      "offset": 2152,
       "length": 1,
       "value": "0"
     },
@@ -30187,1176 +30176,1169 @@
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 5751,
+      "offset": 4642,
       "length": 15,
       "value": "\"select_friend\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 5771,
+      "offset": 4662,
       "length": 7,
       "value": "\"-----\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 5935,
+      "offset": 4826,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 5982,
+      "offset": 4873,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 6033,
+      "offset": 4924,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 6082,
+      "offset": 4973,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 6139,
+      "offset": 5030,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 6196,
+      "offset": 5087,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 6251,
+      "offset": 5142,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 9135,
+      "offset": 7604,
       "length": 15,
       "value": "\"select_friend\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 9155,
+      "offset": 7624,
       "length": 7,
       "value": "\"-----\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 9498,
+      "offset": 7967,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 9545,
+      "offset": 8014,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 9596,
+      "offset": 8065,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 9645,
+      "offset": 8114,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 9768,
+      "offset": 8237,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 9826,
+      "offset": 8295,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 9883,
+      "offset": 8352,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 9938,
+      "offset": 8407,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 12369,
+      "offset": 10838,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 12407,
+      "offset": 10876,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 12441,
+      "offset": 10910,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 15154,
+      "offset": 13340,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 15343,
+      "offset": 13529,
       "length": 13,
       "value": "\"select_chat\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 15361,
+      "offset": 13547,
       "length": 13,
       "value": "\"-챗피커-\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 15413,
+      "offset": 13599,
       "length": 15,
       "value": "\"select_friend\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 15433,
+      "offset": 13619,
       "length": 16,
       "value": "\"-친구피커-\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 15707,
+      "offset": 13893,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 15830,
+      "offset": 14016,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 15888,
+      "offset": 14074,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 15943,
+      "offset": 14129,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 16011,
+      "offset": 14197,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 16045,
+      "offset": 14231,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 17914,
+      "offset": 15841,
       "length": 15,
       "value": "\"select_friend\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 17934,
+      "offset": 15861,
       "length": 7,
       "value": "\"-----\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 18089,
+      "offset": 16016,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 18212,
+      "offset": 16139,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 18270,
+      "offset": 16197,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 18325,
+      "offset": 16252,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 20259,
+      "offset": 17878,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 20314,
+      "offset": 17933,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 20367,
+      "offset": 17986,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 20428,
+      "offset": 18047,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 21909,
+      "offset": 19207,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 21946,
+      "offset": 19244,
       "length": 3,
       "value": "100"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 21997,
+      "offset": 19295,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 22041,
+      "offset": 19339,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 22344,
+      "offset": 19642,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 22349,
+      "offset": 19647,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 22354,
+      "offset": 19652,
       "length": 1,
       "value": "6"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 22616,
+      "offset": 19914,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 22725,
+      "offset": 20023,
       "length": 122,
       "value": "\"==> [expiredAtTimeInterval: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 22778,
+      "offset": 20076,
       "length": 18,
       "value": "\"  remainTimeInterval: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 22821,
+      "offset": 20119,
       "length": 8,
       "value": "\"   cooltime: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 22845,
+      "offset": 20143,
       "length": 1,
       "value": "\"]\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 23014,
+      "offset": 20312,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 23254,
+      "offset": 20552,
       "length": 141,
       "value": "\">>>> dont have to refresh ==> cooltimeInterval: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 23314,
+      "offset": 20612,
       "length": 18,
       "value": "\"  passedTimeInterval: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 23394,
+      "offset": 20692,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 23420,
+      "offset": 20718,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 23486,
+      "offset": 20784,
       "length": 137,
       "value": "\"<<< have to refresh : ==> cooltimeInterval: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 23542,
+      "offset": 20840,
       "length": 18,
       "value": "\"  passedTimeInterval: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 23622,
+      "offset": 20920,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 23664,
+      "offset": 20962,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 23878,
+      "offset": 21176,
       "length": 59,
       "value": "\"sharingData: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 23936,
+      "offset": 21234,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 23958,
+      "offset": 21256,
       "length": 59,
       "value": "\"sharingData: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 24016,
+      "offset": 21314,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 24038,
+      "offset": 21336,
       "length": 57,
       "value": "\"sharingData: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 24094,
+      "offset": 21392,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
-      "kind": "BooleanLiteral",
-      "offset": 24276,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 24455,
+      "offset": 21679,
       "length": 50,
       "value": "\"updatedAt: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 24504,
+      "offset": 21728,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 26444,
+      "offset": 23657,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 27711,
+      "offset": 24924,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 28889,
+      "offset": 26102,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 28991,
+      "offset": 26204,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 30238,
+      "offset": 27451,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 31394,
+      "offset": 28607,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 32636,
+      "offset": 29849,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 33788,
+      "offset": 31001,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 34503,
+      "offset": 31716,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 34538,
+      "offset": 31751,
       "length": 25,
       "value": "\"picker present complete\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 34906,
+      "offset": 32119,
       "length": 31,
       "value": "\"BadParameter error: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 34936,
+      "offset": 32149,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 35043,
+      "offset": 32256,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 35203,
+      "offset": 32416,
       "length": 31,
       "value": "\"BadParameter error: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 35233,
+      "offset": 32446,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 35340,
+      "offset": 32553,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 35372,
+      "offset": 32585,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 35705,
+      "offset": 32918,
       "length": 31,
       "value": "\"BadParameter error: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 35735,
+      "offset": 32948,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 35847,
+      "offset": 33060,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 36016,
+      "offset": 33229,
       "length": 31,
       "value": "\"BadParameter error: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 36046,
+      "offset": 33259,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 36158,
+      "offset": 33371,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 36318,
+      "offset": 33531,
       "length": 31,
       "value": "\"BadParameter error: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 36348,
+      "offset": 33561,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 36460,
+      "offset": 33673,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 36500,
+      "offset": 33713,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 36831,
+      "offset": 34044,
       "length": 31,
       "value": "\"BadParameter error: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 36861,
+      "offset": 34074,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 36973,
+      "offset": 34186,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 37164,
+      "offset": 34377,
       "length": 31,
       "value": "\"BadParameter error: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 37194,
+      "offset": 34407,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 37306,
+      "offset": 34519,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 37466,
+      "offset": 34679,
       "length": 31,
       "value": "\"BadParameter error: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 37496,
+      "offset": 34709,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 37608,
+      "offset": 34821,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 37648,
+      "offset": 34861,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 37749,
+      "offset": 34962,
       "length": 1158,
       "value": "\"\n================ picker params ================\ntitle: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 37861,
+      "offset": 35074,
       "length": 12,
       "value": "\"\nfriendFilter: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 37926,
+      "offset": 35139,
       "length": 18,
       "value": "\"\ncountryCodeFilters: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 38003,
+      "offset": 35216,
       "length": 13,
       "value": "\"\nusingOsFilter: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 38070,
+      "offset": 35283,
       "length": 14,
       "value": "\"\nviewAppearance: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 38139,
+      "offset": 35352,
       "length": 11,
       "value": "\"\norientation: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 38202,
+      "offset": 35415,
       "length": 12,
       "value": "\"\nenableSearch: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 38267,
+      "offset": 35480,
       "length": 11,
       "value": "\"\nenableIndex: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 38330,
+      "offset": 35543,
       "length": 13,
       "value": "\"\nshowMyProfile: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 38397,
+      "offset": 35610,
       "length": 12,
       "value": "\"\nshowFavorite: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 38462,
+      "offset": 35675,
       "length": 20,
       "value": "\"\ndisableSelectOptions: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 38543,
+      "offset": 35756,
       "length": 17,
       "value": "\"\ndisplayAllProfile: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 38618,
+      "offset": 35831,
       "length": 16,
       "value": "\"\nshowPickedFriend: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 38691,
+      "offset": 35904,
       "length": 16,
       "value": "\"\nmaxPickableCount: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 38764,
+      "offset": 35977,
       "length": 16,
       "value": "\"\nminPickableCount: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 38837,
+      "offset": 36050,
       "length": 16,
       "value": "\"\n================ picker params ================\n\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 39261,
+      "offset": 36474,
       "length": 52,
       "value": "\"Parameter minPickableCount must be greater than 1.\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 39391,
+      "offset": 36604,
       "length": 49,
       "value": "\"Parameter maxPickableCount must be 100 or less.\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 39510,
+      "offset": 36723,
       "length": 84,
       "value": "\"Parameter maxPickableCount is greater than or equal to parameter minPickableCount.\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 39978,
+      "offset": 37191,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 40094,
+      "offset": 37307,
       "length": 51,
       "value": "\"Chat member picker can't contain open chat member\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 40244,
+      "offset": 37457,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 40423,
+      "offset": 37636,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 40468,
+      "offset": 37681,
       "length": 113,
       "value": "\"'.direct' or '.multi' have to use with '.regular'.  because, chat member picker can't contain open chat member.\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 41160,
+      "offset": 38373,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 41199,
+      "offset": 38412,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 41284,
+      "offset": 38497,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 41340,
+      "offset": 38553,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 41372,
+      "offset": 38585,
       "length": 56,
       "value": "\"'uuids' and 'message' must be set for 'CUSTOM' option.\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 41582,
+      "offset": 38795,
       "length": 821,
       "value": "\"\n================ chat picker params ================\nselectionType: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 41715,
+      "offset": 38928,
       "length": 5,
       "value": "\"\ntitle: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 41766,
+      "offset": 38979,
       "length": 11,
       "value": "\"\nchatFilters: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 41829,
+      "offset": 39042,
       "length": 14,
       "value": "\"\nviewAppearance: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 41898,
+      "offset": 39111,
       "length": 11,
       "value": "\"\norientation: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 41961,
+      "offset": 39174,
       "length": 20,
       "value": "\"\ndisableSelectOptions: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 42042,
+      "offset": 39255,
       "length": 12,
       "value": "\"\nenableSearch: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 42107,
+      "offset": 39320,
       "length": 17,
       "value": "\"\ndisplayAllProfile: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 42182,
+      "offset": 39395,
       "length": 16,
       "value": "\"\nmaxPickableCount: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 42255,
+      "offset": 39468,
       "length": 16,
       "value": "\"\nminPickableCount: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 42328,
+      "offset": 39541,
       "length": 16,
       "value": "\"\n================ chat picker params ================\n\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 42510,
+      "offset": 39723,
       "length": 1485,
       "value": "\"\n================ tab picker params ================\n[common]\ntitle: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 42643,
+      "offset": 39856,
       "length": 14,
       "value": "\"\nviewAppearance: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 42712,
+      "offset": 39925,
       "length": 11,
       "value": "\"\norientation: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 42775,
+      "offset": 39988,
       "length": 12,
       "value": "\"\nenableSearch: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 42840,
+      "offset": 40053,
       "length": 20,
       "value": "\"\ndisableSelectOptions: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 42921,
+      "offset": 40134,
       "length": 17,
       "value": "\"\ndisplayAllProfile: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 42996,
+      "offset": 40209,
       "length": 16,
       "value": "\"\nmaxPickableCount: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 43069,
+      "offset": 40282,
       "length": 16,
       "value": "\"\nminPickableCount: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 43142,
+      "offset": 40355,
       "length": 1,
       "value": "\"\n\n[friend]\n\nfriendFilter: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 43255,
+      "offset": 40468,
       "length": 18,
       "value": "\"\ncountryCodeFilters: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 43345,
+      "offset": 40558,
       "length": 13,
       "value": "\"\nusingOsFilter: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 43425,
+      "offset": 40638,
       "length": 11,
       "value": "\"\nenableIndex: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 43501,
+      "offset": 40714,
       "length": 13,
       "value": "\"\nshowMyProfile: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 43581,
+      "offset": 40794,
       "length": 12,
       "value": "\"\nshowFavorite: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 43659,
+      "offset": 40872,
       "length": 16,
       "value": "\"\nshowPickedFriend: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 43745,
+      "offset": 40958,
       "length": 1,
       "value": "\"\n\n[chat]\nselectionType: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 43847,
+      "offset": 41060,
       "length": 11,
       "value": "\"\nchatFilters: \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 43921,
+      "offset": 41134,
       "length": 16,
       "value": "\"\n================ tab picker params ================\n\""
     },

@@ -17,16 +17,13 @@ import KakaoSDKCommon
 
 // MARK: Enumerations
     
-/// 정렬 방식 \
-/// Sorting method
-public enum Order: String, Codable {
-    /// 오름차순
-    /// Ascending
-    case Asc = "asc"
-    /// 내림차순
-    /// Descending
-    case Desc = "desc"
-    
+    /// 목록 조회 API에 사용되는 정렬 방식 열거형
+    public enum Order: String, Codable {
+        /// 오름차순
+        case Asc = "asc"
+        /// 내림차순
+        case Desc = "desc"
+        
 //        public var parameterValue: String {
 //            switch self {
 //            case .Asc:
@@ -35,22 +32,18 @@ public enum Order: String, Codable {
 //                return "desc"
 //            }
 //        }
-}
+    }
 
-/// 친구 정렬 방식 \
-/// Method to sort the friend list
+/// 친구 목록 정렬 타입
 public enum FriendOrder : String, Codable {
     
-    /// 닉네임순 정렬 \
-    /// Sort by nickname
+    /// 닉네임 기준으로 정렬
     case Nickname = "nickname"
     
-    /// 나이순 정렬 \
-    /// Sort by age
+    /// 19세 이상인 사용자 기준으로 정렬
     case Age = "age"
     
-    /// 즐겨찾기 우선 정렬 \
-    /// Sort favorite friends first
+    /// 즐겨찾기 기준으로 정렬
     case Favorite = "favorite"
     
 //    public var parameterValue: String {
@@ -63,32 +56,23 @@ public enum FriendOrder : String, Codable {
 //    }
 }
 
-/// 친구 목록 \
-/// Friend list
+/// 친구 목록 조회 API 응답 클래스 입니다.
 /// ## SeeAlso
 /// - ``TalkApi.friends(offset:limit:order:)``
 public struct Friends<T:Codable> : Codable {
     
     // MARK: Fields
     
-    /// 친구 목록 \
-    /// Friend list
+    /// 친구 목록
     public let elements: [T]?
     
-    /// 친구 수 \
-    /// Number of friends
+    /// 조회 가능한 전체 친구 수
     public let totalCount: Int
     
-    /// 즐겨찾기 친구 수 \
-    /// Number of favorite friends
+    /// 조회된 친구 중 즐겨찾기에 등록된 친구 수
     public let favoriteCount: Int?
     
-    /// 이전 페이지 URL \
-    /// URL for the prior page
     public let beforeUrl : URL?
-    
-    /// 다음 페이지 URL \
-    /// URL for the next page
     public let afterUrl : URL?
     
     public init(elements:[T]?, totalCount:Int, favoriteCount:Int? = nil, beforeUrl:URL? = nil, afterUrl:URL? = nil) {
@@ -100,25 +84,13 @@ public struct Friends<T:Codable> : Codable {
     }
 }
 
-/// 친구 목록 조회 설정 \
-/// Context for retrieving friend list
+/// 친구 목록 조회 컨텍스트 입니다.
 /// ## SeeAlso
 /// - ``TalkApi/friends(context:completion:)``
 public struct FriendsContext {
-    /// 친구 목록 시작 지점 \
-    /// Start point of the friend list
     public let offset : Int?
-    
-    /// 페이지당 결과 수 \
-    /// Number of results in a page
     public let limit : Int?
-    
-    /// 정렬 방식 \
-    /// Sorting method
     public let order : Order?
-    
-    /// 친구 정렬 방식 \
-    /// Method to sort the friend list
     public let friendOrder : FriendOrder?
     
     public init(offset: Int? = nil,
@@ -145,34 +117,29 @@ public struct FriendsContext {
 }
 
 
-/// 친구 정보 \
-/// Friend information
+/// 카카오톡 친구 입니다.
 public struct Friend : Codable {
     
     // MARK: Fields
     
-    /// 회원번호 \
-    /// Service user ID
+    /// 사용자 아이디
     public let id: Int64?
     
-    /// 고유 ID \
-    /// Unique ID
+    /// 메시지를 전송하기 위한 고유 아이디
+    ///
+    /// 사용자의 계정 상태에 따라 이 정보는 바뀔 수 있습니다. 앱내의 사용자 식별자로 저장 사용되는 것은 권장하지 않습니다.
     public let uuid: String
     
-    /// 프로필 닉네임 \
-    /// Profile nickname
+    /// 닉네임
     public let profileNickname: String?
     
-    /// 프로필 썸네일 이미지 \
-    /// Profile thumbnail image
+    /// 썸네일 이미지 URL
     public let profileThumbnailImage: URL?
     
-    /// 즐겨찾기 친구 여부 \
-    /// Whether a favorite friend
+    /// 즐겨찾기 추가 여부
     public let favorite: Bool?
     
-    ///  메시지 수신 허용 여부 \
-    ///  Whether to allow receiving messages
+    ///  메시지 수신이 허용되었는지 여부. 앱가입 친구의 경우는 feed msg에 해당. 앱미가입친구는 invite msg에 해당
     public let allowedMsg: Bool?
     
     // MARK: Internal

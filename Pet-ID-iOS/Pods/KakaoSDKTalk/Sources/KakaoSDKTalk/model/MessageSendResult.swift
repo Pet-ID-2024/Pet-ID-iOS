@@ -14,8 +14,7 @@
 
 import Foundation
 
-/// 메시지 전송 결과 \
-/// Sending message result
+/// 메시지 전송 API 호출 결과 입니다.
 /// ## SeeAlso
 /// - ``TalkApi/sendDefaultMessage(templatable:receiverUuids:completion:)``
 /// - ``TalkApi/sendScrapMessage(requestUrl:templateId:templateArgs:receiverUuids:completion:)``
@@ -24,12 +23,10 @@ public struct MessageSendResult : Codable {
     
     // MARK: Fields
     
-    /// 메시지 전송에 성공한 수신자 UUID 목록 \
-    /// Receiver UUIDs that succeeded in sending the message
+    /// 메시지 전송에 성공한 대상의 UUID
     public let successfulReceiverUuids: [String]?
     
-    /// 메시지 전송 실패 정보 \
-    /// Failure information for sending a message
+    /// (복수의 전송 대상을 지정한 경우) 전송 실패한 일부 대상의 오류 정보
     public let failureInfos: [MessageFailureInfo]?
     
     
@@ -41,23 +38,19 @@ public struct MessageSendResult : Codable {
     }
 }
 
-/// 메시지 전송 실패 정보 \
-/// Failure information for sending a message
+/// 복수의 친구를 대상으로 메시지 전송 API 호출 시 대상 중 일부가 실패한 경우 오류 정보를 제공합니다.
 /// ## SeeAlso
 /// - ``MessageSendResult/failureInfos``
 public struct MessageFailureInfo : Codable {
     
     // MARK: Fields
     
-    /// 에러 코드 \
-    /// Error code
+    /// 오류 코드
     public let code: Int
     
-    /// 에러 메시지 \
-    /// Error message
+    /// 메시지
     public let msg: String
     
-    /// 메시지 전송에 실패한 수신자 UUID 목록 \
-    /// Receiver UUIDs that failed to send the message
+    /// 이 에러로 인해 실패한 대상 목록
     public let receiverUuids: [String]
 }
