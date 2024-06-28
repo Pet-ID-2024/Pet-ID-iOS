@@ -34,14 +34,14 @@ struct Sign: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: RegistrationSuccess().navigationBarBackButtonHidden()) {
-                            Text("다음")
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color.blue)
-                                .cornerRadius(10)
-                        }
+//                NavigationLink(destination: RegistrationSuccess().navigationBarBackButtonHidden()) {
+//                            Text("다음")
+//                                .foregroundColor(.white)
+//                                .frame(maxWidth: .infinity)
+//                                .padding()
+//                                .background(Color.blue)
+//                                .cornerRadius(10)
+//                        }
             }
             .padding()
             

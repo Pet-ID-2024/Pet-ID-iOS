@@ -18,7 +18,6 @@
 		0A21CF012C0DE23A005DD8E2 /* Pet_ID_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21CF002C0DE23A005DD8E2 /* Pet_ID_iOSUITestsLaunchTests.swift */; };
 		0A21CF0F2C0DE3AA005DD8E2 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21CF0E2C0DE3AA005DD8E2 /* Test.swift */; };
 		0A21CF112C0DE3E3005DD8E2 /* TensorFlowLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A21CF102C0DE3E3005DD8E2 /* TensorFlowLite.framework */; };
-		0A21CF132C0DE414005DD8E2 /* model.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 0A21CF122C0DE414005DD8E2 /* model.tflite */; };
 		0A21CF1C2C0DEF8D005DD8E2 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21CF1B2C0DEF8D005DD8E2 /* SplashView.swift */; };
 		0A21CF1E2C0DEFEB005DD8E2 /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21CF1D2C0DEFEB005DD8E2 /* LoginSuccess.swift */; };
 		0A21CF222C0DF0E6005DD8E2 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21CF212C0DF0E6005DD8E2 /* OnboardingViewModel.swift */; };
@@ -77,7 +76,6 @@
 		0A21CF002C0DE23A005DD8E2 /* Pet_ID_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet_ID_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0A21CF0E2C0DE3AA005DD8E2 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		0A21CF102C0DE3E3005DD8E2 /* TensorFlowLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TensorFlowLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A21CF122C0DE414005DD8E2 /* model.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = model.tflite; path = ../../../../../Downloads/model.tflite; sourceTree = "<group>"; };
 		0A21CF1B2C0DEF8D005DD8E2 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		0A21CF1D2C0DEFEB005DD8E2 /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
 		0A21CF212C0DF0E6005DD8E2 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
@@ -238,7 +236,6 @@
 		0A21CF0D2C0DE39D005DD8E2 /* AI */ = {
 			isa = PBXGroup;
 			children = (
-				0A21CF122C0DE414005DD8E2 /* model.tflite */,
 				0A21CF0E2C0DE3AA005DD8E2 /* Test.swift */,
 			);
 			path = AI;
@@ -619,7 +616,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A21CEEB2C0DE23A005DD8E2 /* Preview Assets.xcassets in Resources */,
-				0A21CF132C0DE414005DD8E2 /* model.tflite in Resources */,
 				0A21CEE72C0DE23A005DD8E2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -896,7 +892,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Pet-ID-iOS/Info.plist";
+				INFOPLIST_FILE = "Pet-ID-iOS/Resources/Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -907,7 +903,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.3;
@@ -915,7 +911,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ssss.Pet-ID-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -937,7 +934,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Pet-ID-iOS/Info.plist";
+				INFOPLIST_FILE = "Pet-ID-iOS/Resources/Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -948,7 +945,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.3;
@@ -956,7 +953,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ssss.Pet-ID-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
