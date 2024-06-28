@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct Pet_ID_iOSApp: App {
+
+    @UIApplicationDelegateAdaptor var delegate: AppDelegate
+
     var body: some Scene {
         WindowGroup {
             ContentView()
