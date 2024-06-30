@@ -14,7 +14,7 @@ struct Pet_ID_iOSApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
         }
     }
 }

@@ -11,13 +11,6 @@ def pods_ui
 	pod 'Toast-Swift', '~> 5.0' #
 end
 
-def pods_socialLoginSDK
-  pod 'KakaoSDK'
-end
-
-def pods_AI
-  pod 'TensorFlowLiteSwift'
-end
 
 platform :ios, '15.0'
 
@@ -26,6 +19,4 @@ target 'Pet-ID-iOS' do
 	pods_networking
 	pods_log
 	pods_ui
-	pods_socialLoginSDK
-	pods_AI
 end
