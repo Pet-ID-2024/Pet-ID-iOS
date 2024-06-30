@@ -15,6 +15,10 @@ def pods_DI
 	pod 'Swinject', '~> 2.8.0' #
 end
 
+def pods_Utils
+	pod 'Then', '~> 3.0.0' #
+end
+
 platform :ios, '15.0'
 
 target 'Pet-ID-iOS' do
@@ -23,4 +27,5 @@ target 'Pet-ID-iOS' do
 	pods_networking
 	pods_log
 	pods_ui
+	pods_Utils
 end
