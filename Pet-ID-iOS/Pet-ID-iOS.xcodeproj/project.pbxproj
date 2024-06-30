@@ -10,7 +10,6 @@
 		0A1069FA2C1747870031E230 /* PetCardStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1069F92C1747870031E230 /* PetCardStart.swift */; };
 		0A1069FC2C1750B70031E230 /* PetCaption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1069FB2C1750B70031E230 /* PetCaption.swift */; };
 		0A21CEE32C0DE238005DD8E2 /* Pet_ID_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21CEE22C0DE238005DD8E2 /* Pet_ID_iOSApp.swift */; };
-		0A21CEE52C0DE238005DD8E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21CEE42C0DE238005DD8E2 /* ContentView.swift */; };
 		0A21CEE72C0DE23A005DD8E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A21CEE62C0DE23A005DD8E2 /* Assets.xcassets */; };
 		0A21CEEB2C0DE23A005DD8E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A21CEEA2C0DE23A005DD8E2 /* Preview Assets.xcassets */; };
 		0A21CF0F2C0DE3AA005DD8E2 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21CF0E2C0DE3AA005DD8E2 /* Test.swift */; };
@@ -29,15 +28,12 @@
 		0A5C71A82C1094590079849C /* PetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C71A72C1094590079849C /* PetInfo.swift */; };
 		0A66689E2C297E3F00EB6E8D /* HospitalSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A66689D2C297E3F00EB6E8D /* HospitalSuccess.swift */; };
 		FA6E49E42C2C4EAA00F3C957 /* docs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49E32C2C4EAA00F3C957 /* docs.swift */; };
-		FA6E49E62C2C4F0100F3C957 /* RepositoryDocs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49E52C2C4F0100F3C957 /* RepositoryDocs.swift */; };
 		FA6E49E82C2C4F4100F3C957 /* CoreDocs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49E72C2C4F4100F3C957 /* CoreDocs.swift */; };
 		FA6E49EA2C2C4F7600F3C957 /* NetworkDocs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49E92C2C4F7600F3C957 /* NetworkDocs.swift */; };
 		FA6E49EC2C2C4FB200F3C957 /* PresentationDOcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49EB2C2C4FB200F3C957 /* PresentationDOcs.swift */; };
-		FA6E49F02C2C501D00F3C957 /* AppDocs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49EF2C2C501D00F3C957 /* AppDocs.swift */; };
 		FA6E49F22C2C534500F3C957 /* UseCaseDocs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49F12C2C534500F3C957 /* UseCaseDocs.swift */; };
 		FA6E49F72C2E3FEC00F3C957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49F62C2E3FEC00F3C957 /* AppDelegate.swift */; };
 		FA6E49F92C2E40A500F3C957 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49F82C2E40A500F3C957 /* SceneDelegate.swift */; };
-		FA82CEE12C3184E500887D05 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA82CEE02C3184E500887D05 /* SwiftUIView.swift */; };
 		FADD57022C318C2F00770AC6 /* Pods_Pet_ID_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE708653717083BEEFB7716B /* Pods_Pet_ID_iOS.framework */; };
 		FADD57032C318C2F00770AC6 /* Pods_Pet_ID_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EE708653717083BEEFB7716B /* Pods_Pet_ID_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FADD57062C318CD700770AC6 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD57052C318CD700770AC6 /* SplashViewModel.swift */; };
@@ -47,6 +43,17 @@
 		FADD57112C318EDF00770AC6 /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD57102C318EDF00770AC6 /* KeyChainManager.swift */; };
 		FADD57142C318EFA00770AC6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD57132C318EFA00770AC6 /* Constants.swift */; };
 		FADD57162C318F7200770AC6 /* KeychainManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD57152C318F7200770AC6 /* KeychainManagerProtocol.swift */; };
+		FADD57192C31914B00770AC6 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD57182C31914B00770AC6 /* Authorization.swift */; };
+		FADD571C2C3191B500770AC6 /* AuthorizationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD571B2C3191B500770AC6 /* AuthorizationDTO.swift */; };
+		FADD571F2C31922700770AC6 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD571E2C31922700770AC6 /* UserError.swift */; };
+		FADD57222C31935300770AC6 /* AppDelegate+DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD57212C31935300770AC6 /* AppDelegate+DIContainer.swift */; };
+		FADD57252C3193B200770AC6 /* DIConatiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD57242C3193B200770AC6 /* DIConatiner.swift */; };
+		FADD57292C31988500770AC6 /* AutoLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD57282C31988500770AC6 /* AutoLoginUseCase.swift */; };
+		FADD572C2C319BC600770AC6 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD572B2C319BC600770AC6 /* BaseViewModel.swift */; };
+		FADD572F2C319ECD00770AC6 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD572E2C319ECD00770AC6 /* Logger.swift */; };
+		FADD57312C31A01400770AC6 /* UserRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD57302C31A01400770AC6 /* UserRepositoryProtocol.swift */; };
+		FADD57362C31A0A400770AC6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD57352C31A0A400770AC6 /* MainView.swift */; };
+		FADD57392C31A13100770AC6 /* AccessibilityPermissionRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD57382C31A13100770AC6 /* AccessibilityPermissionRequestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -68,7 +75,6 @@
 		0A1069FB2C1750B70031E230 /* PetCaption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCaption.swift; sourceTree = "<group>"; };
 		0A21CEDF2C0DE238005DD8E2 /* Pet-ID-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pet-ID-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A21CEE22C0DE238005DD8E2 /* Pet_ID_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet_ID_iOSApp.swift; sourceTree = "<group>"; };
-		0A21CEE42C0DE238005DD8E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0A21CEE62C0DE23A005DD8E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A21CEE82C0DE23A005DD8E2 /* Pet_ID_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pet_ID_iOS.entitlements; sourceTree = "<group>"; };
 		0A21CEEA2C0DE23A005DD8E2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -93,15 +99,12 @@
 		8BE1E2477EE2103256707795 /* Pods-Pet-ID-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet-ID-iOS.release.xcconfig"; path = "Target Support Files/Pods-Pet-ID-iOS/Pods-Pet-ID-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		EE708653717083BEEFB7716B /* Pods_Pet_ID_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pet_ID_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6E49E32C2C4EAA00F3C957 /* docs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = docs.swift; sourceTree = "<group>"; };
-		FA6E49E52C2C4F0100F3C957 /* RepositoryDocs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDocs.swift; sourceTree = "<group>"; };
 		FA6E49E72C2C4F4100F3C957 /* CoreDocs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDocs.swift; sourceTree = "<group>"; };
 		FA6E49E92C2C4F7600F3C957 /* NetworkDocs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDocs.swift; sourceTree = "<group>"; };
 		FA6E49EB2C2C4FB200F3C957 /* PresentationDOcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationDOcs.swift; sourceTree = "<group>"; };
-		FA6E49EF2C2C501D00F3C957 /* AppDocs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDocs.swift; sourceTree = "<group>"; };
 		FA6E49F12C2C534500F3C957 /* UseCaseDocs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseDocs.swift; sourceTree = "<group>"; };
 		FA6E49F62C2E3FEC00F3C957 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA6E49F82C2E40A500F3C957 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA82CEE02C3184E500887D05 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		FADD57052C318CD700770AC6 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		FADD57072C318D1F00770AC6 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		FADD570A2C318DA300770AC6 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
@@ -109,6 +112,17 @@
 		FADD57102C318EDF00770AC6 /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		FADD57132C318EFA00770AC6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FADD57152C318F7200770AC6 /* KeychainManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerProtocol.swift; sourceTree = "<group>"; };
+		FADD57182C31914B00770AC6 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
+		FADD571B2C3191B500770AC6 /* AuthorizationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationDTO.swift; sourceTree = "<group>"; };
+		FADD571E2C31922700770AC6 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
+		FADD57212C31935300770AC6 /* AppDelegate+DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+DIContainer.swift"; sourceTree = "<group>"; };
+		FADD57242C3193B200770AC6 /* DIConatiner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIConatiner.swift; sourceTree = "<group>"; };
+		FADD57282C31988500770AC6 /* AutoLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginUseCase.swift; sourceTree = "<group>"; };
+		FADD572B2C319BC600770AC6 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		FADD572E2C319ECD00770AC6 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		FADD57302C31A01400770AC6 /* UserRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryProtocol.swift; sourceTree = "<group>"; };
+		FADD57352C31A0A400770AC6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		FADD57382C31A13100770AC6 /* AccessibilityPermissionRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityPermissionRequestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,8 +196,6 @@
 				FA6E49DA2C2C4E3E00F3C957 /* Network */,
 				FA6E49D92C2C4E3B00F3C957 /* Domain */,
 				FA6E49D82C2C4E3600F3C957 /* Presentation */,
-				0A21CEE42C0DE238005DD8E2 /* ContentView.swift */,
-				FA82CEE02C3184E500887D05 /* SwiftUIView.swift */,
 				0A21CF252C0DF131005DD8E2 /* UseApp.swift */,
 				0A55B92B2C0F371E00C98F16 /* UserInfo.swift */,
 				0A21CEE82C0DE23A005DD8E2 /* Pet_ID_iOS.entitlements */,
@@ -369,6 +381,8 @@
 		FA6E49D82C2C4E3600F3C957 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				FADD57372C31A0DA00770AC6 /* LoginFlow */,
+				FADD57322C31A09300770AC6 /* MainFlow */,
 				FA6E49DD2C2C4E5B00F3C957 /* Splash */,
 				0A6668992C297DE100EB6E8D /* HospitalReservation */,
 				0A1069F62C1746F00031E230 /* Pet */,
@@ -383,6 +397,7 @@
 		FA6E49D92C2C4E3B00F3C957 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				FADD57172C31913B00770AC6 /* Model */,
 				FA6E49DF2C2C4E7500F3C957 /* Repository */,
 				FA6E49DE2C2C4E7200F3C957 /* UseCase */,
 			);
@@ -400,6 +415,7 @@
 		FA6E49DB2C2C4E4000F3C957 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				FADD571A2C3191AB00770AC6 /* DTO */,
 				FADD570D2C318EC200770AC6 /* Protocol */,
 				FADD57092C318D9C00770AC6 /* Local */,
 				FA6E49E22C2C4E8400F3C957 /* Repository */,
@@ -410,6 +426,10 @@
 		FA6E49DC2C2C4E4300F3C957 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				FADD572D2C319EC800770AC6 /* Logger */,
+				FADD572A2C319BBD00770AC6 /* ViewModel */,
+				FADD57232C31939C00770AC6 /* DIConatiner */,
+				FADD571D2C31921300770AC6 /* Error */,
 				FA6E49E72C2C4F4100F3C957 /* CoreDocs.swift */,
 			);
 			path = Core;
@@ -425,8 +445,8 @@
 		FA6E49DE2C2C4E7200F3C957 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				FA6E49F32C2C534F00F3C957 /* Protocol */,
 				FA6E49F12C2C534500F3C957 /* UseCaseDocs.swift */,
+				FADD57282C31988500770AC6 /* AutoLoginUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -443,6 +463,7 @@
 			isa = PBXGroup;
 			children = (
 				FA6E49E32C2C4EAA00F3C957 /* docs.swift */,
+				FADD57302C31A01400770AC6 /* UserRepositoryProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -450,7 +471,6 @@
 		FA6E49E22C2C4E8400F3C957 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				FA6E49E52C2C4F0100F3C957 /* RepositoryDocs.swift */,
 				FADD57072C318D1F00770AC6 /* UserRepository.swift */,
 			);
 			path = Repository;
@@ -468,20 +488,13 @@
 		FA6E49EE2C2C500E00F3C957 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				FADD57202C31934B00770AC6 /* DIContainer */,
 				FADD57122C318EF000770AC6 /* Constant */,
 				FA6E49F62C2E3FEC00F3C957 /* AppDelegate.swift */,
 				FA6E49F82C2E40A500F3C957 /* SceneDelegate.swift */,
 				0A21CEE22C0DE238005DD8E2 /* Pet_ID_iOSApp.swift */,
-				FA6E49EF2C2C501D00F3C957 /* AppDocs.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		FA6E49F32C2C534F00F3C957 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 		FADD57092C318D9C00770AC6 /* Local */ = {
@@ -508,6 +521,94 @@
 				FADD57132C318EFA00770AC6 /* Constants.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		FADD57172C31913B00770AC6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FADD57182C31914B00770AC6 /* Authorization.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FADD571A2C3191AB00770AC6 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				FADD571B2C3191B500770AC6 /* AuthorizationDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		FADD571D2C31921300770AC6 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				FADD571E2C31922700770AC6 /* UserError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		FADD57202C31934B00770AC6 /* DIContainer */ = {
+			isa = PBXGroup;
+			children = (
+				FADD57212C31935300770AC6 /* AppDelegate+DIContainer.swift */,
+			);
+			path = DIContainer;
+			sourceTree = "<group>";
+		};
+		FADD57232C31939C00770AC6 /* DIConatiner */ = {
+			isa = PBXGroup;
+			children = (
+				FADD57242C3193B200770AC6 /* DIConatiner.swift */,
+			);
+			path = DIConatiner;
+			sourceTree = "<group>";
+		};
+		FADD572A2C319BBD00770AC6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FADD572B2C319BC600770AC6 /* BaseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FADD572D2C319EC800770AC6 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				FADD572E2C319ECD00770AC6 /* Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		FADD57322C31A09300770AC6 /* MainFlow */ = {
+			isa = PBXGroup;
+			children = (
+				FADD57332C31A09700770AC6 /* Main */,
+			);
+			path = MainFlow;
+			sourceTree = "<group>";
+		};
+		FADD57332C31A09700770AC6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FADD57352C31A0A400770AC6 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FADD57372C31A0DA00770AC6 /* LoginFlow */ = {
+			isa = PBXGroup;
+			children = (
+				FADD573A2C31A13D00770AC6 /* AccessibilityPermission */,
+				FADD57382C31A13100770AC6 /* AccessibilityPermissionRequestView.swift */,
+			);
+			path = LoginFlow;
+			sourceTree = "<group>";
+		};
+		FADD573A2C31A13D00770AC6 /* AccessibilityPermission */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AccessibilityPermission;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -627,39 +728,46 @@
 			files = (
 				FA6E49F22C2C534500F3C957 /* UseCaseDocs.swift in Sources */,
 				0A4022012C186CBD007AA6D5 /* Sign.swift in Sources */,
-				0A21CEE52C0DE238005DD8E2 /* ContentView.swift in Sources */,
-				FA6E49F02C2C501D00F3C957 /* AppDocs.swift in Sources */,
 				FA6E49F72C2E3FEC00F3C957 /* AppDelegate.swift in Sources */,
 				0A21CF262C0DF131005DD8E2 /* UseApp.swift in Sources */,
 				0A21CF1E2C0DEFEB005DD8E2 /* LoginSuccess.swift in Sources */,
 				FADD57112C318EDF00770AC6 /* KeyChainManager.swift in Sources */,
 				FA6E49EA2C2C4F7600F3C957 /* NetworkDocs.swift in Sources */,
+				FADD57362C31A0A400770AC6 /* MainView.swift in Sources */,
 				0A4022032C1891BA007AA6D5 /* Complete.swift in Sources */,
 				0A1069FC2C1750B70031E230 /* PetCaption.swift in Sources */,
+				FADD57252C3193B200770AC6 /* DIConatiner.swift in Sources */,
 				0A4021FF2C186C44007AA6D5 /* InformationCheck.swift in Sources */,
 				0A5C71A82C1094590079849C /* PetInfo.swift in Sources */,
+				FADD57312C31A01400770AC6 /* UserRepositoryProtocol.swift in Sources */,
 				FA6E49F92C2E40A500F3C957 /* SceneDelegate.swift in Sources */,
-				FA82CEE12C3184E500887D05 /* SwiftUIView.swift in Sources */,
 				0A1069FA2C1747870031E230 /* PetCardStart.swift in Sources */,
 				FADD57062C318CD700770AC6 /* SplashViewModel.swift in Sources */,
 				FADD57082C318D1F00770AC6 /* UserRepository.swift in Sources */,
+				FADD57392C31A13100770AC6 /* AccessibilityPermissionRequestView.swift in Sources */,
+				FADD572C2C319BC600770AC6 /* BaseViewModel.swift in Sources */,
 				0A21CF1C2C0DEF8D005DD8E2 /* SplashView.swift in Sources */,
+				FADD571C2C3191B500770AC6 /* AuthorizationDTO.swift in Sources */,
 				FA6E49E42C2C4EAA00F3C957 /* docs.swift in Sources */,
+				FADD572F2C319ECD00770AC6 /* Logger.swift in Sources */,
 				FA6E49E82C2C4F4100F3C957 /* CoreDocs.swift in Sources */,
+				FADD57192C31914B00770AC6 /* Authorization.swift in Sources */,
 				0A4022072C189C4A007AA6D5 /* RegistrationSuccess.swift in Sources */,
 				FADD570B2C318DA300770AC6 /* Keychain.swift in Sources */,
 				0A4022052C189717007AA6D5 /* RegistrationInfo.swift in Sources */,
-				FA6E49E62C2C4F0100F3C957 /* RepositoryDocs.swift in Sources */,
 				FADD57162C318F7200770AC6 /* KeychainManagerProtocol.swift in Sources */,
+				FADD57292C31988500770AC6 /* AutoLoginUseCase.swift in Sources */,
 				FADD57142C318EFA00770AC6 /* Constants.swift in Sources */,
 				0A21CEE32C0DE238005DD8E2 /* Pet_ID_iOSApp.swift in Sources */,
 				0A21CF242C0DF0F6005DD8E2 /* OnboardingView.swift in Sources */,
 				0A21CF222C0DF0E6005DD8E2 /* OnboardingViewModel.swift in Sources */,
 				0A4021FD2C1868DF007AA6D5 /* ScanCheck.swift in Sources */,
+				FADD571F2C31922700770AC6 /* UserError.swift in Sources */,
 				FADD570F2C318ECB00770AC6 /* KeychainProtocol.swift in Sources */,
 				0A55B92C2C0F371E00C98F16 /* UserInfo.swift in Sources */,
 				0A21CF0F2C0DE3AA005DD8E2 /* Test.swift in Sources */,
 				FA6E49EC2C2C4FB200F3C957 /* PresentationDOcs.swift in Sources */,
+				FADD57222C31935300770AC6 /* AppDelegate+DIContainer.swift in Sources */,
 				0A66689E2C297E3F00EB6E8D /* HospitalSuccess.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

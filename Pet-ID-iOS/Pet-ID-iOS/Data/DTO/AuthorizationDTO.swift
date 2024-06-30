@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+struct AuthorizationDTO: Codable{
+    var accessToken: String
+    var refreshToken: String
+    
+    func toDomain() -> Authorization {
+        return .init(
+            accessToken: accessToken,
+            refreshToken: refreshToken
+        )
+    }
+}

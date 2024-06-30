@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Authorization {
+    var accessToken: String
+    var refreshToken: String
+}
