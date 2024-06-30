@@ -7,11 +7,13 @@ PODS:
     - Moya/Core
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
+  - Swinject (2.8.8)
   - Toast-Swift (5.1.1)
 
 DEPENDENCIES:
   - CocoaLumberjack/Swift (~> 3.8)
   - Moya/Combine (~> 15.0)
+  - Swinject (~> 2.8.0)
   - Toast-Swift (~> 5.0)
 
 SPEC REPOS:
@@ -19,14 +21,16 @@ SPEC REPOS:
     - Alamofire
     - CocoaLumberjack
     - Moya
+    - Swinject
     - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
   CocoaLumberjack: 6a459bc897d6d80bd1b8c78482ec7ad05dffc3f0
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  Swinject: 2943463cdd58b49f114213bf1ce4a09f374828e7
   Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
 
-PODFILE CHECKSUM: e31e092b3e446d48c3ba0c514f99444987938fd1
+PODFILE CHECKSUM: 5bfabcf444169c65c2dbe3a691e4a768c6f3f824
 
 COCOAPODS: 1.15.2

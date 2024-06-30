@@ -11,11 +11,15 @@ def pods_ui
 	pod 'Toast-Swift', '~> 5.0' #
 end
 
+def pods_DI
+	pod 'Swinject', '~> 2.8.0' #
+end
 
 platform :ios, '15.0'
 
 target 'Pet-ID-iOS' do
   use_frameworks!
+	pods_DI
 	pods_networking
 	pods_log
 	pods_ui
