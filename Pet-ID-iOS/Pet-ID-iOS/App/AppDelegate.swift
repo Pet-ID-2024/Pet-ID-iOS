@@ -14,7 +14,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
         
-        print("App")
+        #if DEBUG
+        Logger().debug("DEVELOP")
+        #else
+        Logger().debug("Product")
+        #endif
+        registerDependencies()
         return true
     }
     
