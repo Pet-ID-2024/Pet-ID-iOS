@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+enum UserError: Error {
+    case anyError(Error)
+    case userDataNotFound
+}

@@ -6,12 +6,23 @@
 //
 
 import Foundation
+import Combine
 
-final class SplashViewModel: ObservableObject {
+final class SplashViewModel: BaseViewModel {
     
-    init() {
-        
+    private let autologinUseCase: AutoLoginUseCase
+    
+    let autoLoginPublisher = PassthroughSubject<Bool, Never>()
+    
+    override init() {
+        self.autologinUseCase = DIContainer.shared.resolve(AutoLoginUseCase.self)
     }
     
-    func check
+    func autoLogin() {
+        autologinUseCase.execute()
+            .sink { [weak self] result in
+                self?.autoLoginPublisher.send(result)
+            }
+            .store(in: &cancellBag)
+    }
 }
