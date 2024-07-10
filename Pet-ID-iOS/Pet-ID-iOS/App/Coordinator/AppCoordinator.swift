@@ -34,14 +34,23 @@ public final class AppCoordinator: BaseCoordinator<Void> {
         let coordinator = SplashCoordinator(navigationController)
         
         coordinate(to: coordinator)
-            .sink(receiveValue: { result in
+            .sink(receiveValue: { [weak self] result in
                 
                 switch result {
                 case .login:
-                    break
+                    self?.runLoginFlow()
                 case .main:
                     break
                 }
+                
+            }).store(in: &cancelBag)
+    }
+    
+    private func runLoginFlow() {
+        let coordinator = LoginCoordinator(navigationController)
+        
+        coordinate(to: coordinator)
+            .sink(receiveValue: { _ in
                 
             }).store(in: &cancelBag)
     }
