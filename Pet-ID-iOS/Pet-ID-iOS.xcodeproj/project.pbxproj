@@ -59,6 +59,7 @@
 		FAE566042C3C384B00D77149 /* AccessibilityGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE566032C3C384B00D77149 /* AccessibilityGuideView.swift */; };
 		FAE566092C3C39AF00D77149 /* ViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE566082C3C39AF00D77149 /* ViewModelable.swift */; };
 		FAE5660B2C3EAF6C00D77149 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAE5660A2C3EAF6C00D77149 /* GoogleService-Info.plist */; };
+		FAE5660D2C3EB68D00D77149 /* CameraAlbumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5660C2C3EB68D00D77149 /* CameraAlbumManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -133,6 +134,7 @@
 		FAE566032C3C384B00D77149 /* AccessibilityGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityGuideView.swift; sourceTree = "<group>"; };
 		FAE566082C3C39AF00D77149 /* ViewModelable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelable.swift; sourceTree = "<group>"; };
 		FAE5660A2C3EAF6C00D77149 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAE5660C2C3EB68D00D77149 /* CameraAlbumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAlbumManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -653,6 +655,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE566002C3C365300D77149 /* UserDefaultManager.swift */,
+				FAE5660C2C3EB68D00D77149 /* CameraAlbumManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -804,6 +807,7 @@
 				0A1069FC2C1750B70031E230 /* PetCaption.swift in Sources */,
 				FAE565DA2C3C1A4500D77149 /* BaseCoordinator.swift in Sources */,
 				FADD57252C3193B200770AC6 /* DIConatiner.swift in Sources */,
+				FAE5660D2C3EB68D00D77149 /* CameraAlbumManager.swift in Sources */,
 				0A4021FF2C186C44007AA6D5 /* InformationCheck.swift in Sources */,
 				0A5C71A82C1094590079849C /* PetInfo.swift in Sources */,
 				FADD57312C31A01400770AC6 /* UserRepositoryProtocol.swift in Sources */,
@@ -975,6 +979,8 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Pet-ID-iOS/Resources/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 접근 권한";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨범 접근 권한";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -1038,6 +1044,8 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Pet-ID-iOS/Resources/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 접근 권한";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨범 접근 권한";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

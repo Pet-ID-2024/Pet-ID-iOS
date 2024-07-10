@@ -29,6 +29,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         registerDependencies()
         configureFirebase()
         configurePushNotification(application: application)
+        requestAccessibility()
         
         return true
     }
@@ -86,6 +87,14 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
+    }
+}
+
+// MARK: - RequestAuthorization
+extension AppDelegate {
+    func requestAccessibility() {
+        CameraAlbumManager.shared.requestAlbumAuthorization()
+        CameraAlbumManager.shared.requestCameraAuthorization()
     }
 }
 
