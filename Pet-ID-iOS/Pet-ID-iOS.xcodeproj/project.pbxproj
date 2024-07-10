@@ -58,6 +58,7 @@
 		FAE566012C3C365300D77149 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE566002C3C365300D77149 /* UserDefaultManager.swift */; };
 		FAE566042C3C384B00D77149 /* AccessibilityGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE566032C3C384B00D77149 /* AccessibilityGuideView.swift */; };
 		FAE566092C3C39AF00D77149 /* ViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE566082C3C39AF00D77149 /* ViewModelable.swift */; };
+		FAE5660B2C3EAF6C00D77149 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAE5660A2C3EAF6C00D77149 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -131,6 +132,7 @@
 		FAE566002C3C365300D77149 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		FAE566032C3C384B00D77149 /* AccessibilityGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityGuideView.swift; sourceTree = "<group>"; };
 		FAE566082C3C39AF00D77149 /* ViewModelable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelable.swift; sourceTree = "<group>"; };
+		FAE5660A2C3EAF6C00D77149 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -481,6 +483,7 @@
 		FA6E49ED2C2C500800F3C957 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAE5660A2C3EAF6C00D77149 /* GoogleService-Info.plist */,
 				0AB4E1072C2B14BC006331B4 /* Info.plist */,
 				0A21CEE62C0DE23A005DD8E2 /* Assets.xcassets */,
 			);
@@ -734,6 +737,7 @@
 			files = (
 				0A21CEEB2C0DE23A005DD8E2 /* Preview Assets.xcassets in Resources */,
 				0A21CEE72C0DE23A005DD8E2 /* Assets.xcassets in Resources */,
+				FAE5660B2C3EAF6C00D77149 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -961,10 +965,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Pet-ID-iOS/Pet_ID_iOS.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pet-ID-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 5GX72A4PN9;
+				DEVELOPMENT_TEAM = 5QNWYK9LQY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1004,8 +1009,9 @@
 					"-framework",
 					"\"Foundation\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ssss.Pet-ID-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pet-id-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1047,7 +1053,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ssss.Pet-ID-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pet-id-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

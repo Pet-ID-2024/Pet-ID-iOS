@@ -19,6 +19,22 @@ def pods_Utils
 	pod 'Then', '~> 3.0.0' #
 end
 
+def pods_Auth
+	pod 'KakaoSDKCommon'  # 필수 요소를 담은 공통 모듈
+	pod 'KakaoSDKAuth'  # 사용자 인증
+	pod 'KakaoSDKUser'  # 카카오 로그인, 사용자 관리
+
+	pod 'naveridlogin-sdk-ios' 
+	pod 'GoogleSignIn'
+end
+
+def pods_Firebase
+	pod 'Firebase/Analytics'
+	pod 'Firebase/Crashlytics'
+	pod 'FirebaseMessaging'
+end
+
+
 platform :ios, '15.0'
 
 target 'Pet-ID-iOS' do
@@ -28,4 +44,6 @@ target 'Pet-ID-iOS' do
 	pods_log
 	pods_ui
 	pods_Utils
+	pods_Auth
+	pods_Firebase
 end

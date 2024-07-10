@@ -6,9 +6,14 @@
 //
 
 import UIKit
+import Firebase
+import UserNotifications
+import FirebaseMessaging
 
 @main
 class AppDelegate: NSObject, UIApplicationDelegate {
+    
+    let logger: Logger = Logger()
     
     func application(
         _ application: UIApplication,
@@ -20,7 +25,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         #else
         Logger().debug("Product")
         #endif
+        
         registerDependencies()
+        configureFirebase()
+        configurePushNotification(application: application)
+        
         return true
     }
     
@@ -36,5 +45,47 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     }
     
     
+}
+
+// MARK: - ConfigureFirebase
+extension AppDelegate {
+    func configureFirebase() {
+        FirebaseApp.configure()
+        Messaging.messaging().delegate = self
+    }
+}
+
+// MARK: - FirebaseMessaging
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        logger.debug("Firebase registration token: \(String(describing: fcmToken))")
+    }
+}
+
+// MARK: - ConfigurePushNotification
+extension AppDelegate {
+    
+    func configurePushNotification(application: UIApplication) {
+        UNUserNotificationCenter.current().delegate = self
+        
+        let authOption: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(
+            options: authOption,
+            completionHandler: { _, _ in }
+        )
+        
+        application.registerForRemoteNotifications()
+    }
+}
+
+// MARK: - UNUserNotificationCenterDelefate
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.list, .banner])
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
+    }
 }
 
