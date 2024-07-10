@@ -28,6 +28,7 @@
 		0A66689E2C297E3F00EB6E8D /* HospitalSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A66689D2C297E3F00EB6E8D /* HospitalSuccess.swift */; };
 		FA46F33E2C3EC503003CAC02 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46F33D2C3EC503003CAC02 /* LoginButton.swift */; };
 		FA46F3472C3EC977003CAC02 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46F3462C3EC977003CAC02 /* Color+.swift */; };
+		FA46F34A2C3ED4C2003CAC02 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46F3492C3ED4C2003CAC02 /* BaseViewModel.swift */; };
 		FA6E49E42C2C4EAA00F3C957 /* docs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49E32C2C4EAA00F3C957 /* docs.swift */; };
 		FA6E49EA2C2C4F7600F3C957 /* NetworkDocs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49E92C2C4F7600F3C957 /* NetworkDocs.swift */; };
 		FA6E49F22C2C534500F3C957 /* UseCaseDocs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49F12C2C534500F3C957 /* UseCaseDocs.swift */; };
@@ -107,6 +108,7 @@
 		EE708653717083BEEFB7716B /* Pods_Pet_ID_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pet_ID_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA46F33D2C3EC503003CAC02 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		FA46F3462C3EC977003CAC02 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		FA46F3492C3ED4C2003CAC02 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		FA6E49E32C2C4EAA00F3C957 /* docs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = docs.swift; sourceTree = "<group>"; };
 		FA6E49E92C2C4F7600F3C957 /* NetworkDocs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDocs.swift; sourceTree = "<group>"; };
 		FA6E49F12C2C534500F3C957 /* UseCaseDocs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseDocs.swift; sourceTree = "<group>"; };
@@ -430,6 +432,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		FA46F3482C3ED4B2003CAC02 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FAE565EF2C3C280700D77149 /* Interface */,
+				FA46F3492C3ED4C2003CAC02 /* BaseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		FA6E49D82C2C4E3600F3C957 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -668,17 +679,17 @@
 		FAE565EE2C3C280300D77149 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				FAE565EF2C3C280700D77149 /* ViewModelable */,
+				FA46F3482C3ED4B2003CAC02 /* ViewModel */,
 			);
 			path = Base;
 			sourceTree = "<group>";
 		};
-		FAE565EF2C3C280700D77149 /* ViewModelable */ = {
+		FAE565EF2C3C280700D77149 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
 				FAE566082C3C39AF00D77149 /* ViewModelable.swift */,
 			);
-			path = ViewModelable;
+			path = Interface;
 			sourceTree = "<group>";
 		};
 		FAE565F22C3C324000D77149 /* Coordinator */ = {
@@ -833,6 +844,7 @@
 			files = (
 				FA6E49F22C2C534500F3C957 /* UseCaseDocs.swift in Sources */,
 				FA46F3472C3EC977003CAC02 /* Color+.swift in Sources */,
+				FA46F34A2C3ED4C2003CAC02 /* BaseViewModel.swift in Sources */,
 				0A4022012C186CBD007AA6D5 /* Sign.swift in Sources */,
 				FAE566012C3C365300D77149 /* UserDefaultManager.swift in Sources */,
 				FA6E49F72C2E3FEC00F3C957 /* AppDelegate.swift in Sources */,

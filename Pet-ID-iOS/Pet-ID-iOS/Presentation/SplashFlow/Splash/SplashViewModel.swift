@@ -14,11 +14,9 @@ enum SplashResult {
     case main
 }
 
-final class SplashViewModel: ViewModelable {
+final class SplashViewModel: BaseViewModel, ViewModelable {
 
     private let autologinUseCase: AutoLoginUseCase
-    
-    var cancelBag: Set<AnyCancellable> = .init()
     
     var result: PassthroughSubject = PassthroughSubject<SplashResult, Never>()
     
