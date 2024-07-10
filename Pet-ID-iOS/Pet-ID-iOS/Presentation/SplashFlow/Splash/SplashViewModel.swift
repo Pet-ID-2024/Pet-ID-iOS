@@ -32,8 +32,6 @@ final class SplashViewModel: ViewModelable {
         
         if UserDefaultManager.shared.isFirstExecute {
             result.send(.firstLogin)
-            
-//            UserDefaultManager.shared.isFirstExecute = true
         } else {
             autologinUseCase.execute()
                 .sink { [weak self] result in

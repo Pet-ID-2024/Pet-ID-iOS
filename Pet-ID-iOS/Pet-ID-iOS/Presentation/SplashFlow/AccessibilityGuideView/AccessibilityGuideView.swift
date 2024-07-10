@@ -13,7 +13,7 @@ struct AccessibilityGuideView: View {
         VStack {
             
             Button(action: {
-                
+                UserDefaultManager.shared.isFirstExecute = false
             }, label: {
                 Text("확인")
             })

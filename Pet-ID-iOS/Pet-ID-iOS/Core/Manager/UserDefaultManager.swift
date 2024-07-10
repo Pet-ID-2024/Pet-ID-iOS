@@ -21,12 +21,13 @@ final class UserDefaultManager {
         case isFirstExecute
     }
     
+    /// 앱을 처음 실행한건지
     var isFirstExecute: Bool {
         get {
             !userDefault.bool(forKey: Keys.isFirstExecute.rawValue)
         }
         set {
-            userDefault.setValue(false, forKey: Keys.isFirstExecute.rawValue)
+            userDefault.setValue(!newValue, forKey: Keys.isFirstExecute.rawValue)
         }
     }
 }
