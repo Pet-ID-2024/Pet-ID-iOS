@@ -7,6 +7,7 @@
 
 import UIKit
 
+@main
 class AppDelegate: NSObject, UIApplicationDelegate {
     
     func application(
