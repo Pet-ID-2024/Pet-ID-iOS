@@ -85,7 +85,7 @@ struct TermsAgreementView: View {
     var temsAgreementView: some View {
         VStack {
             HStack {
-//                CheckBox(isChecked: Binding(get: {}, set: <#T##(Value) -> Void#>))
+///                CheckBox(isChecked: Binding(get: {}, set: <#T##(Value) -> Void#>))
                 Text("약관 전체 동의")
             }
         }
