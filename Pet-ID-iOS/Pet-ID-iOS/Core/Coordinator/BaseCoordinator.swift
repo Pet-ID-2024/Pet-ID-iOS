@@ -8,6 +8,7 @@
 import UIKit
 import Combine
 
+@MainActor
 open class BaseCoordinator<ResultType> {
     
     public typealias CoordinateResult = ResultType

@@ -30,7 +30,7 @@ struct LoginMainView: View {
                     LoginButton(type: type, action: {
                         switch type {
                         case .apple: appleAuthProvider.startAppleLogin { credential, error in
-                            if let error = error {
+                            if let _ = error {
                                 return
                             }
                             

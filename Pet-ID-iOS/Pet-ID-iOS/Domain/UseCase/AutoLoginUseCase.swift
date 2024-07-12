@@ -14,10 +14,14 @@ protocol AutoLoginUseCase {
 
 struct DefaultAutoLoginUseCase: AutoLoginUseCase {
     
-    let userRepository: UserRepository
+    let authRepository: AuthRepository
+    
+    init(authRepository: AuthRepository = DefaultAuthRepository()) {
+        self.authRepository = authRepository
+    }
     
     func execute() -> AnyPublisher<Bool, Never> {
-        return userRepository.getAuthorizationFromKeychain()
+        return authRepository.getAuthorizationFromKeychain()
             .map { _ in true}
             .catch { _ in
                 return Just(false)

@@ -19,6 +19,7 @@ final class UserDefaultManager {
     
     private enum Keys: String {
         case isFirstExecute
+        case fcmToken
     }
     
     /// 앱을 처음 실행한건지
@@ -30,4 +31,7 @@ final class UserDefaultManager {
             userDefault.setValue(!newValue, forKey: Keys.isFirstExecute.rawValue)
         }
     }
+    
+    @UserDefault(key: Keys.fcmToken.rawValue, defaultValue: "")
+    var fcmToken: String
 }

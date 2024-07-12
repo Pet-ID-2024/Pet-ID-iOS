@@ -8,4 +8,6 @@
 import Foundation
 import Combine
 
-protocol UserRepository { }
+struct DefaultUserRepository: UserRepository {
+    
+}

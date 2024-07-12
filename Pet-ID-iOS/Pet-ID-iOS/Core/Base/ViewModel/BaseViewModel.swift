@@ -14,6 +14,6 @@ open class BaseViewModel: ObservableObject {
     var cancelBag: Set<AnyCancellable> = .init()
     
     deinit {
-        logger.debug("ViewModelDeinit!!!!!\n\(self)")
+        logger.debug("\(self) Deinit!!!!!")
     }
 }

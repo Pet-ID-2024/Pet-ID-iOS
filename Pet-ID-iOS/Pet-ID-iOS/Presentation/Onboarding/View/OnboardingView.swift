@@ -50,7 +50,7 @@ struct OnboardingView: View {
                         .padding()
                 }
                 NavigationLink(
-                    destination: UseApp().navigationBarBackButtonHidden(),
+                    destination: EmptyView(),
                     isActive: $viewModel.isOnboardingCompleted,
                     label: {
                         EmptyView()

@@ -29,6 +29,23 @@ final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
             )
         )
         
+        viewModel.result
+            .sink(receiveValue: { [weak self] in
+                switch $0 {
+                case .main: break
+                case .signUp:
+                    self?.pushTermsAgreement()
+                }
+            }).store(in: &cancelBag)
+        
         push(loginMainVC, animate: false, isRoot: true)
+    }
+    
+    func pushTermsAgreement() {
+        let termsAgreementVC = UIHostingController(
+            rootView: TermsAgreementView()
+        )
+        
+        push(termsAgreementVC)
     }
 }

@@ -21,7 +21,7 @@ final class SplashViewModel: BaseViewModel, ViewModelable {
     var result: PassthroughSubject = PassthroughSubject<SplashResult, Never>()
     
     init(
-        autologinUseCase: AutoLoginUseCase = DIContainer.shared.resolve(AutoLoginUseCase.self)
+        autologinUseCase: AutoLoginUseCase = DefaultAutoLoginUseCase()
     ) {
         self.autologinUseCase = autologinUseCase
     }
