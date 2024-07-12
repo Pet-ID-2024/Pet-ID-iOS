@@ -6,3 +6,16 @@
 //
 
 import Foundation
+import AuthenticationServices
+
+final class LoginMainViewModel: BaseViewModel {
+    
+}
+
+// MARK: - AppLogin
+extension LoginMainViewModel {
+    func runAppleLogin(credential: ASAuthorizationAppleIDCredential) {
+        logger.debug("Success to get Apple auth credential")
+    }
+}
+

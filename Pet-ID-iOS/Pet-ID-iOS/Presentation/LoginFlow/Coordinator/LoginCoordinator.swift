@@ -22,7 +22,12 @@ final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
     }
     
     func showLoginMain() {
-        let loginMainVC = UIHostingController(rootView: LoginMainView())
+        let viewModel = LoginMainViewModel()
+        let loginMainVC = UIHostingController(
+            rootView: LoginMainView(
+                viewModel: viewModel
+            )
+        )
         
         push(loginMainVC, animate: false, isRoot: true)
     }
