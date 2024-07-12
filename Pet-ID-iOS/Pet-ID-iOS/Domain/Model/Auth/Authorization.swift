@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Authorization {
+struct Authorization: Encodable {
     var accessToken: String
     var refreshToken: String
 }

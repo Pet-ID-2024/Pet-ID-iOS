@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct LoginMainView: View {
+    
+    @ObservedObject var viewModel: LoginMainViewModel
+    private var appleAuthProvider = AppleAuthProvider(window: UIWindow.currentKeyWindow)
+    
+    init(viewModel: LoginMainViewModel) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
         VStack(spacing: 0) {
             HStack {
@@ -20,7 +28,20 @@ struct LoginMainView: View {
             VStack(spacing: 12) {
                 ForEach(LoginButton.LoginButtonType.allCases, id: \.self) { type in
                     LoginButton(type: type, action: {
-                        
+                        switch type {
+                        case .apple: appleAuthProvider.startAppleLogin { credential, error in
+                            if let _ = error {
+                                return
+                            }
+                            
+                            if let credential = credential {
+                                viewModel.runAppleLogin(credential: credential)
+                            }
+                        }
+                        case .google: break
+                        case .kakao: break
+                        case .naver: break
+                        }
                     })
                 }
             }
@@ -34,5 +55,5 @@ struct LoginMainView: View {
 }
 
 #Preview {
-    LoginMainView()
+    LoginMainView(viewModel: LoginMainViewModel())
 }

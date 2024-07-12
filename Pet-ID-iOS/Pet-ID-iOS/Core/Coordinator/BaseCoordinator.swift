@@ -8,6 +8,7 @@
 import UIKit
 import Combine
 
+@MainActor
 open class BaseCoordinator<ResultType> {
     
     public typealias CoordinateResult = ResultType
@@ -33,9 +34,6 @@ open class BaseCoordinator<ResultType> {
         append(coordinator: coordinator)
         return coordinator.start()
             .handleEvents(
-                receiveOutput: { [weak self] _ in
-                    self?.remove(coordinator: coordinator)
-                },
                 receiveCompletion: { [weak self] _ in
                     self?.remove(coordinator: coordinator)
                 }

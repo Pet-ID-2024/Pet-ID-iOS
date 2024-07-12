@@ -9,7 +9,11 @@ import Foundation
 
 struct KeychainManager: KeychainManagerProtocol {
 
-    var keychain: KeychainProtocol?
+    var keychain: KeychainProtocol
+    
+    init(keychain: KeychainProtocol = Keychain()) {
+        self.keychain = keychain
+    }
 
     func save(key: Constants.KeychainKey, data: Data) -> Bool {
         let query: [String: Any] = [
@@ -18,7 +22,9 @@ struct KeychainManager: KeychainManagerProtocol {
             kSecValueData as String: data   //저장될 데이터를 Data Type으로
         ]
 
-        let status = keychain?.add(query)
+        let status = keychain.add(query)
+        
+        if status != errSecSuccess { Logger().error("Keychain 저장 실패 \nkey:\(key)") }
         return status == errSecSuccess ? true : false // status가 errSecSuccess로 저장에 성공하면 true, else false
     }
 
@@ -30,7 +36,7 @@ struct KeychainManager: KeychainManagerProtocol {
             kSecMatchLimit as String: kSecMatchLimitOne //값이 일치하는 1개의 데이터만
         ]
 
-        return keychain?.search(query)
+        return keychain.search(query)
     }
 
     func delete(key: Constants.KeychainKey) -> Bool {
@@ -39,7 +45,10 @@ struct KeychainManager: KeychainManagerProtocol {
             kSecAttrAccount as String: key.rawValue
         ]
 
-        let status = keychain?.delete(query)
+        let status = keychain.delete(query)
+        
+        if status != errSecSuccess { Logger().error("Keychain 삭제 실패 \nkey:\(key)") }
+        
         return status == errSecSuccess ? true : false
     }
 
@@ -54,7 +63,10 @@ struct KeychainManager: KeychainManagerProtocol {
             kSecValueData as String: data
         ]
 
-        let status = keychain?.update(query, with: attributes)
+        let status = keychain.update(query, with: attributes)
+        
+        if status != errSecSuccess { Logger().error("Keychain 업데이트 실패 \nkey:\(key)") }
+        
         return status == errSecSuccess ? true : false
     }
 }

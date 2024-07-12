@@ -26,7 +26,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         Logger().debug("Product")
         #endif
         
-        registerDependencies()
         configureFirebase()
         configurePushNotification(application: application)
         requestAccessibility()
@@ -59,7 +58,10 @@ extension AppDelegate {
 // MARK: - FirebaseMessaging
 extension AppDelegate: MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        
+        guard let fcmToken else { return }
         logger.debug("Firebase registration token: \(String(describing: fcmToken))")
+        UserDefaultManager.shared.fcmToken = fcmToken
     }
 }
 
