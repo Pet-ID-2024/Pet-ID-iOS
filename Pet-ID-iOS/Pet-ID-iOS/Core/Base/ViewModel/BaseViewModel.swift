@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-open class BaseViewModel {
+open class BaseViewModel: ObservableObject {
     
     let logger: Logger = Logger()
     var cancelBag: Set<AnyCancellable> = .init()
