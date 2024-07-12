@@ -29,6 +29,7 @@
 		FA46F33E2C3EC503003CAC02 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46F33D2C3EC503003CAC02 /* LoginButton.swift */; };
 		FA46F3472C3EC977003CAC02 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46F3462C3EC977003CAC02 /* Color+.swift */; };
 		FA46F34A2C3ED4C2003CAC02 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46F3492C3ED4C2003CAC02 /* BaseViewModel.swift */; };
+		FA46F34D2C3F56FA003CAC02 /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46F34C2C3F56FA003CAC02 /* UIWindow+.swift */; };
 		FA6E49E42C2C4EAA00F3C957 /* docs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49E32C2C4EAA00F3C957 /* docs.swift */; };
 		FA6E49EA2C2C4F7600F3C957 /* NetworkDocs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49E92C2C4F7600F3C957 /* NetworkDocs.swift */; };
 		FA6E49F22C2C534500F3C957 /* UseCaseDocs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49F12C2C534500F3C957 /* UseCaseDocs.swift */; };
@@ -63,6 +64,7 @@
 		FAE566092C3C39AF00D77149 /* ViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE566082C3C39AF00D77149 /* ViewModelable.swift */; };
 		FAE5660B2C3EAF6C00D77149 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAE5660A2C3EAF6C00D77149 /* GoogleService-Info.plist */; };
 		FAE5660D2C3EB68D00D77149 /* CameraAlbumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5660C2C3EB68D00D77149 /* CameraAlbumManager.swift */; };
+		FAF8E6E72C40C20600CA7145 /* AppleAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8E6E62C40C20600CA7145 /* AppleAuthProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -109,6 +111,7 @@
 		FA46F33D2C3EC503003CAC02 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		FA46F3462C3EC977003CAC02 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		FA46F3492C3ED4C2003CAC02 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		FA46F34C2C3F56FA003CAC02 /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
 		FA6E49E32C2C4EAA00F3C957 /* docs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = docs.swift; sourceTree = "<group>"; };
 		FA6E49E92C2C4F7600F3C957 /* NetworkDocs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDocs.swift; sourceTree = "<group>"; };
 		FA6E49F12C2C534500F3C957 /* UseCaseDocs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseDocs.swift; sourceTree = "<group>"; };
@@ -141,6 +144,7 @@
 		FAE566082C3C39AF00D77149 /* ViewModelable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelable.swift; sourceTree = "<group>"; };
 		FAE5660A2C3EAF6C00D77149 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FAE5660C2C3EB68D00D77149 /* CameraAlbumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAlbumManager.swift; sourceTree = "<group>"; };
+		FAF8E6E62C40C20600CA7145 /* AppleAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -441,6 +445,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		FA46F34B2C3F56F1003CAC02 /* UIWindow+ */ = {
+			isa = PBXGroup;
+			children = (
+				FA46F34C2C3F56FA003CAC02 /* UIWindow+.swift */,
+			);
+			path = "UIWindow+";
+			sourceTree = "<group>";
+		};
 		FA6E49D82C2C4E3600F3C957 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,6 +499,7 @@
 		FA6E49DC2C2C4E4300F3C957 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				FAF8E6E52C40C1F200CA7145 /* AuthProvider */,
 				FAE565FF2C3C363A00D77149 /* Manager */,
 				FAE565EE2C3C280300D77149 /* Base */,
 				FAE565DC2C3C1BB600D77149 /* Extension */,
@@ -647,8 +660,8 @@
 		FADD57372C31A0DA00770AC6 /* LoginFlow */ = {
 			isa = PBXGroup;
 			children = (
-				FA46F33B2C3EC4ED003CAC02 /* LoginMain */,
 				FAE565F22C3C324000D77149 /* Coordinator */,
+				FA46F33B2C3EC4ED003CAC02 /* LoginMain */,
 			);
 			path = LoginFlow;
 			sourceTree = "<group>";
@@ -664,6 +677,7 @@
 		FAE565DC2C3C1BB600D77149 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FA46F34B2C3F56F1003CAC02 /* UIWindow+ */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -724,6 +738,14 @@
 				FADD57052C318CD700770AC6 /* SplashViewModel.swift */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		FAF8E6E52C40C1F200CA7145 /* AuthProvider */ = {
+			isa = PBXGroup;
+			children = (
+				FAF8E6E62C40C20600CA7145 /* AppleAuthProvider.swift */,
+			);
+			path = AuthProvider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -853,6 +875,7 @@
 				0A21CF1E2C0DEFEB005DD8E2 /* LoginSuccess.swift in Sources */,
 				FADD57112C318EDF00770AC6 /* KeyChainManager.swift in Sources */,
 				FA6E49EA2C2C4F7600F3C957 /* NetworkDocs.swift in Sources */,
+				FA46F34D2C3F56FA003CAC02 /* UIWindow+.swift in Sources */,
 				FADD57362C31A0A400770AC6 /* MainView.swift in Sources */,
 				0A4022032C1891BA007AA6D5 /* Complete.swift in Sources */,
 				0A1069FC2C1750B70031E230 /* PetCaption.swift in Sources */,
@@ -883,6 +906,7 @@
 				0A21CF242C0DF0F6005DD8E2 /* OnboardingView.swift in Sources */,
 				FA46F33E2C3EC503003CAC02 /* LoginButton.swift in Sources */,
 				0A21CF222C0DF0E6005DD8E2 /* OnboardingViewModel.swift in Sources */,
+				FAF8E6E72C40C20600CA7145 /* AppleAuthProvider.swift in Sources */,
 				0A4021FD2C1868DF007AA6D5 /* ScanCheck.swift in Sources */,
 				FADD571F2C31922700770AC6 /* UserError.swift in Sources */,
 				FADD570F2C318ECB00770AC6 /* KeychainProtocol.swift in Sources */,
