@@ -19,7 +19,8 @@ struct LoginMainView: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack {
-                Text("간편하게 로그인하고\n펫아이디를 사용해보세요")
+                Text("간편하게 로그인하고\n펫아이디를 사용해보세요.")
+                    .font(.petIdTitle1)
                 Spacer()
             }
             

@@ -32,4 +32,15 @@ extension Color {
             opacity: Double(a) / 255
         )
     }
+    
+    static let petIdSkyBlue = Color(hex: "#84C6FF")
+    static let petid_lightdark_skyblue = Color(hex: "#79B2E4")
+    static let petid_clearblue = Color(hex: "#3397FF")
+    static let petid_blue = Color(hex: "#007DFF")
+    static let petid_clearblue_gradient = Color(hex: "#007DFF~#B4D9FF")
+    static let petid_lightgrey = Color(hex: "#D9D9D9")
+    static let petid_grey = Color(hex: "#838383")
+    static let petid_subtitle = Color(hex: "#848484")
+    static let petid_title = Color(hex: "#242424")
+    static let petid_red = Color(hex: "#E54747")
 }

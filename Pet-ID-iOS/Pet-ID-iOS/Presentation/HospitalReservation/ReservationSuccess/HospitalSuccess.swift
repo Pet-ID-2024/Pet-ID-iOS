@@ -16,7 +16,7 @@ struct HospitalSuccess: View {
                     Spacer()
                 }
                 Text("예약 신청이 완료되었습니다!")
-                    .font(.system(size: 28))
+                    .font(.petIdTitle1)
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .center)
                 HStack(spacing: 0) {

@@ -25,7 +25,15 @@
 		0A4022072C189C4A007AA6D5 /* RegistrationSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4022062C189C4A007AA6D5 /* RegistrationSuccess.swift */; };
 		0A55B92C2C0F371E00C98F16 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A55B92B2C0F371E00C98F16 /* UserInfo.swift */; };
 		0A5C71A82C1094590079849C /* PetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C71A72C1094590079849C /* PetInfo.swift */; };
+		0A5FE6982C45416D00B95F3C /* AccessibilityRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FE6972C45416D00B95F3C /* AccessibilityRightView.swift */; };
+		0A5FE69A2C45419300B95F3C /* AccessibilityRightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FE6992C45419300B95F3C /* AccessibilityRightViewModel.swift */; };
+		0A5FE69C2C4541A500B95F3C /* AccessibilityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FE69B2C4541A500B95F3C /* AccessibilityItemView.swift */; };
 		0A66689E2C297E3F00EB6E8D /* HospitalSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A66689D2C297E3F00EB6E8D /* HospitalSuccess.swift */; };
+		0AC9B0852C4278B30040FB28 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC9B0842C4278B30040FB28 /* Font+.swift */; };
+		0AC9B0882C4278D30040FB28 /* NotoSansKR-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AC9B0862C4278D30040FB28 /* NotoSansKR-Regular.ttf */; };
+		0AC9B0892C4278D30040FB28 /* NotoSansKR-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AC9B0872C4278D30040FB28 /* NotoSansKR-SemiBold.ttf */; };
+		0AC9B08B2C4278DD0040FB28 /* NotoSansKR-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AC9B08A2C4278DD0040FB28 /* NotoSansKR-Bold.ttf */; };
+		0AC9B08D2C427D660040FB28 /* Image+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC9B08C2C427D660040FB28 /* Image+.swift */; };
 		FA46F33E2C3EC503003CAC02 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46F33D2C3EC503003CAC02 /* LoginButton.swift */; };
 		FA46F3472C3EC977003CAC02 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46F3462C3EC977003CAC02 /* Color+.swift */; };
 		FA46F34A2C3ED4C2003CAC02 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46F3492C3ED4C2003CAC02 /* BaseViewModel.swift */; };
@@ -118,8 +126,16 @@
 		0A4022062C189C4A007AA6D5 /* RegistrationSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationSuccess.swift; sourceTree = "<group>"; };
 		0A55B92B2C0F371E00C98F16 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		0A5C71A72C1094590079849C /* PetInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInfo.swift; sourceTree = "<group>"; };
+		0A5FE6972C45416D00B95F3C /* AccessibilityRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityRightView.swift; sourceTree = "<group>"; };
+		0A5FE6992C45419300B95F3C /* AccessibilityRightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityRightViewModel.swift; sourceTree = "<group>"; };
+		0A5FE69B2C4541A500B95F3C /* AccessibilityItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityItemView.swift; sourceTree = "<group>"; };
 		0A66689D2C297E3F00EB6E8D /* HospitalSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalSuccess.swift; sourceTree = "<group>"; };
 		0AB4E1072C2B14BC006331B4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AC9B0842C4278B30040FB28 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		0AC9B0862C4278D30040FB28 /* NotoSansKR-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.ttf"; sourceTree = "<group>"; };
+		0AC9B0872C4278D30040FB28 /* NotoSansKR-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-SemiBold.ttf"; sourceTree = "<group>"; };
+		0AC9B08A2C4278DD0040FB28 /* NotoSansKR-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.ttf"; sourceTree = "<group>"; };
+		0AC9B08C2C427D660040FB28 /* Image+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+.swift"; sourceTree = "<group>"; };
 		3C7286A000034D1F020526EC /* Pods-Pet-ID-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet-ID-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Pet-ID-iOS/Pods-Pet-ID-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		8BE1E2477EE2103256707795 /* Pods-Pet-ID-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet-ID-iOS.release.xcconfig"; path = "Target Support Files/Pods-Pet-ID-iOS/Pods-Pet-ID-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		EE708653717083BEEFB7716B /* Pods_Pet_ID_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pet_ID_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -302,6 +318,7 @@
 		0A21CF1A2C0DEC48005DD8E2 /* SplashFlow */ = {
 			isa = PBXGroup;
 			children = (
+				0A5FE6962C45414F00B95F3C /* AccessibilityRight */,
 				FAE565EC2C3C275900D77149 /* SplashCoordinator.swift */,
 				FAE566052C3C385800D77149 /* Splash */,
 				FAE566022C3C383400D77149 /* AccessibilityGuideView */,
@@ -382,6 +399,16 @@
 			path = RegistrationSuccess;
 			sourceTree = "<group>";
 		};
+		0A5FE6962C45414F00B95F3C /* AccessibilityRight */ = {
+			isa = PBXGroup;
+			children = (
+				0A5FE6972C45416D00B95F3C /* AccessibilityRightView.swift */,
+				0A5FE6992C45419300B95F3C /* AccessibilityRightViewModel.swift */,
+				0A5FE69B2C4541A500B95F3C /* AccessibilityItemView.swift */,
+			);
+			path = AccessibilityRight;
+			sourceTree = "<group>";
+		};
 		0A6668992C297DE100EB6E8D /* HospitalReservation */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +423,16 @@
 				0A66689D2C297E3F00EB6E8D /* HospitalSuccess.swift */,
 			);
 			path = ReservationSuccess;
+			sourceTree = "<group>";
+		};
+		0AC9B0812C4278990040FB28 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				0AC9B0862C4278D30040FB28 /* NotoSansKR-Regular.ttf */,
+				0AC9B0872C4278D30040FB28 /* NotoSansKR-SemiBold.ttf */,
+				0AC9B08A2C4278DD0040FB28 /* NotoSansKR-Bold.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		1FC2591F97EAEF2423DFA2D5 /* Frameworks */ = {
@@ -436,6 +473,7 @@
 		FA46F33F2C3EC53C003CAC02 /* DSKit */ = {
 			isa = PBXGroup;
 			children = (
+				0AC9B0812C4278990040FB28 /* Font */,
 				FA46F3452C3EC96F003CAC02 /* Extension */,
 				FA46F3402C3EC556003CAC02 /* Buttons */,
 			);
@@ -465,6 +503,8 @@
 			isa = PBXGroup;
 			children = (
 				FA46F3462C3EC977003CAC02 /* Color+.swift */,
+				0AC9B0842C4278B30040FB28 /* Font+.swift */,
+				0AC9B08C2C427D660040FB28 /* Image+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -943,8 +983,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A21CEEB2C0DE23A005DD8E2 /* Preview Assets.xcassets in Resources */,
+				0AC9B08B2C4278DD0040FB28 /* NotoSansKR-Bold.ttf in Resources */,
+				0AC9B0892C4278D30040FB28 /* NotoSansKR-SemiBold.ttf in Resources */,
 				0A21CEE72C0DE23A005DD8E2 /* Assets.xcassets in Resources */,
 				FAE5660B2C3EAF6C00D77149 /* GoogleService-Info.plist in Resources */,
+				0AC9B0882C4278D30040FB28 /* NotoSansKR-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1007,6 +1050,7 @@
 				FAE565F92C3C328D00D77149 /* LoginMainView.swift in Sources */,
 				FAF8E6F12C40D17E00CA7145 /* UserDefault.swift in Sources */,
 				FAF8E6E92C40C70A00CA7145 /* Provider.swift in Sources */,
+				0A5FE69A2C45419300B95F3C /* AccessibilityRightViewModel.swift in Sources */,
 				0A21CF262C0DF131005DD8E2 /* UseApp.swift in Sources */,
 				FAF8E70F2C40E3A200CA7145 /* LoginResponseDTO.swift in Sources */,
 				0A21CF1E2C0DEFEB005DD8E2 /* LoginSuccess.swift in Sources */,
@@ -1022,6 +1066,7 @@
 				FAE5660D2C3EB68D00D77149 /* CameraAlbumManager.swift in Sources */,
 				0A4021FF2C186C44007AA6D5 /* InformationCheck.swift in Sources */,
 				0A5C71A82C1094590079849C /* PetInfo.swift in Sources */,
+				0A5FE6982C45416D00B95F3C /* AccessibilityRightView.swift in Sources */,
 				FADD57312C31A01400770AC6 /* UserRepositoryProtocol.swift in Sources */,
 				FA6E49F92C2E40A500F3C957 /* SceneDelegate.swift in Sources */,
 				0A1069FA2C1747870031E230 /* PetCardStart.swift in Sources */,
@@ -1030,6 +1075,7 @@
 				0A21CF1C2C0DEF8D005DD8E2 /* SplashView.swift in Sources */,
 				FADD571C2C3191B500770AC6 /* AuthorizationDTO.swift in Sources */,
 				FAF8E6ED2C40CC1000CA7145 /* NetworkInterceptor.swift in Sources */,
+				0AC9B0852C4278B30040FB28 /* Font+.swift in Sources */,
 				FA6E49E42C2C4EAA00F3C957 /* docs.swift in Sources */,
 				FADD572F2C319ECD00770AC6 /* Logger.swift in Sources */,
 				FAF8E6FE2C40D68D00CA7145 /* LoginRequestDTO.swift in Sources */,
@@ -1047,6 +1093,7 @@
 				FAF8E7092C40E27C00CA7145 /* AuthDataSource.swift in Sources */,
 				FAE565F62C3C328000D77149 /* LoginCoordinator.swift in Sources */,
 				FAF8E7162C40EC7100CA7145 /* LoginUseCase.swift in Sources */,
+				0A5FE69C2C4541A500B95F3C /* AccessibilityItemView.swift in Sources */,
 				FADD57142C318EFA00770AC6 /* Constants.swift in Sources */,
 				0A21CF242C0DF0F6005DD8E2 /* OnboardingView.swift in Sources */,
 				FA46F33E2C3EC503003CAC02 /* LoginButton.swift in Sources */,
@@ -1063,6 +1110,7 @@
 				FAE565ED2C3C275900D77149 /* SplashCoordinator.swift in Sources */,
 				FAE566042C3C384B00D77149 /* AccessibilityGuideView.swift in Sources */,
 				FAF8E7062C40E22B00CA7145 /* DefaultAuthRepository.swift in Sources */,
+				0AC9B08D2C427D660040FB28 /* Image+.swift in Sources */,
 				0A66689E2C297E3F00EB6E8D /* HospitalSuccess.swift in Sources */,
 				FAE565E92C3C229600D77149 /* AppCoordinator.swift in Sources */,
 			);
