@@ -56,7 +56,6 @@ struct AccessibilityRightView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             
             
-            
             Button(action: {
                 
             }) {

@@ -32,7 +32,6 @@ extension Color {
             opacity: Double(a) / 255
         )
     }
-    
     static let petIdSkyBlue = Color(hex: "#84C6FF")
     static let petid_lightdark_skyblue = Color(hex: "#79B2E4")
     static let petid_clearblue = Color(hex: "#3397FF")
