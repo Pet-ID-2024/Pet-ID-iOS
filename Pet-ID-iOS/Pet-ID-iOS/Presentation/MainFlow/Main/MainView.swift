@@ -11,8 +11,8 @@ struct MainView: View {
     var body: some View {
         Button(
             action: {
-                let keychain = KeychainManager()
-                keychain.delete(key: .authorization)
+                let usecase = DefaultLogoutUseCase()
+                usecase.execute()
             },
             label: {
                 Text("키체인 인증정보 삭제")

@@ -27,6 +27,11 @@ protocol AuthRepository {
     /// 키체인에 인증을 업데이트합니다
     func updateAuthorizationToKeychain(auth: Authorization) -> Bool
     
+    
+    /// 인증정보를 삭제합니다
+    /// - Returns: 성공 / 실패 여부
+    func deleteAuthorizationFromKeychain() -> Bool
+    
     /// Login을 요청합니다.
     /// - Parameters:
     ///   - oauth: OAuth

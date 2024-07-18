@@ -36,6 +36,8 @@
 		FA6E49E42C2C4EAA00F3C957 /* docs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49E32C2C4EAA00F3C957 /* docs.swift */; };
 		FA6E49F72C2E3FEC00F3C957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49F62C2E3FEC00F3C957 /* AppDelegate.swift */; };
 		FA6E49F92C2E40A500F3C957 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49F82C2E40A500F3C957 /* SceneDelegate.swift */; };
+		FAB57C642C49D4F300F471F0 /* PetIdNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB57C632C49D4F300F471F0 /* PetIdNotificationCenter.swift */; };
+		FAB57C662C49D5A700F471F0 /* LogoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB57C652C49D5A700F471F0 /* LogoutUseCase.swift */; };
 		FAC4CD422C49209400A3658A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4CD412C49209400A3658A /* NetworkError.swift */; };
 		FAC4CD442C49214D00A3658A /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4CD432C49214D00A3658A /* ErrorModel.swift */; };
 		FAC4CD472C4921A400A3658A /* LoggAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4CD462C4921A400A3658A /* LoggAble.swift */; };
@@ -146,6 +148,8 @@
 		FA6E49E32C2C4EAA00F3C957 /* docs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = docs.swift; sourceTree = "<group>"; };
 		FA6E49F62C2E3FEC00F3C957 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA6E49F82C2E40A500F3C957 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FAB57C632C49D4F300F471F0 /* PetIdNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetIdNotificationCenter.swift; sourceTree = "<group>"; };
+		FAB57C652C49D5A700F471F0 /* LogoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUseCase.swift; sourceTree = "<group>"; };
 		FAC4CD412C49209400A3658A /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		FAC4CD432C49214D00A3658A /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		FAC4CD462C4921A400A3658A /* LoggAble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggAble.swift; sourceTree = "<group>"; };
@@ -605,6 +609,7 @@
 				FADD57282C31988500770AC6 /* AutoLoginUseCase.swift */,
 				FAF8E7152C40EC7100CA7145 /* LoginUseCase.swift */,
 				FAC4CD512C49309700A3658A /* JoinUseCase.swift */,
+				FAB57C652C49D5A700F471F0 /* LogoutUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -661,6 +666,7 @@
 		FAB57C622C49D42700F471F0 /* PetIDNotificationCenter */ = {
 			isa = PBXGroup;
 			children = (
+				FAB57C632C49D4F300F471F0 /* PetIdNotificationCenter.swift */,
 			);
 			path = PetIDNotificationCenter;
 			sourceTree = "<group>";
@@ -1172,6 +1178,7 @@
 				FAF8E7162C40EC7100CA7145 /* LoginUseCase.swift in Sources */,
 				FADD57142C318EFA00770AC6 /* Constants.swift in Sources */,
 				0A21CF242C0DF0F6005DD8E2 /* OnboardingView.swift in Sources */,
+				FAB57C642C49D4F300F471F0 /* PetIdNotificationCenter.swift in Sources */,
 				FA3F56BE2C4575CC0011969A /* IsEnablePetButton.swift in Sources */,
 				FAC4CD522C49309700A3658A /* JoinUseCase.swift in Sources */,
 				FA46F33E2C3EC503003CAC02 /* LoginButton.swift in Sources */,
@@ -1189,6 +1196,7 @@
 				FAE565ED2C3C275900D77149 /* SplashCoordinator.swift in Sources */,
 				FAE566042C3C384B00D77149 /* AccessibilityGuideView.swift in Sources */,
 				FAF8E7062C40E22B00CA7145 /* DefaultAuthRepository.swift in Sources */,
+				FAB57C662C49D5A700F471F0 /* LogoutUseCase.swift in Sources */,
 				0A66689E2C297E3F00EB6E8D /* HospitalSuccess.swift in Sources */,
 				FAE565E92C3C229600D77149 /* AppCoordinator.swift in Sources */,
 			);

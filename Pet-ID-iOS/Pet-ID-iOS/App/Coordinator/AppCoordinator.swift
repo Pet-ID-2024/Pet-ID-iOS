@@ -22,6 +22,8 @@ public final class AppCoordinator: BaseCoordinator<Void> {
         setup(with: window)
         runSplashFlow()
         
+        bindLogout()
+        
         return Empty().eraseToAnyPublisher()
     }
     
@@ -64,6 +66,14 @@ public final class AppCoordinator: BaseCoordinator<Void> {
         
         coordinate(to: coordinator)
             .sink(receiveValue: { _ in })
+            .store(in: &cancelBag)
+    }
+    
+    private func bindLogout() {
+        PetIdNotificationCenter.shared.logout.subject
+            .sink(receiveValue: { [weak self] _ in
+                self?.runLoginFlow()
+            })
             .store(in: &cancelBag)
     }
 }

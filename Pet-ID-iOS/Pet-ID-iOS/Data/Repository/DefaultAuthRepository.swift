@@ -61,6 +61,10 @@ struct DefaultAuthRepository: AuthRepository {
         }
     }
     
+    func deleteAuthorizationFromKeychain() -> Bool {
+        return keychainManager.delete(key: .authorization)
+    }
+    
     func login(oauth: OAuth, fcmToken: String) async throws -> Authorization {
         let request = LoginRequestDTO(
             sub: oauth.id,
