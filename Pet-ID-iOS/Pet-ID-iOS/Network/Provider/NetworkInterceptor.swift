@@ -92,7 +92,7 @@ public class NetworkInterceptor: RequestInterceptor, LoggAble {
         
         if let path = path {
             
-            return path.contains("authoauth2login") || path.contains("authoauth2join")
+            return path.contains("authoauth2login") || path.contains("authoauth2join") || path.contains("authtokenrefresh")
             
         } else {
             
