@@ -8,28 +8,26 @@
 import Foundation
 import Combine
 
-enum SplashResult {
+enum SplashViewResult {
     case firstLogin
     case login
     case main
 }
 
-final class SplashViewModel: BaseViewModel, ViewModelable {
+final class SplashViewModel: BaseViewModel<SplashViewResult> {
 
     private let autologinUseCase: AutoLoginUseCase
-    
-    var result: PassthroughSubject = PassthroughSubject<SplashResult, Never>()
-    
+
     init(
         autologinUseCase: AutoLoginUseCase = DefaultAutoLoginUseCase()
     ) {
         self.autologinUseCase = autologinUseCase
     }
     
-    func run() {
+    @MainActor func run() {
         
         if UserDefaultManager.shared.isFirstExecute {
-            result.send(.firstLogin)
+            self.result.send(.firstLogin)
         } else {
             autologinUseCase.execute()
                 .sink { [weak self] result in

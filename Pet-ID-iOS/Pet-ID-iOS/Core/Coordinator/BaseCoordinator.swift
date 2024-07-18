@@ -33,6 +33,7 @@ open class BaseCoordinator<ResultType> {
     public func coordinate<T>(to coordinator: BaseCoordinator<T>) -> AnyPublisher<T, Never> {
         append(coordinator: coordinator)
         return coordinator.start()
+            .receive(on: DispatchQueue.main)
             .handleEvents(
                 receiveOutput: { [weak self] _ in
                     self?.remove(coordinator: coordinator)

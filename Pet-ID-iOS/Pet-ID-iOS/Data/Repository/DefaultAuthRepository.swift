@@ -34,10 +34,28 @@ struct DefaultAuthRepository: AuthRepository {
         .eraseToAnyPublisher()
     }
     
+    func getAuthorizationFromKeychain() throws -> Authorization {
+        guard let data = keychainManager.load(key: .authorization),
+              let authorization = try? JSONDecoder().decode(AuthorizationDTO.self, from: data) else {
+            throw UserError.userDataNotFound
+        }
+        
+        return authorization.toDomain()
+    }
+    
     func storeAuthorizationToKeychain(auth: Authorization) -> Bool {
         do {
             let data = try JSONEncoder().encode(auth)
             return keychainManager.save(key: .authorization, data: data)
+        } catch {
+            return false
+        }
+    }
+    
+    func updateAuthorizationToKeychain(auth: Authorization) -> Bool {
+        do {
+            let data = try JSONEncoder().encode(auth)
+            return keychainManager.update(key: .authorization, data: data)
         } catch {
             return false
         }
@@ -61,6 +79,16 @@ struct DefaultAuthRepository: AuthRepository {
             ad: agreedAd
         )
         let response = try await dataSource.join(req: request, platform: oauth.type.toServerString)
+        
+        return response.toDomain()
+    }
+    
+    func refresh(refreshToken: String) async throws -> Authorization {
+        let request = TokenRefreshRequestDTO(
+            refreshToken: refreshToken
+        )
+        
+        let response = try await dataSource.refresh(req: request)
         
         return response.toDomain()
     }

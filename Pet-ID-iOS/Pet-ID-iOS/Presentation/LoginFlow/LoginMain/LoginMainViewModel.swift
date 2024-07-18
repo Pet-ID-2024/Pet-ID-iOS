@@ -15,10 +15,8 @@ enum LoginMainReesult {
     case signUp(OAuth)
 }
 
-final class LoginMainViewModel: BaseViewModel, ViewModelResultProvidable {
+final class LoginMainViewModel: BaseViewModel<LoginMainReesult> {
     private let loginUseCase: LoginUseCase
-    
-    var result: PassthroughSubject = PassthroughSubject<LoginMainReesult, Never>()
     
     init(loginUseCase: LoginUseCase = DefaultLoginUseCase()) {
         self.loginUseCase = loginUseCase
@@ -108,6 +106,11 @@ extension LoginMainViewModel {
         Task {
             do {
                 let result = try await loginUseCase.execute(oauth: oauth, fcmToken: fcmToken)
+                if result {
+                    await self.result.send(.main)
+                } else {
+                    logger.error("Leaguend Error")
+                }
             } catch let error as NetworkError {
                 if case .invalidResponse(let errorModel) = error {
                     if errorModel.code == 404 {

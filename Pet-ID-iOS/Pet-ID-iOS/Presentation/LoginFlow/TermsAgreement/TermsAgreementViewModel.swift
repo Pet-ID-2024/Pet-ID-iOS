@@ -13,9 +13,7 @@ enum TermsAgreementViewModelResult {
     case signup
 }
 
-final class TermsAgreementViewModel: BaseViewModel, ViewModelResultProvidable {
-    
-    let result = PassthroughSubject<TermsAgreementViewModelResult, Never>()
+final class TermsAgreementViewModel: BaseViewModel<TermsAgreementViewModelResult> {
     
     @Published var terms: [UserServiceTermsRequest]
     private let oauth: OAuth

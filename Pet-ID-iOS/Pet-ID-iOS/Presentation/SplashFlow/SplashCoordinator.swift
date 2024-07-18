@@ -30,7 +30,7 @@ final class SplashCoordinator: BaseCoordinator<SplashCoordinatorResult> {
         
         push(splashVC, animate: false, isRoot: true)
         
-        viewModel.result
+        viewModel.result.subject
             .sink(receiveValue: { [weak self] result in
                 switch result {
                 case .login:

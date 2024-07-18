@@ -26,6 +26,8 @@
 		0A55B92C2C0F371E00C98F16 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A55B92B2C0F371E00C98F16 /* UserInfo.swift */; };
 		0A5C71A82C1094590079849C /* PetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C71A72C1094590079849C /* PetInfo.swift */; };
 		0A66689E2C297E3F00EB6E8D /* HospitalSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A66689D2C297E3F00EB6E8D /* HospitalSuccess.swift */; };
+		FA3584E82C49873C0019C46A /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3584E72C49873C0019C46A /* Interface.swift */; };
+		FA3584EA2C49875E0019C46A /* ResultPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3584E92C49875E0019C46A /* ResultPublisher.swift */; };
 		FA3F56BE2C4575CC0011969A /* IsEnablePetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F56BD2C4575CC0011969A /* IsEnablePetButton.swift */; };
 		FA46F33E2C3EC503003CAC02 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46F33D2C3EC503003CAC02 /* LoginButton.swift */; };
 		FA46F3472C3EC977003CAC02 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46F3462C3EC977003CAC02 /* Color+.swift */; };
@@ -44,6 +46,7 @@
 		FAC4CD522C49309700A3658A /* JoinUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4CD512C49309700A3658A /* JoinUseCase.swift */; };
 		FAC4CD542C49353F00A3658A /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4CD532C49353F00A3658A /* Encodable+.swift */; };
 		FAC4CD582C494C5600A3658A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4CD572C494C5600A3658A /* MainCoordinator.swift */; };
+		FAC4CD5B2C4970E600A3658A /* TokenRefreshRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4CD5A2C4970E600A3658A /* TokenRefreshRequestDTO.swift */; };
 		FADD57022C318C2F00770AC6 /* Pods_Pet_ID_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE708653717083BEEFB7716B /* Pods_Pet_ID_iOS.framework */; };
 		FADD57032C318C2F00770AC6 /* Pods_Pet_ID_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EE708653717083BEEFB7716B /* Pods_Pet_ID_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FADD57062C318CD700770AC6 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD57052C318CD700770AC6 /* SplashViewModel.swift */; };
@@ -69,7 +72,6 @@
 		FAE565FB2C3C329700D77149 /* LoginMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE565FA2C3C329700D77149 /* LoginMainViewModel.swift */; };
 		FAE566012C3C365300D77149 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE566002C3C365300D77149 /* UserDefaultManager.swift */; };
 		FAE566042C3C384B00D77149 /* AccessibilityGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE566032C3C384B00D77149 /* AccessibilityGuideView.swift */; };
-		FAE566092C3C39AF00D77149 /* ViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE566082C3C39AF00D77149 /* ViewModelable.swift */; };
 		FAE5660B2C3EAF6C00D77149 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAE5660A2C3EAF6C00D77149 /* GoogleService-Info.plist */; };
 		FAE5660D2C3EB68D00D77149 /* CameraAlbumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5660C2C3EB68D00D77149 /* CameraAlbumManager.swift */; };
 		FAF8E6E72C40C20600CA7145 /* AppleAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8E6E62C40C20600CA7145 /* AppleAuthProvider.swift */; };
@@ -134,6 +136,8 @@
 		3C7286A000034D1F020526EC /* Pods-Pet-ID-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet-ID-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Pet-ID-iOS/Pods-Pet-ID-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		8BE1E2477EE2103256707795 /* Pods-Pet-ID-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet-ID-iOS.release.xcconfig"; path = "Target Support Files/Pods-Pet-ID-iOS/Pods-Pet-ID-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		EE708653717083BEEFB7716B /* Pods_Pet_ID_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pet_ID_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA3584E72C49873C0019C46A /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
+		FA3584E92C49875E0019C46A /* ResultPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPublisher.swift; sourceTree = "<group>"; };
 		FA3F56BD2C4575CC0011969A /* IsEnablePetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsEnablePetButton.swift; sourceTree = "<group>"; };
 		FA46F33D2C3EC503003CAC02 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		FA46F3462C3EC977003CAC02 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 		FAC4CD512C49309700A3658A /* JoinUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinUseCase.swift; sourceTree = "<group>"; };
 		FAC4CD532C49353F00A3658A /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
 		FAC4CD572C494C5600A3658A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		FAC4CD5A2C4970E600A3658A /* TokenRefreshRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRefreshRequestDTO.swift; sourceTree = "<group>"; };
 		FADD57052C318CD700770AC6 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		FADD57072C318D1F00770AC6 /* DefaultUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserRepository.swift; sourceTree = "<group>"; };
 		FADD570A2C318DA300770AC6 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
@@ -175,7 +180,6 @@
 		FAE565FA2C3C329700D77149 /* LoginMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainViewModel.swift; sourceTree = "<group>"; };
 		FAE566002C3C365300D77149 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		FAE566032C3C384B00D77149 /* AccessibilityGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityGuideView.swift; sourceTree = "<group>"; };
-		FAE566082C3C39AF00D77149 /* ViewModelable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelable.swift; sourceTree = "<group>"; };
 		FAE5660A2C3EAF6C00D77149 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FAE5660C2C3EB68D00D77149 /* CameraAlbumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAlbumManager.swift; sourceTree = "<group>"; };
 		FAF8E6E62C40C20600CA7145 /* AppleAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthProvider.swift; sourceTree = "<group>"; };
@@ -437,6 +441,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FA3584E52C4987190019C46A /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				FA3584E62C49871E0019C46A /* ViewModelResultProvidable */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		FA3584E62C49871E0019C46A /* ViewModelResultProvidable */ = {
+			isa = PBXGroup;
+			children = (
+				FA3584E72C49873C0019C46A /* Interface.swift */,
+				FA3584E92C49875E0019C46A /* ResultPublisher.swift */,
+			);
+			path = ViewModelResultProvidable;
+			sourceTree = "<group>";
+		};
 		FA3F56B62C4569870011969A /* TermsAgreement */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,7 +524,7 @@
 		FA46F3482C3ED4B2003CAC02 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				FAE565EF2C3C280700D77149 /* Interface */,
+				FA3584E52C4987190019C46A /* Interface */,
 				FA46F3492C3ED4C2003CAC02 /* BaseViewModel.swift */,
 			);
 			path = ViewModel;
@@ -661,6 +682,14 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		FAC4CD592C4970D300A3658A /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				FAC4CD5A2C4970E600A3658A /* TokenRefreshRequestDTO.swift */,
+			);
+			path = Refresh;
+			sourceTree = "<group>";
+		};
 		FADD57092C318D9C00770AC6 /* Local */ = {
 			isa = PBXGroup;
 			children = (
@@ -791,14 +820,6 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		FAE565EF2C3C280700D77149 /* Interface */ = {
-			isa = PBXGroup;
-			children = (
-				FAE566082C3C39AF00D77149 /* ViewModelable.swift */,
-			);
-			path = Interface;
-			sourceTree = "<group>";
-		};
 		FAE565F22C3C324000D77149 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -898,6 +919,7 @@
 		FAF8E6FC2C40D65A00CA7145 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				FAC4CD592C4970D300A3658A /* Refresh */,
 				FAC4CD4C2C492D5D00A3658A /* Join */,
 				FAF8E70C2C40E39400CA7145 /* Login */,
 				FADD571B2C3191B500770AC6 /* AuthorizationDTO.swift */,
@@ -1091,6 +1113,7 @@
 				FAF8E71C2C410ADA00CA7145 /* UserServiceTerms.swift in Sources */,
 				FAE565F92C3C328D00D77149 /* LoginMainView.swift in Sources */,
 				FAF8E6F12C40D17E00CA7145 /* UserDefault.swift in Sources */,
+				FA3584E82C49873C0019C46A /* Interface.swift in Sources */,
 				FAF8E6E92C40C70A00CA7145 /* Provider.swift in Sources */,
 				0A21CF262C0DF131005DD8E2 /* TermsAgreementView.swift in Sources */,
 				FAF8E70F2C40E3A200CA7145 /* LoginResponseDTO.swift in Sources */,
@@ -1100,6 +1123,7 @@
 				FA46F34D2C3F56FA003CAC02 /* UIWindow+.swift in Sources */,
 				FAF8E7192C41046200CA7145 /* CheckBox.swift in Sources */,
 				FADD57362C31A0A400770AC6 /* MainView.swift in Sources */,
+				FA3584EA2C49875E0019C46A /* ResultPublisher.swift in Sources */,
 				FAC4CD442C49214D00A3658A /* ErrorModel.swift in Sources */,
 				0A4022032C1891BA007AA6D5 /* Complete.swift in Sources */,
 				0A1069FC2C1750B70031E230 /* PetCaption.swift in Sources */,
@@ -1131,7 +1155,6 @@
 				FAE565FB2C3C329700D77149 /* LoginMainViewModel.swift in Sources */,
 				FADD570B2C318DA300770AC6 /* Keychain.swift in Sources */,
 				0A4022052C189717007AA6D5 /* RegistrationInfo.swift in Sources */,
-				FAE566092C3C39AF00D77149 /* ViewModelable.swift in Sources */,
 				FAC4CD542C49353F00A3658A /* Encodable+.swift in Sources */,
 				FADD57162C318F7200770AC6 /* KeychainManagerProtocol.swift in Sources */,
 				FADD57292C31988500770AC6 /* AutoLoginUseCase.swift in Sources */,
@@ -1151,6 +1174,7 @@
 				0A4021FD2C1868DF007AA6D5 /* ScanCheck.swift in Sources */,
 				FADD571F2C31922700770AC6 /* UserError.swift in Sources */,
 				FADD570F2C318ECB00770AC6 /* KeychainProtocol.swift in Sources */,
+				FAC4CD5B2C4970E600A3658A /* TokenRefreshRequestDTO.swift in Sources */,
 				0A55B92C2C0F371E00C98F16 /* UserInfo.swift in Sources */,
 				0A21CF0F2C0DE3AA005DD8E2 /* Test.swift in Sources */,
 				FAF8E6F42C40D3C200CA7145 /* AuthAPI.swift in Sources */,

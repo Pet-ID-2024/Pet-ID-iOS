@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import UserNotifications
 import FirebaseMessaging
+import FirebaseAnalytics
 import KakaoSDKCommon
 import KakaoSDKAuth
 
@@ -62,6 +63,12 @@ extension AppDelegate {
     func configureFirebase() {
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
+        
+#if DEBUG
+        Crashlytics.crashlytics().setCrashlyticsCollectionEnabled(false)
+#else
+        Crashlytics.crashlytics().setCrashlyticsCollectionEnabled(true)
+#endif
     }
 }
 

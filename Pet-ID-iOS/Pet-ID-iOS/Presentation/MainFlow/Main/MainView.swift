@@ -9,7 +9,15 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        Text("MainView!")
+        Button(
+            action: {
+                let keychain = KeychainManager()
+                keychain.delete(key: .authorization)
+            },
+            label: {
+                Text("키체인 인증정보 삭제")
+            }
+        )
     }
 }
 

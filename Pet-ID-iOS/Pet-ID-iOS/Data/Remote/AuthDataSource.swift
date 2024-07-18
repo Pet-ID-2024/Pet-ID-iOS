@@ -10,6 +10,7 @@ import Foundation
 protocol AuthDataSource {
     func login(req: LoginRequestDTO) async throws -> LoginResponseDTO
     func join(req: JoinRequestDTO, platform: String) async throws -> JoinResponseDTO
+    func refresh(req: TokenRefreshRequestDTO) async throws -> AuthorizationDTO
 }
 
 struct DefaultAuthDataSource: AuthDataSource {
@@ -21,5 +22,9 @@ struct DefaultAuthDataSource: AuthDataSource {
     
     func join(req: JoinRequestDTO, platform: String) async throws -> JoinResponseDTO {
         try await self.provider.request(.join(req: req, platform: platform))
+    }
+    
+    func refresh(req: TokenRefreshRequestDTO) async throws -> AuthorizationDTO {
+        try await self.provider.request(.refresh(req: req))
     }
 }

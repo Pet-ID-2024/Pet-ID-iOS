@@ -8,13 +8,9 @@
 import Foundation
 import Combine
 
-protocol ViewModelResultProvidable {
-    associatedtype Result
-    @MainActor var result: PassthroughSubject<Result, Never> { get }
-}
-
-open class BaseViewModel: ObservableObject {
+open class BaseViewModel<ResultType>: ObservableObject, ResultProvidable {
     
+    let result: ResultPublisher<ResultType> = .init()
     let logger: Logger = Logger()
     var cancelBag: Set<AnyCancellable> = .init()
     

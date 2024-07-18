@@ -30,10 +30,11 @@ final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
             )
         )
         
-        viewModel.result
+        viewModel.result.subject
             .sink(receiveValue: { [weak self] in
                 switch $0 {
-                case .main: break
+                case .main:
+                    self?.coordinatorResult.send(.main)
                 case .signUp(let oauth):
                     self?.pushTermsAgreement(oauth: oauth)
                 }
@@ -50,7 +51,7 @@ final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
             )
         )
         
-        viewModel.result
+        viewModel.result.subject
             .sink(receiveValue: { [weak self] in
                 switch $0 {
                 case .back:
