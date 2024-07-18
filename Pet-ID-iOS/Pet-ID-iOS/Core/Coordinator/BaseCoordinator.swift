@@ -73,4 +73,13 @@ open class BaseCoordinator<ResultType> {
     public func navigationBarHidded() {
         navigationController.setNavigationBarHidden(true, animated: false)
     }
+    
+    public func removeAllChildCoordinators() {
+        for (_, coordinator) in childCoordinators {
+            if let coordinator = coordinator as? BaseCoordinator {
+                coordinator.removeAllChildCoordinators()
+            }
+        }
+        childCoordinators.removeAll()
+    }
 }

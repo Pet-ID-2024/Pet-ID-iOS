@@ -6,12 +6,12 @@ struct LoginSuccess: View {
         NavigationView {
             VStack {
                 Text("펫아이디 회원가입을\n     축하드립니다.")
-                    .font(.system(size: 28))
+                    .font(.petIdTitle1)
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .center)
                 Spacer()
                 
-                Image("CheckImage")
+                DSImage.checkimage.toImage()
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 150, height: 150)
@@ -29,7 +29,7 @@ struct LoginSuccess: View {
                         .cornerRadius(8)
                 }
                 .padding()
-
+                
             }
             .navigationBarTitleDisplayMode(.inline)
         }

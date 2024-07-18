@@ -72,6 +72,8 @@ public final class AppCoordinator: BaseCoordinator<Void> {
     private func bindLogout() {
         PetIdNotificationCenter.shared.logout.subject
             .sink(receiveValue: { [weak self] _ in
+                self?.removeAllChildCoordinators()
+                self?.cancelBag.forEach { $0.cancel() }
                 self?.runLoginFlow()
             })
             .store(in: &cancelBag)
