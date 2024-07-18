@@ -16,7 +16,7 @@
 		0A21CF1E2C0DEFEB005DD8E2 /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21CF1D2C0DEFEB005DD8E2 /* LoginSuccess.swift */; };
 		0A21CF222C0DF0E6005DD8E2 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21CF212C0DF0E6005DD8E2 /* OnboardingViewModel.swift */; };
 		0A21CF242C0DF0F6005DD8E2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21CF232C0DF0F6005DD8E2 /* OnboardingView.swift */; };
-		0A21CF262C0DF131005DD8E2 /* UseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21CF252C0DF131005DD8E2 /* UseApp.swift */; };
+		0A21CF262C0DF131005DD8E2 /* TermsAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21CF252C0DF131005DD8E2 /* TermsAgreementView.swift */; };
 		0A4021FD2C1868DF007AA6D5 /* ScanCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4021FC2C1868DF007AA6D5 /* ScanCheck.swift */; };
 		0A4021FF2C186C44007AA6D5 /* InformationCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4021FE2C186C44007AA6D5 /* InformationCheck.swift */; };
 		0A4022012C186CBD007AA6D5 /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4022002C186CBD007AA6D5 /* Sign.swift */; };
@@ -26,6 +26,7 @@
 		0A55B92C2C0F371E00C98F16 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A55B92B2C0F371E00C98F16 /* UserInfo.swift */; };
 		0A5C71A82C1094590079849C /* PetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C71A72C1094590079849C /* PetInfo.swift */; };
 		0A66689E2C297E3F00EB6E8D /* HospitalSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A66689D2C297E3F00EB6E8D /* HospitalSuccess.swift */; };
+		FA3F56BE2C4575CC0011969A /* IsEnablePetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F56BD2C4575CC0011969A /* IsEnablePetButton.swift */; };
 		FA46F33E2C3EC503003CAC02 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46F33D2C3EC503003CAC02 /* LoginButton.swift */; };
 		FA46F3472C3EC977003CAC02 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46F3462C3EC977003CAC02 /* Color+.swift */; };
 		FA46F34A2C3ED4C2003CAC02 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46F3492C3ED4C2003CAC02 /* BaseViewModel.swift */; };
@@ -33,6 +34,16 @@
 		FA6E49E42C2C4EAA00F3C957 /* docs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49E32C2C4EAA00F3C957 /* docs.swift */; };
 		FA6E49F72C2E3FEC00F3C957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49F62C2E3FEC00F3C957 /* AppDelegate.swift */; };
 		FA6E49F92C2E40A500F3C957 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49F82C2E40A500F3C957 /* SceneDelegate.swift */; };
+		FAC4CD422C49209400A3658A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4CD412C49209400A3658A /* NetworkError.swift */; };
+		FAC4CD442C49214D00A3658A /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4CD432C49214D00A3658A /* ErrorModel.swift */; };
+		FAC4CD472C4921A400A3658A /* LoggAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4CD462C4921A400A3658A /* LoggAble.swift */; };
+		FAC4CD492C49230000A3658A /* NetworkPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4CD482C49230000A3658A /* NetworkPlugin.swift */; };
+		FAC4CD4B2C4929C100A3658A /* TermsAgreementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4CD4A2C4929C100A3658A /* TermsAgreementViewModel.swift */; };
+		FAC4CD4E2C492D6500A3658A /* JoinRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4CD4D2C492D6500A3658A /* JoinRequestDTO.swift */; };
+		FAC4CD502C492F3C00A3658A /* JoinResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4CD4F2C492F3C00A3658A /* JoinResponseDTO.swift */; };
+		FAC4CD522C49309700A3658A /* JoinUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4CD512C49309700A3658A /* JoinUseCase.swift */; };
+		FAC4CD542C49353F00A3658A /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4CD532C49353F00A3658A /* Encodable+.swift */; };
+		FAC4CD582C494C5600A3658A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4CD572C494C5600A3658A /* MainCoordinator.swift */; };
 		FADD57022C318C2F00770AC6 /* Pods_Pet_ID_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE708653717083BEEFB7716B /* Pods_Pet_ID_iOS.framework */; };
 		FADD57032C318C2F00770AC6 /* Pods_Pet_ID_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EE708653717083BEEFB7716B /* Pods_Pet_ID_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FADD57062C318CD700770AC6 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD57052C318CD700770AC6 /* SplashViewModel.swift */; };
@@ -109,7 +120,7 @@
 		0A21CF1D2C0DEFEB005DD8E2 /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
 		0A21CF212C0DF0E6005DD8E2 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		0A21CF232C0DF0F6005DD8E2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		0A21CF252C0DF131005DD8E2 /* UseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseApp.swift; sourceTree = "<group>"; };
+		0A21CF252C0DF131005DD8E2 /* TermsAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAgreementView.swift; sourceTree = "<group>"; };
 		0A4021FC2C1868DF007AA6D5 /* ScanCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCheck.swift; sourceTree = "<group>"; };
 		0A4021FE2C186C44007AA6D5 /* InformationCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCheck.swift; sourceTree = "<group>"; };
 		0A4022002C186CBD007AA6D5 /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
@@ -123,6 +134,7 @@
 		3C7286A000034D1F020526EC /* Pods-Pet-ID-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet-ID-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Pet-ID-iOS/Pods-Pet-ID-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		8BE1E2477EE2103256707795 /* Pods-Pet-ID-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet-ID-iOS.release.xcconfig"; path = "Target Support Files/Pods-Pet-ID-iOS/Pods-Pet-ID-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		EE708653717083BEEFB7716B /* Pods_Pet_ID_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pet_ID_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA3F56BD2C4575CC0011969A /* IsEnablePetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsEnablePetButton.swift; sourceTree = "<group>"; };
 		FA46F33D2C3EC503003CAC02 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		FA46F3462C3EC977003CAC02 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		FA46F3492C3ED4C2003CAC02 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
@@ -130,6 +142,16 @@
 		FA6E49E32C2C4EAA00F3C957 /* docs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = docs.swift; sourceTree = "<group>"; };
 		FA6E49F62C2E3FEC00F3C957 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA6E49F82C2E40A500F3C957 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FAC4CD412C49209400A3658A /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		FAC4CD432C49214D00A3658A /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
+		FAC4CD462C4921A400A3658A /* LoggAble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggAble.swift; sourceTree = "<group>"; };
+		FAC4CD482C49230000A3658A /* NetworkPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPlugin.swift; sourceTree = "<group>"; };
+		FAC4CD4A2C4929C100A3658A /* TermsAgreementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAgreementViewModel.swift; sourceTree = "<group>"; };
+		FAC4CD4D2C492D6500A3658A /* JoinRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRequestDTO.swift; sourceTree = "<group>"; };
+		FAC4CD4F2C492F3C00A3658A /* JoinResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinResponseDTO.swift; sourceTree = "<group>"; };
+		FAC4CD512C49309700A3658A /* JoinUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinUseCase.swift; sourceTree = "<group>"; };
+		FAC4CD532C49353F00A3658A /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
+		FAC4CD572C494C5600A3658A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		FADD57052C318CD700770AC6 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		FADD57072C318D1F00770AC6 /* DefaultUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserRepository.swift; sourceTree = "<group>"; };
 		FADD570A2C318DA300770AC6 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
@@ -249,7 +271,6 @@
 				FA6E49D92C2C4E3B00F3C957 /* Domain */,
 				FA6E49D82C2C4E3600F3C957 /* Presentation */,
 				FA6E49DA2C2C4E3E00F3C957 /* Network */,
-				0A21CF252C0DF131005DD8E2 /* UseApp.swift */,
 				0A55B92B2C0F371E00C98F16 /* UserInfo.swift */,
 				0A21CEE82C0DE23A005DD8E2 /* Pet_ID_iOS.entitlements */,
 				0A21CEE92C0DE23A005DD8E2 /* Preview Content */,
@@ -416,6 +437,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FA3F56B62C4569870011969A /* TermsAgreement */ = {
+			isa = PBXGroup;
+			children = (
+				0A21CF252C0DF131005DD8E2 /* TermsAgreementView.swift */,
+				FAC4CD4A2C4929C100A3658A /* TermsAgreementViewModel.swift */,
+			);
+			path = TermsAgreement;
+			sourceTree = "<group>";
+		};
 		FA46F33B2C3EC4ED003CAC02 /* LoginMain */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,6 +477,7 @@
 			children = (
 				FA46F33D2C3EC503003CAC02 /* LoginButton.swift */,
 				FAF8E7182C41046200CA7145 /* CheckBox.swift */,
+				FA3F56BD2C4575CC0011969A /* IsEnablePetButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -551,6 +582,7 @@
 			children = (
 				FADD57282C31988500770AC6 /* AutoLoginUseCase.swift */,
 				FAF8E7152C40EC7100CA7145 /* LoginUseCase.swift */,
+				FAC4CD512C49309700A3658A /* JoinUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -602,6 +634,31 @@
 				FA6E49F82C2E40A500F3C957 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		FAC4CD4C2C492D5D00A3658A /* Join */ = {
+			isa = PBXGroup;
+			children = (
+				FAC4CD4D2C492D6500A3658A /* JoinRequestDTO.swift */,
+				FAC4CD4F2C492F3C00A3658A /* JoinResponseDTO.swift */,
+			);
+			path = Join;
+			sourceTree = "<group>";
+		};
+		FAC4CD552C49354100A3658A /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				FAC4CD532C49353F00A3658A /* Encodable+.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		FAC4CD562C494C4B00A3658A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FAC4CD572C494C5600A3658A /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		FADD57092C318D9C00770AC6 /* Local */ = {
@@ -669,6 +726,7 @@
 			isa = PBXGroup;
 			children = (
 				FADD572E2C319ECD00770AC6 /* Logger.swift */,
+				FAC4CD462C4921A400A3658A /* LoggAble.swift */,
 			);
 			path = Logger;
 			sourceTree = "<group>";
@@ -676,6 +734,7 @@
 		FADD57322C31A09300770AC6 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				FAC4CD562C494C4B00A3658A /* Coordinator */,
 				FADD57332C31A09700770AC6 /* Main */,
 			);
 			path = MainFlow;
@@ -694,6 +753,7 @@
 			children = (
 				FAE565F22C3C324000D77149 /* Coordinator */,
 				FA46F33B2C3EC4ED003CAC02 /* LoginMain */,
+				FA3F56B62C4569870011969A /* TermsAgreement */,
 			);
 			path = LoginFlow;
 			sourceTree = "<group>";
@@ -709,6 +769,7 @@
 		FAE565DC2C3C1BB600D77149 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FAC4CD552C49354100A3658A /* Foundation */,
 				FA46F34B2C3F56F1003CAC02 /* UIWindow+ */,
 			);
 			path = Extension;
@@ -786,7 +847,10 @@
 				FAF8E6FA2C40D58700CA7145 /* BaseTargetType.swift */,
 				FAF8E6E82C40C70A00CA7145 /* Provider.swift */,
 				FAF8E6EA2C40C84300CA7145 /* NetworkEventLogger.swift */,
+				FAC4CD412C49209400A3658A /* NetworkError.swift */,
+				FAC4CD432C49214D00A3658A /* ErrorModel.swift */,
 				FAF8E6EC2C40CC1000CA7145 /* NetworkInterceptor.swift */,
+				FAC4CD482C49230000A3658A /* NetworkPlugin.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -834,6 +898,7 @@
 		FAF8E6FC2C40D65A00CA7145 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				FAC4CD4C2C492D5D00A3658A /* Join */,
 				FAF8E70C2C40E39400CA7145 /* Login */,
 				FADD571B2C3191B500770AC6 /* AuthorizationDTO.swift */,
 			);
@@ -894,6 +959,7 @@
 				0A21CEDD2C0DE238005DD8E2 /* Resources */,
 				F03F13473EE25B949AA23595 /* [CP] Embed Pods Frameworks */,
 				FADD57042C318C2F00770AC6 /* Embed Frameworks */,
+				8233D2EA6DEDD054F16714F5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -973,6 +1039,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8233D2EA6DEDD054F16714F5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pet-ID-iOS/Pods-Pet-ID-iOS-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pet-ID-iOS/Pods-Pet-ID-iOS-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pet-ID-iOS/Pods-Pet-ID-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F03F13473EE25B949AA23595 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -997,8 +1080,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC4CD492C49230000A3658A /* NetworkPlugin.swift in Sources */,
 				FA46F3472C3EC977003CAC02 /* Color+.swift in Sources */,
 				FA46F34A2C3ED4C2003CAC02 /* BaseViewModel.swift in Sources */,
+				FAC4CD4E2C492D6500A3658A /* JoinRequestDTO.swift in Sources */,
 				FAF8E6EB2C40C84300CA7145 /* NetworkEventLogger.swift in Sources */,
 				0A4022012C186CBD007AA6D5 /* Sign.swift in Sources */,
 				FAE566012C3C365300D77149 /* UserDefaultManager.swift in Sources */,
@@ -1007,17 +1092,21 @@
 				FAE565F92C3C328D00D77149 /* LoginMainView.swift in Sources */,
 				FAF8E6F12C40D17E00CA7145 /* UserDefault.swift in Sources */,
 				FAF8E6E92C40C70A00CA7145 /* Provider.swift in Sources */,
-				0A21CF262C0DF131005DD8E2 /* UseApp.swift in Sources */,
+				0A21CF262C0DF131005DD8E2 /* TermsAgreementView.swift in Sources */,
 				FAF8E70F2C40E3A200CA7145 /* LoginResponseDTO.swift in Sources */,
+				FAC4CD502C492F3C00A3658A /* JoinResponseDTO.swift in Sources */,
 				0A21CF1E2C0DEFEB005DD8E2 /* LoginSuccess.swift in Sources */,
 				FADD57112C318EDF00770AC6 /* KeyChainManager.swift in Sources */,
 				FA46F34D2C3F56FA003CAC02 /* UIWindow+.swift in Sources */,
 				FAF8E7192C41046200CA7145 /* CheckBox.swift in Sources */,
 				FADD57362C31A0A400770AC6 /* MainView.swift in Sources */,
+				FAC4CD442C49214D00A3658A /* ErrorModel.swift in Sources */,
 				0A4022032C1891BA007AA6D5 /* Complete.swift in Sources */,
 				0A1069FC2C1750B70031E230 /* PetCaption.swift in Sources */,
+				FAC4CD4B2C4929C100A3658A /* TermsAgreementViewModel.swift in Sources */,
 				FAE565DA2C3C1A4500D77149 /* BaseCoordinator.swift in Sources */,
 				FAF8E6FB2C40D58700CA7145 /* BaseTargetType.swift in Sources */,
+				FAC4CD472C4921A400A3658A /* LoggAble.swift in Sources */,
 				FADD57252C3193B200770AC6 /* DIConatiner.swift in Sources */,
 				FAE5660D2C3EB68D00D77149 /* CameraAlbumManager.swift in Sources */,
 				0A4021FF2C186C44007AA6D5 /* InformationCheck.swift in Sources */,
@@ -1026,7 +1115,9 @@
 				FA6E49F92C2E40A500F3C957 /* SceneDelegate.swift in Sources */,
 				0A1069FA2C1747870031E230 /* PetCardStart.swift in Sources */,
 				FADD57062C318CD700770AC6 /* SplashViewModel.swift in Sources */,
+				FAC4CD422C49209400A3658A /* NetworkError.swift in Sources */,
 				FADD57082C318D1F00770AC6 /* DefaultUserRepository.swift in Sources */,
+				FAC4CD582C494C5600A3658A /* MainCoordinator.swift in Sources */,
 				0A21CF1C2C0DEF8D005DD8E2 /* SplashView.swift in Sources */,
 				FADD571C2C3191B500770AC6 /* AuthorizationDTO.swift in Sources */,
 				FAF8E6ED2C40CC1000CA7145 /* NetworkInterceptor.swift in Sources */,
@@ -1041,6 +1132,7 @@
 				FADD570B2C318DA300770AC6 /* Keychain.swift in Sources */,
 				0A4022052C189717007AA6D5 /* RegistrationInfo.swift in Sources */,
 				FAE566092C3C39AF00D77149 /* ViewModelable.swift in Sources */,
+				FAC4CD542C49353F00A3658A /* Encodable+.swift in Sources */,
 				FADD57162C318F7200770AC6 /* KeychainManagerProtocol.swift in Sources */,
 				FADD57292C31988500770AC6 /* AutoLoginUseCase.swift in Sources */,
 				FAF8E7142C40EC4A00CA7145 /* AuthRepository.swift in Sources */,
@@ -1049,6 +1141,8 @@
 				FAF8E7162C40EC7100CA7145 /* LoginUseCase.swift in Sources */,
 				FADD57142C318EFA00770AC6 /* Constants.swift in Sources */,
 				0A21CF242C0DF0F6005DD8E2 /* OnboardingView.swift in Sources */,
+				FA3F56BE2C4575CC0011969A /* IsEnablePetButton.swift in Sources */,
+				FAC4CD522C49309700A3658A /* JoinUseCase.swift in Sources */,
 				FA46F33E2C3EC503003CAC02 /* LoginButton.swift in Sources */,
 				0A21CF222C0DF0E6005DD8E2 /* OnboardingViewModel.swift in Sources */,
 				FAF8E6E72C40C20600CA7145 /* AppleAuthProvider.swift in Sources */,

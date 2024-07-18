@@ -9,5 +9,6 @@ import Foundation
 
 struct OAuth {
     var type: OAuthType
-    var token: String
+    var accessToken: String
+    var id: String
 }

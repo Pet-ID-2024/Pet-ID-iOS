@@ -9,7 +9,7 @@ import Combine
 import SwiftUI
 
 enum LoginCoordinatorResult {
-    
+    case main
 }
 
 final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
@@ -18,6 +18,7 @@ final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
     
     override func start() -> AnyPublisher<LoginCoordinatorResult, Never> {
         showLoginMain()
+        navigationBarHidded()
         return coordinatorResult.eraseToAnyPublisher()
     }
     
@@ -33,18 +34,31 @@ final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
             .sink(receiveValue: { [weak self] in
                 switch $0 {
                 case .main: break
-                case .signUp:
-                    self?.pushTermsAgreement()
+                case .signUp(let oauth):
+                    self?.pushTermsAgreement(oauth: oauth)
                 }
             }).store(in: &cancelBag)
         
         push(loginMainVC, animate: false, isRoot: true)
     }
     
-    func pushTermsAgreement() {
+    func pushTermsAgreement(oauth: OAuth) {
+        let viewModel = TermsAgreementViewModel(oauth: oauth)
         let termsAgreementVC = UIHostingController(
-            rootView: TermsAgreementView()
+            rootView: TermsAgreementView(
+                viewModel: viewModel
+            )
         )
+        
+        viewModel.result
+            .sink(receiveValue: { [weak self] in
+                switch $0 {
+                case .back:
+                    self?.pop(animated: true)
+                case .signup:
+                    self?.coordinatorResult.send(.main)
+                }
+            }).store(in: &cancelBag)
         
         push(termsAgreementVC)
     }

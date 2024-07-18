@@ -8,6 +8,11 @@
 import Foundation
 import Combine
 
+protocol ViewModelResultProvidable {
+    associatedtype Result
+    @MainActor var result: PassthroughSubject<Result, Never> { get }
+}
+
 open class BaseViewModel: ObservableObject {
     
     let logger: Logger = Logger()

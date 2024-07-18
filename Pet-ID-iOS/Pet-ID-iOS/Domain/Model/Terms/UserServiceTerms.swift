@@ -12,6 +12,7 @@ protocol ServiceTermsType {
     var title: String { get }
     var toURL: URL? { get }
     var agreementType: AgreementType { get }
+    var subTitle: String { get }
 }
 
 extension ServiceTermsType {
@@ -46,6 +47,15 @@ enum UserServiceTerms: ServiceTermsType, CaseIterable {
         case .privacyCollectionUsage: return .required
         case .privacyThirdPartyProvision: return .required
         case .marketingInfoReception: return .optional
+        }
+    }
+    
+    var subTitle: String {
+        switch self {
+        case .marketingInfoReception:
+            return "다양한 혜택과 신규 소식을 보내드립니다."
+        default:
+            return ""
         }
     }
 }

@@ -12,4 +12,13 @@ enum OAuthType {
     case google
     case apple
     case naver
+    
+    var toServerString: String {
+        switch self {
+        case .kakao: return "kakao"
+        case .google: return "google"
+        case .apple: return "apple"
+        case .naver: return "naver"
+        }
+    }
 }

@@ -39,7 +39,7 @@ struct LoginMainView: View {
                             }
                         }
                         case .google: break
-                        case .kakao: break
+                        case .kakao: viewModel.runKakaoLogin()   
                         case .naver: break
                         }
                     })

@@ -34,7 +34,7 @@ open class BaseCoordinator<ResultType> {
         append(coordinator: coordinator)
         return coordinator.start()
             .handleEvents(
-                receiveCompletion: { [weak self] _ in
+                receiveOutput: { [weak self] _ in
                     self?.remove(coordinator: coordinator)
                 }
             )
@@ -48,6 +48,8 @@ open class BaseCoordinator<ResultType> {
     private func remove<T>(coordinator: BaseCoordinator<T>) {
         childCoordinators[coordinator.identifier] = nil
     }
+    
+    // MARK: - push, pop
     
     public func push(_ viewController: UIViewController, animate: Bool = true, isRoot: Bool = false) {
         if isRoot {
@@ -63,5 +65,11 @@ open class BaseCoordinator<ResultType> {
         } else {
             navigationController.popViewController(animated: animated)
         }
+    }
+    
+    // MARK: - navigationBar
+    
+    public func navigationBarHidded() {
+        navigationController.setNavigationBarHidden(true, animated: false)
     }
 }

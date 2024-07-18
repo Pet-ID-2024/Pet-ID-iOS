@@ -24,5 +24,11 @@ protocol AuthRepository {
     ///   - oauth: OAuth
     ///   - fcmToken: fcmToken
     /// - Returns: 로그인의 결과를 리턴
-    func login(oauth: OAuth, fcmToken: String) async -> Result<Authorization, NetworkError>
+    func login(oauth: OAuth, fcmToken: String) async throws -> Authorization 
+    
+    
+    /// 회원가입을 요청합니다.
+    /// - Parameter oauth:
+    /// - Returns: Authorization
+    func join(oauth: OAuth, fcmToken: String, agreedAd: Bool) async throws -> Authorization
 }

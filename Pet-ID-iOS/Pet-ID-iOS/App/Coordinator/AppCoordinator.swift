@@ -17,6 +17,7 @@ public final class AppCoordinator: BaseCoordinator<Void> {
         super.init(UINavigationController())
     }
     
+    @discardableResult
     public override func start() -> AnyPublisher<Void, Never> {
         setup(with: window)
         runSplashFlow()
@@ -40,7 +41,7 @@ public final class AppCoordinator: BaseCoordinator<Void> {
                 case .login:
                     self?.runLoginFlow()
                 case .main:
-                    break
+                    self?.runMainFlow()
                 }
                 
             }).store(in: &cancelBag)
@@ -50,8 +51,19 @@ public final class AppCoordinator: BaseCoordinator<Void> {
         let coordinator = LoginCoordinator(navigationController)
         
         coordinate(to: coordinator)
-            .sink(receiveValue: { _ in
-                
+            .sink(receiveValue: { [weak self] in
+                switch $0 {
+                case .main:
+                    self?.runMainFlow()
+                }
             }).store(in: &cancelBag)
+    }
+    
+    private func runMainFlow() {
+        let coordinator = MainCoordinator(navigationController)
+        
+        coordinate(to: coordinator)
+            .sink(receiveValue: { _ in })
+            .store(in: &cancelBag)
     }
 }

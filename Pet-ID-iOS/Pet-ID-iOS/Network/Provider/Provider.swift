@@ -8,61 +8,44 @@
 import Foundation
 import Moya
 
-enum NetworkError: Error {
-    case statusCode(Int)
-    case accessTokenExpired
-    case decode
-    case underlying(Error)
-}
-
-public class Provider<T: TargetType>: MoyaProvider<T> {
-    
-    private let logger = Logger()
+public class Provider<T>: MoyaProvider<T> where T: TargetType {
     
     init() {
         let session = Session(
             configuration: .default,
-            interceptor: NetworkInterceptor(),
-            eventMonitors: [NetworkEventLogger()]
+            interceptor: NetworkInterceptor()
         )
-        super.init(session: session)
+        
+        super.init(
+            session: session,
+            plugins: [NetworkLoggerPlugin()]
+        )
     }
     
-    func request<D>(_ target: T) async -> Result<D, NetworkError> where D: Decodable {
-        await withCheckedContinuation { continuation in
-            self.request(target) { [weak self] result in
-                
+    func request<D: Decodable>(_ target: T) async throws -> D {
+        return try await withCheckedThrowingContinuation { continuation in
+            super.request(target) { result in
                 switch result {
                 case .success(let response):
                     do {
-                        let decoder = JSONDecoder()
-                        let decodedData = try decoder.decode(D.self, from: response.data)
-                        continuation.resume(returning: .success(decodedData))
-                    } catch {
+                        let filterResonse = try response.filterSuccessfulStatusCodes()
+                        let decodedData = try filterResonse.map(D.self)
+                        continuation.resume(returning: decodedData)
+                    } catch let error  {
                         
-                        let statusCode = response.statusCode
-                        
-                        if statusCode == 200 {
-                            self?.logger.warning(
-                                "Failed Decode\n"
-                                + "type: \(D.self)"
-                                + "response: \(response.data)"
-                            )
-                            continuation.resume(returning: .failure(.decode))
+                        if let moyaError = error as? MoyaError {
+                            let networkError = NetworkError(error: moyaError)
+                            continuation.resume(throwing: networkError)
                         } else {
-                            continuation.resume(returning: .failure(.statusCode(statusCode)))
+                            Logger().error("ProviderError")
+                            continuation.resume(throwing: NetworkError.unknown)
                         }
-                        
                     }
                 case .failure(let error):
-                    
-                    switch error {
-                        
-                    default:
-                        continuation.resume(returning: .failure(.underlying(error)))
-                    }
+                    continuation.resume(throwing: NetworkError.moyaError(error))
                 }
             }
+            
         }
     }
 }

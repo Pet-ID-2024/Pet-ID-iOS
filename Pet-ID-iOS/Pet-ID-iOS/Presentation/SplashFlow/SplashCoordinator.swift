@@ -36,7 +36,7 @@ final class SplashCoordinator: BaseCoordinator<SplashCoordinatorResult> {
                 case .login:
                     self?.coordinatorResult.send(.login)
                 case .main:
-                    break
+                    self?.coordinatorResult.send(.main)
                 case .firstLogin:
                     self?.showAccessibilityGuid()
                 }

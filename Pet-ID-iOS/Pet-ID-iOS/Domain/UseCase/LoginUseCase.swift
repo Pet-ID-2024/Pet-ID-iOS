@@ -8,10 +8,11 @@
 import Foundation
 
 protocol LoginUseCase {
-    func execute(oauth: OAuth, fcmToken: String) async -> Result<Bool, NetworkError>
+    func execute(oauth: OAuth, fcmToken: String) async throws -> Bool
 }
 
 struct DefaultLoginUseCase: LoginUseCase {
+    
     private let authRepository: AuthRepository
     
     init(
@@ -20,20 +21,9 @@ struct DefaultLoginUseCase: LoginUseCase {
         self.authRepository = authRepository
     }
     
-    func execute(oauth: OAuth, fcmToken: String) async -> Result<Bool, NetworkError> {
-        let result = await authRepository.login(oauth: oauth, fcmToken: fcmToken)
-        
-        switch result {
-        
-        case .success(let authorization):
-            
-            let result = authRepository.storeAuthorizationToKeychain(auth: authorization)
-            
-            return .success(result)
-        
-        case .failure(let error):
-            
-            return .failure(error)
-        }
+    func execute(oauth: OAuth, fcmToken: String) async throws -> Bool {
+        let authorization = try await authRepository.login(oauth: oauth, fcmToken: fcmToken)
+        let result = authRepository.storeAuthorizationToKeychain(auth: authorization)
+        return result
     }
 }

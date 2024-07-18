@@ -9,6 +9,8 @@ import UIKit
 import Firebase
 import UserNotifications
 import FirebaseMessaging
+import KakaoSDKCommon
+import KakaoSDKAuth
 
 @main
 class AppDelegate: NSObject, UIApplicationDelegate {
@@ -27,6 +29,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         #endif
         
         configureFirebase()
+        configureOAuth()
         configurePushNotification(application: application)
         requestAccessibility()
         
@@ -44,7 +47,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         return sceneConfig
     }
     
-    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        if AuthApi.isKakaoTalkLoginUrl(url) {
+            return AuthController.handleOpenUrl(url: url)
+        }
+        
+        return false
+    }
 }
 
 // MARK: - ConfigureFirebase
@@ -52,6 +62,13 @@ extension AppDelegate {
     func configureFirebase() {
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
+    }
+}
+
+// MARK: - ConfigureOAuth
+extension AppDelegate {
+    func configureOAuth() {
+        KakaoSDK.initSDK(appKey: APIConfigs.Key.kakaoAppKey)
     }
 }
 

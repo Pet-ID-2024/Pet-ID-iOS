@@ -43,13 +43,25 @@ struct DefaultAuthRepository: AuthRepository {
         }
     }
     
-    func login(oauth: OAuth, fcmToken: String) async -> Result<Authorization, NetworkError> {
+    func login(oauth: OAuth, fcmToken: String) async throws -> Authorization {
         let request = LoginRequestDTO(
-            sub: oauth.token,
+            sub: oauth.id,
             fcmToken: fcmToken
         )
         
-        return await dataSource.login(req: request)
-            .map { $0.toDomain() }
+        let response = try await dataSource.login(req: request)
+            
+        return response.toDomain()
+    }
+    
+    func join(oauth: OAuth, fcmToken: String, agreedAd: Bool) async throws -> Authorization {
+        let request = JoinRequestDTO(
+            token: oauth.accessToken,
+            fcmToken: fcmToken,
+            ad: agreedAd
+        )
+        let response = try await dataSource.join(req: request, platform: oauth.type.toServerString)
+        
+        return response.toDomain()
     }
 }

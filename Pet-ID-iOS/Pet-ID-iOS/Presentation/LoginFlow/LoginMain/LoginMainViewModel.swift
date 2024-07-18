@@ -7,20 +7,25 @@
 
 import Foundation
 import AuthenticationServices
+import KakaoSDKUser
 import Combine
 
 enum LoginMainReesult {
     case main
-    case signUp
+    case signUp(OAuth)
 }
 
-final class LoginMainViewModel: BaseViewModel {
+final class LoginMainViewModel: BaseViewModel, ViewModelResultProvidable {
     private let loginUseCase: LoginUseCase
     
     var result: PassthroughSubject = PassthroughSubject<LoginMainReesult, Never>()
     
     init(loginUseCase: LoginUseCase = DefaultLoginUseCase()) {
         self.loginUseCase = loginUseCase
+    }
+    
+    @MainActor func toSignUp(oauth: OAuth) {
+        self.result.send(.signUp(oauth))
     }
 }
 
@@ -42,10 +47,55 @@ extension LoginMainViewModel {
         requestOAuthLogin(
             oauth: OAuth(
                 type: .apple,
-                token: tokenString
+                accessToken: "",
+                id: tokenString
             )
         )
     }
+}
+
+// MARK: - KakaoLogin
+extension LoginMainViewModel {
+    
+    func runKakaoLogin() {
+        if UserApi.isKakaoTalkLoginAvailable() {
+            UserApi.shared.loginWithKakaoTalk { [weak self] (token, error) in
+                
+                guard let self else { return }
+                
+                if let error = error {
+                    self.logger.error(error)
+                }
+                
+                guard let accessToken = token?.accessToken else { return }
+                
+                guard let idToken = token?.idToken else { return }
+                
+                UserApi.shared.me(completion: { user, error in
+                    
+                    guard let user else { return }
+                    
+                    guard let id = user.id else { return }
+                    
+                    let oauth: OAuth = OAuth(
+                        type: .kakao,
+                        accessToken: accessToken,
+                        id: "\(id)"
+                    )
+                    
+                    self.requestOAuthLogin(
+                        oauth: oauth
+                    )
+                })
+                
+            }
+        } else {
+            
+        }
+    }
+    
+    
+    
 }
 
 // MARK: - CallLoginUseCase
@@ -56,25 +106,18 @@ extension LoginMainViewModel {
         fcmToken: String = UserDefaultManager.shared.fcmToken
     ) {
         Task {
-            let result = await loginUseCase.execute(oauth: oauth, fcmToken: fcmToken)
-            
-            switch result {
-            case .success: break
-            case .failure(let error):
-                switch error {
-                case .statusCode(let code):
-                    if code == 404 {
-                        await toSignUp()
+            do {
+                let result = try await loginUseCase.execute(oauth: oauth, fcmToken: fcmToken)
+            } catch let error as NetworkError {
+                if case .invalidResponse(let errorModel) = error {
+                    if errorModel.code == 404 {
+                        await toSignUp(oauth: oauth)
                     }
-                    
-                default:
-                    break
+                } else {
+                    logger.error(error)
                 }
             }
+            
         }
-    }
-    
-    @MainActor func toSignUp() {
-        self.result.send(.signUp)
     }
 }
