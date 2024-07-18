@@ -585,6 +585,7 @@
 		FA6E49DC2C2C4E4300F3C957 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				FAB57C622C49D42700F471F0 /* PetIDNotificationCenter */,
 				FAF8E6EF2C40D16800CA7145 /* UserDefaults */,
 				FAF8E6E52C40C1F200CA7145 /* AuthProvider */,
 				FAE565FF2C3C363A00D77149 /* Manager */,
@@ -655,6 +656,13 @@
 				FA6E49F82C2E40A500F3C957 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		FAB57C622C49D42700F471F0 /* PetIDNotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PetIDNotificationCenter;
 			sourceTree = "<group>";
 		};
 		FAC4CD4C2C492D5D00A3658A /* Join */ = {
