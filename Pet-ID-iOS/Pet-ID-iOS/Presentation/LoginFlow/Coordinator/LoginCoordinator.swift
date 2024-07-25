@@ -78,4 +78,8 @@ final class LoginCoordinator: Coordinator {
         
         push(termsAgreementVC)
     }
+    
+    deinit {
+        Logger().debug("Coordinator Deinit \(self)")
+    }
 }

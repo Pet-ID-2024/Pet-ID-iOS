@@ -72,4 +72,8 @@ final class SplashCoordinator: Coordinator {
         
         push(accessibilityVC, animate: false, isRoot: true)
     }
+    
+    deinit {
+        Logger().debug("Coordinator Deinit \(self)")
+    }
 }

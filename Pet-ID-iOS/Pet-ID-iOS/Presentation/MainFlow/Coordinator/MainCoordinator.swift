@@ -37,4 +37,8 @@ final class MainCoordinator: Coordinator {
         
         push(mainVC, animate: false, isRoot: true)
     }
+    
+    deinit {
+        Logger().debug("Coordinator Deinit \(self)")
+    }
 }
