@@ -11,15 +11,31 @@ import Combine
 enum SplashCoordinatorResult {
     case login
     case main
+    case accessibilityGuid
 }
 
-final class SplashCoordinator: BaseCoordinator<SplashCoordinatorResult> {
+protocol SplashFinishDelegate: AnyObject {
+    func finish(result: SplashCoordinatorResult)
+}
+
+final class SplashCoordinator: Coordinator {
     
-    let coordinatorResult = PassthroughSubject<SplashCoordinatorResult, Never>()
+    public let id: String = UUID().uuidString
+    public var navigationController: UINavigationController
+    public var childCoordinators: [String : any Coordinator] = [:]
+    private var cancelBag = Set<AnyCancellable>()
     
-    override func start() -> AnyPublisher<SplashCoordinatorResult, Never> {
+    weak var splashFinishDelegate: SplashFinishDelegate?
+    weak var finishDelegate: CoordinatorFinishDelegate?
+    
+    public init(
+        navigationController: UINavigationController
+    ) {
+        self.navigationController = navigationController
+    }
+    
+    public func start() {
         showSplash()
-        return coordinatorResult.eraseToAnyPublisher()
     }
     
     func showSplash() {
@@ -32,14 +48,19 @@ final class SplashCoordinator: BaseCoordinator<SplashCoordinatorResult> {
         
         viewModel.result.subject
             .sink(receiveValue: { [weak self] result in
+                
+                guard let self else { return }
+                
                 switch result {
                 case .login:
-                    self?.coordinatorResult.send(.login)
+                    splashFinishDelegate?.finish(result: .login)
                 case .main:
-                    self?.coordinatorResult.send(.main)
+                    splashFinishDelegate?.finish(result: .main)
                 case .firstLogin:
-                    self?.showAccessibilityGuid()
+                    splashFinishDelegate?.finish(result: .accessibilityGuid)
                 }
+                
+                self.finish()
             })
             .store(in: &cancelBag)
     }

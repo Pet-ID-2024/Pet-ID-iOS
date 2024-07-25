@@ -12,14 +12,27 @@ enum LoginCoordinatorResult {
     case main
 }
 
-final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
+protocol LoginFinishDelegate: AnyObject {
+    func finish(result: LoginCoordinatorResult)
+}
+
+final class LoginCoordinator: Coordinator {
     
-    let coordinatorResult = PassthroughSubject<LoginCoordinatorResult, Never>()
+    var id: String = UUID().uuidString
+    var navigationController: UINavigationController
+    var childCoordinators: [String : any Coordinator] = [:]
+    private var cancelBag = Set<AnyCancellable>()
     
-    override func start() -> AnyPublisher<LoginCoordinatorResult, Never> {
+    weak var finishDelegate: CoordinatorFinishDelegate?
+    weak var loginFinishDelegate: LoginFinishDelegate?
+    
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
+    func start() {
         showLoginMain()
         navigationBarHidded()
-        return coordinatorResult.eraseToAnyPublisher()
     }
     
     func showLoginMain() {
@@ -34,10 +47,12 @@ final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
             .sink(receiveValue: { [weak self] in
                 switch $0 {
                 case .main:
-                    self?.coordinatorResult.send(.main)
+                    self?.loginFinishDelegate?.finish(result: .main)
                 case .signUp(let oauth):
                     self?.pushTermsAgreement(oauth: oauth)
                 }
+                
+                self?.finish()
             }).store(in: &cancelBag)
         
         push(loginMainVC, animate: false, isRoot: true)
@@ -57,7 +72,7 @@ final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
                 case .back:
                     self?.pop(animated: true)
                 case .signup:
-                    self?.coordinatorResult.send(.main)
+                    break
                 }
             }).store(in: &cancelBag)
         

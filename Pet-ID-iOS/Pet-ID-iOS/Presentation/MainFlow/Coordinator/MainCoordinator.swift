@@ -10,15 +10,24 @@ import SwiftUI
 
 enum MainCoordinatorResult {
     case main
+    case finish
 }
 
-final class MainCoordinator: BaseCoordinator<MainCoordinatorResult> {
+final class MainCoordinator: Coordinator {
     
-    let coordinatorResult = PassthroughSubject<MainCoordinatorResult, Never>()
+    var id: String = UUID().uuidString
     
-    override func start() -> AnyPublisher<MainCoordinatorResult, Never> {
+    var finishDelegate: CoordinatorFinishDelegate?
+    
+    var navigationController: UINavigationController
+    var childCoordinators: [String : any Coordinator] = [:]
+    
+    init(_ navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
+    func start() {
         showMain()
-        return coordinatorResult.eraseToAnyPublisher()
     }
     
     func showMain() {
