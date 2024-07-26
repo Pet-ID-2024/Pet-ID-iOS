@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-open class BaseViewModel<ResultType>: ObservableObject, ResultProvidable {
+open class BaseViewModel<ResultType>: NSObject, ObservableObject, ResultProvidable {
     
     let result: ResultPublisher<ResultType> = .init()
     let logger: Logger = Logger()

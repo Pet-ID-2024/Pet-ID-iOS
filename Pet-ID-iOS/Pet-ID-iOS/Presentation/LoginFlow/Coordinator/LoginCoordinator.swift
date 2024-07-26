@@ -48,11 +48,10 @@ final class LoginCoordinator: Coordinator {
                 switch $0 {
                 case .main:
                     self?.loginFinishDelegate?.finish(result: .main)
+                    self?.finish()
                 case .signUp(let oauth):
                     self?.pushTermsAgreement(oauth: oauth)
                 }
-                
-                self?.finish()
             }).store(in: &cancelBag)
         
         push(loginMainVC, animate: false, isRoot: true)
@@ -72,6 +71,7 @@ final class LoginCoordinator: Coordinator {
                 case .back:
                     self?.pop(animated: true)
                 case .signup:
+                    print()
                     break
                 }
             }).store(in: &cancelBag)

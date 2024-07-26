@@ -8,7 +8,9 @@
 import Foundation
 import AuthenticationServices
 import KakaoSDKUser
+import NaverThirdPartyLogin
 import Combine
+import Alamofire
 
 enum LoginMainReesult {
     case main
@@ -17,9 +19,13 @@ enum LoginMainReesult {
 
 final class LoginMainViewModel: BaseViewModel<LoginMainReesult> {
     private let loginUseCase: LoginUseCase
+    private let naverLoginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
     
     init(loginUseCase: LoginUseCase = DefaultLoginUseCase()) {
         self.loginUseCase = loginUseCase
+        
+        super.init()
+        
     }
     
     @MainActor func toSignUp(oauth: OAuth) {
@@ -52,6 +58,80 @@ extension LoginMainViewModel {
     }
 }
 
+// MARK: - NaverLogin
+extension LoginMainViewModel: NaverThirdPartyLoginConnectionDelegate, UIApplicationDelegate{
+    
+    private func setNaverLoginInstance() {
+        naverLoginInstance?.delegate = self
+        naverLoginInstance?.resetToken()
+        
+    }
+    
+    func runNaverLogin() {
+        
+        setNaverLoginInstance()
+        
+        naverLoginInstance?.requestThirdPartyLogin()
+    }
+    
+    
+    // 로그인에 성공한 경우 호출
+    func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
+        logger.debug("\nSuccess Naver Login")
+        
+        guard let isValidAccessToken = naverLoginInstance?.isValidAccessTokenExpireTimeNow() else { return }
+        
+        
+        if !isValidAccessToken { return }
+        
+        guard let tokenType = naverLoginInstance?.tokenType else { return }
+        guard let accessToken = naverLoginInstance?.accessToken else { return }
+        guard let refreshToken = naverLoginInstance?.refreshToken else { return }
+        
+        let urlStr = "https://openapi.naver.com/v1/nid/me"
+        let url = URL(string: urlStr)!
+        
+        let authorization = "\(tokenType) \(accessToken)"
+        
+        let req = AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": authorization])
+        
+        req.responseJSON { [weak self] response in
+            
+            guard let self else { return }
+            
+            guard let result = response.value as? [String: Any],
+            let object = result["response"] as? [String: Any] else { return }
+            
+            guard let id = object["id"] as? String,
+                  let accessToken = naverLoginInstance?.accessToken else { return }
+            
+            let info = "ID: \(id)"
+            
+            logger.debug("\n Naver Login Response \n\(info)")
+            
+            let oauth = OAuth(type: .naver, accessToken: accessToken, id: id)
+            
+            requestOAuthLogin(oauth: oauth)
+        }
+        
+    }
+    
+    // referesh token
+    func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
+    }
+    
+    // 로그아웃
+    func oauth20ConnectionDidFinishDeleteToken() {
+        logger.debug("log out")
+    }
+    
+    // 모든 error
+    func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
+        logger.error("error = \(error.localizedDescription)")
+        self.naverLoginInstance?.requestDeleteToken()
+    }
+}
+
 // MARK: - KakaoLogin
 extension LoginMainViewModel {
     
@@ -63,11 +143,10 @@ extension LoginMainViewModel {
                 
                 if let error = error {
                     self.logger.error(error)
+                    return
                 }
                 
                 guard let accessToken = token?.accessToken else { return }
-                
-                guard let idToken = token?.idToken else { return }
                 
                 UserApi.shared.me(completion: { user, error in
                     
@@ -91,9 +170,6 @@ extension LoginMainViewModel {
             
         }
     }
-    
-    
-    
 }
 
 // MARK: - CallLoginUseCase

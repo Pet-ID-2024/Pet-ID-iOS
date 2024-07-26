@@ -41,6 +41,7 @@
 		FA46F3472C3EC977003CAC02 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46F3462C3EC977003CAC02 /* Color+.swift */; };
 		FA46F34A2C3ED4C2003CAC02 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46F3492C3ED4C2003CAC02 /* BaseViewModel.swift */; };
 		FA46F34D2C3F56FA003CAC02 /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46F34C2C3F56FA003CAC02 /* UIWindow+.swift */; };
+		FA47EFBB2C53A34A000F6529 /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47EFBA2C53A34A000F6529 /* Configs.swift */; };
 		FA52CAE02C4F76A3009EC228 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52CADF2C4F76A3009EC228 /* Coordinator.swift */; };
 		FA52CAE22C4FD6EE009EC228 /* CoordinatorFinishDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52CAE12C4FD6EE009EC228 /* CoordinatorFinishDelegate.swift */; };
 		FA6E49E42C2C4EAA00F3C957 /* docs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49E32C2C4EAA00F3C957 /* docs.swift */; };
@@ -162,6 +163,7 @@
 		FA46F3462C3EC977003CAC02 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		FA46F3492C3ED4C2003CAC02 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		FA46F34C2C3F56FA003CAC02 /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
+		FA47EFBA2C53A34A000F6529 /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
 		FA52CADF2C4F76A3009EC228 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		FA52CAE12C4FD6EE009EC228 /* CoordinatorFinishDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFinishDelegate.swift; sourceTree = "<group>"; };
 		FA6E49E32C2C4EAA00F3C957 /* docs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = docs.swift; sourceTree = "<group>"; };
@@ -961,6 +963,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF8E6F62C40D3FA00CA7145 /* APIConfigs.swift */,
+				FA47EFBA2C53A34A000F6529 /* Configs.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1189,6 +1192,7 @@
 				FAC4CD442C49214D00A3658A /* ErrorModel.swift in Sources */,
 				0A4022032C1891BA007AA6D5 /* Complete.swift in Sources */,
 				0A1069FC2C1750B70031E230 /* PetCaption.swift in Sources */,
+				FA47EFBB2C53A34A000F6529 /* Configs.swift in Sources */,
 				FAC4CD4B2C4929C100A3658A /* TermsAgreementViewModel.swift in Sources */,
 				FAF8E6FB2C40D58700CA7145 /* BaseTargetType.swift in Sources */,
 				FAC4CD472C4921A400A3658A /* LoggAble.swift in Sources */,
@@ -1431,7 +1435,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pet-id-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = auto;
+				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1477,7 +1481,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pet-id-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
+				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
