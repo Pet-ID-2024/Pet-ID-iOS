@@ -23,6 +23,7 @@ struct DefaultLoginUseCase: LoginUseCase {
     
     func execute(oauth: OAuth, fcmToken: String) async throws -> Bool {
         let authorization = try await authRepository.login(oauth: oauth, fcmToken: fcmToken)
+        authRepository.deleteAuthorizationFromKeychain()
         let result = authRepository.storeAuthorizationToKeychain(auth: authorization)
         return result
     }
