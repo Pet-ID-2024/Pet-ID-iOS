@@ -27,6 +27,8 @@ public enum DSImage {
     case cameraicon
     case infoicon
     
+    case umbrellaicon
+    
     
     var toName: String {
         switch self {
@@ -61,6 +63,9 @@ public enum DSImage {
             return "phoneicon"
         case .infoicon:
             return "infoicon"
+            
+        case .umbrellaicon:
+            return "umbrellaicon"
         }
     }
 }
