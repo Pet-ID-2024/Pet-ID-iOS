@@ -13,7 +13,7 @@ enum MainCoordinatorResult {
     case finish
 }
 
-final class MainCoordinator: Coordinator {
+final class MainCoordinator: Coordinator, ObservableObject {
     
     var id: String = UUID().uuidString
     
@@ -31,11 +31,22 @@ final class MainCoordinator: Coordinator {
     }
     
     func showMain() {
+        let viewModel = MainViewModel(coordinator: self)
         let mainVC = UIHostingController(
-            rootView: MainView()
+            rootView: MainView(viewModel: viewModel)
         )
         
         push(mainVC, animate: false, isRoot: true)
+    }
+    
+    func showBanner() {
+        let bannerVC = UIHostingController(rootView: Banner())
+        navigationController.pushViewController(bannerVC, animated: true)
+    }
+    
+    func showPetCard() {
+        let petCardVC = UIHostingController(rootView: PetCardView())
+        navigationController.pushViewController(petCardVC, animated: true)
     }
     
     deinit {
