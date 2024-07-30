@@ -39,7 +39,7 @@ struct LoginMainView: View {
                                 viewModel.runAppleLogin(credential: credential)
                             }
                         }
-                        case .google: break
+                        case .google: viewModel.runGoogleLogin()
                         case .kakao: viewModel.runKakaoLogin()   
                         case .naver: viewModel.runNaverLogin()
                         }

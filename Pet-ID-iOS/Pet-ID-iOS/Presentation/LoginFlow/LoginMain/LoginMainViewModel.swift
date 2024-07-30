@@ -11,6 +11,7 @@ import KakaoSDKUser
 import NaverThirdPartyLogin
 import Combine
 import Alamofire
+import GoogleSignIn
 
 enum LoginMainReesult {
     case main
@@ -30,6 +31,33 @@ final class LoginMainViewModel: BaseViewModel<LoginMainReesult> {
     
     @MainActor func toSignUp(oauth: OAuth) {
         self.result.send(.signUp(oauth))
+    }
+}
+
+// MARK: - GoogleLogin
+extension LoginMainViewModel {
+    func runGoogleLogin() {
+        
+        guard let vc = UIWindow.currentKeyWindow?.rootViewController else { return }
+        
+        GIDSignIn.sharedInstance.signIn(withPresenting: vc) { [weak self] result, error in
+            
+            guard let self else { return }
+            
+            if let error = error {
+                logger.error(error)
+                return
+            }
+            
+            guard let user = result?.user,
+            let id = user.userID else { return }
+            
+            let accessToken = user.accessToken.tokenString
+            
+            let oauth = OAuth(type: .google, accessToken: accessToken, id: id)
+            
+            requestOAuthLogin(oauth: oauth)
+        }
     }
 }
 
