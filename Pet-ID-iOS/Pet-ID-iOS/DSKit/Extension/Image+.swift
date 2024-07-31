@@ -27,6 +27,9 @@ public enum DSImage: String {
     case cameraicon
     case infoicon
     
+    case umbrellaicon
+    case bannerbg
+    case petidicon
     
     var toName: String {
         return self.rawValue

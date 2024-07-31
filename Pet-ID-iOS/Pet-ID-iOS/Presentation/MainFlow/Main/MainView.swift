@@ -8,19 +8,37 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject var viewModel: MainViewModel
     var body: some View {
-        Button(
-            action: {
-                let usecase = DefaultLogoutUseCase()
-                usecase.execute()
-            },
-            label: {
-                Text("키체인 인증정보 삭제")
+        ScrollView {
+            VStack{
+                HStack{
+                    Text("Pet ID")
+                        .font(.petIdTitle2)
+                        .foregroundColor(.petid_blue)
+                    Spacer()
+                    Image(.notificationicon)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 20)
+                }
+                .padding()
+                
+                Button {
+                    viewModel.showBanner()
+                } label: {
+                    Banner()
+                }
+                
+                
+                PetCardView()
+
+                
             }
-        )
+        }
     }
 }
 
 #Preview {
-    MainView()
+    MainView(viewModel: MainViewModel(coordinator: MainCoordinator(UINavigationController())))
 }
