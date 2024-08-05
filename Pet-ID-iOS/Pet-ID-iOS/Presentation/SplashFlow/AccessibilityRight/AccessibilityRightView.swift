@@ -23,8 +23,7 @@ struct AccessibilityRightView: View {
                     .frame(height: 8)
                 
                 Text("PET ID 고객님의 편리한 앱 이용을 위해 다음의 접근 권한이 필요합니다.")
-                    .lineLimit(nil)
-                    .multilineTextAlignment(.leading)
+                    .fixedSize(horizontal: false, vertical: true)
                     .font(.petIdBody2)
                     .foregroundColor(.petid_grey)
 
