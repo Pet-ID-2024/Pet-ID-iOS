@@ -195,7 +195,34 @@ extension LoginMainViewModel {
                 
             }
         } else {
-            
+            UserApi.shared.loginWithKakaoAccount{ [weak self] token, error in
+                
+                guard let self else { return }
+                
+                if let error = error {
+                    self.logger.error(error)
+                    return
+                }
+                
+                guard let accessToken = token?.accessToken else { return }
+                
+                UserApi.shared.me(completion: { user, error in
+                    
+                    guard let user else { return }
+                    
+                    guard let id = user.id else { return }
+                    
+                    let oauth: OAuth = OAuth(
+                        type: .kakao,
+                        accessToken: accessToken,
+                        id: "\(id)"
+                    )
+                    
+                    self.requestOAuthLogin(
+                        oauth: oauth
+                    )
+                })
+            }
         }
     }
 }
