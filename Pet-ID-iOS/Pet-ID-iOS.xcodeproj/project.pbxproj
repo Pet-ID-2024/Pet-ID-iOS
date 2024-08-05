@@ -50,6 +50,7 @@
 		FA47EFBB2C53A34A000F6529 /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47EFBA2C53A34A000F6529 /* Configs.swift */; };
 		FA52CAE02C4F76A3009EC228 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52CADF2C4F76A3009EC228 /* Coordinator.swift */; };
 		FA52CAE22C4FD6EE009EC228 /* CoordinatorFinishDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52CAE12C4FD6EE009EC228 /* CoordinatorFinishDelegate.swift */; };
+		FA6BEF172C60FAD6004AE82D /* BaseHostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BEF162C60FAD6004AE82D /* BaseHostingViewController.swift */; };
 		FA6E49E42C2C4EAA00F3C957 /* docs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49E32C2C4EAA00F3C957 /* docs.swift */; };
 		FA6E49F72C2E3FEC00F3C957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49F62C2E3FEC00F3C957 /* AppDelegate.swift */; };
 		FA6E49F92C2E40A500F3C957 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49F82C2E40A500F3C957 /* SceneDelegate.swift */; };
@@ -89,7 +90,6 @@
 		FAE565F92C3C328D00D77149 /* LoginMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE565F82C3C328D00D77149 /* LoginMainView.swift */; };
 		FAE565FB2C3C329700D77149 /* LoginMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE565FA2C3C329700D77149 /* LoginMainViewModel.swift */; };
 		FAE566012C3C365300D77149 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE566002C3C365300D77149 /* UserDefaultManager.swift */; };
-		FAE566042C3C384B00D77149 /* AccessibilityGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE566032C3C384B00D77149 /* AccessibilityGuideView.swift */; };
 		FAE5660B2C3EAF6C00D77149 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAE5660A2C3EAF6C00D77149 /* GoogleService-Info.plist */; };
 		FAE5660D2C3EB68D00D77149 /* CameraAlbumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5660C2C3EB68D00D77149 /* CameraAlbumManager.swift */; };
 		FAF8E6E72C40C20600CA7145 /* AppleAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8E6E62C40C20600CA7145 /* AppleAuthProvider.swift */; };
@@ -178,6 +178,7 @@
 		FA47EFBA2C53A34A000F6529 /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
 		FA52CADF2C4F76A3009EC228 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		FA52CAE12C4FD6EE009EC228 /* CoordinatorFinishDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFinishDelegate.swift; sourceTree = "<group>"; };
+		FA6BEF162C60FAD6004AE82D /* BaseHostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHostingViewController.swift; sourceTree = "<group>"; };
 		FA6E49E32C2C4EAA00F3C957 /* docs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = docs.swift; sourceTree = "<group>"; };
 		FA6E49F62C2E3FEC00F3C957 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA6E49F82C2E40A500F3C957 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -215,7 +216,6 @@
 		FAE565F82C3C328D00D77149 /* LoginMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainView.swift; sourceTree = "<group>"; };
 		FAE565FA2C3C329700D77149 /* LoginMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainViewModel.swift; sourceTree = "<group>"; };
 		FAE566002C3C365300D77149 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
-		FAE566032C3C384B00D77149 /* AccessibilityGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityGuideView.swift; sourceTree = "<group>"; };
 		FAE5660A2C3EAF6C00D77149 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FAE5660C2C3EB68D00D77149 /* CameraAlbumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAlbumManager.swift; sourceTree = "<group>"; };
 		FAF8E6E62C40C20600CA7145 /* AppleAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthProvider.swift; sourceTree = "<group>"; };
@@ -355,10 +355,9 @@
 		0A21CF1A2C0DEC48005DD8E2 /* SplashFlow */ = {
 			isa = PBXGroup;
 			children = (
+				FA6BEF142C60F936004AE82D /* Coordinator */,
 				0A5FE6962C45414F00B95F3C /* AccessibilityRight */,
-				FAE565EC2C3C275900D77149 /* SplashCoordinator.swift */,
 				FAE566052C3C385800D77149 /* Splash */,
-				FAE566022C3C383400D77149 /* AccessibilityGuideView */,
 			);
 			path = SplashFlow;
 			sourceTree = "<group>";
@@ -614,6 +613,22 @@
 				FA46F34C2C3F56FA003CAC02 /* UIWindow+.swift */,
 			);
 			path = "UIWindow+";
+			sourceTree = "<group>";
+		};
+		FA6BEF142C60F936004AE82D /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FAE565EC2C3C275900D77149 /* SplashCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		FA6BEF152C60FACC004AE82D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FA6BEF162C60FAD6004AE82D /* BaseHostingViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		FA6E49D82C2C4E3600F3C957 /* Presentation */ = {
@@ -908,6 +923,7 @@
 		FAE565EE2C3C280300D77149 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				FA6BEF152C60FACC004AE82D /* ViewController */,
 				FA46F3482C3ED4B2003CAC02 /* ViewModel */,
 			);
 			path = Base;
@@ -928,14 +944,6 @@
 				FAE5660C2C3EB68D00D77149 /* CameraAlbumManager.swift */,
 			);
 			path = Manager;
-			sourceTree = "<group>";
-		};
-		FAE566022C3C383400D77149 /* AccessibilityGuideView */ = {
-			isa = PBXGroup;
-			children = (
-				FAE566032C3C384B00D77149 /* AccessibilityGuideView.swift */,
-			);
-			path = AccessibilityGuideView;
 			sourceTree = "<group>";
 		};
 		FAE566052C3C385800D77149 /* Splash */ = {
@@ -1283,6 +1291,7 @@
 				FAF8E7002C40D7A700CA7145 /* OAuthType.swift in Sources */,
 				FAF8E71F2C410DB800CA7145 /* AggreementType.swift in Sources */,
 				0A4021FD2C1868DF007AA6D5 /* ScanCheck.swift in Sources */,
+				FA6BEF172C60FAD6004AE82D /* BaseHostingViewController.swift in Sources */,
 				FADD571F2C31922700770AC6 /* UserError.swift in Sources */,
 				FADD570F2C318ECB00770AC6 /* KeychainProtocol.swift in Sources */,
 				FAC4CD5B2C4970E600A3658A /* TokenRefreshRequestDTO.swift in Sources */,
@@ -1290,7 +1299,6 @@
 				0A21CF0F2C0DE3AA005DD8E2 /* Test.swift in Sources */,
 				FAF8E6F42C40D3C200CA7145 /* AuthAPI.swift in Sources */,
 				FAE565ED2C3C275900D77149 /* SplashCoordinator.swift in Sources */,
-				FAE566042C3C384B00D77149 /* AccessibilityGuideView.swift in Sources */,
 				FAF8E7062C40E22B00CA7145 /* DefaultAuthRepository.swift in Sources */,
 				FAB57C662C49D5A700F471F0 /* LogoutUseCase.swift in Sources */,
 				0AC9B08D2C427D660040FB28 /* Image+.swift in Sources */,
@@ -1452,6 +1460,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -1523,6 +1532,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
