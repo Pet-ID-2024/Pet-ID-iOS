@@ -8,6 +8,8 @@
 import Foundation
 
 struct ErrorModel: Codable {
-    var code: UInt
-    var message: String
+    var timestamp: UInt64
+    var status: UInt
+    var error: String
+    var path: String
 }

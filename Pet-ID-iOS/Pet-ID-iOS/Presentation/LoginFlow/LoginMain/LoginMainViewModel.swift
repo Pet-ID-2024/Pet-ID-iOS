@@ -244,7 +244,7 @@ extension LoginMainViewModel {
                 }
             } catch let error as NetworkError {
                 if case .invalidResponse(let errorModel) = error {
-                    if errorModel.code == 404 {
+                    if errorModel.status == 404 {
                         await toSignUp(oauth: oauth)
                     }
                 } else {
