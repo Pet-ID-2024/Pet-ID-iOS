@@ -195,7 +195,34 @@ extension LoginMainViewModel {
                 
             }
         } else {
-            
+            UserApi.shared.loginWithKakaoAccount{ [weak self] token, error in
+                
+                guard let self else { return }
+                
+                if let error = error {
+                    self.logger.error(error)
+                    return
+                }
+                
+                guard let accessToken = token?.accessToken else { return }
+                
+                UserApi.shared.me(completion: { user, error in
+                    
+                    guard let user else { return }
+                    
+                    guard let id = user.id else { return }
+                    
+                    let oauth: OAuth = OAuth(
+                        type: .kakao,
+                        accessToken: accessToken,
+                        id: "\(id)"
+                    )
+                    
+                    self.requestOAuthLogin(
+                        oauth: oauth
+                    )
+                })
+            }
         }
     }
 }
@@ -217,7 +244,7 @@ extension LoginMainViewModel {
                 }
             } catch let error as NetworkError {
                 if case .invalidResponse(let errorModel) = error {
-                    if errorModel.code == 404 {
+                    if errorModel.status == 404 {
                         await toSignUp(oauth: oauth)
                     }
                 } else {

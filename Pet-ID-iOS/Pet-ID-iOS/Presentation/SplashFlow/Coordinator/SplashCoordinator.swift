@@ -11,7 +11,6 @@ import Combine
 enum SplashCoordinatorResult {
     case login
     case main
-    case accessibilityGuid
 }
 
 protocol SplashFinishDelegate: AnyObject {
@@ -40,7 +39,7 @@ final class SplashCoordinator: Coordinator {
     
     func showSplash() {
         let viewModel = SplashViewModel()
-        let splashVC = UIHostingController(
+        let splashVC = BaseHostingViewController(
             rootView: SplashView(viewModel: viewModel)
         )
         
@@ -54,21 +53,32 @@ final class SplashCoordinator: Coordinator {
                 switch result {
                 case .login:
                     splashFinishDelegate?.finish(result: .login)
+                    self.finish()
                 case .main:
                     splashFinishDelegate?.finish(result: .main)
+                    self.finish()
                 case .firstLogin:
-                    splashFinishDelegate?.finish(result: .accessibilityGuid)
+                    showAccessibilityGuid()
                 }
-                
-                self.finish()
             })
             .store(in: &cancelBag)
     }
     
     func showAccessibilityGuid() {
-        let accessibilityVC = UIHostingController(
-            rootView: AccessibilityGuideView()
+        
+        let viewModel = AccessibilityRightViewModel()
+        let accessibilityVC = BaseHostingViewController(
+            rootView: AccessibilityRightView(viewModel: viewModel)
         )
+        
+        viewModel.result.subject
+            .sink(receiveValue: { [weak self] _ in
+                guard let self else { return }
+                
+                splashFinishDelegate?.finish(result: .login)
+                self.finish()
+            })
+            .store(in: &cancelBag)
         
         push(accessibilityVC, animate: false, isRoot: true)
     }

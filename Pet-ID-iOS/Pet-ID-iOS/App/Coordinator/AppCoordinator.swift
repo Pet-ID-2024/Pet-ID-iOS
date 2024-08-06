@@ -92,8 +92,6 @@ extension AppCoordinator: SplashFinishDelegate {
             runLoginFlow()
         case .main:
             runMainFlow()
-        case .accessibilityGuid:
-            break
         }
     }
 }

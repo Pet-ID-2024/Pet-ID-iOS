@@ -37,7 +37,7 @@ final class LoginCoordinator: Coordinator {
     
     func showLoginMain() {
         let viewModel = LoginMainViewModel()
-        let loginMainVC = UIHostingController(
+        let loginMainVC = BaseHostingViewController(
             rootView: LoginMainView(
                 viewModel: viewModel
             )
@@ -59,7 +59,7 @@ final class LoginCoordinator: Coordinator {
     
     func pushTermsAgreement(oauth: OAuth) {
         let viewModel = TermsAgreementViewModel(oauth: oauth)
-        let termsAgreementVC = UIHostingController(
+        let termsAgreementVC = BaseHostingViewController(
             rootView: TermsAgreementView(
                 viewModel: viewModel
             )
