@@ -9,7 +9,7 @@ import Combine
 import SwiftUI
 
 enum LoginCoordinatorResult {
-    case main
+    case tab
 }
 
 protocol LoginFinishDelegate: AnyObject {
@@ -47,7 +47,7 @@ final class LoginCoordinator: Coordinator {
             .sink(receiveValue: { [weak self] in
                 switch $0 {
                 case .main:
-                    self?.loginFinishDelegate?.finish(result: .main)
+                    self?.loginFinishDelegate?.finish(result: .tab)
                     self?.finish()
                 case .signUp(let oauth):
                     self?.pushTermsAgreement(oauth: oauth)
@@ -71,7 +71,7 @@ final class LoginCoordinator: Coordinator {
                 case .back:
                     self?.pop(animated: true)
                 case .signup:
-                    self?.loginFinishDelegate?.finish(result: .main)
+                    self?.loginFinishDelegate?.finish(result: .tab)
                     self?.finish()
                 }
             }).store(in: &cancelBag)

@@ -10,7 +10,7 @@ import Combine
 
 enum SplashCoordinatorResult {
     case login
-    case main
+    case tab
 }
 
 protocol SplashFinishDelegate: AnyObject {
@@ -55,7 +55,7 @@ final class SplashCoordinator: Coordinator {
                     splashFinishDelegate?.finish(result: .login)
                     self.finish()
                 case .main:
-                    splashFinishDelegate?.finish(result: .main)
+                    splashFinishDelegate?.finish(result: .tab)
                     self.finish()
                 case .firstLogin:
                     showAccessibilityGuid()
