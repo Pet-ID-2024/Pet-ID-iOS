@@ -12,19 +12,20 @@ struct HomeView: View {
     
     var body: some View {
         VStack {
+            HStack{
+                Text("Pet ID")
+                    .font(.petIdTitle2)
+                    .foregroundColor(.petid_blue)
+                Spacer()
+                Image(.notificationicon)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 20)
+            }
+            .padding()
+            
             ScrollView {
                 VStack{
-                    HStack{
-                        Text("Pet ID")
-                            .font(.petIdTitle2)
-                            .foregroundColor(.petid_blue)
-                        Spacer()
-                        Image(.notificationicon)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20)
-                    }
-                    .padding()
                     
                     Button {
                         
