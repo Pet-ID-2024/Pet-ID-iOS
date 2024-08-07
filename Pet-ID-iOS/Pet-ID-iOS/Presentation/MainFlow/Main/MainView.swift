@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject var viewModel: MainViewModel
+    var coordinator: MainCoordinator
     var body: some View {
         ScrollView {
             VStack{
@@ -30,8 +31,14 @@ struct MainView: View {
                     Banner()
                 }
                 
+                Button {
+                    coordinator.showPetCardStart()
+                } label: {
+                    PetCardView()
+                }
+
                 
-                PetCardView()
+//                PetCardView()
 
                 
             }
@@ -40,5 +47,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView(viewModel: MainViewModel(coordinator: MainCoordinator(UINavigationController())))
+    MainView(viewModel: MainViewModel(coordinator: MainCoordinator(UINavigationController())), coordinator: MainCoordinator(UINavigationController()))
 }

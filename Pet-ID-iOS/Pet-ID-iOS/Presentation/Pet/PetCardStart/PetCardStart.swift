@@ -1,68 +1,87 @@
 import SwiftUI
 
 struct PetCardStart: View {
-    @State private var isNextScreenPresented = false
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @ObservedObject var viewModel: PetCardStartViewModel
+    var coordinator: PetCardStartCoordinator
     
     var body: some View {
-        NavigationView {
-            VStack {
-                HStack {
-                    Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(.black)
-                    }
-                    Spacer()
-                }
-                Text("펫 아이디 만들기를 시작합니다")
-                    .font(.system(size: 24))
-                    .padding()
-                Text("반려동물 등록이 필요해요")
-                    .font(.system(size: 16))
-                    .foregroundColor(.gray)
-                Spacer()
-                
-                Image(systemName: "pencil")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                
-                Spacer()
-                
-                NavigationLink(destination: PetInfo().navigationBarBackButtonHidden(), isActive: $isNextScreenPresented) {
-                    EmptyView()
-                }
-                .navigationBarHidden(true)
-                .padding(.horizontal)
-                
+        VStack(alignment: .leading) {
+            HStack {
                 Button(action: {
-                    isNextScreenPresented = true
+                    print("Back button pressed in PetCardStart view")
+                    viewModel.navigateBack()
                 }) {
-                    Text("시작하기")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.black)
                 }
-                .padding()
+                Spacer()
+            }
+            
+            VStack(alignment: .leading, spacing: 10) {
+                Text("1/7")
+                    .font(.headline)
+                    .foregroundColor(.blue)
                 
-                Button {
-                    // 이미 등록되어 있어요 버튼 액션 추가
-                } label: {
-                    Text("이미 등록되어 있어요")
-                        .foregroundColor(.gray)
+                Text("펫 아이디 만들기를 시작합니다")
+                    .font(.title)
+                    .fontWeight(.bold)
+                
+                Text("회원님의 상태를 선택하세요")
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+                
+                Spacer()
+                
+                VStack(spacing: 15) {
+                    Button(action: {
+                        print("Unregistered button pressed")
+                        viewModel.selectState(.unregistered)
+                        coordinator.navigateToUserInfo()
+                    }) {
+                        Text("반려동물 등록을 하지 않았어요")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color(UIColor.systemGray6))
+                            .foregroundColor(.black)
+                            .cornerRadius(10)
+                    }
+                    
+                    Button(action: {
+                        print("External Chip button pressed")
+                        viewModel.selectState(.externalChip)
+                        coordinator.navigateToUserInfo()
+                    }) {
+                        Text("외장칩 등록이 되어있어요")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color(UIColor.systemGray6))
+                            .foregroundColor(.black)
+                            .cornerRadius(10)
+                    }
+                    
+                    Button(action: {
+                        print("Internal Chip button pressed")
+                        viewModel.selectState(.internalChip)
+                        coordinator.navigateToUserInfo()
+                    }) {
+                        Text("내장칩 등록이 되어있어요")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color(UIColor.systemGray6))
+                            .foregroundColor(.black)
+                            .cornerRadius(10)
+                    }
                 }
+                .padding(.top, -100)
+                
+                Spacer()
             }
             .padding()
-//            .navigationBarBackButtonHidden()
         }
+        .padding()
     }
 }
 
-struct PetCardStart_Previews: PreviewProvider {
-    static var previews: some View {
-        PetCardStart()
-    }
+#Preview {
+    PetCardStart(viewModel: PetCardStartViewModel(), coordinator: PetCardStartCoordinator(navigationController: UINavigationController()))
 }

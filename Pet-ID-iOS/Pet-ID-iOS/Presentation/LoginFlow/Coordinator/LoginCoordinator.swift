@@ -32,7 +32,7 @@ final class LoginCoordinator: Coordinator {
     
     func start() {
         showLoginMain()
-        navigationBarHidded()
+        navigationBarHidden()
     }
     
     func showLoginMain() {

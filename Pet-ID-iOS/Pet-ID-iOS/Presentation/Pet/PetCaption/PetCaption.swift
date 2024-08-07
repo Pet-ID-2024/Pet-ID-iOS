@@ -1,13 +1,14 @@
 import SwiftUI
 
 struct PetCaption: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @ObservedObject var viewModel: PetCaptionViewModel
+    var coordinator: PetCaptionCoordinator
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
+                    coordinator.navigateBack()
                 }) {
                     Image(systemName: "chevron.left")
                         .foregroundColor(.black)
@@ -15,13 +16,10 @@ struct PetCaption: View {
                 Spacer()
             }
             
-            VStack(alignment: .leading) {
-                Text("반려동물의 사진을")
-                    .font(.system(size: 24))
-                Text("추가해주세요.")
-                    .font(.system(size: 24))
-                Text("정보가 자동으로 입력됩니다.")
-                    .foregroundColor(.gray)
+            VStack(alignment: .leading, spacing: 10) {
+                Text("4/7")
+                Text("반려동물 \n사진 촬영을 시작할게요")
+                Text("AI가 반려동물의 정보를 가져올거에요!")
             }
             .padding()
             
@@ -29,30 +27,17 @@ struct PetCaption: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             
-            VStack(alignment: .leading, spacing: 20) {
-                HStack {
-                    Image(systemName: "1.circle")
-                    Text("반려동물의 사진을 찍어주세요.")
-                }
-                HStack {
-                    Image(systemName: "2.circle")
-                    HStack(spacing: 0) {
-                        Text("촬영 시작 버튼")
-                            .foregroundColor(.blue)
-                        Text("을 누르면 가이드가 나와요.")
-                    }
-                }
-                HStack {
-                    Image(systemName: "3.circle")
-                    Text("스캔한 정보가 자동으로 입력됩니다.")
-                }
+            VStack {
+                Text("가이드에 맞춰서 \n사진촬영을 해주세요!")
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity)
             }
             .padding()
             
             Spacer()
             
             Button(action: {
-                // 여기에 완료 버튼 액션을 추가하세요
+                viewModel.navigateToCamera()
             }) {
                 Text("촬영 시작")
                     .frame(maxWidth: .infinity)
@@ -68,5 +53,5 @@ struct PetCaption: View {
 }
 
 #Preview {
-    PetCaption()
+    PetCaption(viewModel: PetCaptionViewModel(), coordinator: PetCaptionCoordinator(navigationController: UINavigationController()))
 }

@@ -33,7 +33,7 @@ final class MainCoordinator: Coordinator, ObservableObject {
     func showMain() {
         let viewModel = MainViewModel(coordinator: self)
         let mainVC = UIHostingController(
-            rootView: MainView(viewModel: viewModel)
+            rootView: MainView(viewModel: viewModel, coordinator: self)
         )
         
         push(mainVC, animate: false, isRoot: true)
@@ -48,6 +48,12 @@ final class MainCoordinator: Coordinator, ObservableObject {
         let petCardVC = UIHostingController(rootView: PetCardView())
         navigationController.pushViewController(petCardVC, animated: true)
     }
+    
+    func showPetCardStart() {
+            let petCardStartCoordinator = PetCardStartCoordinator(navigationController: navigationController)
+            childCoordinators[petCardStartCoordinator.id] = petCardStartCoordinator
+            petCardStartCoordinator.start()
+        }
     
     deinit {
         Logger().debug("Coordinator Deinit \(self)")

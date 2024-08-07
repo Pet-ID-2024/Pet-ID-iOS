@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PetCardView: View {
     @StateObject private var viewModel = PetCardViewModel()
+    var coordinator: MainCoordinator?
     
     var body: some View {
         VStack{
@@ -23,7 +24,7 @@ struct PetCardView: View {
                     Text(viewModel.card.mainText)
                         .multilineTextAlignment(.center)
                         .padding()
-                    DSImage.petidicon.toImage()
+                    Image(systemName: "pencil")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 200)
@@ -32,7 +33,7 @@ struct PetCardView: View {
                         .bold()
                         .multilineTextAlignment(.center)
                     Button(action: {
-                        
+                        coordinator?.showPetCard()
                     }) {
                         Text(viewModel.card.buttonText)
                             .font(.petIdBody1)
@@ -60,5 +61,5 @@ struct PetCardView: View {
 }
 
 #Preview {
-    PetCardView()
+    PetCardView(coordinator: nil)
 }

@@ -12,7 +12,7 @@ struct Tab: View {
 
     var body: some View {
         TabView {
-            MainView(viewModel: MainViewModel(coordinator: mainCoordinator))
+            MainView(viewModel: MainViewModel(coordinator: mainCoordinator), coordinator: mainCoordinator)
                 .tabItem {
                     Image(systemName: "house")
                     Text("홈")

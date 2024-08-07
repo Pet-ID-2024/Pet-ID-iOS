@@ -21,7 +21,7 @@ class MainViewModel: BaseViewModel<MainCoordinatorResult> {
         coordinator?.showBanner()
     }
     
-//    @MainActor func showPetCard() {
-//        coordinator?.showPetCard()
-//    }
+    @MainActor func showPetCard() {
+        coordinator?.showPetCard()
+    }
 }
