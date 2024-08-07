@@ -71,8 +71,8 @@ final class LoginCoordinator: Coordinator {
                 case .back:
                     self?.pop(animated: true)
                 case .signup:
-                    print()
-                    break
+                    self?.loginFinishDelegate?.finish(result: .main)
+                    self?.finish()
                 }
             }).store(in: &cancelBag)
         

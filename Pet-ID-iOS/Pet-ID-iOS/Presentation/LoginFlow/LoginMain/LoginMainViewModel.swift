@@ -29,7 +29,7 @@ final class LoginMainViewModel: BaseViewModel<LoginMainReesult> {
         
     }
     
-    @MainActor func toSignUp(oauth: OAuth) {
+    func toSignUp(oauth: OAuth) {
         self.result.send(.signUp(oauth))
     }
 }
@@ -245,6 +245,10 @@ extension LoginMainViewModel {
             } catch let error as NetworkError {
                 if case .invalidResponse(let errorModel) = error {
                     if errorModel.status == 404 {
+                        await toSignUp(oauth: oauth)
+                    }
+                } else if case .underlying(let statusCode, _) = error {
+                    if statusCode == 404 {
                         await toSignUp(oauth: oauth)
                     }
                 } else {

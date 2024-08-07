@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "petidicon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "240726_메인_3D아이콘.png",
+      "filename" : "petidicon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "petidicon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
