@@ -62,11 +62,11 @@ public final class AppCoordinator: Coordinator {
         coordinator.start()
     }
     
-    private func runMainFlow() {
-        let coordinator = MainCoordinator(navigationController)
-        
+    private func runTabFlow() {
+        let coordinator = TabCoordinator(navigationController)
         add(coordinator: coordinator)
         coordinator.finishDelegate = self
+        coordinator.tabFinishDelegate = self
         coordinator.start()
     }
     
@@ -90,10 +90,8 @@ extension AppCoordinator: SplashFinishDelegate {
         switch result {
         case .login:
             runLoginFlow()
-        case .main:
-            runMainFlow()
-        case .accessibilityGuid:
-            break
+        case .tab:
+            runTabFlow()
         }
     }
 }
@@ -102,8 +100,8 @@ extension AppCoordinator: SplashFinishDelegate {
 extension AppCoordinator: LoginFinishDelegate {
     func finish(result: LoginCoordinatorResult) {
         switch result {
-        case .main:
-            runMainFlow()
+        case .tab:
+            runTabFlow()
         }
     }
 }
@@ -112,5 +110,9 @@ extension AppCoordinator: CoordinatorFinishDelegate {
     public func coordinatorDidFinish(childCoordinator: any Coordinator) {
         self.free(coordinator: childCoordinator)
     }
+}
+
+extension AppCoordinator: TabFinishDelegate {
+    
 }
 

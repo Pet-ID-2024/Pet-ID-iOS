@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PetCardView: View {
     @StateObject private var viewModel = PetCardViewModel()
-    var coordinator: MainCoordinator?
+    var coordinator: HomeCoordinator?
     
     var body: some View {
         VStack{
@@ -33,7 +33,7 @@ struct PetCardView: View {
                         .bold()
                         .multilineTextAlignment(.center)
                     Button(action: {
-                        coordinator?.showPetCard()
+                        
                     }) {
                         Text(viewModel.card.buttonText)
                             .font(.petIdBody1)

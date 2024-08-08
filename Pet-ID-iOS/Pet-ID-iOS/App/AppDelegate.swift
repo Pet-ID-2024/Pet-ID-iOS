@@ -13,6 +13,7 @@ import FirebaseAnalytics
 import KakaoSDKCommon
 import KakaoSDKAuth
 import NaverThirdPartyLogin
+import GoogleSignIn
 
 @main
 class AppDelegate: NSObject, UIApplicationDelegate {
@@ -54,6 +55,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         if AuthApi.isKakaoTalkLoginUrl(url) {
             return AuthController.handleOpenUrl(url: url)
         }
+        
+        return GIDSignIn.sharedInstance.handle(url)
         
         return false
     }

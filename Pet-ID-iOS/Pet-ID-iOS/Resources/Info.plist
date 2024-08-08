@@ -32,7 +32,19 @@
 				<string>com.pet-id-iOS</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>googleLogin</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.920376783702-qmammpi3q83ukhht44ovu8r65j98tod9</string>
+			</array>
+		</dict>
 	</array>
+	<key>GIDClientID</key>
+	<string>920376783702-qmammpi3q83ukhht44ovu8r65j98tod9.apps.googleusercontent.com</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>kakaolink</string>

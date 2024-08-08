@@ -11,6 +11,7 @@ import KakaoSDKUser
 import NaverThirdPartyLogin
 import Combine
 import Alamofire
+import GoogleSignIn
 
 enum LoginMainReesult {
     case main
@@ -28,8 +29,35 @@ final class LoginMainViewModel: BaseViewModel<LoginMainReesult> {
         
     }
     
-    @MainActor func toSignUp(oauth: OAuth) {
+    func toSignUp(oauth: OAuth) {
         self.result.send(.signUp(oauth))
+    }
+}
+
+// MARK: - GoogleLogin
+extension LoginMainViewModel {
+    func runGoogleLogin() {
+        
+        guard let vc = UIWindow.currentKeyWindow?.rootViewController else { return }
+        
+        GIDSignIn.sharedInstance.signIn(withPresenting: vc) { [weak self] result, error in
+            
+            guard let self else { return }
+            
+            if let error = error {
+                logger.error(error)
+                return
+            }
+            
+            guard let user = result?.user,
+            let id = user.userID else { return }
+            
+            let accessToken = user.accessToken.tokenString
+            
+            let oauth = OAuth(type: .google, accessToken: accessToken, id: id)
+            
+            requestOAuthLogin(oauth: oauth)
+        }
     }
 }
 
@@ -167,7 +195,34 @@ extension LoginMainViewModel {
                 
             }
         } else {
-            
+            UserApi.shared.loginWithKakaoAccount{ [weak self] token, error in
+                
+                guard let self else { return }
+                
+                if let error = error {
+                    self.logger.error(error)
+                    return
+                }
+                
+                guard let accessToken = token?.accessToken else { return }
+                
+                UserApi.shared.me(completion: { user, error in
+                    
+                    guard let user else { return }
+                    
+                    guard let id = user.id else { return }
+                    
+                    let oauth: OAuth = OAuth(
+                        type: .kakao,
+                        accessToken: accessToken,
+                        id: "\(id)"
+                    )
+                    
+                    self.requestOAuthLogin(
+                        oauth: oauth
+                    )
+                })
+            }
         }
     }
 }
@@ -189,7 +244,11 @@ extension LoginMainViewModel {
                 }
             } catch let error as NetworkError {
                 if case .invalidResponse(let errorModel) = error {
-                    if errorModel.code == 404 {
+                    if errorModel.status == 404 {
+                        await toSignUp(oauth: oauth)
+                    }
+                } else if case .underlying(let statusCode, _) = error {
+                    if statusCode == 404 {
                         await toSignUp(oauth: oauth)
                     }
                 } else {

@@ -9,7 +9,7 @@ import Combine
 import SwiftUI
 
 enum LoginCoordinatorResult {
-    case main
+    case tab
 }
 
 protocol LoginFinishDelegate: AnyObject {
@@ -37,7 +37,7 @@ final class LoginCoordinator: Coordinator {
     
     func showLoginMain() {
         let viewModel = LoginMainViewModel()
-        let loginMainVC = UIHostingController(
+        let loginMainVC = BaseHostingViewController(
             rootView: LoginMainView(
                 viewModel: viewModel
             )
@@ -47,7 +47,7 @@ final class LoginCoordinator: Coordinator {
             .sink(receiveValue: { [weak self] in
                 switch $0 {
                 case .main:
-                    self?.loginFinishDelegate?.finish(result: .main)
+                    self?.loginFinishDelegate?.finish(result: .tab)
                     self?.finish()
                 case .signUp(let oauth):
                     self?.pushTermsAgreement(oauth: oauth)
@@ -59,7 +59,7 @@ final class LoginCoordinator: Coordinator {
     
     func pushTermsAgreement(oauth: OAuth) {
         let viewModel = TermsAgreementViewModel(oauth: oauth)
-        let termsAgreementVC = UIHostingController(
+        let termsAgreementVC = BaseHostingViewController(
             rootView: TermsAgreementView(
                 viewModel: viewModel
             )
@@ -71,8 +71,8 @@ final class LoginCoordinator: Coordinator {
                 case .back:
                     self?.pop(animated: true)
                 case .signup:
-                    print()
-                    break
+                    self?.loginFinishDelegate?.finish(result: .tab)
+                    self?.finish()
                 }
             }).store(in: &cancelBag)
         
