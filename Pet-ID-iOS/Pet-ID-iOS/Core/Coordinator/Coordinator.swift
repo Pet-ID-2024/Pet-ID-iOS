@@ -58,7 +58,7 @@ public extension Coordinator {
     
     // MARK: - navigationBar
 
-    func navigationBarHidded() {
+    func navigationBarHidden() {
         navigationController.setNavigationBarHidden(true, animated: false)
     }
 }

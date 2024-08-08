@@ -1,13 +1,14 @@
 import SwiftUI
 
 struct PetCaption: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @ObservedObject var viewModel: PetCaptionViewModel
+    var coordinator: PetCaptionCoordinator
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
+                    coordinator.navigateBack()
                 }) {
                     Image(systemName: "chevron.left")
                         .foregroundColor(.black)
@@ -15,58 +16,55 @@ struct PetCaption: View {
                 Spacer()
             }
             
-            VStack(alignment: .leading) {
-                Text("반려동물의 사진을")
-                    .font(.system(size: 24))
-                Text("추가해주세요.")
-                    .font(.system(size: 24))
-                Text("정보가 자동으로 입력됩니다.")
-                    .foregroundColor(.gray)
+            VStack(alignment: .leading, spacing: 10) {
+                Text("4/7")
+                    .font(.petIdTitle1)
+                    .foregroundColor(.petid_clearblue)
+                Text("반려동물 \n사진 촬영을 시작할게요")
+                    .font(.petIdTitle1)
+                Text("AI가 반려동물의 정보를 가져올거에요!")
+                    .font(.petIdBody2)
+                    .foregroundColor(.petid_gray)
             }
             .padding()
             
-            Image(systemName: "pencil")
+            Spacer()
+            
+            DSImage.captionicon.toImage()
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .frame(width: 360, height: 300)
+                .multilineTextAlignment(.center)
             
-            VStack(alignment: .leading, spacing: 20) {
-                HStack {
-                    Image(systemName: "1.circle")
-                    Text("반려동물의 사진을 찍어주세요.")
-                }
-                HStack {
-                    Image(systemName: "2.circle")
-                    HStack(spacing: 0) {
-                        Text("촬영 시작 버튼")
-                            .foregroundColor(.blue)
-                        Text("을 누르면 가이드가 나와요.")
-                    }
-                }
-                HStack {
-                    Image(systemName: "3.circle")
-                    Text("스캔한 정보가 자동으로 입력됩니다.")
-                }
+            Spacer()
+            
+            VStack {
+                Text("가이드에 맞춰서 \n사진촬영을 해주세요!")
+                    .font(.petIdTitle3)
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity)
             }
             .padding()
             
             Spacer()
             
             Button(action: {
-                // 여기에 완료 버튼 액션을 추가하세요
+                viewModel.navigateToCamera()
             }) {
                 Text("촬영 시작")
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
+                    .background(Color.petid_clearblue)
+                    .foregroundColor(.petid_white)
+                    .font(.petIdBody1)
                     .cornerRadius(8)
             }
         }
-        .navigationBarBackButtonHidden(true) // 뒤로 가기 버튼 숨기기
+        .navigationBarHidden(true)
         .padding()
     }
 }
 
 #Preview {
-    PetCaption()
+    PetCaption(viewModel: PetCaptionViewModel(), coordinator: PetCaptionCoordinator(navigationController: UINavigationController()))
 }

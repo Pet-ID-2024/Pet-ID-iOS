@@ -9,13 +9,14 @@ import SwiftUI
 
 struct PetCardView: View {
     @StateObject private var viewModel = PetCardViewModel()
+    var coordinator: HomeCoordinator?
     
     var body: some View {
         VStack{
             ZStack {
                 Rectangle()
                     .cornerRadius(10)
-                    .foregroundColor(.petid_lightgrey)
+                    .foregroundColor(.petid_lightgray)
                     .padding()
                     .shadow(radius: 5)
                 
@@ -23,7 +24,7 @@ struct PetCardView: View {
                     Text(viewModel.card.mainText)
                         .multilineTextAlignment(.center)
                         .padding()
-                    DSImage.petidicon.toImage()
+                    Image(systemName: "pencil")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 200)
@@ -60,5 +61,5 @@ struct PetCardView: View {
 }
 
 #Preview {
-    PetCardView()
+    PetCardView(coordinator: nil)
 }

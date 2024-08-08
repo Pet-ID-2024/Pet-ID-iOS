@@ -25,7 +25,7 @@ struct AccessibilityRightView: View {
                 Text("PET ID 고객님의 편리한 앱 이용을 위해 다음의 접근 권한이 필요합니다.")
                     .fixedSize(horizontal: false, vertical: true)
                     .font(.petIdBody2)
-                    .foregroundColor(.petid_grey)
+                    .foregroundColor(.petid_gray)
 
                 Spacer()
                     .frame(height: 20)
@@ -41,7 +41,6 @@ struct AccessibilityRightView: View {
             }
             
             VStack(spacing: 0){
-                
                 VStack(alignment: .leading){
                     HStack {
                         DSImage.infoicon.toImage()
@@ -61,7 +60,7 @@ struct AccessibilityRightView: View {
                 .padding()
                 .background(
                     Rectangle()
-                        .foregroundColor(.petid_lightgrey)
+                        .foregroundColor(.petid_lightgray)
                         .cornerRadius(10)
                 )
                 
