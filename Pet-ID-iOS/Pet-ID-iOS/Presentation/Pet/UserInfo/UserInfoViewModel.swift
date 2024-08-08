@@ -8,9 +8,14 @@
 import SwiftUI
 import Combine
 
-class UserInfoViewModel: BaseViewModel<Bool> {
+enum UserInfoState {
+    case valid
+    case invalid
+    case back
+}
+
+class UserInfoViewModel: BaseViewModel<UserInfoState> {
     @Published var user: UserModel
-    @Published var isNextButtonActive: Bool = false
     @Published var isNextButtonDisabled: Bool = true
     
     init(user: UserModel = UserModel(name: "", phoneNumber: "", address: "", detailAddress: "")) {
@@ -43,10 +48,19 @@ class UserInfoViewModel: BaseViewModel<Bool> {
     }
     
     func validateInput() {
-        isNextButtonDisabled = user.name.isEmpty || user.phoneNumber.isEmpty || !user.phoneNumber.allSatisfy({ $0.isNumber }) || user.address.isEmpty
-        
-        if !isNextButtonDisabled {
-            result.send(true)
+        let isValid = !user.name.isEmpty &&
+        !user.phoneNumber.isEmpty &&
+        user.phoneNumber.allSatisfy({ $0.isNumber }) &&
+        !user.address.isEmpty
+        isNextButtonDisabled = !isValid
+        if isValid {
+            result.send(.valid)
+        } else {
+            result.send(.invalid)
         }
+    }
+    
+    func navigateBack() {
+        result.send(.back)
     }
 }

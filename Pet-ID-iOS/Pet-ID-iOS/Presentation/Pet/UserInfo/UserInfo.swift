@@ -24,15 +24,15 @@ struct UserInfo: View {
                 Spacer()
             }
             
-            Text("회원님의 정보를 알려주세요")
-                .font(.title2)
-                .padding(.top)
-            
-            Text("펫 아이디 회원은 누구나 서비스를 제공 받을 수 있습니다.")
-                .font(.body)
-                .foregroundStyle(.gray)
             
             Text("2/7")
+                .font(.petIdTitle1)
+                .foregroundColor(.petid_clearblue)
+            
+            Text("회원님의 정보를 \n알려주세요")
+                .font(.petIdTitle1)
+            
+            
             
             CustomField(
                 text: $viewModel.user.name,

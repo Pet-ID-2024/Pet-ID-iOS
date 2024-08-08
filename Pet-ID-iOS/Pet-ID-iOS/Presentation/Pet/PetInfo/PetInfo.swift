@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct PetInfo: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @StateObject private var viewModel = PetInfoViewModel()
     
     var body: some View {
@@ -10,7 +9,7 @@ struct PetInfo: View {
                 VStack(alignment: .leading) {
                     HStack {
                         Button(action: {
-                            self.presentationMode.wrappedValue.dismiss()
+                            viewModel.navigateBack()
                         }) {
                             Image(systemName: "chevron.left")
                                 .foregroundColor(.black)
@@ -21,9 +20,12 @@ struct PetInfo: View {
                     .padding(.leading, -10)
                     
                     
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 10) {
                         Text("3/7")
+                            .font(.petIdTitle1)
+                            .foregroundColor(.petid_clearblue)
                         Text("반려동물의 정보를 \n알려주세요")
+                            .font(.petIdTitle1)
                     }
                     .padding()
                     

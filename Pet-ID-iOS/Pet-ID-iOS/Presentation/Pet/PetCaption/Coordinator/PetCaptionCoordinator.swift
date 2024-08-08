@@ -51,6 +51,10 @@ final class PetCaptionCoordinator: Coordinator {
         pop(animated: true)
     }
     
+    func navigationBarHidden(_ hidden: Bool, animated: Bool = false) {
+        navigationController.setNavigationBarHidden(hidden, animated: animated)
+    }
+    
     deinit {
         Logger().debug("Coordinator Deinit \(self)")
     }

@@ -16,7 +16,7 @@ struct PetCardView: View {
             ZStack {
                 Rectangle()
                     .cornerRadius(10)
-                    .foregroundColor(.petid_lightgrey)
+                    .foregroundColor(.petid_lightgray)
                     .padding()
                     .shadow(radius: 5)
                 

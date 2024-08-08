@@ -14,7 +14,7 @@ struct AccessibilityItemView: View {
             ZStack {
                 Circle()
                     .aspectRatio(contentMode: .fit)
-                    .foregroundColor(.petid_lightgrey)
+                    .foregroundColor(.petid_lightgray)
                     .frame(width: 50, height: 50)
                 item.icon
                     .resizable()
@@ -39,7 +39,7 @@ struct AccessibilityItemView: View {
                 .font(.petIdBody2)
                 
                 Text(item.description)
-                    .foregroundColor(.petid_grey)
+                    .foregroundColor(.petid_gray)
                     .font(.petIdBody2)
             }
         }

@@ -54,7 +54,6 @@ final class PetInfoCoordinator: Coordinator {
         push(petInfoVC, animate: false, isRoot: true)
     }
     
-    // PetCaption 화면을 보여주는 메소드
     func showPetCaption() {
         let viewModel = PetCaptionViewModel()
         let petCaptionVC = UIHostingController(
@@ -65,10 +64,10 @@ final class PetInfoCoordinator: Coordinator {
             .sink(receiveValue: { [weak self] result in
                 switch result {
                 case .nextStep:
-                    // 다음 스텝으로 이동하는 로직을 추가
+                    
                     self?.finish()
                 case .back:
-                    self?.pop(animated: true)
+                    self?.navigateBack()
                 case .completed:
                     self?.finishDelegate
                 }
@@ -80,6 +79,10 @@ final class PetInfoCoordinator: Coordinator {
     func navigateBack() {
         pop(animated: true)
     }
+    
+//    func navigationBarHidden() {
+//        navigationController.setNavigationBarHidden(hidden, animated: animated)
+//    }
     
     deinit {
         Logger().debug("PetInfoCoordinator Deinit \(self)")

@@ -13,12 +13,10 @@ class PetCardStartViewModel: BaseViewModel<PetRegistrationState> {
     
     func selectState(_ state: PetRegistrationState) {
         self.selectedState = state
-        print("PetCardStartViewModel - State selected: \(state)")
         result.send(state)
     }
     
     func navigateBack() {
-        print("PetCardStartViewModel - navigateBack called")
         result.send(.back)
     }
 }

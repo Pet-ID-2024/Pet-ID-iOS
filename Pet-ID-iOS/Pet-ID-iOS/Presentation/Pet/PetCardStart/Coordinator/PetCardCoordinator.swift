@@ -19,13 +19,11 @@ final class PetCardStartCoordinator: Coordinator {
     }
     
     func start() {
-        print("Starting PetCardStartCoordinator")
         showPetCardStart()
         navigationBarHidden()
     }
     
     private func showPetCardStart() {
-        print("Showing PetCardStart view")
         let viewModel = PetCardStartViewModel()
         let petCardStartView = PetCardStart(viewModel: viewModel, coordinator: self)
         
@@ -34,17 +32,14 @@ final class PetCardStartCoordinator: Coordinator {
         
         viewModel.result.subject
             .sink(receiveValue: { [weak self] state in
-                print("PetRegistrationState received in Coordinator: \(state)")
                 self?.handleStateSelection(state)
             })
             .store(in: &cancelBag)
     }
     
     private func handleStateSelection(_ state: PetRegistrationState) {
-        print("Handling state selection: \(state)")
         switch state {
         case .unregistered, .externalChip, .internalChip:
-            print("State matched: \(state). Navigating to UserInfo.")
             navigateToUserInfo()
         case .back:
             navigateBack()
@@ -52,16 +47,18 @@ final class PetCardStartCoordinator: Coordinator {
     }
     
     func navigateToUserInfo() {
-        print("Navigating to UserInfo")
         let userInfoCoordinator = UserInfoCoordinator(navigationController: navigationController)
         childCoordinators[userInfoCoordinator.id] = userInfoCoordinator
         userInfoCoordinator.start()
     }
     
     func navigateBack() {
-        print("Navigating back")
         pop(animated: true)
     }
+    
+//    func navigationBarHidden() {
+//        navigationController.setNavigationBarHidden(hidden, animated: animated)
+//    }
     
     deinit {
         Logger().debug("PetCardStartCoordinator Deinit \(self)")

@@ -16,7 +16,7 @@ struct AccessibilityRightView: View {
                 .padding(.bottom, 5)
             Text("PET ID 고객님의 편리한 앱 이용을 위해 \n접근권한 허용이 필요합니다.")
                 .font(.petIdBody2)
-                .foregroundColor(.petid_grey)
+                .foregroundColor(.petid_gray)
             
             Divider()
                 
@@ -30,7 +30,7 @@ struct AccessibilityRightView: View {
         VStack{
             ZStack{
                 Rectangle()
-                    .foregroundColor(.petid_lightgrey)
+                    .foregroundColor(.petid_lightgray)
                     .frame(width: 360, height: 72)
                     .cornerRadius(10)
                 VStack(alignment: .leading){

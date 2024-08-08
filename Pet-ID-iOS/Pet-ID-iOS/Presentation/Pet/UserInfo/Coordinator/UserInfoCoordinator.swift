@@ -28,12 +28,23 @@ final class UserInfoCoordinator: Coordinator {
         push(userInfoVC, animate: true)
         
         viewModel.result.subject
-            .sink(receiveValue: { [weak self] isValid in
-                if isValid {
-                    self?.navigateToPetInfo()
-                }
+            .sink(receiveValue: { [weak self] state in
+                self?.handleStateSelection(state)
             })
             .store(in: &cancelBag)
+    }
+    
+    private func handleStateSelection(_ state: UserInfoState) {
+        print("Handling UserInfoState: \(state)")
+        switch state {
+        case .valid:
+            navigateToPetInfo()
+        case .back:
+            self.navigateBack()
+        case .invalid:
+            // Handle invalid state if needed
+            print("Input is invalid")
+        }
     }
     
     func navigateToPetInfo() {
@@ -44,8 +55,13 @@ final class UserInfoCoordinator: Coordinator {
     }
     
     func navigateBack() {
+        print("Navigating back")
         pop(animated: true)
     }
+    
+//    func navigationBarHidden() {
+//        navigationController.setNavigationBarHidden(hidden, animated: animated)
+//    }
     
     func finish() {
         finishDelegate?.coordinatorDidFinish(childCoordinator: self)
