@@ -52,6 +52,7 @@
 		FA6E49F72C2E3FEC00F3C957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49F62C2E3FEC00F3C957 /* AppDelegate.swift */; };
 		FA6E49F92C2E40A500F3C957 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E49F82C2E40A500F3C957 /* SceneDelegate.swift */; };
 		FA8175C82C6394FC00C17B90 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8175C72C6394FC00C17B90 /* TabBarCoordinator.swift */; };
+		FAAEFB972C64CAD60035A488 /* client_910865919536_qchidigpsv035g8sqsn8vika8haqq9gg_apps_googleusercontent.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAAEFB962C64CAD50035A488 /* client_910865919536_qchidigpsv035g8sqsn8vika8haqq9gg_apps_googleusercontent.plist */; };
 		FAB57C642C49D4F300F471F0 /* PetIdNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB57C632C49D4F300F471F0 /* PetIdNotificationCenter.swift */; };
 		FAB57C662C49D5A700F471F0 /* LogoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB57C652C49D5A700F471F0 /* LogoutUseCase.swift */; };
 		FAC4CD422C49209400A3658A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4CD412C49209400A3658A /* NetworkError.swift */; };
@@ -173,6 +174,7 @@
 		FA6E49F62C2E3FEC00F3C957 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA6E49F82C2E40A500F3C957 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FA8175C72C6394FC00C17B90 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		FAAEFB962C64CAD50035A488 /* client_910865919536_qchidigpsv035g8sqsn8vika8haqq9gg_apps_googleusercontent.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = client_910865919536_qchidigpsv035g8sqsn8vika8haqq9gg_apps_googleusercontent.plist; sourceTree = "<group>"; };
 		FAB57C632C49D4F300F471F0 /* PetIdNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetIdNotificationCenter.swift; sourceTree = "<group>"; };
 		FAB57C652C49D5A700F471F0 /* LogoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUseCase.swift; sourceTree = "<group>"; };
 		FAC4CD412C49209400A3658A /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -689,6 +691,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE5660A2C3EAF6C00D77149 /* GoogleService-Info.plist */,
+				FAAEFB962C64CAD50035A488 /* client_910865919536_qchidigpsv035g8sqsn8vika8haqq9gg_apps_googleusercontent.plist */,
 				0AB4E1072C2B14BC006331B4 /* Info.plist */,
 				0A21CEE62C0DE23A005DD8E2 /* Assets.xcassets */,
 			);
@@ -1100,6 +1103,7 @@
 				0A21CEE72C0DE23A005DD8E2 /* Assets.xcassets in Resources */,
 				FAE5660B2C3EAF6C00D77149 /* GoogleService-Info.plist in Resources */,
 				0AC9B0882C4278D30040FB28 /* NotoSansKR-Regular.ttf in Resources */,
+				FAAEFB972C64CAD60035A488 /* client_910865919536_qchidigpsv035g8sqsn8vika8haqq9gg_apps_googleusercontent.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
