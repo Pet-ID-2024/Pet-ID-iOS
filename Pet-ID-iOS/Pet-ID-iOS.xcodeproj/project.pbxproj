@@ -31,12 +31,12 @@
 		0A5FE6982C45416D00B95F3C /* AccessibilityRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FE6972C45416D00B95F3C /* AccessibilityRightView.swift */; };
 		0A5FE69A2C45419300B95F3C /* AccessibilityRightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FE6992C45419300B95F3C /* AccessibilityRightViewModel.swift */; };
 		0A5FE69C2C4541A500B95F3C /* AccessibilityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FE69B2C4541A500B95F3C /* AccessibilityItemView.swift */; };
-		0A66689E2C297E3F00EB6E8D /* HospitalSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A66689D2C297E3F00EB6E8D /* HospitalSuccess.swift */; };
 		0AC9B0852C4278B30040FB28 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC9B0842C4278B30040FB28 /* Font+.swift */; };
 		0AC9B0882C4278D30040FB28 /* NotoSansKR-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AC9B0862C4278D30040FB28 /* NotoSansKR-Regular.ttf */; };
 		0AC9B0892C4278D30040FB28 /* NotoSansKR-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AC9B0872C4278D30040FB28 /* NotoSansKR-SemiBold.ttf */; };
 		0AC9B08B2C4278DD0040FB28 /* NotoSansKR-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AC9B08A2C4278DD0040FB28 /* NotoSansKR-Bold.ttf */; };
 		0AC9B08D2C427D660040FB28 /* Image+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC9B08C2C427D660040FB28 /* Image+.swift */; };
+		FA136CD52C6B92D6007D7A9E /* ReservationMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA136CD42C6B92D6007D7A9E /* ReservationMainView.swift */; };
 		FA3584E82C49873C0019C46A /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3584E72C49873C0019C46A /* Interface.swift */; };
 		FA3584EA2C49875E0019C46A /* ResultPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3584E92C49875E0019C46A /* ResultPublisher.swift */; };
 		FA3F56BE2C4575CC0011969A /* IsEnablePetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F56BD2C4575CC0011969A /* IsEnablePetButton.swift */; };
@@ -150,15 +150,16 @@
 		0A5FE6972C45416D00B95F3C /* AccessibilityRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityRightView.swift; sourceTree = "<group>"; };
 		0A5FE6992C45419300B95F3C /* AccessibilityRightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityRightViewModel.swift; sourceTree = "<group>"; };
 		0A5FE69B2C4541A500B95F3C /* AccessibilityItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityItemView.swift; sourceTree = "<group>"; };
-		0A66689D2C297E3F00EB6E8D /* HospitalSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalSuccess.swift; sourceTree = "<group>"; };
 		0AB4E1072C2B14BC006331B4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AC9B0842C4278B30040FB28 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		0AC9B0862C4278D30040FB28 /* NotoSansKR-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.ttf"; sourceTree = "<group>"; };
-		0AC9B0872C4278D30040FB28 /* NotoSansKR-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-SemiBold.ttf"; sourceTree = "<group>"; };
+		0AC9B0872C4278D30040FB28 /* NotoSansKR-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-SemiBold.ttf"; path = "../NotoSansKR-SemiBold.ttf"; sourceTree = "<group>"; };
 		0AC9B08A2C4278DD0040FB28 /* NotoSansKR-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.ttf"; sourceTree = "<group>"; };
 		0AC9B08C2C427D660040FB28 /* Image+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+.swift"; sourceTree = "<group>"; };
 		3C7286A000034D1F020526EC /* Pods-Pet-ID-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet-ID-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Pet-ID-iOS/Pods-Pet-ID-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		8BE1E2477EE2103256707795 /* Pods-Pet-ID-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet-ID-iOS.release.xcconfig"; path = "Target Support Files/Pods-Pet-ID-iOS/Pods-Pet-ID-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		FA136CD42C6B92D6007D7A9E /* ReservationMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationMainView.swift; sourceTree = "<group>"; };
+		FA136CD72C6B95D9007D7A9E /* NotoSansKR-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.ttf"; sourceTree = "<group>"; };
 		FA3584E72C49873C0019C46A /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
 		FA3584E92C49875E0019C46A /* ResultPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPublisher.swift; sourceTree = "<group>"; };
 		FA3F56BD2C4575CC0011969A /* IsEnablePetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsEnablePetButton.swift; sourceTree = "<group>"; };
@@ -430,32 +431,6 @@
 			path = AccessibilityRight;
 			sourceTree = "<group>";
 		};
-		0A6668992C297DE100EB6E8D /* HospitalReservation */ = {
-			isa = PBXGroup;
-			children = (
-				0A66689B2C297E1A00EB6E8D /* ReservationSuccess */,
-			);
-			path = HospitalReservation;
-			sourceTree = "<group>";
-		};
-		0A66689B2C297E1A00EB6E8D /* ReservationSuccess */ = {
-			isa = PBXGroup;
-			children = (
-				0A66689D2C297E3F00EB6E8D /* HospitalSuccess.swift */,
-			);
-			path = ReservationSuccess;
-			sourceTree = "<group>";
-		};
-		0AC9B0812C4278990040FB28 /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				0AC9B0862C4278D30040FB28 /* NotoSansKR-Regular.ttf */,
-				0AC9B0872C4278D30040FB28 /* NotoSansKR-SemiBold.ttf */,
-				0AC9B08A2C4278DD0040FB28 /* NotoSansKR-Bold.ttf */,
-			);
-			path = Font;
-			sourceTree = "<group>";
-		};
 		1FC2591F97EAEF2423DFA2D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -470,6 +445,33 @@
 				8BE1E2477EE2103256707795 /* Pods-Pet-ID-iOS.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA136CCF2C6B91BE007D7A9E /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				FA136CD12C6B9263007D7A9E /* Main */,
+			);
+			path = Reservation;
+			sourceTree = "<group>";
+		};
+		FA136CD12C6B9263007D7A9E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FA136CD42C6B92D6007D7A9E /* ReservationMainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FA136CD92C6B95FE007D7A9E /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				0AC9B0862C4278D30040FB28 /* NotoSansKR-Regular.ttf */,
+				0AC9B08A2C4278DD0040FB28 /* NotoSansKR-Bold.ttf */,
+				0AC9B0872C4278D30040FB28 /* NotoSansKR-SemiBold.ttf */,
+				FA136CD72C6B95D9007D7A9E /* NotoSansKR-Medium.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		FA3584E52C4987190019C46A /* Interface */ = {
@@ -518,7 +520,6 @@
 		FA46F33F2C3EC53C003CAC02 /* DSKit */ = {
 			isa = PBXGroup;
 			children = (
-				0AC9B0812C4278990040FB28 /* Font */,
 				FA46F3452C3EC96F003CAC02 /* Extension */,
 				FA46F3402C3EC556003CAC02 /* Buttons */,
 			);
@@ -591,9 +592,7 @@
 		FA6E49D82C2C4E3600F3C957 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				FA8175C92C639ACA00C17B90 /* New Group */,
 				FADD57322C31A09300770AC6 /* MainFlow */,
-				0A6668992C297DE100EB6E8D /* HospitalReservation */,
 				0A1069F62C1746F00031E230 /* Pet */,
 				FADD57372C31A0DA00770AC6 /* LoginFlow */,
 				0A21CF1A2C0DEC48005DD8E2 /* SplashFlow */,
@@ -690,6 +689,7 @@
 		FA6E49ED2C2C500800F3C957 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA136CD92C6B95FE007D7A9E /* Font */,
 				FAE5660A2C3EAF6C00D77149 /* GoogleService-Info.plist */,
 				FAAEFB962C64CAD50035A488 /* client_910865919536_qchidigpsv035g8sqsn8vika8haqq9gg_apps_googleusercontent.plist */,
 				0AB4E1072C2B14BC006331B4 /* Info.plist */,
@@ -708,13 +708,6 @@
 				FA6E49F82C2E40A500F3C957 /* SceneDelegate.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		FA8175C92C639ACA00C17B90 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		FAB57C622C49D42700F471F0 /* PetIDNotificationCenter */ = {
@@ -831,10 +824,9 @@
 		FADD57322C31A09300770AC6 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
-				0A5D60222C58C7D4009D656D /* PetCard */,
-				0A5D60202C58C7C7009D656D /* Banner */,
 				FAC4CD562C494C4B00A3658A /* Coordinator */,
 				FADD57332C31A09700770AC6 /* HomeView */,
+				FA136CCF2C6B91BE007D7A9E /* Reservation */,
 				FA8175C72C6394FC00C17B90 /* TabBarCoordinator.swift */,
 			);
 			path = MainFlow;
@@ -843,6 +835,8 @@
 		FADD57332C31A09700770AC6 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				0A5D60222C58C7D4009D656D /* PetCard */,
+				0A5D60202C58C7C7009D656D /* Banner */,
 				FADD57352C31A0A400770AC6 /* HomeView.swift */,
 				0A5D601D2C58C638009D656D /* HomeViewModel.swift */,
 			);
@@ -1226,6 +1220,7 @@
 				FA52CAE22C4FD6EE009EC228 /* CoordinatorFinishDelegate.swift in Sources */,
 				0AC9B0852C4278B30040FB28 /* Font+.swift in Sources */,
 				FA6E49E42C2C4EAA00F3C957 /* docs.swift in Sources */,
+				FA136CD52C6B92D6007D7A9E /* ReservationMainView.swift in Sources */,
 				FADD572F2C319ECD00770AC6 /* Logger.swift in Sources */,
 				FAF8E6FE2C40D68D00CA7145 /* LoginRequestDTO.swift in Sources */,
 				FAF8E6F72C40D3FA00CA7145 /* APIConfigs.swift in Sources */,
@@ -1266,7 +1261,6 @@
 				FAF8E7062C40E22B00CA7145 /* DefaultAuthRepository.swift in Sources */,
 				FAB57C662C49D5A700F471F0 /* LogoutUseCase.swift in Sources */,
 				0AC9B08D2C427D660040FB28 /* Image+.swift in Sources */,
-				0A66689E2C297E3F00EB6E8D /* HospitalSuccess.swift in Sources */,
 				FAE565E92C3C229600D77149 /* AppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
