@@ -12,6 +12,7 @@ enum UserInfoState {
     case valid
     case invalid
     case back
+//    case next
 }
 
 class UserInfoViewModel: BaseViewModel<UserInfoState> {
@@ -63,4 +64,8 @@ class UserInfoViewModel: BaseViewModel<UserInfoState> {
     func navigateBack() {
         result.send(.back)
     }
+    
+//    func navigateToPetInfo() {
+//        result.send(.next)
+//    }
 }

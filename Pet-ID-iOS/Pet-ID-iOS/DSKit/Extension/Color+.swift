@@ -43,5 +43,7 @@ extension Color {
     static let petid_title = Color(hex: "#242424")
     static let petid_red = Color(hex: "#E54747")
     static let petid_white = Color(hex: "#F5F5F5")
-    static let petid_new = Color(hex: "FF8298")
+    static let petid_new = Color(hex: "#FF8298")
+    static let petid_border = Color(hex: "#D9D9D9")
+    static let petid_foregray = Color(hex: "#6E6E6E")
 }

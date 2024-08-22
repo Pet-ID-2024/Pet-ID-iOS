@@ -53,12 +53,9 @@ final class PetCardStartCoordinator: Coordinator {
     }
     
     func navigateBack() {
-        pop(animated: true)
+        navigationController.popViewController(animated: true)
     }
     
-//    func navigationBarHidden() {
-//        navigationController.setNavigationBarHidden(hidden, animated: animated)
-//    }
     
     deinit {
         Logger().debug("PetCardStartCoordinator Deinit \(self)")

@@ -14,13 +14,11 @@ final class UserInfoCoordinator: Coordinator {
     }
     
     func start() {
-        print("Starting UserInfoCoordinator")
         showUserInfo()
         navigationBarHidden()
     }
     
     private func showUserInfo() {
-        print("Showing UserInfo view")
         let viewModel = UserInfoViewModel()
         let userInfoView = UserInfo(viewModel: viewModel, coordinator: self)
         
@@ -48,20 +46,15 @@ final class UserInfoCoordinator: Coordinator {
     }
     
     func navigateToPetInfo() {
-        print("Navigating to PetInfo")
         let petInfoCoordinator = PetInfoCoordinator(navigationController: navigationController)
         add(coordinator: petInfoCoordinator)
         petInfoCoordinator.start()
     }
     
     func navigateBack() {
-        print("Navigating back")
-        pop(animated: true)
+        navigationController.popViewController(animated: true)
     }
     
-//    func navigationBarHidden() {
-//        navigationController.setNavigationBarHidden(hidden, animated: animated)
-//    }
     
     func finish() {
         finishDelegate?.coordinatorDidFinish(childCoordinator: self)

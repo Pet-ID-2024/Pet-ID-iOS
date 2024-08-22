@@ -25,7 +25,6 @@
 		0A4021FD2C1868DF007AA6D5 /* ScanCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4021FC2C1868DF007AA6D5 /* ScanCheck.swift */; };
 		0A4021FF2C186C44007AA6D5 /* InformationCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4021FE2C186C44007AA6D5 /* InformationCheck.swift */; };
 		0A4022012C186CBD007AA6D5 /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4022002C186CBD007AA6D5 /* Sign.swift */; };
-		0A4022032C1891BA007AA6D5 /* Complete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4022022C1891BA007AA6D5 /* Complete.swift */; };
 		0A4022052C189717007AA6D5 /* PetCardRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4022042C189717007AA6D5 /* PetCardRegistration.swift */; };
 		0A4022072C189C4A007AA6D5 /* RegistrationSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4022062C189C4A007AA6D5 /* RegistrationSuccess.swift */; };
 		0A55B92C2C0F371E00C98F16 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A55B92B2C0F371E00C98F16 /* UserInfo.swift */; };
@@ -45,6 +44,17 @@
 		0A5FE69A2C45419300B95F3C /* AccessibilityRightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FE6992C45419300B95F3C /* AccessibilityRightViewModel.swift */; };
 		0A5FE69C2C4541A500B95F3C /* AccessibilityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FE69B2C4541A500B95F3C /* AccessibilityItemView.swift */; };
 		0A66689E2C297E3F00EB6E8D /* HospitalSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A66689D2C297E3F00EB6E8D /* HospitalSuccess.swift */; };
+		0A74AE212C6C935800E3D26D /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74AE202C6C935800E3D26D /* CameraViewController.swift */; };
+		0A74AE242C6C9AA200E3D26D /* ScanCheckCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74AE232C6C9AA200E3D26D /* ScanCheckCoordinator.swift */; };
+		0A74AE262C6C9B8C00E3D26D /* ScanCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74AE252C6C9B8C00E3D26D /* ScanCheckViewModel.swift */; };
+		0A74AE282C6DDA8900E3D26D /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74AE272C6DDA8900E3D26D /* InputField.swift */; };
+		0A74AE2B2C6DE6C700E3D26D /* InformationCheckCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74AE2A2C6DE6C700E3D26D /* InformationCheckCoordinator.swift */; };
+		0A74AE2D2C6DE70700E3D26D /* InformationCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74AE2C2C6DE70700E3D26D /* InformationCheckViewModel.swift */; };
+		0A74AE312C6DFDAC00E3D26D /* PetCardDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74AE302C6DFDAC00E3D26D /* PetCardDone.swift */; };
+		0A74AE342C6F246700E3D26D /* SignCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74AE332C6F246700E3D26D /* SignCoordinator.swift */; };
+		0A74AE362C6F25BE00E3D26D /* SignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74AE352C6F25BE00E3D26D /* SignViewModel.swift */; };
+		0A74AE392C6F3F9400E3D26D /* PetCardDoneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74AE382C6F3F9400E3D26D /* PetCardDoneCoordinator.swift */; };
+		0A74AE3B2C6F405B00E3D26D /* PetCardDoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74AE3A2C6F405B00E3D26D /* PetCardDoneViewModel.swift */; };
 		0AC9B0852C4278B30040FB28 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC9B0842C4278B30040FB28 /* Font+.swift */; };
 		0AC9B0882C4278D30040FB28 /* NotoSansKR-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AC9B0862C4278D30040FB28 /* NotoSansKR-Regular.ttf */; };
 		0AC9B0892C4278D30040FB28 /* NotoSansKR-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AC9B0872C4278D30040FB28 /* NotoSansKR-SemiBold.ttf */; };
@@ -157,7 +167,6 @@
 		0A4021FC2C1868DF007AA6D5 /* ScanCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCheck.swift; sourceTree = "<group>"; };
 		0A4021FE2C186C44007AA6D5 /* InformationCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCheck.swift; sourceTree = "<group>"; };
 		0A4022002C186CBD007AA6D5 /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
-		0A4022022C1891BA007AA6D5 /* Complete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complete.swift; sourceTree = "<group>"; };
 		0A4022042C189717007AA6D5 /* PetCardRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardRegistration.swift; sourceTree = "<group>"; };
 		0A4022062C189C4A007AA6D5 /* RegistrationSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationSuccess.swift; sourceTree = "<group>"; };
 		0A55B92B2C0F371E00C98F16 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -178,6 +187,17 @@
 		0A5FE6992C45419300B95F3C /* AccessibilityRightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityRightViewModel.swift; sourceTree = "<group>"; };
 		0A5FE69B2C4541A500B95F3C /* AccessibilityItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityItemView.swift; sourceTree = "<group>"; };
 		0A66689D2C297E3F00EB6E8D /* HospitalSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalSuccess.swift; sourceTree = "<group>"; };
+		0A74AE202C6C935800E3D26D /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		0A74AE232C6C9AA200E3D26D /* ScanCheckCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCheckCoordinator.swift; sourceTree = "<group>"; };
+		0A74AE252C6C9B8C00E3D26D /* ScanCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCheckViewModel.swift; sourceTree = "<group>"; };
+		0A74AE272C6DDA8900E3D26D /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
+		0A74AE2A2C6DE6C700E3D26D /* InformationCheckCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCheckCoordinator.swift; sourceTree = "<group>"; };
+		0A74AE2C2C6DE70700E3D26D /* InformationCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCheckViewModel.swift; sourceTree = "<group>"; };
+		0A74AE302C6DFDAC00E3D26D /* PetCardDone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardDone.swift; sourceTree = "<group>"; };
+		0A74AE332C6F246700E3D26D /* SignCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignCoordinator.swift; sourceTree = "<group>"; };
+		0A74AE352C6F25BE00E3D26D /* SignViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewModel.swift; sourceTree = "<group>"; };
+		0A74AE382C6F3F9400E3D26D /* PetCardDoneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardDoneCoordinator.swift; sourceTree = "<group>"; };
+		0A74AE3A2C6F405B00E3D26D /* PetCardDoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardDoneViewModel.swift; sourceTree = "<group>"; };
 		0AB4E1072C2B14BC006331B4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AC9B0842C4278B30040FB28 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		0AC9B0862C4278D30040FB28 /* NotoSansKR-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.ttf"; sourceTree = "<group>"; };
@@ -317,15 +337,15 @@
 		0A1069F62C1746F00031E230 /* Pet */ = {
 			isa = PBXGroup;
 			children = (
-				0A40220E2C189E46007AA6D5 /* Registration */,
-				0A40220D2C189E39007AA6D5 /* Complete */,
-				0A40220C2C189DED007AA6D5 /* InformationCheck */,
-				0A40220B2C189DE2007AA6D5 /* ScanCheck */,
-				0A40220A2C189DC8007AA6D5 /* Sign */,
-				0A4022092C189DC4007AA6D5 /* PetCaption */,
 				0A4022082C189DB3007AA6D5 /* PetCardStart */,
 				0A08B15E2C5F7AA200267DE1 /* UserInfo */,
 				0A1069F72C1747000031E230 /* PetInfo */,
+				0A4022092C189DC4007AA6D5 /* PetCaption */,
+				0A40220E2C189E46007AA6D5 /* Registration */,
+				0A40220B2C189DE2007AA6D5 /* ScanCheck */,
+				0A40220C2C189DED007AA6D5 /* InformationCheck */,
+				0A40220A2C189DC8007AA6D5 /* Sign */,
+				0A74AE2F2C6DFD7800E3D26D /* Done */,
 			);
 			path = Pet;
 			sourceTree = "<group>";
@@ -420,6 +440,7 @@
 				0A08B16B2C5FDF6800267DE1 /* Coordinator */,
 				0A1069FB2C1750B70031E230 /* PetCaption.swift */,
 				0A08B1662C5FD04800267DE1 /* PetCaptionViewModel.swift */,
+				0A74AE202C6C935800E3D26D /* CameraViewController.swift */,
 			);
 			path = PetCaption;
 			sourceTree = "<group>";
@@ -427,7 +448,9 @@
 		0A40220A2C189DC8007AA6D5 /* Sign */ = {
 			isa = PBXGroup;
 			children = (
+				0A74AE322C6F245300E3D26D /* Coordinator */,
 				0A4022002C186CBD007AA6D5 /* Sign.swift */,
+				0A74AE352C6F25BE00E3D26D /* SignViewModel.swift */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -435,7 +458,10 @@
 		0A40220B2C189DE2007AA6D5 /* ScanCheck */ = {
 			isa = PBXGroup;
 			children = (
+				0A74AE222C6C9A8F00E3D26D /* Coordinator */,
 				0A4021FC2C1868DF007AA6D5 /* ScanCheck.swift */,
+				0A74AE252C6C9B8C00E3D26D /* ScanCheckViewModel.swift */,
+				0A74AE272C6DDA8900E3D26D /* InputField.swift */,
 			);
 			path = ScanCheck;
 			sourceTree = "<group>";
@@ -443,17 +469,11 @@
 		0A40220C2C189DED007AA6D5 /* InformationCheck */ = {
 			isa = PBXGroup;
 			children = (
+				0A74AE292C6DE6B200E3D26D /* Coordinator */,
 				0A4021FE2C186C44007AA6D5 /* InformationCheck.swift */,
+				0A74AE2C2C6DE70700E3D26D /* InformationCheckViewModel.swift */,
 			);
 			path = InformationCheck;
-			sourceTree = "<group>";
-		};
-		0A40220D2C189E39007AA6D5 /* Complete */ = {
-			isa = PBXGroup;
-			children = (
-				0A4022022C1891BA007AA6D5 /* Complete.swift */,
-			);
-			path = Complete;
 			sourceTree = "<group>";
 		};
 		0A40220E2C189E46007AA6D5 /* Registration */ = {
@@ -531,6 +551,48 @@
 				0A66689D2C297E3F00EB6E8D /* HospitalSuccess.swift */,
 			);
 			path = ReservationSuccess;
+			sourceTree = "<group>";
+		};
+		0A74AE222C6C9A8F00E3D26D /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0A74AE232C6C9AA200E3D26D /* ScanCheckCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0A74AE292C6DE6B200E3D26D /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0A74AE2A2C6DE6C700E3D26D /* InformationCheckCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0A74AE2F2C6DFD7800E3D26D /* Done */ = {
+			isa = PBXGroup;
+			children = (
+				0A74AE372C6F3F8400E3D26D /* Coordinator */,
+				0A74AE302C6DFDAC00E3D26D /* PetCardDone.swift */,
+				0A74AE3A2C6F405B00E3D26D /* PetCardDoneViewModel.swift */,
+			);
+			path = Done;
+			sourceTree = "<group>";
+		};
+		0A74AE322C6F245300E3D26D /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0A74AE332C6F246700E3D26D /* SignCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0A74AE372C6F3F8400E3D26D /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0A74AE382C6F3F9400E3D26D /* PetCardDoneCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		0AC9B0812C4278990040FB28 /* Font */ = {
@@ -1265,11 +1327,13 @@
 				0A5D602A2C58CF7E009D656D /* PetCardView.swift in Sources */,
 				FAC4CD492C49230000A3658A /* NetworkPlugin.swift in Sources */,
 				FA8175C82C6394FC00C17B90 /* TabBarCoordinator.swift in Sources */,
+				0A74AE312C6DFDAC00E3D26D /* PetCardDone.swift in Sources */,
 				FA46F3472C3EC977003CAC02 /* Color+.swift in Sources */,
 				FA46F34A2C3ED4C2003CAC02 /* BaseViewModel.swift in Sources */,
 				FAC4CD4E2C492D6500A3658A /* JoinRequestDTO.swift in Sources */,
 				FAF8E6EB2C40C84300CA7145 /* NetworkEventLogger.swift in Sources */,
 				0A5D60362C5A7194009D656D /* PetInfoRequestDTO.swift in Sources */,
+				0A74AE342C6F246700E3D26D /* SignCoordinator.swift in Sources */,
 				0A4022012C186CBD007AA6D5 /* Sign.swift in Sources */,
 				FAE566012C3C365300D77149 /* UserDefaultManager.swift in Sources */,
 				FA6E49F72C2E3FEC00F3C957 /* AppDelegate.swift in Sources */,
@@ -1279,6 +1343,7 @@
 				FA3584E82C49873C0019C46A /* Interface.swift in Sources */,
 				FAF8E6E92C40C70A00CA7145 /* Provider.swift in Sources */,
 				0A21CF262C0DF131005DD8E2 /* TermsAgreementView.swift in Sources */,
+				0A74AE212C6C935800E3D26D /* CameraViewController.swift in Sources */,
 				0A5FE69A2C45419300B95F3C /* AccessibilityRightViewModel.swift in Sources */,
 				0A21CF262C0DF131005DD8E2 /* TermsAgreementView.swift in Sources */,
 				FAF8E70F2C40E3A200CA7145 /* LoginResponseDTO.swift in Sources */,
@@ -1290,7 +1355,6 @@
 				FADD57362C31A0A400770AC6 /* HomeView.swift in Sources */,
 				FA3584EA2C49875E0019C46A /* ResultPublisher.swift in Sources */,
 				FAC4CD442C49214D00A3658A /* ErrorModel.swift in Sources */,
-				0A4022032C1891BA007AA6D5 /* Complete.swift in Sources */,
 				0A1069FC2C1750B70031E230 /* PetCaption.swift in Sources */,
 				FA47EFBB2C53A34A000F6529 /* Configs.swift in Sources */,
 				FAC4CD4B2C4929C100A3658A /* TermsAgreementViewModel.swift in Sources */,
@@ -1304,12 +1368,14 @@
 				0A5C71A82C1094590079849C /* PetInfo.swift in Sources */,
 				0A5FE6982C45416D00B95F3C /* AccessibilityRightView.swift in Sources */,
 				0A08B1672C5FD04900267DE1 /* PetCaptionViewModel.swift in Sources */,
+				0A74AE392C6F3F9400E3D26D /* PetCardDoneCoordinator.swift in Sources */,
 				FADD57312C31A01400770AC6 /* UserRepositoryProtocol.swift in Sources */,
 				FA6E49F92C2E40A500F3C957 /* SceneDelegate.swift in Sources */,
 				0A1069FA2C1747870031E230 /* PetCardStart.swift in Sources */,
 				0A08B1602C5F7CF600267DE1 /* UserModel.swift in Sources */,
 				FADD57062C318CD700770AC6 /* SplashViewModel.swift in Sources */,
 				FAC4CD422C49209400A3658A /* NetworkError.swift in Sources */,
+				0A74AE2D2C6DE70700E3D26D /* InformationCheckViewModel.swift in Sources */,
 				FADD57082C318D1F00770AC6 /* DefaultUserRepository.swift in Sources */,
 				FAC4CD582C494C5600A3658A /* HomeCoordinator.swift in Sources */,
 				0A21CF1C2C0DEF8D005DD8E2 /* SplashView.swift in Sources */,
@@ -1318,9 +1384,12 @@
 				0A5D603C2C5A88F9009D656D /* CustomField.swift in Sources */,
 				FAF8E6ED2C40CC1000CA7145 /* NetworkInterceptor.swift in Sources */,
 				FA52CAE22C4FD6EE009EC228 /* CoordinatorFinishDelegate.swift in Sources */,
+				0A74AE282C6DDA8900E3D26D /* InputField.swift in Sources */,
 				0AC9B0852C4278B30040FB28 /* Font+.swift in Sources */,
 				FA6E49E42C2C4EAA00F3C957 /* docs.swift in Sources */,
 				FADD572F2C319ECD00770AC6 /* Logger.swift in Sources */,
+				0A74AE3B2C6F405B00E3D26D /* PetCardDoneViewModel.swift in Sources */,
+				0A74AE2B2C6DE6C700E3D26D /* InformationCheckCoordinator.swift in Sources */,
 				FAF8E6FE2C40D68D00CA7145 /* LoginRequestDTO.swift in Sources */,
 				FAF8E6F72C40D3FA00CA7145 /* APIConfigs.swift in Sources */,
 				0A5D60442C5B6AC2009D656D /* PetCardStartViewModel.swift in Sources */,
@@ -1360,6 +1429,7 @@
 				FADD570F2C318ECB00770AC6 /* KeychainProtocol.swift in Sources */,
 				FAC4CD5B2C4970E600A3658A /* TokenRefreshRequestDTO.swift in Sources */,
 				0A08B1692C5FD11500267DE1 /* PetCaptionCoordinator.swift in Sources */,
+				0A74AE242C6C9AA200E3D26D /* ScanCheckCoordinator.swift in Sources */,
 				0A08B1652C5FC99A00267DE1 /* PetInfoCoordinator.swift in Sources */,
 				0A55B92C2C0F371E00C98F16 /* UserInfo.swift in Sources */,
 				0A21CF0F2C0DE3AA005DD8E2 /* Test.swift in Sources */,
@@ -1369,7 +1439,9 @@
 				FAB57C662C49D5A700F471F0 /* LogoutUseCase.swift in Sources */,
 				0AC9B08D2C427D660040FB28 /* Image+.swift in Sources */,
 				0A66689E2C297E3F00EB6E8D /* HospitalSuccess.swift in Sources */,
+				0A74AE262C6C9B8C00E3D26D /* ScanCheckViewModel.swift in Sources */,
 				FAE565E92C3C229600D77149 /* AppCoordinator.swift in Sources */,
+				0A74AE362C6F25BE00E3D26D /* SignViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1503,7 +1575,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pet-ID-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 5QNWYK9LQY;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1575,7 +1647,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pet-ID-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 5QNWYK9LQY;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;

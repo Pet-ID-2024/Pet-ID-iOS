@@ -10,7 +10,8 @@ struct PetCardStart: View {
                 Button(action: {
                     viewModel.navigateBack()
                 }) {
-                    Image(systemName: "chevron.left")
+                    DSImage.chevronicon.toImage()
+                        .font(.petIdChevron)
                         .foregroundColor(.black)
                 }
                 Spacer()

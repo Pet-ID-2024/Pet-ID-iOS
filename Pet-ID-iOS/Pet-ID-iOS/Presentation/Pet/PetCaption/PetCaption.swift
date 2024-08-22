@@ -10,7 +10,8 @@ struct PetCaption: View {
                 Button(action: {
                     coordinator.navigateBack()
                 }) {
-                    Image(systemName: "chevron.left")
+                    DSImage.chevronicon.toImage()
+                        .font(.petIdChevron)
                         .foregroundColor(.black)
                 }
                 Spacer()
@@ -30,11 +31,17 @@ struct PetCaption: View {
             
             Spacer()
             
-            DSImage.captionicon.toImage()
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 360, height: 300)
-                .multilineTextAlignment(.center)
+            VStack {
+                HStack {
+                    Spacer()
+                    DSImage.captionicon.toImage()
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 180, height: 150)
+                    Spacer()
+                }
+            }
+            .padding(.top, -50)
             
             Spacer()
             
@@ -44,7 +51,7 @@ struct PetCaption: View {
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity)
             }
-            .padding()
+            .padding(.top, -60)
             
             Spacer()
             
@@ -59,6 +66,7 @@ struct PetCaption: View {
                     .font(.petIdBody1)
                     .cornerRadius(8)
             }
+            .padding()
         }
         .navigationBarHidden(true)
         .padding()

@@ -38,13 +38,13 @@ final class PetInfoCoordinator: Coordinator {
     func showPetInfo() {
         let viewModel = PetInfoViewModel()
         let petInfoVC = UIHostingController(
-            rootView: PetInfo()
+            rootView: PetInfo(coordinator: PetInfoCoordinator(navigationController: UINavigationController()))
         )
         
         viewModel.result.subject
             .sink(receiveValue: { [weak self] result in
                 switch result {
-                case .petCaption:
+                case .nextStep:
                     self?.showPetCaption()
                 case .back:
                     self?.pop(animated: true)
@@ -64,7 +64,6 @@ final class PetInfoCoordinator: Coordinator {
             .sink(receiveValue: { [weak self] result in
                 switch result {
                 case .nextStep:
-                    
                     self?.finish()
                 case .back:
                     self?.navigateBack()
@@ -77,7 +76,7 @@ final class PetInfoCoordinator: Coordinator {
     }
     
     func navigateBack() {
-        pop(animated: true)
+        navigationController.popViewController(animated: true)
     }
     
 //    func navigationBarHidden() {

@@ -14,7 +14,9 @@ struct GenderField: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text("성별")
-                .font(.headline)
+                .font(.petIdBody1)
+                .fontWeight(.medium)
+                .foregroundColor(.petid_foregray)
                 .padding(.bottom, 4)
 
             HStack(spacing: 30) {
@@ -36,9 +38,10 @@ struct GenderField: View {
                 .cornerRadius(8)
                 .overlay(
                     RoundedRectangle(cornerRadius: 8)
-                        .stroke(gender == selectedGender ? Color.blue : Color.gray, lineWidth: 1)
+                        .stroke(gender == selectedGender ? Color.blue : Color.petid_border, lineWidth: 1)
                 )
-                .foregroundColor(gender == selectedGender ? .blue : .black)
+                .foregroundColor(gender == selectedGender ? .blue : .petid_border)
+                .font(gender == selectedGender ? .system(size: 16, weight: .bold) : .system(size: 16))
         }
     }
 }

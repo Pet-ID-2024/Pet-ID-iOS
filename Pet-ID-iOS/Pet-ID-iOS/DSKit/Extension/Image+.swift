@@ -31,7 +31,10 @@ public enum DSImage: String {
     case bannerbg
     case petidicon
     
+    case petidiconok
+    
     case captionicon
+    case chevronicon
     
     var toName: String {
         return self.rawValue

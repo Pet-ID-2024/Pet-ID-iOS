@@ -11,7 +11,7 @@ struct CustomField: View {
     @Binding var text: String
     var field: PetInfoViewModel.Field
     var placeholder: String
-    var label: String
+    var label: String?
     var inputType: InputType
     
     @State private var showDatePickerSheet: Bool = false
@@ -27,8 +27,10 @@ struct CustomField: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(label)
-                .font(.headline)
+            Text(label!)
+                .font(.petIdBody1)
+                .fontWeight(.medium)
+                .foregroundColor(.petid_foregray)
                 .padding(.bottom, 4)
             
             switch inputType {
@@ -85,7 +87,7 @@ struct DatePickerField: View {
     var body: some View {
         HStack {
             Text(text.isEmpty ? placeholder : text)
-                .foregroundColor(text.isEmpty ? Color.gray : Color.black)
+                .foregroundColor(text.isEmpty ? Color.petid_border : Color.black)
             Spacer()
             Image(systemName: "calendar")
                 .foregroundColor(.gray)
@@ -98,7 +100,7 @@ struct DatePickerField: View {
         .cornerRadius(8)
         .overlay(
             RoundedRectangle(cornerRadius: 8)
-                .stroke(Color.gray, lineWidth: 1)
+                .stroke(Color.petid_border, lineWidth: 1)
         )
     }
 }
@@ -115,7 +117,7 @@ struct DetailAddressField: View {
             .cornerRadius(8)
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
-                    .stroke(Color.gray, lineWidth: 1)
+                    .stroke(Color.petid_border, lineWidth: 1)
             )
     }
 }
@@ -133,7 +135,7 @@ struct PhoneNumberField: View {
             .cornerRadius(8)
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
-                    .stroke(Color.gray, lineWidth: 1)
+                    .stroke(Color.petid_border, lineWidth: 1)
             )
     }
 }
@@ -146,7 +148,7 @@ struct AddressField: View {
     var body: some View {
         HStack {
             Text(text.isEmpty ? placeholder : text)
-                .foregroundColor(text.isEmpty ? Color.gray : Color.black)
+                .foregroundColor(text.isEmpty ? Color.petid_border : Color.black)
             Spacer()
             Image(systemName: "magnifyingglass")
                 .foregroundColor(.gray)
@@ -157,7 +159,7 @@ struct AddressField: View {
         .cornerRadius(8)
         .overlay(
             RoundedRectangle(cornerRadius: 8)
-                .stroke(Color.gray, lineWidth: 1)
+                .stroke(Color.petid_border, lineWidth: 1)
         )
     }
 }
@@ -174,7 +176,7 @@ struct TextFieldView: View {
             .cornerRadius(8)
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
-                    .stroke(Color.gray, lineWidth: 1)
+                    .stroke(Color.petid_border, lineWidth: 1)
             )
     }
 }

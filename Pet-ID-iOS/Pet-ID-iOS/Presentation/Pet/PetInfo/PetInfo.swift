@@ -2,6 +2,7 @@ import SwiftUI
 
 struct PetInfo: View {
     @StateObject private var viewModel = PetInfoViewModel()
+    var coordinator: PetInfoCoordinator
     
     var body: some View {
         NavigationView {
@@ -11,13 +12,11 @@ struct PetInfo: View {
                         Button(action: {
                             viewModel.navigateBack()
                         }) {
-                            Image(systemName: "chevron.left")
+                            DSImage.chevronicon.toImage()
+                                .font(.petIdChevron)
                                 .foregroundColor(.black)
-                                .padding()
                         }
                     }
-                    .padding(.top, -10)
-                    .padding(.leading, -10)
                     
                     
                     VStack(alignment: .leading, spacing: 10) {
@@ -31,7 +30,7 @@ struct PetInfo: View {
                     
                     Spacer()
                     
-                    VStack(alignment: .leading, spacing: 20) {
+                    VStack(alignment: .leading, spacing: 25) {
                         
                         CustomField(
                             text: $viewModel.name,
@@ -57,7 +56,7 @@ struct PetInfo: View {
                             focusedField: $viewModel.focusedField
                         )
                         
-                        
+                        VStack(alignment: .leading, spacing: 20){
                         CustomField(
                             text: $viewModel.neuteringDate,
                             field: .neuteringDate,
@@ -67,10 +66,13 @@ struct PetInfo: View {
                         )
                         
                         
-                        VStack {
+                        
                             HStack {
                                 CheckBox(isChecked: $viewModel.neuteredChecked)
                                 Text("중성화 전이에요.")
+                                    .font(.petIdBody1)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.petid_foregray)
                             }
                         }
                         
@@ -86,8 +88,8 @@ struct PetInfo: View {
                             Text("완료")
                                 .frame(maxWidth: .infinity)
                                 .padding()
-                                .background(Color.blue)
-                                .foregroundColor(.white)
+                                .background(Color.petid_clearblue)
+                                .foregroundColor(.petid_white)
                                 .cornerRadius(8)
                         }
                     }
@@ -119,5 +121,5 @@ struct PetInfo: View {
 }
 
 #Preview {
-    PetInfo()
+    PetInfo(coordinator: PetInfoCoordinator(navigationController: UINavigationController()))
 }

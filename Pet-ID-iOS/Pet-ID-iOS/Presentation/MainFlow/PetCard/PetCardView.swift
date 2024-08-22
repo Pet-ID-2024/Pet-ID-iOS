@@ -18,20 +18,22 @@ struct PetCardView: View {
                     .cornerRadius(10)
                     .foregroundColor(.petid_lightgray)
                     .padding()
-                    .shadow(radius: 5)
+                    .shadow(color: .black.opacity(0.25), radius: 5, x: 0, y: 5) // 그림자를 아래쪽으로만 주기 위해 y값을 설정
                 
                 VStack{
+                    Spacer()
                     Text(viewModel.card.mainText)
+                        .foregroundColor(.petid_gray)
                         .multilineTextAlignment(.center)
                         .padding()
-                    Image(systemName: "pencil")
+                    DSImage.petidicon.toImage()
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 200)
+                        .frame(width: 154)
                     Text(styledSubText(viewModel.card.subText))
                         .font(.petIdTitle3)
-                        .bold()
                         .multilineTextAlignment(.center)
+                        .padding()
                     Button(action: {
                         
                     }) {
@@ -39,8 +41,8 @@ struct PetCardView: View {
                             .font(.petIdBody1)
                             .frame(minWidth: 0, maxWidth: .infinity)
                             .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
+                            .background(Color.petid_clearblue)
+                            .foregroundColor(.petid_white)
                             .cornerRadius(10)
                     }
                     .padding(.horizontal, 10)
@@ -49,6 +51,7 @@ struct PetCardView: View {
                 .padding()
             }
         }
+        .padding()
     }
     
     private func styledSubText(_ text: String) -> AttributedString {

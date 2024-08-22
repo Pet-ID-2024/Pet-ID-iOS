@@ -9,7 +9,7 @@ import Moya
 import Combine
 
 enum PetInfoViewModelResult {
-    case petCaption
+    case nextStep
     case back
 }
 
@@ -27,7 +27,7 @@ class PetInfoViewModel: BaseViewModel<PetInfoViewModelResult> {
     @Published var address: String = ""
     
     enum Field: Hashable {
-        case name, birthDate, neuteringDate, gender, address, phone
+        case name, birthDate, neuteringDate, gender, address, phone, detailAddress
     }
     
     @Published var focusedField: Field?
@@ -51,7 +51,7 @@ class PetInfoViewModel: BaseViewModel<PetInfoViewModelResult> {
     }
     
     func navigateToPetCaption() {
-        result.send(.petCaption)
+        result.send(.nextStep)
     }
     
     func navigateBack() {

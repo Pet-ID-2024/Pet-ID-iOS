@@ -12,7 +12,7 @@ extension Font {
         return Font.custom("NotoSansKR-Regular", size: fontSize).weight(fontWeight)
     }
     
-    static let petIdTitle1 = Font.notoSansKR(fontSize: 24, fontWeight: .semibold)
+    static let petIdTitle1 = Font.notoSansKR(fontSize: 24, fontWeight: .medium)
     static let petIdTitle2 = Font.notoSansKR(fontSize: 22, fontWeight: .bold)
     static let petIdPopup = Font.notoSansKR(fontSize: 20, fontWeight: .semibold)
     static let petIdTitle3 = Font.notoSansKR(fontSize: 18, fontWeight: .regular)
@@ -20,6 +20,5 @@ extension Font {
     static let petIdBody2 = Font.notoSansKR(fontSize: 14, fontWeight: .regular)
     static let petIdBody3 = Font.notoSansKR(fontSize: 13, fontWeight: .regular)
     static let petIdCaption1 = Font.notoSansKR(fontSize: 12, fontWeight: .regular)
-    
-    
+    static let petIdChevron = Font.notoSansKR(fontSize: 24, fontWeight: .regular)
 }

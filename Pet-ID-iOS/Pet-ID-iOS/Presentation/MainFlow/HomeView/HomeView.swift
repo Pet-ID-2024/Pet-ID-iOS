@@ -35,11 +35,14 @@ struct HomeView: View {
                     
                     
                     PetCardView()
+//                        .padding()
+//                        .padding(.top, 20)
                     
                     
                 }
             }
         }
+        .padding()
     }
 }
 
