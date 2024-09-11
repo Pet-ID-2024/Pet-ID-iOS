@@ -40,7 +40,7 @@ struct NetworkLoggerPlugin: PluginType {
         
         print(
             "\n" +
-            "🛰 V2 NETWORK Response LOG \n"
+            "🛰 NETWORK Response LOG \n"
             + "URL: \(url)\n"
             + "StatusCode: \(statusCode)\n"
             + "HTTPHeader: \n\(httpHeader)\n"

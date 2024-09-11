@@ -73,7 +73,6 @@ public final class AppCoordinator: Coordinator {
     private func bindLogout() {
         PetIdNotificationCenter.shared.logout.subject
             .sink(receiveValue: { [weak self] _ in
-                
                 guard let self else { return }
                 navigationController = UINavigationController()
                 childCoordinators = [:]

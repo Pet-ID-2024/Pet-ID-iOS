@@ -13,6 +13,7 @@ enum NetworkError: Error {
     case moyaError(MoyaError)
     case invalidResponse(ErrorModel)
     case underlying(statusCode: Int, response: Response)
+    case shouldRefreshAccessToken
     case unknown
     case decodingError
     

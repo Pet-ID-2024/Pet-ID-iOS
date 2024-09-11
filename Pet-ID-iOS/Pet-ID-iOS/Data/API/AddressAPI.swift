@@ -1,0 +1,35 @@
+//
+//  AddressAPI.swift
+//  Pet-ID-iOS
+//
+//  Created by 강현준 on 8/26/24.
+//
+
+import Foundation
+import Moya
+
+enum AddressAPI: BaseTargetType {
+    
+    case sido
+    case sigungu(sidoId: Int)
+    
+    var path: String {
+        switch self {
+        case .sido: return "/v1/location"
+        case .sigungu(let sidoId): return "/v1/location/sido/\(sidoId)/sigungu"
+        }
+    }
+    
+    var method: Moya.Method {
+        switch self {
+        case .sido, .sigungu: return .get
+        }
+    }
+    
+    var task: Moya.Task {
+        switch self {
+        case .sido: return .requestPlain
+        case .sigungu: return .requestPlain
+        }
+    }
+}

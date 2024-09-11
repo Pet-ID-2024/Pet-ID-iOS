@@ -15,7 +15,7 @@ struct APIConfigs {
         static let naverClientSecret: String = "CeCpvGoU8m"
     }
     enum Network {
-        static let domain: String = "http://43.203.1.26:8080" // 서버 도메인
+        static let domain: String = "http://yourpet-id.com:8080" // 서버 도메인
     }
     
     private init() {}
