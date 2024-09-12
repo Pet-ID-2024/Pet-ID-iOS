@@ -88,7 +88,7 @@ struct AccessibilityRightView: View {
             }
         }
         .padding(.horizontal, 33)
-        .padding(.vertical, 15)
+        .padding(.vertical, 50)
     }
 }
 

@@ -1,10 +1,3 @@
-//
-//  PetCaptionCoordinator.swift
-//  Pet-ID-iOS
-//
-//  Created by 박호건 on 8/5/24.
-//
-
 import UIKit
 import SwiftUI
 import Combine
@@ -31,14 +24,14 @@ final class PetCaptionCoordinator: NSObject, Coordinator {
         let petCaptionView = PetCaption(viewModel: viewModel, coordinator: self)
         
         viewModel.result.subject
-            .sink(receiveValue: {[weak self] result in
+            .sink(receiveValue: { [weak self] result in
                 switch result {
                 case .completed:
-                    self?.finish()
+                    break
                 case .nextStep:
                     self?.navigateToCamera()
                 case .back:
-                    self?.pop(animated: true)
+                    self?.navigateBack()
                 }
             })
             .store(in: &cancelBag)
@@ -57,14 +50,14 @@ final class PetCaptionCoordinator: NSObject, Coordinator {
         navigationController.present(cameraVC, animated: true, completion: nil)
     }
     
-    func navigationBarHidden(_ hidden: Bool, animated: Bool = false) {
-        navigationController.setNavigationBarHidden(hidden, animated: animated)
-    }
-    
     func navigateToScanCheck(with image: UIImage) {
         let scanCheckCoordinator = ScanCheckCoordinator(navigationController: navigationController, image: image)
         childCoordinators[scanCheckCoordinator.id] = scanCheckCoordinator
-                scanCheckCoordinator.start()
+        scanCheckCoordinator.start()
+    }
+    
+    func navigationBarHidden(_ hidden: Bool, animated: Bool = false) {
+        navigationController.setNavigationBarHidden(hidden, animated: animated)
     }
     
     deinit {
@@ -72,23 +65,12 @@ final class PetCaptionCoordinator: NSObject, Coordinator {
     }
 }
 
-extension PetCaptionCoordinator: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true) { [weak self] in
-            self?.navigateBack()
-        }
+extension PetCaptionCoordinator: CameraViewControllerDelegate {
+    func cameraViewController(_ viewController: CameraViewController, didPickImage image: UIImage) {
+        navigateToScanCheck(with: image)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[.originalImage] as? UIImage {
-            picker.dismiss(animated: true) { [weak self] in
-                self?.navigateToScanCheck(with: image)
-            }
-        }else {
-            picker.dismiss(animated: true) { [weak self] in
-                self?.navigateBack()
-            }
-        }
+    func cameraViewControllerDidCancel(_ viewController: CameraViewController) {
+        navigateBack()
     }
-    
 }

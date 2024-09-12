@@ -46,21 +46,26 @@ final class UserInfoCoordinator: Coordinator {
     }
     
     func navigateToPetInfo() {
+        print("PetInfoCoordinator로 이동")
         let petInfoCoordinator = PetInfoCoordinator(navigationController: navigationController)
         add(coordinator: petInfoCoordinator)
         petInfoCoordinator.start()
     }
     
     func navigateBack() {
+        print("뒤로 가기")
         navigationController.popViewController(animated: true)
     }
-    
     
     func finish() {
         finishDelegate?.coordinatorDidFinish(childCoordinator: self)
     }
     
+    func navigationBarHidden() {
+        navigationController.setNavigationBarHidden(true, animated: false)
+    }
+    
     deinit {
-        Logger().debug("UserInfoCoordinator Deinit \(self)")
+        print("UserInfoCoordinator Deinit \(self)")
     }
 }

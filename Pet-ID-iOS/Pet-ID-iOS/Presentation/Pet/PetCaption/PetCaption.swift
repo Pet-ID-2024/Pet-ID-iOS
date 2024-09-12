@@ -37,7 +37,7 @@ struct PetCaption: View {
                     DSImage.captionicon.toImage()
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 180, height: 150)
+                        .frame(width: 300, height: 190)
                     Spacer()
                 }
             }

@@ -1,16 +1,10 @@
-//
-//  PetInfoViewModel.swift
-//  Pet-ID-iOS
-//
-//  Created by 박호건 on 7/31/24.
-//
-
 import Moya
 import Combine
 
 enum PetInfoViewModelResult {
-    case nextStep
     case back
+    case valid
+    case invalid
 }
 
 class PetInfoViewModel: BaseViewModel<PetInfoViewModelResult> {
@@ -23,8 +17,7 @@ class PetInfoViewModel: BaseViewModel<PetInfoViewModelResult> {
     @Published var neuteringDate: String = ""
     @Published var isNextScreenPresented: Bool = false
     @Published var neuteredChecked: Bool = false
-    @Published var phone: String = ""
-    @Published var address: String = ""
+    @Published var isNextButtonDisabled: Bool = true
     
     enum Field: Hashable {
         case name, birthDate, neuteringDate, gender, address, phone, detailAddress
@@ -38,23 +31,46 @@ class PetInfoViewModel: BaseViewModel<PetInfoViewModelResult> {
     
     func toggleNeuteredChecked() {
         neuteredChecked.toggle()
+        validateInput()
     }
     
     func updateBirthDate(with date: Date) {
         birthDate = dateFormatter.string(from: date)
         showDatePicker = false
+        validateInput()
     }
     
     func updateNeuteringDate(with date: Date) {
         neuteringDate = dateFormatter.string(from: date)
         showDatePicker = false
+        validateInput()
     }
     
     func navigateToPetCaption() {
-        result.send(.nextStep)
+        result.send(.valid)
     }
     
     func navigateBack() {
         result.send(.back)
+    }
+    
+    func validateInput() {
+        let isNameValid = !name.isEmpty
+        let isBirthDateValid = !birthDate.isEmpty
+        let isGenderValid = !gender.isEmpty
+        let isNeuteringDateValid = !neuteringDate.isEmpty
+        let isNeuteredCheckedValid = !neuteredChecked || isNeuteringDateValid
+        
+        let isValid = isNameValid &&
+        isBirthDateValid &&
+        isGenderValid &&
+        isNeuteredCheckedValid
+        
+        isNextButtonDisabled = !isValid
+        if isValid {
+            result.send(.valid)
+        } else {
+            result.send(.invalid)
+        }
     }
 }

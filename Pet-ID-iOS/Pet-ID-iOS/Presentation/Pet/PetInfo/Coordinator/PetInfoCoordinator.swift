@@ -44,10 +44,13 @@ final class PetInfoCoordinator: Coordinator {
         viewModel.result.subject
             .sink(receiveValue: { [weak self] result in
                 switch result {
-                case .nextStep:
-                    self?.showPetCaption()
                 case .back:
                     self?.pop(animated: true)
+                case .valid:
+                    self?.showPetCaption()
+                case .invalid:
+                    print("Input is invalid")
+                    
                 }
             }).store(in: &cancelBag)
         
@@ -79,9 +82,9 @@ final class PetInfoCoordinator: Coordinator {
         navigationController.popViewController(animated: true)
     }
     
-//    func navigationBarHidden() {
-//        navigationController.setNavigationBarHidden(hidden, animated: animated)
-//    }
+    //    func navigationBarHidden() {
+    //        navigationController.setNavigationBarHidden(hidden, animated: animated)
+    //    }
     
     deinit {
         Logger().debug("PetInfoCoordinator Deinit \(self)")

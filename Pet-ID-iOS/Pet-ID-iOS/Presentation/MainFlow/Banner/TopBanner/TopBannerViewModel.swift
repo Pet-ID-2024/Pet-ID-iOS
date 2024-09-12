@@ -8,17 +8,17 @@
 import SwiftUI
 import Combine
 
-struct BannerModel {
+struct TopBannerModel {
     let title: String
     let subtitle: String
     let icon: Image
 }
 
-class BannerViewModel: BaseViewModel<BannerModel> {
+class TopBannerViewModel: BaseViewModel<TopBannerModel> {
     
-    @Published var banner: BannerModel
+    @Published var banner: TopBannerModel
     
-    init(banner: BannerModel) {
+    init(banner: TopBannerModel) {
         self.banner = banner
         super.init()
     }

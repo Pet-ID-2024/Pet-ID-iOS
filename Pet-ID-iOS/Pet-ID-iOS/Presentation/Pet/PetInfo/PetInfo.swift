@@ -18,7 +18,6 @@ struct PetInfo: View {
                         }
                     }
                     
-                    
                     VStack(alignment: .leading, spacing: 10) {
                         Text("3/7")
                             .font(.petIdTitle1)
@@ -31,7 +30,6 @@ struct PetInfo: View {
                     Spacer()
                     
                     VStack(alignment: .leading, spacing: 25) {
-                        
                         CustomField(
                             text: $viewModel.name,
                             field: .name,
@@ -39,8 +37,7 @@ struct PetInfo: View {
                             label: "반려동물이름",
                             inputType: .text
                         )
-                        
-                        
+                        .onChange(of: viewModel.name) { _ in viewModel.validateInput() }
                         
                         CustomField(
                             text: $viewModel.birthDate,
@@ -49,33 +46,33 @@ struct PetInfo: View {
                             label: "생년월일",
                             inputType: .date
                         )
-                        
+                        .onChange(of: viewModel.birthDate) { _ in viewModel.validateInput() }
                         
                         GenderField(
                             gender: $viewModel.gender,
                             focusedField: $viewModel.focusedField
                         )
+                        .onChange(of: viewModel.gender) { _ in viewModel.validateInput() }
                         
                         VStack(alignment: .leading, spacing: 20){
-                        CustomField(
-                            text: $viewModel.neuteringDate,
-                            field: .neuteringDate,
-                            placeholder: "중성화 날짜 선택",
-                            label: "중성화 날짜",
-                            inputType: .date
-                        )
-                        
-                        
-                        
+                            CustomField(
+                                text: $viewModel.neuteringDate,
+                                field: .neuteringDate,
+                                placeholder: "중성화 날짜 선택",
+                                label: "중성화 날짜",
+                                inputType: .date
+                            )
+                            .onChange(of: viewModel.neuteringDate) { _ in viewModel.validateInput() }
+                            
                             HStack {
                                 CheckBox(isChecked: $viewModel.neuteredChecked)
+                                    .onChange(of: viewModel.neuteredChecked) { _ in viewModel.validateInput() }
                                 Text("중성화 전이에요.")
                                     .font(.petIdBody1)
                                     .fontWeight(.medium)
                                     .foregroundColor(.petid_foregray)
                             }
                         }
-                        
                         
                         NavigationLink(destination: PetCaption(viewModel: PetCaptionViewModel(), coordinator: PetCaptionCoordinator(navigationController: UINavigationController())), isActive: $viewModel.isNextScreenPresented) {
                             EmptyView()
@@ -88,10 +85,11 @@ struct PetInfo: View {
                             Text("완료")
                                 .frame(maxWidth: .infinity)
                                 .padding()
-                                .background(Color.petid_clearblue)
+                                .background(viewModel.isNextButtonDisabled ? Color.gray : Color.petid_clearblue)
                                 .foregroundColor(.petid_white)
                                 .cornerRadius(8)
                         }
+                        .disabled(viewModel.isNextButtonDisabled)
                     }
                     .padding()
                     

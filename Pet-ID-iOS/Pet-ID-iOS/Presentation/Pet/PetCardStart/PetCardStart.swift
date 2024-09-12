@@ -3,7 +3,7 @@ import SwiftUI
 struct PetCardStart: View {
     @ObservedObject var viewModel: PetCardStartViewModel
     var coordinator: PetCardStartCoordinator
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -16,21 +16,21 @@ struct PetCardStart: View {
                 }
                 Spacer()
             }
-            
+
             VStack(alignment: .leading, spacing: 10) {
                 Text("1/7")
                     .font(.petIdTitle1)
                     .foregroundColor(.petid_clearblue)
-                
+
                 Text("펫 아이디 만들기를 \n시작합니다")
                     .font(.petIdTitle1)
-                
+
                 Text("회원님의 상태를 선택하세요")
                     .font(.petIdBody2)
                     .foregroundColor(.petid_gray)
-                
+
                 Spacer()
-                
+
                 VStack(spacing: 15) {
                     Button(action: {
                         viewModel.selectState(.unregistered)
@@ -42,7 +42,7 @@ struct PetCardStart: View {
                             .foregroundColor(.black)
                             .cornerRadius(10)
                     }
-                    
+
                     Button(action: {
                         viewModel.selectState(.externalChip)
                     }) {
@@ -53,7 +53,7 @@ struct PetCardStart: View {
                             .foregroundColor(.black)
                             .cornerRadius(10)
                     }
-                    
+
                     Button(action: {
                         viewModel.selectState(.internalChip)
                     }) {
@@ -67,7 +67,7 @@ struct PetCardStart: View {
                 }
                 .font(.petIdBody1)
                 .padding(.top, -100)
-                
+
                 Spacer()
             }
             .padding()

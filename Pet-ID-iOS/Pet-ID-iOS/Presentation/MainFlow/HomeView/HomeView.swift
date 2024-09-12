@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
+    var coordinator: HomeCoordinator
     
     var body: some View {
         VStack {
@@ -17,10 +18,15 @@ struct HomeView: View {
                     .font(.petIdTitle2)
                     .foregroundColor(.petid_blue)
                 Spacer()
-                Image(.notificationicon)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 20)
+                
+                Button {
+                    
+                } label: {
+                    DSImage.notificationicon.toImage()
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 20)
+                }
             }
             .padding()
             
@@ -30,15 +36,15 @@ struct HomeView: View {
                     Button {
                         
                     } label: {
-                        Banner()
+                        TopBanner()
                     }
                     
-                    
-                    PetCardView()
-//                        .padding()
-//                        .padding(.top, 20)
-                    
-                    
+                    Button {
+                        coordinator.showPetCardView()
+                    } label: {
+                        PetCardView()
+                    }
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
         }
@@ -47,5 +53,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(viewModel: HomeViewModel())
+    HomeView(viewModel: HomeViewModel(), coordinator: HomeCoordinator(UINavigationController()))
 }

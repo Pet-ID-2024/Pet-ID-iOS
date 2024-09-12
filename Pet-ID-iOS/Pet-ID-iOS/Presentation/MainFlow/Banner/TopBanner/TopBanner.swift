@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct Banner: View {
-    @StateObject private var viewModel = BannerViewModel(banner: BannerModel(title: "반려동물과 나가기 전 체크하세요!", subtitle: "외출 체크리스트 확인하기", icon: DSImage.umbrellaicon.toImage()))
+struct TopBanner: View {
+    @StateObject private var viewModel = TopBannerViewModel(banner: TopBannerModel(title: "반려동물과 나가기 전 체크하세요!", subtitle: "외출 체크리스트 확인하기", icon: DSImage.arrowicon.toImage()))
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 2) {
@@ -25,13 +25,10 @@ struct Banner: View {
             Spacer()
             
             ZStack {
-                Circle()
-                    .fill(Color.petid_Skyblue)
-                    .frame(width: 40, height: 40)
                 viewModel.banner.icon
                     .resizable()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(.petid_white)
+                    .frame(width: 10, height: 20)
+//                    .foregroundColor(.petid_white)
             }
             .padding()
         }
@@ -44,5 +41,5 @@ struct Banner: View {
 }
 
 #Preview {
-    Banner()
+    TopBanner()
 }

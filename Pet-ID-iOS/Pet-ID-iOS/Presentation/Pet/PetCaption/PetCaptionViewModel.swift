@@ -22,4 +22,8 @@ class PetCaptionViewModel: BaseViewModel<PetCaptionViewModelResult> {
     func navigateBack() {
         result.send(.back)
     }
+    
+    func navigateToScan() {
+        result.send(.nextStep)
+    }
 }

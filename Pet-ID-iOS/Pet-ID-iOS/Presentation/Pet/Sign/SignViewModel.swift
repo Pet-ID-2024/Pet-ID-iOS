@@ -7,7 +7,7 @@ enum SignViewModelResult {
 }
 
 final class SignViewModel: BaseViewModel<SignViewModelResult> {
-    @Published var points: [CGPoint] = []
+    @Published var lines: [[CGPoint]] = []
     
     func navigateToPCD() {
         result.send(.completed)

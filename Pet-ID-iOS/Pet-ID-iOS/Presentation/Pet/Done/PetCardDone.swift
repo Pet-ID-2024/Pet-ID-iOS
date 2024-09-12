@@ -20,6 +20,7 @@ struct PetCardDone: View {
                         .font(.petIdChevron)
                         .foregroundColor(.black)
                 }
+                .padding()
                 Spacer()
             }
             .padding()
@@ -42,18 +43,21 @@ struct PetCardDone: View {
         
         Spacer()
         
-        Button {
-            viewModel.complete()
-        } label: {
-            Text("확인")
-                .foregroundColor(.petid_white)
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.petid_clearblue)
-                .cornerRadius(10)
+        VStack{
+            Button {
+                viewModel.complete()
+            } label: {
+                Text("확인")
+                    .foregroundColor(.petid_white)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.petid_clearblue)
+                    .cornerRadius(10)
+            }
+            .padding()
+            
         }
         .padding()
-
     }
 }
 

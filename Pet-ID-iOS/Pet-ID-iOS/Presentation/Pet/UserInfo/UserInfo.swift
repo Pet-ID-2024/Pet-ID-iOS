@@ -25,7 +25,7 @@ struct UserInfo: View {
             }
             
             VStack(alignment: .leading){
-                VStack(alignment: .leading){
+                VStack(alignment: .leading, spacing: 10){
                     Text("2/7")
                         .font(.petIdTitle1)
                         .foregroundColor(.petid_clearblue)
@@ -98,6 +98,7 @@ struct UserInfo: View {
                 .padding(.bottom)
             }
             .padding()
+            .navigationBarHidden(true)
         }
         .padding()
         .onAppear {

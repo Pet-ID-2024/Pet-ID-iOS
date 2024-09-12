@@ -25,9 +25,15 @@ final class HomeCoordinator: Coordinator, ObservableObject {
     
     private func showHome() {
         let viewModel = HomeViewModel()
-        let homeVC = BaseHostingViewController(rootView: HomeView(viewModel: viewModel))
+        let homeVC = BaseHostingViewController(rootView: HomeView(viewModel: viewModel, coordinator: self))
         push(homeVC, animate: false, isRoot: true)
     }
+    
+    func showPetCardView() {
+            let petCardView = PetCardView()
+            let petCardVC = UIHostingController(rootView: petCardView)
+            navigationController.pushViewController(petCardVC, animated: true)
+        }
     
     deinit {
         Logger().debug("Coordinator Deinit \(self)")

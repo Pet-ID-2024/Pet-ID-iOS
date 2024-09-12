@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 enum ScanCheckViewModelResult {
-    case completed
+//    case completed
     case next
     case back
 }

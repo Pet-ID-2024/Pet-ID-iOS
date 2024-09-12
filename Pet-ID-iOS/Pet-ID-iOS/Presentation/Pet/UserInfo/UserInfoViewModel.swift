@@ -12,7 +12,6 @@ enum UserInfoState {
     case valid
     case invalid
     case back
-//    case next
 }
 
 class UserInfoViewModel: BaseViewModel<UserInfoState> {

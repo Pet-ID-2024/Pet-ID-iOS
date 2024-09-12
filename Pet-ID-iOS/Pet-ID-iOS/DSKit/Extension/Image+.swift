@@ -18,7 +18,7 @@ public enum DSImage: String {
     case kakao
     case naver
     
-    case splashImage
+    case splashimage
     
     case phoneicon
     case galleryicon
@@ -27,7 +27,7 @@ public enum DSImage: String {
     case cameraicon
     case infoicon
     
-    case umbrellaicon
+    case arrowicon
     case bannerbg
     case petidicon
     

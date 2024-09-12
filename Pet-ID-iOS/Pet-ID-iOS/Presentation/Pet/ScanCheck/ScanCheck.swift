@@ -3,23 +3,22 @@ import SwiftUI
 struct ScanCheck: View {
     @ObservedObject var viewModel: ScanCheckViewModel
     var coordinator: ScanCheckCoordinator
-    
     @State private var navigateToInformationCheck = false
     
     var body: some View {
-        NavigationView {
-            VStack(alignment: .leading, spacing: 20) {
-                HStack {
-                    Button(action: {
-                        viewModel.navigateBack()
-                    }) {
-                        DSImage.chevronicon.toImage()
-                            .font(.petIdChevron)
-                            .foregroundColor(.black)
-                    }
-                    Spacer()
+        
+        VStack(alignment: .leading, spacing: 20) {
+            HStack {
+                Button(action: {
+                    viewModel.navigateBack()
+                }) {
+                    DSImage.chevronicon.toImage()
+                        .font(.petIdChevron)
+                        .foregroundColor(.black)
                 }
-                
+                Spacer()
+            }
+            VStack(alignment: .leading){
                 VStack(alignment: .leading, spacing: 10){
                     Text("5/7")
                         .font(.petIdTitle2)

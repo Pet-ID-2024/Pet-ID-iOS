@@ -1,7 +1,12 @@
 import UIKit
 
+protocol CameraViewControllerDelegate: AnyObject {
+    func cameraViewController(_ viewController: CameraViewController, didPickImage image: UIImage)
+    func cameraViewControllerDidCancel(_ viewController: CameraViewController)
+}
+
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    var delegate: (UIImagePickerControllerDelegate & UINavigationControllerDelegate)?
+    weak var delegate: CameraViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,20 +27,21 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         present(imagePicker, animated: true, completion: nil)
     }
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true) {
-            self.delegate?.imagePickerControllerDidCancel?(picker) // 취소 시 델리게이트 호출
+        picker.dismiss(animated: true) {
+            self.delegate?.cameraViewControllerDidCancel(self)
         }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
-            dismiss(animated: true) {
-                self.delegate?.imagePickerController?(picker, didFinishPickingMediaWithInfo: info) // 이미지 선택 시 델리게이트 호출
+            picker.dismiss(animated: true) {
+                self.delegate?.cameraViewController(self, didPickImage: image)
             }
         } else {
-            dismiss(animated: true) {
-                self.delegate?.imagePickerControllerDidCancel?(picker) // 이미지 선택 실패 시 델리게이트 호출
+            picker.dismiss(animated: true) {
+                self.delegate?.cameraViewControllerDidCancel(self)
             }
         }
     }

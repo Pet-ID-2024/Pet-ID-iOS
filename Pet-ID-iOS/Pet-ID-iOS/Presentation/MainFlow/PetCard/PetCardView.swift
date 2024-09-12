@@ -18,7 +18,7 @@ struct PetCardView: View {
                     .cornerRadius(10)
                     .foregroundColor(.petid_lightgray)
                     .padding()
-                    .shadow(color: .black.opacity(0.25), radius: 5, x: 0, y: 5) // 그림자를 아래쪽으로만 주기 위해 y값을 설정
+                    .shadow(color: .black.opacity(0.25), radius: 5, x: 0, y: 10)
                 
                 VStack{
                     Spacer()
