@@ -1,51 +1,83 @@
 import Foundation
+import Moya
+import Combine
 
-struct Banner: Identifiable, Codable {
+struct BannerResponse: Codable {
+    let banners: [Banner]
+}
+
+import Foundation
+
+struct Banner: Codable, Identifiable {
     let id: Int
-    let imageUrl: String?
+    var imageUrl: String?
     let text: String?
     let type: String?
     let status: String?
 }
 
+// MARK: - BannerViewModel
 
-import Combine
-import Moya
+
 
 class BannerViewModel: ObservableObject {
-    @Published var banners: [Banner] = []
-    @Published var isLoading: Bool = false
-    @Published var error: Error?
-    
-    private var cancellables = Set<AnyCancellable>()
     private let provider = MoyaProvider<BannerAPI>()
     
+    @Published var banners: [Banner] = []
+    @Published var error: Error?
+    @Published var currentPage: Int = 0
+    
     func fetchBanners(type: String) {
-        isLoading = true
-        provider.requestPublisher(.getBanners(type: type))
-            .map([Banner].self)
-            .sink(receiveCompletion: { completion in
-                self.isLoading = false
-                if case .failure(let error) = completion {
-                    self.error = error
+        provider.request(.getBanners(type: type)) { result in
+            switch result {
+            case .success(let response):
+                let responseData = String(data: response.data, encoding: .utf8)
+                print("서버 응답 데이터: \(responseData ?? "데이터 없음")")
+                do {
+                    var banners = try JSONDecoder().decode([Banner].self, from: response.data)
+                    DispatchQueue.main.async {
+                        self.banners = banners
+//                        self.fetchBannerImages() // 배너 이미지 가져오기
+                    }
+                } catch {
+                    DispatchQueue.main.async {
+                        self.error = error
+                        print("디코딩 오류: \(error.localizedDescription)")
+                    }
                 }
-            }, receiveValue: { banners in
-                self.banners = banners
-            })
-            .store(in: &cancellables)
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.error = error
+                    print("서버 요청 실패: \(error.localizedDescription)")
+                }
+            }
+        }
     }
     
-    func fetchPresignedUrl(for imagePath: String, completion: @escaping (String?) -> Void) {
-        provider.requestPublisher(.getPresignedUrl(imagePath: imagePath))
-            .map(String.self)
-            .sink(receiveCompletion: { completion in
-                if case .failure(let error) = completion {
-                    self.error = error
-//                    completion(nil)
-                }
-            }, receiveValue: { url in
-                completion(url)
-            })
-            .store(in: &cancellables)
-    }
+    // 배너 이미지 URL을 가져오는 함수 추가
+//    func fetchBannerImages() {
+//        for (index, banner) in banners.enumerated() {
+//            guard let imageUrl = banner.imageUrl else { continue }
+//            provider.request(.getPresignedUrl(type: imageUrl)) { result in
+//                switch result {
+//                case .success(let response):
+//                    let presignedUrl = String(data: response.data, encoding: .utf8)
+//                    DispatchQueue.main.async {
+//                        self.banners[index].imageUrl = presignedUrl // presigned URL로 이미지 업데이트
+//                    }
+//                case .failure(let error):
+//                    print("이미지 URL 요청 실패: \(error.localizedDescription)")
+//                }
+//            }
+//        }
+//    }
+}
+
+import Foundation
+
+struct APIError: Decodable, Error {
+    let timestamp: Int
+    let status: Int
+    let error: String
+    let path: String
 }

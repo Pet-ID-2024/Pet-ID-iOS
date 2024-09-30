@@ -82,9 +82,12 @@ struct UserInfo: View {
                 Spacer()
                 
                 Button(action: {
-                    if !viewModel.isNextButtonDisabled {
-                        viewModel.validateInput()
-                    }
+                    viewModel.handleNextButtonTapped()
+//                    viewModel.saveUserInfo()
+                        if !viewModel.isNextButtonDisabled {
+                            coordinator.navigateToPetInfo()
+                        }
+                    
                 }) {
                     Text("다음")
                         .font(.headline)
@@ -108,6 +111,11 @@ struct UserInfo: View {
 }
 
 #Preview{
-    UserInfo(viewModel: UserInfoViewModel(), coordinator: UserInfoCoordinator(navigationController: UINavigationController()))
+    UserInfo(viewModel: UserInfoViewModel(/*memberService: MemberService()*/), coordinator: UserInfoCoordinator(navigationController: UINavigationController()/*, memberService: MemberService()*/))
+//    let memberService = MemberService()
+//        let viewModel = UserInfoViewModel(memberService: memberService)
+//        let coordinator = UserInfoCoordinator(navigationController: UINavigationController(), memberService: memberService)
+//        
+//        UserInfo(viewModel: viewModel, coordinator: coordinator)
 }
 

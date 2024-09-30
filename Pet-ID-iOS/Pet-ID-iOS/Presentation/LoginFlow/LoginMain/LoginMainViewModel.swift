@@ -21,10 +21,11 @@ enum LoginMainReesult {
 final class LoginMainViewModel: BaseViewModel<LoginMainReesult> {
     private let loginUseCase: LoginUseCase
     private let naverLoginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
+    private let keychainManager: KeychainManager // KeychainManager 프로퍼티 추가
     
-    init(loginUseCase: LoginUseCase = DefaultLoginUseCase()) {
+    init(loginUseCase: LoginUseCase = DefaultLoginUseCase(), keychainManager: KeychainManager = KeychainManager()) {
         self.loginUseCase = loginUseCase
-        
+        self.keychainManager = keychainManager
         super.init()
         
     }
@@ -50,7 +51,7 @@ extension LoginMainViewModel {
             }
             
             guard let user = result?.user,
-            let id = user.userID else { return }
+                  let id = user.userID else { return }
             
             let accessToken = user.accessToken.tokenString
             
@@ -128,7 +129,7 @@ extension LoginMainViewModel: NaverThirdPartyLoginConnectionDelegate, UIApplicat
             guard let self else { return }
             
             guard let result = response.value as? [String: Any],
-            let object = result["response"] as? [String: Any] else { return }
+                  let object = result["response"] as? [String: Any] else { return }
             
             guard let id = object["id"] as? String,
                   let accessToken = naverLoginInstance?.accessToken else { return }
@@ -238,6 +239,16 @@ extension LoginMainViewModel {
             do {
                 let result = try await loginUseCase.execute(oauth: oauth, fcmToken: fcmToken)
                 if result {
+                    let authorization = Authorization(accessToken: oauth.accessToken, refreshToken: oauth.id) // 필요에 따라 id, refreshToken 등을 포함
+                    
+                    if let tokenData = oauth.accessToken.data(using: .utf8) {
+                        let success = keychainManager.save(key: .authorization, data: tokenData)
+                        print("Token stored: \(success)")
+                    }
+                    
+                    let success = DefaultAuthRepository().storeAuthorizationToKeychain(auth: authorization)
+                    print("Token stored: \(success)")
+                    
                     await self.result.send(.main)
                 } else {
                     logger.error("Leaguend Error")

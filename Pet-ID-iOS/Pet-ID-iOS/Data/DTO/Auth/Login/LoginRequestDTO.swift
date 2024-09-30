@@ -10,4 +10,5 @@ import Foundation
 public struct LoginRequestDTO: Encodable {
     public var sub: String
     public var fcmToken: String
+    public var idToken: String? // 선택적으로 idToken을 추가
 }

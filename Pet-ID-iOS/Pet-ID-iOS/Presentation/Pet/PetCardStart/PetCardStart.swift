@@ -8,7 +8,7 @@ struct PetCardStart: View {
         VStack(alignment: .leading) {
             HStack {
                 Button(action: {
-                    viewModel.navigateBack()
+                    coordinator.navigateBack()
                 }) {
                     DSImage.chevronicon.toImage()
                         .font(.petIdChevron)
@@ -34,6 +34,7 @@ struct PetCardStart: View {
                 VStack(spacing: 15) {
                     Button(action: {
                         viewModel.selectState(.unregistered)
+//                        coordinator.navigateToUserInfo()
                     }) {
                         Text("반려동물 등록을 하지 않았어요")
                             .frame(maxWidth: .infinity)

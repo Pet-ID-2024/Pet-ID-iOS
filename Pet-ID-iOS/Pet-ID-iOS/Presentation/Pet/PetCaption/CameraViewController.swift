@@ -36,10 +36,12 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
+            // 이미지를 선택했을 때 delegate 호출
             picker.dismiss(animated: true) {
                 self.delegate?.cameraViewController(self, didPickImage: image)
             }
         } else {
+            // 이미지 선택이 실패했을 때 delegate 호출
             picker.dismiss(animated: true) {
                 self.delegate?.cameraViewControllerDidCancel(self)
             }

@@ -57,6 +57,7 @@ struct PetCaption: View {
             
             Button(action: {
                 viewModel.navigateToCamera()
+                print("카메라 눌림")
             }) {
                 Text("촬영 시작")
                     .frame(maxWidth: .infinity)

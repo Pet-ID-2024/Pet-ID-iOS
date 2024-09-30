@@ -19,25 +19,43 @@ final class PetCaptionCoordinator: NSObject, Coordinator {
         navigationBarHidden(true)
     }
     
-    func showPetCaption() {
+    private func showPetCaption() {
+//        let viewModel = PetCaptionViewModel()
+//        let petCaptionView = PetCaption(viewModel: viewModel, coordinator: self)
+//        
+//        viewModel.result.subject
+//            .sink(receiveValue: { [weak self] result in
+//                switch result {
+//                case .completed:
+//                    break
+//                case .nextStep:
+//                    self?.navigateToCamera()
+//                case .back:
+//                    self?.navigateBack()
+//                }
+//            })
+//            .store(in: &cancelBag)
+//        
+//        let petCaptionVC = UIHostingController(rootView: petCaptionView)
+//        navigationController.pushViewController(petCaptionVC, animated: true)
         let viewModel = PetCaptionViewModel()
-        let petCaptionView = PetCaption(viewModel: viewModel, coordinator: self)
+        let petCaptionVC = UIHostingController(rootView: PetCaption(viewModel: viewModel, coordinator: self))
+        push(petCaptionVC, animate: true)
         
-        viewModel.result.subject
-            .sink(receiveValue: { [weak self] result in
-                switch result {
-                case .completed:
-                    break
-                case .nextStep:
-                    self?.navigateToCamera()
-                case .back:
-                    self?.navigateBack()
-                }
-            })
-            .store(in: &cancelBag)
-        
-        let petCaptionVC = UIHostingController(rootView: petCaptionView)
-        navigationController.pushViewController(petCaptionVC, animated: true)
+        viewModel.result.subject.sink(receiveValue: {[weak self] state in
+            self?.petCaptionStateSelection(state)
+        }).store(in: &cancelBag)
+    }
+    
+    private func petCaptionStateSelection(_ state: PetCaptionViewModelResult) {
+        switch state {
+        case .completed:
+            navigateToCamera()
+        case .back:
+            navigateBack()
+        case .nextStep:
+            print("뒤로가기")
+        }
     }
     
     func navigateBack() {

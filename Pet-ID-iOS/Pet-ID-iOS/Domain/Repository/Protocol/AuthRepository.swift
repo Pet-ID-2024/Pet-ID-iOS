@@ -12,12 +12,12 @@ protocol AuthRepository {
     
     /// 키체인으로부터 인증정보를 가져옵니다.
     /// - Returns: Accesstoken, RefreshToken
-    func getAuthorizationFromKeychain() -> AnyPublisher<Authorization, UserError>
+    func fetchAuthTokensFromKeychain() -> AnyPublisher<Authorization, UserError>
     
     
     /// 키체인으로부터 인증정보를 가져옵니다.
     /// - Returns: Accesstoken, RefreshToken
-    func getAuthorizationFromKeychain() throws -> Authorization
+    func fetchAuthTokensFromKeychainSync() throws -> Authorization
     
     /// 키체인에 인증정보를 저장합니다
     /// - Parameter auth: 저장할 Authorization

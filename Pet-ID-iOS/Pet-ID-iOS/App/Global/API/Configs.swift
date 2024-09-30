@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Configs: 앱에서 사용하는 전역 설정 값을 관리
 public struct Configs {
     static let appName: String = "PetID"
     

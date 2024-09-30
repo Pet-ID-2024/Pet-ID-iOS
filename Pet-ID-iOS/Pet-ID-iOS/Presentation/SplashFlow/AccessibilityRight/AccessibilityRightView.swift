@@ -70,6 +70,7 @@ struct AccessibilityRightView: View {
                 Text("선택적 접근권한은 동의하지 않아도 해당기능 외 앱 이용이 가능합니다.")
                     .font(.petIdBody2)
                     .foregroundColor(.petid_subtitle)
+                    .lineLimit(2)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 Spacer()

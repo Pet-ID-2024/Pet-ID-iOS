@@ -29,10 +29,13 @@ final class HomeCoordinator: Coordinator, ObservableObject {
         push(homeVC, animate: false, isRoot: true)
     }
     
-    func showPetCardView() {
-            let petCardView = PetCardView()
-            let petCardVC = UIHostingController(rootView: petCardView)
-            navigationController.pushViewController(petCardVC, animated: true)
+    func goToPetStart() {
+//        let petCardView = PetCardStart(viewModel: PetCardStartViewModel(), coordinator: PetCardStartCoordinator(navigationController: UINavigationController()))
+//            let petCardVC = UIHostingController(rootView: petCardView)
+//            navigationController.pushViewController(petCardVC, animated: true)
+        let petCardStartCoordinator = PetCardStartCoordinator(navigationController: navigationController) // 기존 내비게이션 컨트롤러 사용
+                childCoordinators[petCardStartCoordinator.id] = petCardStartCoordinator // 자식 코디네이터 추가
+                petCardStartCoordinator.start() // 코디네이터 시작
         }
     
     deinit {

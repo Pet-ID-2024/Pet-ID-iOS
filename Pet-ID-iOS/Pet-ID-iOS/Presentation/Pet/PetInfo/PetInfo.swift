@@ -1,11 +1,10 @@
 import SwiftUI
 
 struct PetInfo: View {
-    @StateObject private var viewModel = PetInfoViewModel()
+    @StateObject var viewModel = PetInfoViewModel()
     var coordinator: PetInfoCoordinator
     
     var body: some View {
-        NavigationView {
             ScrollView {
                 VStack(alignment: .leading) {
                     HStack {
@@ -74,13 +73,8 @@ struct PetInfo: View {
                             }
                         }
                         
-                        NavigationLink(destination: PetCaption(viewModel: PetCaptionViewModel(), coordinator: PetCaptionCoordinator(navigationController: UINavigationController())), isActive: $viewModel.isNextScreenPresented) {
-                            EmptyView()
-                        }
-                        .hidden()
-                        
                         Button(action: {
-                            viewModel.isNextScreenPresented = true
+                            viewModel.handleNextButtonTapped()
                         }) {
                             Text("완료")
                                 .frame(maxWidth: .infinity)
@@ -111,13 +105,13 @@ struct PetInfo: View {
                     }
                     .padding()
                 }
+                .navigationBarBackButtonHidden(true)
             }
-            .navigationBarBackButtonHidden(true)
+            .padding()
         }
-        .padding()
+        
     }
-}
 
 #Preview {
-    PetInfo(coordinator: PetInfoCoordinator(navigationController: UINavigationController()))
+    PetInfo(viewModel: PetInfoViewModel(),coordinator: PetInfoCoordinator(navigationController: UINavigationController()))
 }

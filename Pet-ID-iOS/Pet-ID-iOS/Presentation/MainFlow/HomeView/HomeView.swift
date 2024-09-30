@@ -39,12 +39,30 @@ struct HomeView: View {
                         TopBanner()
                     }
                     
-                    Button {
-                        coordinator.showPetCardView()
-                    } label: {
-                        PetCardView()
+//                    Button {
+//                        coordinator.goToPetStart()
+//                    } label: {
+//                        PetCardView()
+//                    }
+//                    .buttonStyle(PlainButtonStyle())
+                    
+                    PetCardView(coordinator: coordinator)
+                    
+                    VStack(alignment: .leading, spacing: -30) {
+                        Text("반려인 라이프 스타일 추천")
+                            .bold()
+                            .padding()
+                        VStack(spacing: -50){
+                            BannerView()
+                                .frame(height: 180)
+                            //                        .background(Color.blue)
+                            //                        .cornerRadius(25)
+                            
+                            BannerView()
+                                .frame(height: 180)
+                        }
+                        
                     }
-                    .buttonStyle(PlainButtonStyle())
                 }
             }
         }

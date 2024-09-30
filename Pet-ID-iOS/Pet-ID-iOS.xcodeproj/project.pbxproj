@@ -14,6 +14,7 @@
 		0A08B1692C5FD11500267DE1 /* PetCaptionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A08B1682C5FD11500267DE1 /* PetCaptionCoordinator.swift */; };
 		0A08B16E2C6212DF00267DE1 /* PetCardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A08B16D2C6212DF00267DE1 /* PetCardCoordinator.swift */; };
 		0A08B1702C62157000267DE1 /* UserInfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A08B16F2C62157000267DE1 /* UserInfoCoordinator.swift */; };
+		0A09F67B2CA6D13D0063B9E1 /* MemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A09F67A2CA6D13D0063B9E1 /* MemberService.swift */; };
 		0A1069FA2C1747870031E230 /* PetCardStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1069F92C1747870031E230 /* PetCardStart.swift */; };
 		0A1069FC2C1750B70031E230 /* PetCaption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1069FB2C1750B70031E230 /* PetCaption.swift */; };
 		0A21CEE72C0DE23A005DD8E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A21CEE62C0DE23A005DD8E2 /* Assets.xcassets */; };
@@ -160,6 +161,7 @@
 		0A08B1682C5FD11500267DE1 /* PetCaptionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCaptionCoordinator.swift; sourceTree = "<group>"; };
 		0A08B16D2C6212DF00267DE1 /* PetCardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardCoordinator.swift; sourceTree = "<group>"; };
 		0A08B16F2C62157000267DE1 /* UserInfoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCoordinator.swift; sourceTree = "<group>"; };
+		0A09F67A2CA6D13D0063B9E1 /* MemberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberService.swift; sourceTree = "<group>"; };
 		0A1069F92C1747870031E230 /* PetCardStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardStart.swift; sourceTree = "<group>"; };
 		0A1069FB2C1750B70031E230 /* PetCaption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCaption.swift; sourceTree = "<group>"; };
 		0A21CEDF2C0DE238005DD8E2 /* Pet-ID-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pet-ID-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -310,6 +312,7 @@
 				0A55B92B2C0F371E00C98F16 /* UserInfo.swift */,
 				0A08B15F2C5F7CF600267DE1 /* UserModel.swift */,
 				0A08B1612C5F7D1D00267DE1 /* UserInfoViewModel.swift */,
+				0A09F67A2CA6D13D0063B9E1 /* MemberService.swift */,
 			);
 			path = UserInfo;
 			sourceTree = "<group>";
@@ -1391,6 +1394,7 @@
 				0AAD04722C81A830001EA775 /* BannerView.swift in Sources */,
 				0AAD046E2C81A800001EA775 /* BannerService.swift in Sources */,
 				0A21CF262C0DF131005DD8E2 /* TermsAgreementView.swift in Sources */,
+				0A09F67B2CA6D13D0063B9E1 /* MemberService.swift in Sources */,
 				FAF8E70F2C40E3A200CA7145 /* LoginResponseDTO.swift in Sources */,
 				FAC4CD502C492F3C00A3658A /* JoinResponseDTO.swift in Sources */,
 				0A21CF1E2C0DEFEB005DD8E2 /* LoginSuccess.swift in Sources */,

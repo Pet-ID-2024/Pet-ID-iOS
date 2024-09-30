@@ -15,14 +15,14 @@ struct InputField: View {
                     .font(.system(size: 20, weight: .bold))
                     .foregroundColor(.black)
                 
-                if !text.isEmpty {
+                
                     Button(action: {
                         text = ""
                     }) {
                         Image(systemName: "x.circle.fill")
-                            .foregroundColor(.gray)
+                            .foregroundColor(.petid_foregray)
                     }
-                }
+                
             }
             Divider()
                 .background(Color.gray)

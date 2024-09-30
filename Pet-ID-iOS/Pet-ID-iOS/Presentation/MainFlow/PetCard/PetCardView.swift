@@ -18,7 +18,8 @@ struct PetCardView: View {
                     .cornerRadius(10)
                     .foregroundColor(.petid_lightgray)
                     .padding()
-                    .shadow(color: .black.opacity(0.25), radius: 5, x: 0, y: 10)
+                // 밑에만 그림자 생기게
+                    .shadow(color: .black.opacity(0.25), radius: 3, y: 3)
                 
                 VStack{
                     Spacer()
@@ -35,7 +36,7 @@ struct PetCardView: View {
                         .multilineTextAlignment(.center)
                         .padding()
                     Button(action: {
-                        
+                        coordinator?.goToPetStart()
                     }) {
                         Text(viewModel.card.buttonText)
                             .font(.petIdBody1)

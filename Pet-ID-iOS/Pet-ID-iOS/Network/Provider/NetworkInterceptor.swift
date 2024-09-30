@@ -8,21 +8,25 @@
 import Alamofire
 import Foundation
 
+// 네트워크 요청을 가로채고 조작하는 클래스
 public class NetworkInterceptor: RequestInterceptor, LoggAble {
     
     static let authRepository: AuthRepository = DefaultAuthRepository()
     
+    // 요청을 조정하여 Authorization 헤더를 추가
     public func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         
         var newRequest = urlRequest
         
+        
         // MARK: - adapt 내용 추가
         
+        // 인증 API가 아닐 경우 Authorization 헤더 추가
         if !isAuthAPI(path: urlRequest.url?.pathComponents.joined()) {
             
             do {
                 
-                let authorization: Authorization = try Self.authRepository.getAuthorizationFromKeychain()
+                let authorization: Authorization = try Self.authRepository.fetchAuthTokensFromKeychainSync()
                 newRequest.addValue(authorization.accessToken, forHTTPHeaderField: "Authentication")
                 
             } catch {
@@ -33,6 +37,7 @@ public class NetworkInterceptor: RequestInterceptor, LoggAble {
         
         let httpRequest = newRequest
         
+        // 요청 로그 출력
         let url = newRequest.url?.absoluteString ?? "unknown nil"
         let method = newRequest.httpMethod ?? "unknown method"
         var httpHeader: String = ""
@@ -63,31 +68,35 @@ public class NetworkInterceptor: RequestInterceptor, LoggAble {
         completion(.success(newRequest))
     }
     
+    // 요청이 실패했을 떄 재시도 로직
     public func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) async {
         
+        // 인증 API인 경우 재시도 하지 X
         if isAuthAPI(path: request.request?.url?.pathComponents.joined()) {
             completion(.doNotRetry)
         } else {
+            // 401 Unauthorized 에러 발생 시 토큰 갱신 시도
             if request.response?.statusCode == 401 {
                 
                 do {
-                    let authorization: Authorization = try Self.authRepository.getAuthorizationFromKeychain()
+                    let authorization: Authorization = try Self.authRepository.fetchAuthTokensFromKeychainSync()
                     let refreshedAuthorization = try await Self.authRepository.refresh(refreshToken: authorization.refreshToken)
                     _ = Self.authRepository.updateAuthorizationToKeychain(auth: refreshedAuthorization)
                     
-                    completion(.retry)
+                    completion(.retry) // 재시도
                     
                 } catch {
-                    completion(.doNotRetry)
+                    completion(.doNotRetry) // 재시도 X
                 }
                 
             }
  
-            completion(.doNotRetry)
+            completion(.doNotRetry) // 기본적으로 재시도하지 X
         }
     }
     
     
+    // 주어진 경로가 인증 관련 API인지 확인
     func isAuthAPI(path: String?) -> Bool {
         
         if let path = path {

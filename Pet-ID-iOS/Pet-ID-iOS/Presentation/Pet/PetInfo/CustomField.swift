@@ -147,7 +147,7 @@ struct AddressField: View {
     
     var body: some View {
         HStack {
-            Text(text.isEmpty ? placeholder : text)
+            TextField(placeholder, text: $text)
                 .foregroundColor(text.isEmpty ? Color.petid_border : Color.black)
             Spacer()
             Image(systemName: "magnifyingglass")
@@ -163,6 +163,31 @@ struct AddressField: View {
         )
     }
 }
+
+//struct AddressField: View {
+//    @Binding var text: String
+//    var placeholder: String
+//    var field: PetInfoViewModel.Field
+//    
+//    var body: some View {
+//        HStack {
+//            TextField(placeholder, text: $text)
+//                .padding()
+//                .background(Color.white)
+//                .cornerRadius(8)
+//                .overlay(
+//                    RoundedRectangle(cornerRadius: 8)
+//                        .stroke(Color.petid_border, lineWidth: 1)
+//                )
+//                .foregroundColor(.black) // 입력된 텍스트 색상
+//            
+//            Image(systemName: "magnifyingglass")
+//                .foregroundColor(.gray)
+//                .padding(.trailing, 10) // 아이콘과 오른쪽 가장자리 간격
+//        }
+//        .padding(.horizontal) // HStack 전체 패딩 추가
+//    }
+//}
 
 struct TextFieldView: View {
     @Binding var text: String
