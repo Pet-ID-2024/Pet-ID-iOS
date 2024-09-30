@@ -10,14 +10,14 @@ import UIKit
 
 enum TabList: Int, CaseIterable {
     case home
-    case hospital
+    case reservation
     case blog
     case myPage
     
     var title: String {
         switch self {
         case .home: return "홈"
-        case .hospital: return "등록대행병원"
+        case .reservation: return "등록대행병원"
         case .blog: return "펫블로그"
         case .myPage: return "my"
         }
@@ -26,7 +26,7 @@ enum TabList: Int, CaseIterable {
     var imageName: String {
         switch self {
         case .home: return "home"
-        case .hospital: return "hospital"
+        case .reservation: return "hospital"
         case .blog: return "blog"
         case .myPage: return "person"
         }
@@ -35,7 +35,7 @@ enum TabList: Int, CaseIterable {
     var selectedImageName: String {
         switch self {
         case .home: return "home_s"
-        case .hospital: return "hospital_s"
+        case .reservation: return "hospital_s"
         case .blog: return "blog_s"
         case .myPage: return "person_s"
         }
@@ -75,7 +75,7 @@ final class TabCoordinator: Coordinator {
             
             switch $0 {
             case .home: showHome(navigationController)
-            case .hospital: break
+            case .reservation: showReservation(navigationController)
             case .blog: break
             case .myPage: break
             }
@@ -87,6 +87,13 @@ final class TabCoordinator: Coordinator {
     
     private func showHome(_ root: UINavigationController) {
         let coordinator = HomeCoordinator(root)
+        add(coordinator: coordinator)
+        coordinator.finishDelegate = self
+        coordinator.start()
+    }
+    
+    private func showReservation(_ root: UINavigationController) {
+        let coordinator = ReservationCoordinator(root)
         add(coordinator: coordinator)
         coordinator.finishDelegate = self
         coordinator.start()

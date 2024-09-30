@@ -11,6 +11,7 @@ import Foundation
 public class NetworkInterceptor: RequestInterceptor, LoggAble {
     
     static let authRepository: AuthRepository = DefaultAuthRepository()
+    static let logoutUseCase: LogoutUseCase = DefaultLogoutUseCase()
     
     public func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         
@@ -23,7 +24,7 @@ public class NetworkInterceptor: RequestInterceptor, LoggAble {
             do {
                 
                 let authorization: Authorization = try Self.authRepository.getAuthorizationFromKeychain()
-                newRequest.addValue(authorization.accessToken, forHTTPHeaderField: "Authentication")
+                newRequest.addValue(authorization.accessToken, forHTTPHeaderField: "Authorization")
                 
             } catch {
                 
@@ -52,7 +53,7 @@ public class NetworkInterceptor: RequestInterceptor, LoggAble {
         
         print(
             "\n" +
-            "🛰 V2 NETWORK Reqeust LOG \n"
+            "🛰 NETWORK Reqeust LOG \n"
             + "URL: \(url)\n"
             + "Method: \(method)\n"
             + "Header: \n\(httpHeader)\n"
@@ -66,6 +67,7 @@ public class NetworkInterceptor: RequestInterceptor, LoggAble {
     public func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) async {
         
         if isAuthAPI(path: request.request?.url?.pathComponents.joined()) {
+            
             completion(.doNotRetry)
         } else {
             if request.response?.statusCode == 401 {
@@ -78,6 +80,7 @@ public class NetworkInterceptor: RequestInterceptor, LoggAble {
                     completion(.retry)
                     
                 } catch {
+                    Self.logoutUseCase.execute()
                     completion(.doNotRetry)
                 }
                 

@@ -36,6 +36,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         configurePushNotification(application: application)
         requestAccessibility()
         
+        settingCache()
+        
         return true
     }
     
