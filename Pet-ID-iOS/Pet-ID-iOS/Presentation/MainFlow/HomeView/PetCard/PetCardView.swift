@@ -9,40 +9,47 @@ import SwiftUI
 
 struct PetCardView: View {
     @StateObject private var viewModel = PetCardViewModel()
+    var coordinator: HomeCoordinator?
     
     var body: some View {
         VStack{
             ZStack {
                 Rectangle()
                     .cornerRadius(10)
-                    .foregroundColor(.petid_lightgrey)
+                    .foregroundColor(.petid_f4)
                     .padding()
-                    .shadow(radius: 5)
+                    .shadow(color: .black.opacity(0.25), radius: 3, y: 3)
                 
                 VStack{
                     Text(viewModel.card.mainText)
                         .multilineTextAlignment(.center)
+                        .font(.body3_reg)
+                        .foregroundColor(.petid_gu2)
                         .padding()
+                        .padding(.top, 20)
                     DSImage.petidicon.toImage()
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 200)
+                        .frame(width: 154)
                     Text(styledSubText(viewModel.card.subText))
-                        .font(.petIdTitle3)
-                        .bold()
+                        .font(.headline15)
+                        .lineSpacing(8)
+//                        .bold()
                         .multilineTextAlignment(.center)
+                        .padding()
                     Button(action: {
-                        
+                        coordinator?.goToPetStart()
                     }) {
                         Text(viewModel.card.buttonText)
-                            .font(.petIdBody1)
+                            .font(.body3_med)
                             .frame(minWidth: 0, maxWidth: .infinity)
                             .padding()
-                            .background(Color.blue)
+                            .background(Color.petid_clearblue)
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     }
                     .padding(.horizontal, 10)
+//                    .padding(.bottom, 10)
                     .padding()
                 }
                 .padding()
@@ -60,5 +67,5 @@ struct PetCardView: View {
 }
 
 #Preview {
-    PetCardView()
+    PetCardView(coordinator: nil)
 }

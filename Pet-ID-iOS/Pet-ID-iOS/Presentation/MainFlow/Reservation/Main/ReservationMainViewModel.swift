@@ -8,12 +8,13 @@
 import SwiftUI
 import Combine
 
-enum ReservationMainViewModelResult {
+enum ReservationMainState {
     case selectHospital
+    case search
 }
 
 @MainActor
-final class ReservationMainViewModel: BaseViewModel<ReservationMainViewModelResult> {
+final class ReservationMainViewModel: BaseViewModel<ReservationMainState> {
     @Published var searchText: String = ""
     @Published var sidoLocations: [Location] = []
     @Published var selectedSidoLocation: Location = Location(id: 0, name: "서울")
@@ -33,8 +34,12 @@ final class ReservationMainViewModel: BaseViewModel<ReservationMainViewModelResu
         }
     }
     
-    func toResult(result: ReservationMainViewModelResult) {
-        self.result.send(result)
+//    func toResult(result: ReservationMainState) {
+//        self.result.send(result)
+//    }
+    
+    func navigateToDetail() {
+        result.send(.selectHospital)
     }
 }
 

@@ -9,40 +9,69 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
+    var coordinator: HomeCoordinator
     
     var body: some View {
         VStack {
             HStack{
-                Text("Pet ID")
-                    .font(.petIdTitle2)
-                    .foregroundColor(.petid_blue)
-                Spacer()
-                Image(.notificationicon)
+                DSImage.petidmain.toImage()
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 20)
+                    .frame(width: 31, height: 35)
+                Text("펫아이디를 만들어보세요.")
+                    .font(.body3_bold)
+                    .foregroundColor(.petid_under_bar)
+                
+                Spacer()
+                
+                Button {
+                    
+                } label: {
+                    
+                    DSImage.notificationicon.toImage()
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 20)
+                }
             }
-            .padding()
+            .padding(.horizontal)
+//                        .padding(.bottom, 8)
             
             ScrollView {
                 VStack{
+                    PetCardView(coordinator: coordinator)
                     
-                    Button {
+                    HStack {
+                        Text("🐶 반려 정보 tip")
+                            .font(.body1_semi)
+                            .foregroundColor(.petid_title)
                         
-                    } label: {
-                        Banner()
+                        Spacer()
+                        
+                        Button {
+                            
+                        } label: {
+                            Text("더보기")
+                                .font(.caption1_reg)
+                                .foregroundColor(.petid_b4)
+                        }
                     }
+                    .padding(.top, 50)
+                    
+                    Spacer()
                     
                     
-                    PetCardView()
+                    BannerView()
                     
+                    //                        BannerView()
                     
                 }
             }
+            .padding([.leading, .trailing], 20)
         }
+        .padding([.leading, .trailing], 20)
     }
 }
 
 #Preview {
-    HomeView(viewModel: HomeViewModel())
+    HomeView(viewModel: HomeViewModel(), coordinator: HomeCoordinator(UINavigationController()))
 }

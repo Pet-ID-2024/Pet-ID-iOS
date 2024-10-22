@@ -14,8 +14,8 @@ struct V2NetworkLoggerPlugin: PluginType {
         switch result {
         case .success(let response):
             onSuceed(response, target: target, isFromError: false)
-        case .failure(let failure):
-            break
+        case .failure(let error):
+            print("❌ Network Request Failed: \(error.localizedDescription)")
         }
     }
     

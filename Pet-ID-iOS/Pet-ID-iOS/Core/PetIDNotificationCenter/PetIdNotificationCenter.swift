@@ -13,5 +13,8 @@ struct PetIdNotificationCenter {
     
     private init () {}
     
+    // 로그아웃 이벤트 퍼블리셔
     let logout = ResultPublisher<Void>()
+    let loginSuccess = ResultPublisher<Void>()
+    let newNotification = ResultPublisher<String>()
 }

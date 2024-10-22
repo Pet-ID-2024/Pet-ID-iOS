@@ -31,9 +31,10 @@ struct IsEnablePetButton: View {
             label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(isEnabled ? .blue : .gray)
+                        .foregroundColor(isEnabled ? .petid_f5 : .petid_clearblue)
                     Text(title)
-                        .foregroundStyle(.white)
+                        .foregroundStyle(Color.petid_b9)
+                        .font(.body2_med)
                 }
             }
         )

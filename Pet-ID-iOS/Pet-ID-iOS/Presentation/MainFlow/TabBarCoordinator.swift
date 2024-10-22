@@ -77,7 +77,7 @@ final class TabCoordinator: Coordinator {
             case .home: showHome(navigationController)
             case .reservation: showReservation(navigationController)
             case .blog: break
-            case .myPage: break
+            case .myPage: showMyPage(navigationController)
             }
         }
         
@@ -94,6 +94,13 @@ final class TabCoordinator: Coordinator {
     
     private func showReservation(_ root: UINavigationController) {
         let coordinator = ReservationCoordinator(root)
+        add(coordinator: coordinator)
+        coordinator.finishDelegate = self
+        coordinator.start()
+    }
+    
+    private func showMyPage(_ root: UINavigationController) {
+        let coordinator = MyPageCoordinator(root)
         add(coordinator: coordinator)
         coordinator.finishDelegate = self
         coordinator.start()

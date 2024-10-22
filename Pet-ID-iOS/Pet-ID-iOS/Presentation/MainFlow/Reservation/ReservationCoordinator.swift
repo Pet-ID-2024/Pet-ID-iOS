@@ -15,6 +15,7 @@ final class ReservationCoordinator: Coordinator, ObservableObject {
     var finishDelegate: CoordinatorFinishDelegate?
     var navigationController: UINavigationController
     var childCoordinators: [String : any Coordinator] = [:]
+    private var cancelBag = Set<AnyCancellable>()
     
     init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -28,7 +29,30 @@ final class ReservationCoordinator: Coordinator, ObservableObject {
         let viewModel = ReservationMainViewModel()
         let homeVC = BaseHostingViewController(rootView: ReservationMainView(viewModel: viewModel))
         push(homeVC, animate: false, isRoot: true)
+        
+        viewModel.result.subject
+            .sink(receiveValue: { [weak self] state in
+                self?.handleStateSelection(state)
+            })
+            .store(in: &cancelBag)
     }
+        
+    
+    private func handleStateSelection(_ state: ReservationMainState) {
+        switch state {
+        case .selectHospital:
+            navigateToDetail()
+        case .search:
+            break
+        }
+    }
+    
+    func navigateToDetail() {
+        let detailCoordinator = ReservationDetailCoordinator(/*navigationController:*/ navigationController)
+        childCoordinators[detailCoordinator.id] = detailCoordinator
+        detailCoordinator.start()
+    }
+    
     
     deinit {
         Logger().debug("Coordinator Deinit \(self)")

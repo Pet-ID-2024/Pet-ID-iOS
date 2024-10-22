@@ -47,3 +47,10 @@ struct Keychain: KeychainProtocol {
         return SecItemDelete(query as CFDictionary)
     }
 }
+
+enum KeychainError: Error {
+    case addError(OSStatus)
+    case searchError(OSStatus)
+    case updateError(OSStatus)
+    case deleteError(OSStatus)
+}
