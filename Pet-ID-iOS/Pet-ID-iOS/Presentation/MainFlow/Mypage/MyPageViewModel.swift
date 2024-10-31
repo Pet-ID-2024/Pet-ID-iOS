@@ -12,10 +12,10 @@ enum MyPageState {
     case petInfo
     case reservation
     case accessibilityRight
-    case personal
+    case privacyPolicy
     case information
     case qna
-    case tal
+    case withdraw
 }
 
 class MyPageViewModel: BaseViewModel<MyPageState> {

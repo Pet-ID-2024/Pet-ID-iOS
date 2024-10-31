@@ -43,6 +43,9 @@ public enum DSImage: String {
     case timeicon
     case randomicon
     
+    case dialogicon1
+    case dialogicon2
+    
     var toName: String {
         return self.rawValue
     }

@@ -25,6 +25,11 @@ struct DefaultAddressRepository: AddressRepository {
             .map { $0.toDomain() }
     }
     
+    func eupmundong(sigunguId: Int) async throws -> [Location] {
+        try await dataSource.eupmundong(sigunguId: sigunguId)
+            .map{ $0.toDomain() }
+    }
+    
 }
 
 

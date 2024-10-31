@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PetInfoDetail: View {
     @ObservedObject var viewModel: PetInfoDetailViewModel
+    @State private var showDialog = false
     var body: some View {
         VStack {
             HStack {
@@ -101,7 +102,7 @@ struct PetInfoDetail: View {
                         .foregroundColor(.petid_title)
                     Spacer()
                     Button {
-                        
+                        showDialog.toggle()
                     } label: {
                         HStack{
                             Text("미등록 상태")
@@ -109,6 +110,9 @@ struct PetInfoDetail: View {
                             Image(systemName: "chevron.right")
                         }
                         .foregroundColor(.petid_caution_red)
+                    }
+                    .sheet(isPresented: $showDialog) {
+                        Dialog5(isPresented: showDialog, image: Image(systemName: "pawprint"), buttonString: "다음")
                     }
 
                 }

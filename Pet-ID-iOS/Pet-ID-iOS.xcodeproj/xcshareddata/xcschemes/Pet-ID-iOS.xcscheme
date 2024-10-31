@@ -25,8 +25,8 @@
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = ""
-      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
       <Testables>
@@ -35,7 +35,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0A21CEEF2C0DE23A005DD8E2"
+               BlueprintIdentifier = "0A14DD192CC7E87500FB26AE"
                BuildableName = "Pet-ID-iOSTests.xctest"
                BlueprintName = "Pet-ID-iOSTests"
                ReferencedContainer = "container:Pet-ID-iOS.xcodeproj">

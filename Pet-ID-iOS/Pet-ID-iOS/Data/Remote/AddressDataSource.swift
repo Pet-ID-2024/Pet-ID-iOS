@@ -10,6 +10,7 @@ import Foundation
 protocol AddressDataSource {
     func sido() async throws -> [LocationResponseDTO]
     func sigungu(sidoId: Int) async throws -> [LocationResponseDTO]
+    func eupmundong(sigunguId: Int) async throws -> [LocationResponseDTO]
 }
 
 struct DefaultAddressDataSource: AddressDataSource {
@@ -22,5 +23,9 @@ struct DefaultAddressDataSource: AddressDataSource {
     
     func sigungu(sidoId: Int) async throws -> [LocationResponseDTO] {
         try await provider.request(.sigungu(sidoId: sidoId))
+    }
+    
+    func eupmundong(sigunguId: Int) async throws -> [LocationResponseDTO] {
+        try await provider.request(.eupmundong(sigunguId: sigunguId))
     }
 }

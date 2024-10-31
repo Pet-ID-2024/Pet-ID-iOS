@@ -5,9 +5,12 @@ protocol BannerDataSource {
 }
 
 struct DefaultBannerDataSource: BannerDataSource {
+    private let provider = Provider<BannerAPI>()
     
-    private let provider: Provider<BannerAPI> = Provider()
-    
+//    init(provider: Provider<BannerAPI> = Provider()) {
+//        self.provider = provider
+//    }
+
     func getBanners(type: String) async throws -> [BannerResponseDTO] {
         try await provider.request(.getBanners(type: type))
     }

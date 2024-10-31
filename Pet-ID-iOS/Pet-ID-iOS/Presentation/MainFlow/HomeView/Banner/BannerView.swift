@@ -4,7 +4,7 @@ struct BannerView: View {
     @StateObject private var viewModel = BannerViewModel()
     @State private var currentPage: Int = 0 // 현재 페이지 상태 추가
     private let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect() // 5초마다 실행되는 타이머
-
+    
     var body: some View {
         TabView(selection: $currentPage) {
             ForEach(viewModel.banners.indices, id: \.self) { index in
@@ -14,14 +14,15 @@ struct BannerView: View {
                         .multilineTextAlignment(.leading)
                     // 이미지는 일단 건드리지 않음
                     Text(viewModel.banners[index].imageUrl ?? "No Image URL")
-//                    if let imageUrl = viewModel.banners[index].imageUrl, let url = URL(string: imageUrl) {
-//                                            AsyncImage(url: url) { image in
-//                                                image.resizable()
-//                                            } placeholder: {
-//                                                Color.gray // 로딩 중일 때는 회색 배경 표시
-//                                            }
-//                                            .frame(width: 300, height: 150)
-//                                            .cornerRadius(10)
+                    if let imageUrl = viewModel.banners[index].imageUrl, let url = URL(string: imageUrl) {
+                        AsyncImage(url: url) { image in
+                            image.resizable()
+                        } placeholder: {
+                            Color.gray // 로딩 중일 때는 회색 배경 표시
+                        }
+                        .frame(width: 300, height: 150)
+                        .cornerRadius(10)
+                    }
                 }
                 .frame(width: 300, height: 80) // 배너의 크기 설정
                 .padding()
@@ -43,11 +44,15 @@ struct BannerView: View {
                     .cornerRadius(10)
                     .padding(.trailing, 16)
             }
-            .padding(.bottom, 16), alignment: .bottom
+                .padding(.bottom, 16), alignment: .bottom
         )
         .onAppear {
             Task{
-             await   viewModel.fetchBanners(type: "content")
+                do {
+                    try await viewModel.fetchBanners(type: "content")
+                } catch {
+                    print("배너 로드 실패: \(error.localizedDescription)")
+                }
             }
         }
         .onReceive(timer) { _ in

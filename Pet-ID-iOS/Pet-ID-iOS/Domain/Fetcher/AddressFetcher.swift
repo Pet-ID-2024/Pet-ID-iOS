@@ -10,6 +10,7 @@ import Foundation
 protocol AddressFetcher {
     func sido() async throws -> [Location]
     func sigungu(sidoId: Int) async throws -> [Location]
+    func eupmundong(sigunguId: Int) async throws -> [Location]
 }
 
 struct DefaultAddressFetcher: AddressFetcher {
@@ -28,5 +29,9 @@ struct DefaultAddressFetcher: AddressFetcher {
     
     func sigungu(sidoId: Int) async throws -> [Location] {
         try await repository.sigungu(sidoId: sidoId)
+    }
+    
+    func eupmundong(sigunguId: Int) async throws -> [Location] {
+        try await repository.eupmundong(sigunguId: sigunguId)
     }
 }

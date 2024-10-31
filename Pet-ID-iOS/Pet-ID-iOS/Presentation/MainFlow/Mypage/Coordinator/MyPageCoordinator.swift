@@ -46,13 +46,13 @@ final class MyPageCoordinator: Coordinator, ObservableObject {
             break
         case .accessibilityRight:
             break
-        case .personal:
+        case .privacyPolicy:
             break
         case .information:
             break
         case .qna:
             break
-        case .tal:
+        case .withdraw:
             break
         }
     }

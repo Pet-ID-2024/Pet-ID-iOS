@@ -45,3 +45,13 @@ target 'Pet-ID-iOS' do
 	pods_Auth
 	pods_Firebase
 end
+
+target 'Pet-ID-iOSTests' do
+  inherit! :search_paths
+  use_frameworks!
+  
+  pods_networking
+  pods_log
+  pods_Auth
+  pods_Firebase
+end

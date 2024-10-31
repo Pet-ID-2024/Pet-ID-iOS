@@ -44,7 +44,7 @@ final class InformationCoordinator: Coordinator, ObservableObject {
     }
     
     func navigateToSign() {
-        let signCoordinator = SignCoordinator(/*navigationController: */navigationController)
+        let signCoordinator = SignCoordinator(navigationController)
         childCoordinators[signCoordinator.id] = signCoordinator
         signCoordinator.start()
     }

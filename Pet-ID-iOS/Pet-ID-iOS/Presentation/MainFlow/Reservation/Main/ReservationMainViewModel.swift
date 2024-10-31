@@ -1,3 +1,112 @@
+////
+////  ReservationMainViewModel.swift
+////  Pet-ID-iOS
+////
+////  Created by 강현준 on 8/26/24.
+////
+//
+//import SwiftUI
+//import Combine
+//
+//enum ReservationMainState {
+//    case selectHospital
+//    case search
+//}
+//
+//@MainActor
+//final class ReservationMainViewModel: BaseViewModel<ReservationMainState> {
+//    @Published var searchText: String = ""
+//    @Published var sidoLocations: [Location] = []
+//    @Published var selectedSidoLocation: Location = Location(id: 0, name: "서울")
+//    @Published var sigunguLocations: [Location] = []
+//    @Published var selectedsigunguLocation: Location = Location(id: 0, name: "송파구")
+//    @Published var eupmundongLocations: [Location] = []
+//    @Published var selectedEupmundongLocation: Location = Location(id: 0, name: "방이동")
+//    
+//    @Published var isLoading: Bool = false
+//    
+//    private let addressFetcher: AddressFetcher = DefaultAddressFetcher()
+//    
+//    override init() {
+//        
+//        super.init()
+//        
+//        Task {
+//            await fetchLocationInfo()
+//        }
+//    }
+//    
+//    //    func toResult(result: ReservationMainState) {
+//    //        self.result.send(result)
+//    //    }
+//    
+//    func navigateToDetail() {
+//        result.send(.selectHospital)
+//    }
+//}
+//
+//extension ReservationMainViewModel {
+//    
+//    // 시도 선택 메서드
+//    func selectSido(location: Location)  {
+//        Task {
+//            self.selectedSidoLocation = location
+//            
+//            do {
+//                isLoading = true
+//                let sigungu = try await addressFetcher.sigungu(sidoId: selectedSidoLocation.id)
+//                sigunguLocations = sigungu
+//                isLoading = false
+//            } catch {
+//                isLoading = false
+//                logger.error(error)
+//            }
+//        }
+//    }
+//    
+//    func selectSigungu(location: Location) {
+//        //        self.selectedsigunguLocation = location
+//        //        /// 나중에 검색 부분 구현
+//        self.selectedsigunguLocation = location
+//        Task {
+////            await fetchEupmundong(for: location.id)
+//        }
+//    }
+//    
+//    func selectEupmundong(location: Location) {
+//        self.selectedEupmundongLocation = location
+//    }
+//    
+//    // 정보 로딩
+//    @MainActor func fetchLocationInfo() async {
+//        do {
+//            
+//            isLoading = true
+//            
+//            let sido = try await addressFetcher.sido()
+//            
+//            let sigungu: [Location]
+//            
+//            if let firstSido = sido.first {
+//                sigungu = try await addressFetcher.sigungu(sidoId: firstSido.id)
+//                self.selectedSidoLocation = firstSido
+//            } else {
+//                self.selectedSidoLocation = Location(id: 1, name: "서울")
+//                sigungu = try await addressFetcher.sigungu(sidoId: 1)
+//            }
+//            
+//            self.sidoLocations = sido
+//            self.sigunguLocations = sigungu
+//            self.selectedsigunguLocation = sigungu.first ?? Location(id: 1, name: "송파구")
+//            
+//            isLoading = false
+//        } catch {
+//            isLoading = true
+//            Logger().error(error)
+//        }
+//    }
+//}
+
 //
 //  ReservationMainViewModel.swift
 //  Pet-ID-iOS
@@ -20,23 +129,20 @@ final class ReservationMainViewModel: BaseViewModel<ReservationMainState> {
     @Published var selectedSidoLocation: Location = Location(id: 0, name: "서울")
     @Published var sigunguLocations: [Location] = []
     @Published var selectedsigunguLocation: Location = Location(id: 0, name: "송파구")
+    @Published var eupmundongLocations: [Location] = []
+    @Published var selectedEupmundongLocation: Location = Location(id: 0, name: "방이동")
     
     @Published var isLoading: Bool = false
     
     private let addressFetcher: AddressFetcher = DefaultAddressFetcher()
     
     override init() {
-        
         super.init()
         
         Task {
             await fetchLocationInfo()
         }
     }
-    
-//    func toResult(result: ReservationMainState) {
-//        self.result.send(result)
-//    }
     
     func navigateToDetail() {
         result.send(.selectHospital)
@@ -45,11 +151,9 @@ final class ReservationMainViewModel: BaseViewModel<ReservationMainState> {
 
 extension ReservationMainViewModel {
     
-    // 시도 선택 메서드
-    func selectSido(location: Location)  {
+    func selectSido(location: Location) {
         Task {
             self.selectedSidoLocation = location
-            
             do {
                 isLoading = true
                 let sigungu = try await addressFetcher.sigungu(sidoId: selectedSidoLocation.id)
@@ -57,24 +161,25 @@ extension ReservationMainViewModel {
                 isLoading = false
             } catch {
                 isLoading = false
-                logger.error(error)
             }
         }
     }
     
     func selectSigungu(location: Location) {
         self.selectedsigunguLocation = location
-        /// 나중에 검색 부분 구현
+        Task {
+            // Await further implementation
+        }
     }
     
-    // 정보 로딩
+    func selectEupmundong(location: Location) {
+        self.selectedEupmundongLocation = location
+    }
+    
     @MainActor func fetchLocationInfo() async {
         do {
-            
             isLoading = true
-            
             let sido = try await addressFetcher.sido()
-            
             let sigungu: [Location]
             
             if let firstSido = sido.first {
@@ -88,11 +193,9 @@ extension ReservationMainViewModel {
             self.sidoLocations = sido
             self.sigunguLocations = sigungu
             self.selectedsigunguLocation = sigungu.first ?? Location(id: 1, name: "송파구")
-            
             isLoading = false
         } catch {
-            isLoading = true
-            Logger().error(error)
+            isLoading = false
         }
     }
 }
