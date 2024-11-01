@@ -20,7 +20,7 @@ struct LoginMainView: View {
         VStack(spacing: 0) {
             HStack {
                 Text("간편하게 로그인하고\n펫아이디를 사용해보세요.")
-                    .font(.petIdTitle1)
+                    .font(.headline1)
                 Spacer()
             }
             
@@ -40,7 +40,7 @@ struct LoginMainView: View {
                             }
                         }
                         case .google: viewModel.runGoogleLogin()
-                        case .kakao: viewModel.runKakaoLogin()   
+                        case .kakao: viewModel.runKakaoLogin()
                         case .naver: viewModel.runNaverLogin()
                         }
                     })

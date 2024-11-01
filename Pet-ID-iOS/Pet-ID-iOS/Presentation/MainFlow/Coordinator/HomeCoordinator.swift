@@ -25,8 +25,16 @@ final class HomeCoordinator: Coordinator, ObservableObject {
     
     private func showHome() {
         let viewModel = HomeViewModel()
-        let homeVC = BaseHostingViewController(rootView: HomeView(viewModel: viewModel))
+        let homeVC = BaseHostingViewController(rootView: HomeView(viewModel: viewModel, coordinator: self))
         push(homeVC, animate: false, isRoot: true)
+    }
+    
+    func goToPetStart() {
+        navigationController.hidesBottomBarWhenPushed = true
+        let petCardStartCoordinator = PetCardStartCoordinator(/*navigationController:*/ navigationController)
+        childCoordinators[petCardStartCoordinator.id] = petCardStartCoordinator
+        petCardStartCoordinator.start()
+//        navigationController.hidesBottomBarWhenPushed = false
     }
     
     deinit {

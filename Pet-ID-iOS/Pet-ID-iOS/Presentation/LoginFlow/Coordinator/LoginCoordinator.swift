@@ -47,9 +47,11 @@ final class LoginCoordinator: Coordinator {
             .sink(receiveValue: { [weak self] in
                 switch $0 {
                 case .main:
+                    print("🟢 Login successful, finishing LoginCoordinator and navigating to tab.")
                     self?.loginFinishDelegate?.finish(result: .tab)
                     self?.finish()
                 case .signUp(let oauth):
+                    print("🟡 Navigating to Terms Agreement for sign up.")
                     self?.pushTermsAgreement(oauth: oauth)
                 }
             }).store(in: &cancelBag)

@@ -14,8 +14,9 @@ struct AccessibilityItemView: View {
             ZStack {
                 Circle()
                     .aspectRatio(contentMode: .fit)
-                    .foregroundColor(.petid_lightgrey)
+//                    .foregroundColor(.petid_subtitle)
                     .frame(width: 50, height: 50)
+                    .foregroundColor(Color.petid_f5)
                 item.icon
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -26,7 +27,7 @@ struct AccessibilityItemView: View {
                 HStack(spacing: 0){
                     if item.isMandatory {
                         Text("[필수]")
-                            .foregroundColor(.petid_red)
+                            .foregroundColor(.petid_caution_red)
                             .bold()
                     } else {
                         Text("[선택]")
@@ -36,11 +37,11 @@ struct AccessibilityItemView: View {
                     Text(" \(item.title)")
                         .bold()
                 }
-                .font(.petIdBody2)
+                .font(.body3_bold)
                 
                 Text(item.description)
-                    .foregroundColor(.petid_grey)
-                    .font(.petIdBody2)
+                    .foregroundColor(.petid_subtitle)
+                    .font(.caption1_reg)
             }
         }
     }

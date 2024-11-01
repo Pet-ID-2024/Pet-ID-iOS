@@ -5,7 +5,7 @@ struct SplashView: View {
     @ObservedObject var viewModel = SplashViewModel()
     
     var body: some View {
-        DSImage.splashImage.toImage()
+        DSImage.splashimage.toImage()
             .resizable()
             .aspectRatio(contentMode: .fill)
             .ignoresSafeArea(.all)

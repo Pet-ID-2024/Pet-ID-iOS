@@ -8,24 +8,26 @@
 import SwiftUI
 import Combine
 
-enum ReservationMainViewModelResult {
+enum ReservationMainState {
     case selectHospital
+    case search
 }
 
 @MainActor
-final class ReservationMainViewModel: BaseViewModel<ReservationMainViewModelResult> {
+final class ReservationMainViewModel: BaseViewModel<ReservationMainState> {
     @Published var searchText: String = ""
     @Published var sidoLocations: [Location] = []
     @Published var selectedSidoLocation: Location = Location(id: 0, name: "서울")
     @Published var sigunguLocations: [Location] = []
     @Published var selectedsigunguLocation: Location = Location(id: 0, name: "송파구")
+    @Published var eupmundongLocations: [Location] = []
+    @Published var selectedEupmundongLocation: Location = Location(id: 0, name: "방이동")
     
     @Published var isLoading: Bool = false
     
     private let addressFetcher: AddressFetcher = DefaultAddressFetcher()
     
     override init() {
-        
         super.init()
         
         Task {
@@ -33,18 +35,16 @@ final class ReservationMainViewModel: BaseViewModel<ReservationMainViewModelResu
         }
     }
     
-    func toResult(result: ReservationMainViewModelResult) {
-        self.result.send(result)
+    func navigateToDetail() {
+        result.send(.selectHospital)
     }
 }
 
 extension ReservationMainViewModel {
     
-    // 시도 선택 메서드
-    func selectSido(location: Location)  {
+    func selectSido(location: Location) {
         Task {
             self.selectedSidoLocation = location
-            
             do {
                 isLoading = true
                 let sigungu = try await addressFetcher.sigungu(sidoId: selectedSidoLocation.id)
@@ -52,24 +52,25 @@ extension ReservationMainViewModel {
                 isLoading = false
             } catch {
                 isLoading = false
-                logger.error(error)
             }
         }
     }
     
     func selectSigungu(location: Location) {
         self.selectedsigunguLocation = location
-        /// 나중에 검색 부분 구현
+        Task {
+            // Await further implementation
+        }
     }
     
-    // 정보 로딩
+    func selectEupmundong(location: Location) {
+        self.selectedEupmundongLocation = location
+    }
+    
     @MainActor func fetchLocationInfo() async {
         do {
-            
             isLoading = true
-            
             let sido = try await addressFetcher.sido()
-            
             let sigungu: [Location]
             
             if let firstSido = sido.first {
@@ -83,11 +84,9 @@ extension ReservationMainViewModel {
             self.sidoLocations = sido
             self.sigunguLocations = sigungu
             self.selectedsigunguLocation = sigungu.first ?? Location(id: 1, name: "송파구")
-            
             isLoading = false
         } catch {
-            isLoading = true
-            Logger().error(error)
+            isLoading = false
         }
     }
 }
