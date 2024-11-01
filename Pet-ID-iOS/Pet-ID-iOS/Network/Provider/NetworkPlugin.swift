@@ -11,6 +11,7 @@ import Moya
 struct NetworkLoggerPlugin: PluginType {
     
     func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
+//        guard !(target is AddressAPI) else { return }
         switch result {
         case .success(let response):
             onSuceed(response, target: target, isFromError: false)

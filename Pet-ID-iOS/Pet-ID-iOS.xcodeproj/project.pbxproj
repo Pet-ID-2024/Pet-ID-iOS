@@ -14,10 +14,8 @@
 		0A21CF1E2C0DEFEB005DD8E2 /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21CF1D2C0DEFEB005DD8E2 /* LoginSuccess.swift */; };
 		0A21CF262C0DF131005DD8E2 /* TermsAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21CF252C0DF131005DD8E2 /* TermsAgreementView.swift */; };
 		0A5D601E2C58C638009D656D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5D601D2C58C638009D656D /* HomeViewModel.swift */; };
-		0A5D60242C58C7E2009D656D /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5D60232C58C7E2009D656D /* Banner.swift */; };
 		0A5D602A2C58CF7E009D656D /* PetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5D60292C58CF7E009D656D /* PetCardView.swift */; };
 		0A5D602C2C58CFB6009D656D /* PetCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5D602B2C58CFB6009D656D /* PetCardViewModel.swift */; };
-		0A5D60302C58D731009D656D /* BannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5D602F2C58D731009D656D /* BannerViewModel.swift */; };
 		0A5FE6982C45416D00B95F3C /* AccessibilityRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FE6972C45416D00B95F3C /* AccessibilityRightView.swift */; };
 		0A5FE69A2C45419300B95F3C /* AccessibilityRightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FE6992C45419300B95F3C /* AccessibilityRightViewModel.swift */; };
 		0A5FE69C2C4541A500B95F3C /* AccessibilityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FE69B2C4541A500B95F3C /* AccessibilityItemView.swift */; };
@@ -66,6 +64,15 @@
 		0A79DB572CD49B68004C0888 /* ReservationDoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79DB562CD49B68004C0888 /* ReservationDoneViewModel.swift */; };
 		0A79DB592CD49BE9004C0888 /* ReservationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79DB582CD49BE9004C0888 /* ReservationDetailView.swift */; };
 		0A79DB5B2CD49BF7004C0888 /* ReservationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79DB5A2CD49BF7004C0888 /* ReservationDetailViewModel.swift */; };
+		0A79DB5E2CD49D5C004C0888 /* BannerResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79DB5D2CD49D5C004C0888 /* BannerResponseDTO.swift */; };
+		0A79DB602CD49DAE004C0888 /* BannerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79DB5F2CD49DAE004C0888 /* BannerAPI.swift */; };
+		0A79DB622CD49DC9004C0888 /* BannerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79DB612CD49DC9004C0888 /* BannerDataSource.swift */; };
+		0A79DB642CD49DEA004C0888 /* DefaultBannerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79DB632CD49DEA004C0888 /* DefaultBannerRepository.swift */; };
+		0A79DB662CD49E03004C0888 /* BannerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79DB652CD49E03004C0888 /* BannerFetcher.swift */; };
+		0A79DB692CD49E1E004C0888 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79DB682CD49E1E004C0888 /* Banner.swift */; };
+		0A79DB6B2CD49E7D004C0888 /* BannerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79DB6A2CD49E7D004C0888 /* BannerRepository.swift */; };
+		0A79DB6D2CD49F2B004C0888 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79DB6C2CD49F2B004C0888 /* BannerView.swift */; };
+		0A79DB6F2CD49F33004C0888 /* BannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79DB6E2CD49F33004C0888 /* BannerViewModel.swift */; };
 		0AC9B0852C4278B30040FB28 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC9B0842C4278B30040FB28 /* Font+.swift */; };
 		0AC9B0882C4278D30040FB28 /* NotoSansKR-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AC9B0862C4278D30040FB28 /* NotoSansKR-Regular.ttf */; };
 		0AC9B0892C4278D30040FB28 /* NotoSansKR-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AC9B0872C4278D30040FB28 /* NotoSansKR-SemiBold.ttf */; };
@@ -180,10 +187,8 @@
 		0A21CF1D2C0DEFEB005DD8E2 /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
 		0A21CF252C0DF131005DD8E2 /* TermsAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAgreementView.swift; sourceTree = "<group>"; };
 		0A5D601D2C58C638009D656D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		0A5D60232C58C7E2009D656D /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		0A5D60292C58CF7E009D656D /* PetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardView.swift; sourceTree = "<group>"; };
 		0A5D602B2C58CFB6009D656D /* PetCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardViewModel.swift; sourceTree = "<group>"; };
-		0A5D602F2C58D731009D656D /* BannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModel.swift; sourceTree = "<group>"; };
 		0A5FE6972C45416D00B95F3C /* AccessibilityRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityRightView.swift; sourceTree = "<group>"; };
 		0A5FE6992C45419300B95F3C /* AccessibilityRightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityRightViewModel.swift; sourceTree = "<group>"; };
 		0A5FE69B2C4541A500B95F3C /* AccessibilityItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityItemView.swift; sourceTree = "<group>"; };
@@ -232,6 +237,15 @@
 		0A79DB562CD49B68004C0888 /* ReservationDoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationDoneViewModel.swift; sourceTree = "<group>"; };
 		0A79DB582CD49BE9004C0888 /* ReservationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationDetailView.swift; sourceTree = "<group>"; };
 		0A79DB5A2CD49BF7004C0888 /* ReservationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationDetailViewModel.swift; sourceTree = "<group>"; };
+		0A79DB5D2CD49D5C004C0888 /* BannerResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerResponseDTO.swift; sourceTree = "<group>"; };
+		0A79DB5F2CD49DAE004C0888 /* BannerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAPI.swift; sourceTree = "<group>"; };
+		0A79DB612CD49DC9004C0888 /* BannerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerDataSource.swift; sourceTree = "<group>"; };
+		0A79DB632CD49DEA004C0888 /* DefaultBannerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBannerRepository.swift; sourceTree = "<group>"; };
+		0A79DB652CD49E03004C0888 /* BannerFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerFetcher.swift; sourceTree = "<group>"; };
+		0A79DB682CD49E1E004C0888 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		0A79DB6A2CD49E7D004C0888 /* BannerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerRepository.swift; sourceTree = "<group>"; };
+		0A79DB6C2CD49F2B004C0888 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		0A79DB6E2CD49F33004C0888 /* BannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModel.swift; sourceTree = "<group>"; };
 		0AB4E1072C2B14BC006331B4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AC9B0842C4278B30040FB28 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		0AC9B0862C4278D30040FB28 /* NotoSansKR-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.ttf"; sourceTree = "<group>"; };
@@ -419,8 +433,8 @@
 		0A5D60202C58C7C7009D656D /* Banner */ = {
 			isa = PBXGroup;
 			children = (
-				0A5D60232C58C7E2009D656D /* Banner.swift */,
-				0A5D602F2C58D731009D656D /* BannerViewModel.swift */,
+				0A79DB6C2CD49F2B004C0888 /* BannerView.swift */,
+				0A79DB6E2CD49F33004C0888 /* BannerViewModel.swift */,
 			);
 			path = Banner;
 			sourceTree = "<group>";
@@ -667,6 +681,22 @@
 				0A79DB522CD49AD2004C0888 /* ReservationDetailCoordinator.swift */,
 			);
 			path = Coodinator;
+			sourceTree = "<group>";
+		};
+		0A79DB5C2CD49D51004C0888 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				0A79DB5D2CD49D5C004C0888 /* BannerResponseDTO.swift */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		0A79DB672CD49E15004C0888 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				0A79DB682CD49E1E004C0888 /* Banner.swift */,
+			);
+			path = Banner;
 			sourceTree = "<group>";
 		};
 		1FC2591F97EAEF2423DFA2D5 /* Frameworks */ = {
@@ -945,6 +975,7 @@
 				FADD57302C31A01400770AC6 /* UserRepositoryProtocol.swift */,
 				FAF8E7132C40EC4A00CA7145 /* AuthRepository.swift */,
 				FAFA5D102C7CB5C4003F842C /* AddressRepository.swift */,
+				0A79DB6A2CD49E7D004C0888 /* BannerRepository.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -955,6 +986,7 @@
 				FADD57072C318D1F00770AC6 /* DefaultUserRepository.swift */,
 				FAF8E7052C40E22B00CA7145 /* DefaultAuthRepository.swift */,
 				FAFA5D0E2C7CB4EA003F842C /* DefaultAddressRepository.swift */,
+				0A79DB632CD49DEA004C0888 /* DefaultBannerRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -1053,6 +1085,7 @@
 		FADD57172C31913B00770AC6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0A79DB672CD49E15004C0888 /* Banner */,
 				FAFA5D022C7CAC7A003F842C /* Address */,
 				FAF8E71D2C410DA600CA7145 /* Aggreement */,
 				FAF8E71A2C410ACE00CA7145 /* Terms */,
@@ -1064,6 +1097,7 @@
 		FADD571A2C3191AB00770AC6 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				0A79DB5C2CD49D51004C0888 /* Banner */,
 				FAFA5D0B2C7CB3B7003F842C /* Address */,
 				FAF8E6FC2C40D65A00CA7145 /* Auth */,
 			);
@@ -1249,6 +1283,7 @@
 			children = (
 				FAFA5D062C7CB2C9003F842C /* AddressAPI.swift */,
 				FAF8E6F32C40D3C200CA7145 /* AuthAPI.swift */,
+				0A79DB5F2CD49DAE004C0888 /* BannerAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1277,6 +1312,7 @@
 			children = (
 				FAF8E7082C40E27C00CA7145 /* AuthDataSource.swift */,
 				FAFA5D092C7CB390003F842C /* AddressDataSource.swift */,
+				0A79DB612CD49DC9004C0888 /* BannerDataSource.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -1326,6 +1362,7 @@
 			isa = PBXGroup;
 			children = (
 				FAFA5D132C7CB5E8003F842C /* AddressFetcher.swift */,
+				0A79DB652CD49E03004C0888 /* BannerFetcher.swift */,
 			);
 			path = Fetcher;
 			sourceTree = "<group>";
@@ -1483,9 +1520,11 @@
 				FA46F34A2C3ED4C2003CAC02 /* BaseViewModel.swift in Sources */,
 				FAC4CD4E2C492D6500A3658A /* JoinRequestDTO.swift in Sources */,
 				0A79DAF02CD480AA004C0888 /* Dialog5.swift in Sources */,
+				0A79DB692CD49E1E004C0888 /* Banner.swift in Sources */,
 				0A79DB2C2CD496A9004C0888 /* ScanCheckViewModel.swift in Sources */,
 				FAF8E6EB2C40C84300CA7145 /* NetworkEventLogger.swift in Sources */,
 				FAE566012C3C365300D77149 /* UserDefaultManager.swift in Sources */,
+				0A79DB5E2CD49D5C004C0888 /* BannerResponseDTO.swift in Sources */,
 				FA6E49F72C2E3FEC00F3C957 /* AppDelegate.swift in Sources */,
 				FAF8E71C2C410ADA00CA7145 /* UserServiceTerms.swift in Sources */,
 				FAE565F92C3C328D00D77149 /* LoginMainView.swift in Sources */,
@@ -1524,6 +1563,8 @@
 				0A79DB282CD49661004C0888 /* InfomationCheckViewModel.swift in Sources */,
 				0A79DB532CD49AD2004C0888 /* ReservationDetailCoordinator.swift in Sources */,
 				0A79DB342CD49732004C0888 /* PetInfo.swift in Sources */,
+				0A79DB642CD49DEA004C0888 /* DefaultBannerRepository.swift in Sources */,
+				0A79DB622CD49DC9004C0888 /* BannerDataSource.swift in Sources */,
 				0A5D602C2C58CFB6009D656D /* PetCardViewModel.swift in Sources */,
 				FADD57252C3193B200770AC6 /* DIConatiner.swift in Sources */,
 				0A79DB002CD494A7004C0888 /* UserInfo.swift in Sources */,
@@ -1533,6 +1574,7 @@
 				0A79DB1A2CD495D6004C0888 /* SignCoordinator.swift in Sources */,
 				0A79DB362CD49740004C0888 /* PetInfoViewModel.swift in Sources */,
 				FADD57312C31A01400770AC6 /* UserRepositoryProtocol.swift in Sources */,
+				0A79DB662CD49E03004C0888 /* BannerFetcher.swift in Sources */,
 				FA6E49F92C2E40A500F3C957 /* SceneDelegate.swift in Sources */,
 				FADD57062C318CD700770AC6 /* SplashViewModel.swift in Sources */,
 				FAC4CD422C49209400A3658A /* NetworkError.swift in Sources */,
@@ -1546,7 +1588,6 @@
 				FA383EB42C7CA2080071A544 /* KFImage+.swift in Sources */,
 				0A21CF1C2C0DEF8D005DD8E2 /* SplashView.swift in Sources */,
 				FAFA5D112C7CB5C4003F842C /* AddressRepository.swift in Sources */,
-				0A5D60242C58C7E2009D656D /* Banner.swift in Sources */,
 				FADD571C2C3191B500770AC6 /* AuthorizationDTO.swift in Sources */,
 				0A79DAF62CD4943D004C0888 /* PetCardCoordinator.swift in Sources */,
 				FAFA5D0D2C7CB3D6003F842C /* LocationResponseDTO.swift in Sources */,
@@ -1556,6 +1597,7 @@
 				0AC9B0852C4278B30040FB28 /* Font+.swift in Sources */,
 				FA136CD52C6B92D6007D7A9E /* ReservationMainView.swift in Sources */,
 				0A79DB162CD495A8004C0888 /* ScanCheckCoordinator.swift in Sources */,
+				0A79DB6B2CD49E7D004C0888 /* BannerRepository.swift in Sources */,
 				FADD572F2C319ECD00770AC6 /* Logger.swift in Sources */,
 				0A79DAFE2CD49497004C0888 /* UserInfoCoordinator.swift in Sources */,
 				FAF8E6FE2C40D68D00CA7145 /* LoginRequestDTO.swift in Sources */,
@@ -1582,8 +1624,8 @@
 				0A5FE69C2C4541A500B95F3C /* AccessibilityItemView.swift in Sources */,
 				0A79DB1E2CD495F7004C0888 /* PetCardDone.swift in Sources */,
 				0A5D601E2C58C638009D656D /* HomeViewModel.swift in Sources */,
-				0A5D60302C58D731009D656D /* BannerViewModel.swift in Sources */,
 				FADD57142C318EFA00770AC6 /* Constants.swift in Sources */,
+				0A79DB6D2CD49F2B004C0888 /* BannerView.swift in Sources */,
 				FAB57C642C49D4F300F471F0 /* PetIdNotificationCenter.swift in Sources */,
 				FA3F56BE2C4575CC0011969A /* IsEnablePetButton.swift in Sources */,
 				0A79DAE82CD48088004C0888 /* Dialog1.swift in Sources */,
@@ -1599,6 +1641,7 @@
 				FAFA5D012C7CAB5F003F842C /* ReservationMainViewModel.swift in Sources */,
 				FADD571F2C31922700770AC6 /* UserError.swift in Sources */,
 				FADD570F2C318ECB00770AC6 /* KeychainProtocol.swift in Sources */,
+				0A79DB602CD49DAE004C0888 /* BannerAPI.swift in Sources */,
 				FAC4CD5B2C4970E600A3658A /* TokenRefreshRequestDTO.swift in Sources */,
 				0A79DB242CD4962E004C0888 /* SignViewModel.swift in Sources */,
 				0A21CF0F2C0DE3AA005DD8E2 /* Test.swift in Sources */,
@@ -1611,6 +1654,7 @@
 				0A79DB442CD49A26004C0888 /* ReservationDoneCoordinator.swift in Sources */,
 				FAB57C662C49D5A700F471F0 /* LogoutUseCase.swift in Sources */,
 				0AC9B08D2C427D660040FB28 /* Image+.swift in Sources */,
+				0A79DB6F2CD49F33004C0888 /* BannerViewModel.swift in Sources */,
 				0A79DAF82CD4944E004C0888 /* PetCardStart.swift in Sources */,
 				0A79DB202CD49603004C0888 /* PetCardDoneViewModel.swift in Sources */,
 				FAE565E92C3C229600D77149 /* AppCoordinator.swift in Sources */,
