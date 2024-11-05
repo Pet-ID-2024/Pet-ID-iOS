@@ -10,4 +10,5 @@ import Foundation
 protocol AddressRepository {
     func sido() async throws -> [Location]
     func sigungu(sidoId: Int) async throws -> [Location]
+    func eupmundong(sigunguId: Int) async throws -> [Location]
 }

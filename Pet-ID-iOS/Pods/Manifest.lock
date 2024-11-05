@@ -6,6 +6,9 @@ PODS:
   - AppAuth/Core (1.7.5)
   - AppAuth/ExternalUserAgent (1.7.5):
     - AppAuth/Core
+  - AWSCore (2.37.2)
+  - AWSS3 (2.37.2):
+    - AWSCore (= 2.37.2)
   - CocoaLumberjack/Core (3.8.5)
   - CocoaLumberjack/Swift (3.8.5):
     - CocoaLumberjack/Core
@@ -195,6 +198,7 @@ PODS:
   - Toast-Swift (5.1.1)
 
 DEPENDENCIES:
+  - AWSS3
   - CocoaLumberjack/Swift (~> 3.8)
   - Firebase/Analytics
   - Firebase/Crashlytics
@@ -211,6 +215,8 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AppAuth
+    - AWSCore
+    - AWSS3
     - CocoaLumberjack
     - Firebase
     - FirebaseAnalytics
@@ -252,6 +258,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
   AppAuth: 501c04eda8a8d11f179dbe8637b7a91bb7e5d2fa
+  AWSCore: 4cbaf219af10ec390a0432ee2b380f7fa644b80c
+  AWSS3: e50d99448a3429311c10efc2d8be7cd7b942580f
   CocoaLumberjack: 6a459bc897d6d80bd1b8c78482ec7ad05dffc3f0
   Firebase: cec914dab6fd7b1bd8ab56ea07ce4e03dd251c2d
   FirebaseAnalytics: 23717de130b779aa506e757edb9713d24b6ffeda
@@ -290,6 +298,6 @@ SPEC CHECKSUMS:
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
 
-PODFILE CHECKSUM: 3d495575e7745c25612d67b0d028bdc55ff88604
+PODFILE CHECKSUM: 8889f9d9a460537c0e31a5b7895cbeac8f01a8e5
 
 COCOAPODS: 1.15.2

@@ -2,7 +2,7 @@ import Foundation
 
 struct Banner: Identifiable, Decodable {
     let id: Int
-    let imageUrl: String?
+    var imageUrl: String
     let text: String
     let type: String
     let status: String

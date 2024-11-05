@@ -69,19 +69,24 @@ public class Provider<T>: MoyaProvider<T> where T: TargetType {
         )
         
         super.init(
-            session: session
-//            plugins: [NetworkLoggerPlugin()]
+            session: session,
+            plugins: [NetworkLoggerPlugin()]
         )
     }
     
     func request<D: Decodable>(_ target: T) async throws -> D {
-        throw MoyaError.statusCode(Response.init(statusCode: 401, data: Data()))
+//        throw MoyaError.statusCode(Response.init(statusCode: 401, data: Data()))
         return try await withCheckedThrowingContinuation { continuation in
             self.request(target) { result in
                 switch result {
                 case .success(let response):
                     // 상태 코드가 2xx가 아닐 경우 예외 처리
                     guard (200...299).contains(response.statusCode) else {
+                        
+                        if response.statusCode == 400 {
+                            let responseBody = String(data: response.data, encoding: .utf8) ?? "응답 본문을 읽을 수 X"
+                            print("서버로부터 받은 오류 메시지: \(responseBody)")
+                        }
                         print("상태 코드 오류: \(response.statusCode)")
                         continuation.resume(throwing: MoyaError.statusCode(response))
                         return

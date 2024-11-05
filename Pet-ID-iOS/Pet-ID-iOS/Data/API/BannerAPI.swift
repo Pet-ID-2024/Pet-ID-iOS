@@ -2,6 +2,7 @@ import Moya
 
 enum BannerAPI {
     case getBanners(type: String)
+    case getBannerImageURL(filePath: String)
 }
 
 extension BannerAPI: BaseTargetType {
@@ -13,6 +14,8 @@ extension BannerAPI: BaseTargetType {
         switch self {
         case .getBanners(let type):
             return "/v1/banner/type"
+        case .getBannerImageURL:
+            return "/v1/banner/presigned-get-url"
         }
     }
     
@@ -24,6 +27,8 @@ extension BannerAPI: BaseTargetType {
         switch self {
         case .getBanners(let type):
             return .requestParameters(parameters: ["type": type], encoding: URLEncoding.default)
+        case .getBannerImageURL(let filePath):
+            return .requestParameters(parameters: ["filePath": filePath], encoding: URLEncoding.default)
         }
     }
 }

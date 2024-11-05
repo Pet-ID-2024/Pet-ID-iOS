@@ -8,6 +8,7 @@
 import Foundation
 import Moya
 
+
 protocol BaseTargetType: TargetType { }
 
 extension BaseTargetType {
@@ -16,4 +17,8 @@ extension BaseTargetType {
     }
     
     var headers: [String : String]? { nil }
+    
+    var validationType: ValidationType {
+        return .successCodes
+    }
 }

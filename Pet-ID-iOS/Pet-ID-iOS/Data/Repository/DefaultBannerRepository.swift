@@ -18,4 +18,15 @@ struct DefaultBannerRepository: BannerRepository {
             throw error
         }
     }
+    
+    func getBannerImageURL(filePath: String) async throws -> String {
+        do {
+            let url = try await dataSource.getBannerImageURL(filePath: filePath)
+            return url
+        } catch {
+            let logger = Logger()
+            logger.error("이미지 URL 가져오기 실패 \(error.localizedDescription)")
+            throw error
+        }
+    }
 }

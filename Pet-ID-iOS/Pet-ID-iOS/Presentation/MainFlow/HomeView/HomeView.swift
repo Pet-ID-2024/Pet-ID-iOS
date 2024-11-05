@@ -60,7 +60,7 @@ struct HomeView: View {
                     Spacer()
                     
                     
-                    BannerView()
+//                    BannerView()
                     
                     //                        BannerView()
                     

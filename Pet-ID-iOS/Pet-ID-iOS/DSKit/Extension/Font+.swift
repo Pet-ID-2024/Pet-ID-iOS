@@ -24,6 +24,7 @@ extension Font {
             }
         }
     }
+    
     static func notoSansKR(fontSize: CGFloat, fontWeight: CustomWeight) -> Font {
         return Font.custom("NotoSansKR-\(fontWeight.toString)", size: fontSize)
     }

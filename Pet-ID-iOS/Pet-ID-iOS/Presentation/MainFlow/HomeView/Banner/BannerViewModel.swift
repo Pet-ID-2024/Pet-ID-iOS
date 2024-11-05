@@ -3,17 +3,12 @@ import SwiftUI
 import Moya
 
 class BannerViewModel: ObservableObject {
-//    private let provider: MoyaProvider<BannerAPI>
     private let provider = Provider<BannerAPI>()
     
     @Published var banners: [Banner] = []
     @Published var error: Error?
     @Published var currentPage: Int = 0
     
-    // 주입 가능한 생성자 추가
-//    init(provider: MoyaProvider<BannerAPI> = MoyaProvider<BannerAPI>()) {
-//        self.provider = provider
-//    }
     
     func fetchBanners(type: String) {
         provider.request(.getBanners(type: type)) { result in
@@ -53,5 +48,32 @@ class BannerViewModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    // s3 버킷
+    private func updateBannerImages(banners: [Banner]) async {
+        var updatedBanners = [Banner]()
+        
+        for banner in banners {
+            do {
+                let s3Url = try await fetchS3ImageURL(filePath: banner.imageUrl)
+                var updatedBanner = banner
+                updatedBanner.imageUrl = s3Url // 이미지 URL 업데이트
+                updatedBanners.append(updatedBanner)
+            } catch {
+                let logger = Logger()
+                logger.error("S3 이미지 URL 가져오기 실패: \(error.localizedDescription)")
+                continue
+            }
+        }
+        
+        DispatchQueue.main.async {
+            self.banners = updatedBanners
+        }
+    }
+    
+    // S3 이미지 URL 요청
+    private func fetchS3ImageURL(filePath: String) async throws -> String {
+        try await provider.request(.getBannerImageURL(filePath: filePath))
     }
 }

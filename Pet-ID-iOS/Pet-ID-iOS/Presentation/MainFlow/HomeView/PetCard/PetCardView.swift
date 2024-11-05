@@ -33,10 +33,10 @@ struct PetCardView: View {
                         .frame(width: 154)
                     Text(styledSubText(viewModel.card.subText))
                         .font(.headline15)
-                        .lineSpacing(8)
-//                        .bold()
+                        .lineSpacing(3)
                         .multilineTextAlignment(.center)
                         .padding()
+                    
                     Button(action: {
                         coordinator?.goToPetStart()
                     }) {
@@ -49,7 +49,6 @@ struct PetCardView: View {
                             .cornerRadius(10)
                     }
                     .padding(.horizontal, 10)
-//                    .padding(.bottom, 10)
                     .padding()
                 }
                 .padding()

@@ -71,33 +71,90 @@
 import SwiftUI
 
 struct BannerView: View {
-    @StateObject private var viewModel = BannerViewModel()
+    @StateObject private var viewModel: BannerViewModel
     @State private var currentPage: Int = 0
     private let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
     
+    init(viewModel: BannerViewModel = BannerViewModel()) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
+    
     var body: some View {
-        VStack{
-//            TabView(selection: $currentPage) {
+        VStack {
+            TabView(selection: $currentPage) {
                 ForEach(viewModel.banners.indices, id: \.self) { index in
-                    VStack(alignment: .leading) {
-                        Text(viewModel.banners[index].text)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                    HStack {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text(viewModel.banners[index].text)
+                                .font(.headline)
+                                .foregroundColor(.black)
+                        }
+                        .padding(.leading, 20)
+                        Spacer()
                         
-                    } // VS
-//                    .background(Color.blue)
+                        
+                        if let imageUrl = URL(string: viewModel.banners[index].imageUrl) {
+                            AsyncImage(url: imageUrl) { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 60, height: 60)
+                                    .cornerRadius(12)
+                            } placeholder: {
+                                Color.gray.frame(width: 60, height: 60)
+                                    .cornerRadius(12)
+                                    .overlay(
+                                        Text("이미지 로드 실패")
+                                            .font(.caption)
+                                            .foregroundColor(.white)
+                                        
+                                    )
+                            }
+                            //                            .onAppear {
+                            //                                print("Banner Image URL: \(viewModel.banners[index].imageUrl)")
+                            //                            }
+                        }
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity, minHeight: 80, maxHeight: 100)
+                    .background(Color(red: 0.9, green: 0.95, blue: 1.0))
+                    .cornerRadius(16)
+                    .padding(.horizontal)
+                    .tag(index)
                 }
-//            } // TV
-        } // VS
-//        .frame(width: 350, height: 120)
-        .padding()
-        .background(Color.red)
-        .cornerRadius(10)
+            }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            .frame(height: 120)
+            .onReceive(timer) { _ in
+                withAnimation {
+                    currentPage = (currentPage + 1) % viewModel.banners.count
+                }
+            }
+            
+            HStack {
+                Spacer()
+                Text("\(currentPage + 1) / \(viewModel.banners.count)")
+                    .font(.subheadline)
+                    .padding(8)
+                    .background(Color.gray.opacity(0.5))
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .padding(.trailing, 16)
+            }
+            .padding(.bottom, 16)
+        }
         .onAppear {
             viewModel.fetchBanners(type: "content")
         }
     }
 }
 
+// MARK: - Preview
 #Preview {
-    BannerView()
+    let sampleViewModel = BannerViewModel()
+    sampleViewModel.banners = [
+        Banner(id: 1, imageUrl: "https://s3.amazonaws.com/example-bucket/images/banner2.jpg", text: "Banner 1", type: "type1", status: "active"),
+        Banner(id: 2, imageUrl: "https://s3.amazonaws.com/example-bucket/images/banner4.jpg", text: "Banner 2", type: "type2", status: "active")
+    ]
+    return BannerView(viewModel: sampleViewModel)
 }

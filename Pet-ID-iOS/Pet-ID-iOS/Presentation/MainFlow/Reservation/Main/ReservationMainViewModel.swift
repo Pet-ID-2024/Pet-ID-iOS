@@ -17,21 +17,24 @@ enum ReservationMainState {
 final class ReservationMainViewModel: BaseViewModel<ReservationMainState> {
     @Published var searchText: String = ""
     @Published var sidoLocations: [Location] = []
-    @Published var selectedSidoLocation: Location = Location(id: 0, name: "서울")
+    @Published var selectedSidoLocation: Location = Location(id: 0, name: "선택")
     @Published var sigunguLocations: [Location] = []
-    @Published var selectedsigunguLocation: Location = Location(id: 0, name: "송파구")
+    @Published var selectedSigunguLocation: Location = Location(id: 0, name: "선택")
     @Published var eupmundongLocations: [Location] = []
-    @Published var selectedEupmundongLocation: Location = Location(id: 0, name: "방이동")
+    @Published var selectedEupmundongLocation: Location = Location(id: 0, name: "선택")
+    @Published var hospitalList: [Hospital] = []
     
     @Published var isLoading: Bool = false
     
     private let addressFetcher: AddressFetcher = DefaultAddressFetcher()
+    private let hospitalFetcher: HospitalFetcher = DefaultHospitalFetcher()
     
     override init() {
         super.init()
         
         Task {
-            await fetchLocationInfo()
+            await fetchLocationInfo() // 초기 위치 정보
+            await fetchHospitals() // 초기 병원 정보
         }
     }
     
@@ -52,14 +55,23 @@ extension ReservationMainViewModel {
                 isLoading = false
             } catch {
                 isLoading = false
+                print("시군구 데이터 로드 실패: \(error.localizedDescription)")
             }
         }
     }
     
     func selectSigungu(location: Location) {
-        self.selectedsigunguLocation = location
+        self.selectedSigunguLocation = location
         Task {
-            // Await further implementation
+            do {
+                isLoading = true
+                let eupmundong = try await addressFetcher.eupmundong(sigunguId: selectedSigunguLocation.id)
+                eupmundongLocations = eupmundong
+                isLoading = false
+            } catch {
+                isLoading = false
+                print("읍면동 데이터 로드 실패: \(error.localizedDescription)")
+            }
         }
     }
     
@@ -83,10 +95,30 @@ extension ReservationMainViewModel {
             
             self.sidoLocations = sido
             self.sigunguLocations = sigungu
-            self.selectedsigunguLocation = sigungu.first ?? Location(id: 1, name: "송파구")
+            self.selectedSigunguLocation = sigungu.first ?? Location(id: 1, name: "송파구")
             isLoading = false
         } catch {
             isLoading = false
+            print("시도 데이터 로드 실패: \(error.localizedDescription)")
         }
     }
-}
+    
+    // 병원 정보 조회
+    private func fetchHospitals() async {
+            guard selectedSidoLocation.id != 0, selectedSigunguLocation.id != 0 else { return }
+
+            do {
+                isLoading = true
+                hospitalList = try await hospitalFetcher.hospitals(
+                    sidoId: selectedSidoLocation.id,
+                    sigunguId: selectedSigunguLocation.id,
+                    eupmundongId: selectedEupmundongLocation.id != 0 ? selectedEupmundongLocation.id : nil
+                )
+                print("병원 리스트 업데이트됨: \(hospitalList)")
+                isLoading = false
+            } catch {
+                isLoading = false
+                print("병원 데이터 로드 실패: \(error.localizedDescription)")
+            }
+        }
+    }

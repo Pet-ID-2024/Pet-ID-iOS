@@ -14,6 +14,7 @@ import KakaoSDKCommon
 import KakaoSDKAuth
 import NaverThirdPartyLogin
 import GoogleSignIn
+import FirebaseCrashlytics
 
 @main
 class AppDelegate: NSObject, UIApplicationDelegate {
