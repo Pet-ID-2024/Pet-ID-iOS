@@ -68,6 +68,7 @@ final class TabCoordinator: Coordinator {
     private func setup() {
         var rootViewControllers: [UINavigationController] = []
         
+        
         TabList.allCases.forEach {
             let navigationController = navigationController($0)
             navigationController.setNavigationBarHidden(true, animated: false)
@@ -76,7 +77,7 @@ final class TabCoordinator: Coordinator {
             switch $0 {
             case .home: showHome(navigationController)
             case .reservation: showReservation(navigationController)
-            case .blog: break
+            case .blog: showPetBlog(navigationController)
             case .myPage: showMyPage(navigationController)
             }
         }
@@ -101,6 +102,13 @@ final class TabCoordinator: Coordinator {
     
     private func showMyPage(_ root: UINavigationController) {
         let coordinator = MyPageCoordinator(root)
+        add(coordinator: coordinator)
+        coordinator.finishDelegate = self
+        coordinator.start()
+    }
+    
+    private func showPetBlog(_ root: UINavigationController) {
+        let coordinator = PetBlogMainCoordinator(root)
         add(coordinator: coordinator)
         coordinator.finishDelegate = self
         coordinator.start()

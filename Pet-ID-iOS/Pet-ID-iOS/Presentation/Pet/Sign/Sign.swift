@@ -75,7 +75,7 @@ struct Sign: View {
 }
 
 #Preview {
-    Sign(viewModel: SignViewModel())
+    Sign(viewModel: SignViewModel(temporaryData: [:]))
 }
 
 struct SignatureView: View {

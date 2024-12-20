@@ -117,5 +117,5 @@ struct PetInfo: View {
 }
 
 #Preview {
-    PetInfo(viewModel: PetInfoViewModel())
+    PetInfo(viewModel: PetInfoViewModel(temporaryData: [:]))
 }

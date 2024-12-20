@@ -23,6 +23,14 @@ struct ReservationMainView: View {
         self.viewModel = viewModel
     }
     
+    var filteredHospitalList: [Hospital] {
+        if viewModel.searchText.isEmpty {
+            return viewModel.hospitalList
+        } else {
+            return viewModel.hospitalList.filter { $0.name.contains(viewModel.searchText) }
+        }
+    }
+    
     var body: some View {
         VStack(spacing: 0) {
             naviBar
@@ -36,6 +44,11 @@ struct ReservationMainView: View {
             Spacer()
         }
         .padding(.horizontal, 24)
+        .onAppear { // 여기서 초기화 작업 수행
+            Task {
+                await viewModel.fetchLocationInfo()
+            }
+        }
     }
     
     var naviBar: some View {
@@ -252,18 +265,25 @@ struct ReservationMainView: View {
             Spacer()
             
             HStack(spacing: -3) {
-                Text("가까운 순")
-                    .foregroundStyle(Color.petid_subtitle)
-                    .font(.body4_med)
-                
-                DSImage.filtericon.toImage()
-                    .resizable()
-                    .frame(width: 23, height: 22)
+                Button {
+                    Task {
+                        /*viewModel.setUserLocation(lat: 37.5665, lon: 126.9780)*/ // 서울 중심 좌표
+                        await viewModel.fetchHospitalsByDistance()
+                    }
+                } label: {
+                    Text("가까운 순")
+                        .foregroundStyle(Color.petid_subtitle)
+                        .font(.body4_med)
+                    
+                    DSImage.filtericon.toImage()
+                        .resizable()
+                        .frame(width: 23, height: 22)
+                }
             }
             .contentShape(Rectangle())
-            .onTapGesture {
-                // Action for "가까운 순" filter
-            }
+            //            .onTapGesture {
+            //                // Action for "가까운 순" filter
+            //            }
         }
         .zIndex(10)
     }
@@ -271,33 +291,45 @@ struct ReservationMainView: View {
     var listView: some View {
         ScrollView {
             LazyVStack(spacing: 0) {
-                ForEach(1...10, id: \.self) { count in
+                ForEach(filteredHospitalList, id: \.self) { hospital in
                     VStack(spacing: 0) {
                         Button(action: {
-                            viewModel.navigateToDetail()
+                            viewModel.navigateToDetail(hospital: hospital)
                         }) {
                             HStack(alignment: .center, spacing: 22) {
-                                
-                                KFImage(string:  "https://postfiles.pstatic.net/MjAyMTA2MDlfMjM0/MDAxNjIzMjIyMjU5Mjgz.cv3La0LhNLcFnPJ091a8jHz6K8-UoA8BIQrZRZcJ54sg.z4v7OPd07iQ7gD7gj1I_WUxRjVxilKiwwvjV1uvHzhcg.PNG.sglucia_/%EB%9E%84%EB%A1%9C%EC%8D%AC%EA%B8%8002.png?type=w773")
-                                    .resizable()
-                                    .frame(width: 90, height: 90)
-                                    .clipShape(RoundedRectangle(cornerRadius: 6))
+                                if let imageUrl = viewModel.processedImageUrls[hospital.id],
+                                   let url = URL(string: imageUrl) {
+                                    KFImage(url)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 90, height: 90) // 크기를 병원 카드의 높이와 맞춤
+                                        .clipped()
+                                } else {
+                                    DSImage.noimageicon.toImage()
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 90, height: 90)
+                                        .clipShape(RoundedRectangle(cornerRadius: 6))
+                                }
                                 
                                 VStack(alignment: .leading, spacing: 5) {
-                                    Text("꿈이 크는")
+                                    Text(hospital.name)
                                         .font(.body2_bold)
                                         .foregroundStyle(Color.petid_title)
                                     
-                                    Text("동물병원")
+                                    Text("\(hospital.vet) 원장")
                                         .font(.body3_med)
                                         .foregroundStyle(Color.petid_title)
                                     
                                     Spacer()
                                         .frame(height: 11)
                                     
-                                    Text("와우")
+                                    Text(hospital.address)
+                                    //                                        .lineLimit(3)
+                                        .multilineTextAlignment(.leading)
                                         .font(.caption1_reg)
                                         .foregroundStyle(Color.petid_subtitle)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
                                 }
                                 Spacer()
                             }

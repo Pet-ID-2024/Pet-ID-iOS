@@ -11,7 +11,10 @@ final class InformationCoordinator: Coordinator, ObservableObject {
     var childCoordinators: [String : any Coordinator] = [:]
     private var cancelBag = Set<AnyCancellable>()
     
-    init(_ navigationController: UINavigationController) {
+    var temporaryData: [String: Any]
+    
+    init(_ navigationController: UINavigationController, temporaryData: [String: Any]) {
+        self.temporaryData = temporaryData
         self.navigationController = navigationController
     }
     
@@ -44,7 +47,7 @@ final class InformationCoordinator: Coordinator, ObservableObject {
     }
     
     func navigateToSign() {
-        let signCoordinator = SignCoordinator(navigationController)
+        let signCoordinator = SignCoordinator(navigationController, temporaryData: temporaryData)
         childCoordinators[signCoordinator.id] = signCoordinator
         signCoordinator.start()
     }

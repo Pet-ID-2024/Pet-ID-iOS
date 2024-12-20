@@ -19,15 +19,41 @@ class PetInfoViewModel: BaseViewModel<PetInfoState> {
     @Published var neuteredChecked: Bool = false
     @Published var isNextButtonDisabled: Bool = true
     
+    var temporaryData: [String: Any]
+    
+    init(temporaryData: [String: Any]) {
+        self.temporaryData = temporaryData
+        super.init()
+        loadTemporaryData()
+    }
+    
     enum Field: Hashable {
         case name, birthDate, neuteringDate, gender, address, phone, detailAddress
     }
-    
     
     @Published var focusedField: Field?
     
     private var dateFormatter: DateFormatter {
         return DateFormatter.petInfoDateFormatter
+    }
+    
+    private func loadTemporaryData() {
+        if let savedName = temporaryData["petName"] as? String {
+            name = savedName
+        }
+        if let savedBirthDate = temporaryData["petBirthDate"] as? String {
+            birthDate = savedBirthDate
+        }
+        if let savedGender = temporaryData["petSex"] as? String {
+            gender = savedGender
+        }
+        if let savedNeuteringDate = temporaryData["petNeuteredDate"] as? String {
+            neuteringDate = savedNeuteringDate
+        }
+        if let savedNeuteredChecked = temporaryData["petNeuteredYn"] as? Bool {
+            neuteredChecked = savedNeuteredChecked
+        }
+        Logger().debug("✅ 임시 저장 데이터 로드 완료: \(temporaryData)")
     }
     
     func toggleNeuteredChecked() {
@@ -59,12 +85,12 @@ class PetInfoViewModel: BaseViewModel<PetInfoState> {
         let isNameValid = !name.isEmpty
         let isBirthDateValid = !birthDate.isEmpty
         let isGenderValid = !gender.isEmpty
-
+        
         // 중성화 여부에 따라 중성화 날짜 필수 여부 결정
         let isNeuteringDateValid = !neuteringDate.isEmpty
         // 중성화 전 체크박스가 체크되면 중성화 날짜는 필수 아님
         let isNeuteredCheckedValid = neuteredChecked ? true : isNeuteringDateValid
-
+        
         // 모든 필수 항목이 만족되면 isValid가 true
         let isValid = isNameValid && isBirthDateValid && isGenderValid && isNeuteredCheckedValid
         
@@ -75,6 +101,16 @@ class PetInfoViewModel: BaseViewModel<PetInfoState> {
     func handleNextButtonTapped() {
         validateInput()
         if !isNextButtonDisabled {
+            let convertedGender = (gender == "남") ? "M" : "F"
+            let petInfo = PetInfoRequestDTO(
+                petName: name,
+                petBirthDate: birthDate,
+                petSex: convertedGender,
+                petNeuteredYn: neuteredChecked ? "N" : "Y",
+                petNeuteredDate: neuteredChecked ? "0000-00-00" : neuteringDate
+            )
+            temporaryData["petInfo"] = petInfo
+            Logger().debug("✅ 저장된 반려동물 정보: \(temporaryData)")
             result.send(.valid)
         }
     }

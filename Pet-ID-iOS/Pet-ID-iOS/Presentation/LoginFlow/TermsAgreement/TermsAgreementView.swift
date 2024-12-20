@@ -27,7 +27,7 @@ struct TermsAgreementView: View {
     var body: some View {
         ZStack {
             VStack {
-                navigationBar
+//                navigationBar
                 
                 Spacer()
                     .frame(maxHeight: 33)
@@ -47,34 +47,35 @@ struct TermsAgreementView: View {
         }
     }
     
-    var navigationBar: some View {
-        HStack {
-            Button(action: {
-                viewModel.handleBackBtnTap()
-            }) {
-                Image(systemName: "chevron.left")
-                    .foregroundColor(.black)
-            }
-            Spacer()
-        }
-    }
+//    var navigationBar: some View {
+//        HStack {
+//            Button(action: {
+//                viewModel.handleBackBtnTap()
+//            }) {
+//                Image(systemName: "chevron.left")
+//                    .foregroundColor(.black)
+//            }
+//            Spacer()
+//        }
+//    }
     
     var title: some View {
         VStack {
             HStack {
                 Text("펫아이디 서비스")
-                    .font(.title3)
+                    .font(.headline1)
                     .padding(.top, 20)
                 Spacer()
             }
             
             HStack {
                 Text("이용 약관에 동의")
-                    .foregroundColor(.blue)
+                    .foregroundColor(.petid_clearblue)
                 + Text("해 주세요.")
                 
                 Spacer()
             }
+            .font(.headline1)
         }
     }
     

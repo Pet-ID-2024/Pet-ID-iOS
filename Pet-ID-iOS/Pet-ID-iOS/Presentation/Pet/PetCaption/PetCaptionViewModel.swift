@@ -15,6 +15,23 @@ enum PetCaptionState {
 }
 
 class PetCaptionViewModel: BaseViewModel<PetCaptionState> {
+    
+    var temporaryData: [String: Any]
+    
+    init(temporaryData: [String : Any]) {
+        self.temporaryData = temporaryData
+        super.init()
+        loadTemporaryData()
+    }
+    
+    private func loadTemporaryData() {
+        if let petImages = temporaryData["petImages"] as? [[String: String]] {
+            Logger().debug("✅ 임시 저장된 캡션 데이터 로드 완료: \(petImages)")
+        } else {
+            Logger().debug("⚠️ 저장된 캡션 데이터가 없습니다.")
+        }
+    }
+    
     func navigateToCamera() {
         result.send(.completed)
     }

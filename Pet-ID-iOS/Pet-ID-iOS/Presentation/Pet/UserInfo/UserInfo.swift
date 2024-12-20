@@ -46,6 +46,7 @@ struct UserInfo: View {
                     )
                     .onChange(of: viewModel.user.name) { newValue in
                         viewModel.updateName(newValue)
+                        viewModel.validateInput()
                     }
                     
                     CustomField(
@@ -57,6 +58,7 @@ struct UserInfo: View {
                     )
                     .onChange(of: viewModel.user.phoneNumber) { newValue in
                         viewModel.updatePhoneNumber(newValue)
+                        viewModel.validateInput()
                     }
                     
                     VStack{
@@ -75,18 +77,17 @@ struct UserInfo: View {
                             .padding(.top, -20)
                             .onChange(of: viewModel.user.detailAddress) { newValue in
                                 viewModel.updateDetailAddress(newValue)
+                                viewModel.validateInput()
                             }
                     }
+                    
+                    
                 }
                 
                 Spacer()
                 
                 Button(action: {
                     viewModel.handleNextButtonTapped()
-                    //                    viewModel.saveUserInfo()
-                    if !viewModel.isNextButtonDisabled {
-                        //                            coordinator.navigateToPetInfo()
-                    }
                     
                 }) {
                     Text("다음")
@@ -104,12 +105,12 @@ struct UserInfo: View {
             .navigationBarHidden(true)
         }
         .padding()
-        .onAppear {
-            viewModel.validateInput()
-        }
+//        .onAppear {
+//            viewModel.validateInput()
+//        }
     }
 }
 
 #Preview {
-    UserInfo(viewModel: UserInfoViewModel())
+    UserInfo(viewModel: UserInfoViewModel(temporaryData: [:]))
 }

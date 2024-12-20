@@ -9,10 +9,15 @@ import Foundation
 
 struct Hospital: Identifiable, Hashable {
     let id: Int
-    let imageUrl: String?
+    let imageUrl: [String]?
     let address: String
     let name: String
     let hours: String?
     let tel: String
     let vet: String
+    
+    // 첫 번째 이미지 가져오기
+    var firstImageUrl: String? {
+        return imageUrl?.first
+    }
 }

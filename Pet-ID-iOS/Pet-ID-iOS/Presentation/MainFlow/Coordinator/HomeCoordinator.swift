@@ -37,6 +37,14 @@ final class HomeCoordinator: Coordinator, ObservableObject {
 //        navigationController.hidesBottomBarWhenPushed = false
     }
     
+    func goToPetBlog() {
+        navigationController.hidesBottomBarWhenPushed = true
+        let petBlogMainCoordinator = PetBlogMainCoordinator(/*navigationController:*/ navigationController)
+        childCoordinators[petBlogMainCoordinator.id] = petBlogMainCoordinator
+        petBlogMainCoordinator.start()
+//        navigationController.hidesBottomBarWhenPushed = false
+    }
+    
     deinit {
         Logger().debug("Coordinator Deinit \(self)")
     }

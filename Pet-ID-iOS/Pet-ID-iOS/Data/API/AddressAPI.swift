@@ -17,15 +17,19 @@ enum AddressAPI: BaseTargetType {
     
     var path: String {
         switch self {
-        case .sido: return "/v1/location"
-        case .sigungu(let sidoId): return "/v1/location/sido/\(sidoId)/sigungu"
-        case .eupmundong(let sigunguId): return "/v1/location/sigungu/\(sigunguId)/eupmundong"
+        case .sido: 
+            return "/v1/location"
+        case .sigungu(let sidoId):
+            return "/v1/location/sido/\(sidoId)/sigungu"
+        case .eupmundong(let sigunguId): 
+            return "/v1/location/sigungu/\(sigunguId)/eupmundong"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .sido, .sigungu, .eupmundong: return .get
+        case .sido, .sigungu, .eupmundong: 
+            return .get
         }
     }
     
@@ -33,6 +37,7 @@ enum AddressAPI: BaseTargetType {
         switch self {
         case .sido, .sigungu, .eupmundong:
 //            print("AddressAPI 요청 경로: \(baseURL)\(path)")
+//            print("AddressAPI 요청 헤더: \(headers ?? [:])")
             return .requestPlain
         }
     }

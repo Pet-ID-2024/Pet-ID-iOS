@@ -1,55 +1,3 @@
-////
-////  Provider.swift
-////  Pet-ID-iOS
-////
-////  Created by 강현준 on 7/12/24.
-////
-//
-//import Foundation
-//import Moya
-//
-//public class Provider<T>: MoyaProvider<T> where T: TargetType {
-//    
-//    init() {
-//        let session = Session(
-//            configuration: .default,
-//            interceptor: NetworkInterceptor()
-//        )
-//        
-//        super.init(
-//            session: session,
-//            plugins: [NetworkLoggerPlugin()]
-//        )
-//    }
-//    
-//    func request<D: Decodable>(_ target: T) async throws -> D {
-//        return try await withCheckedThrowingContinuation { continuation in
-//            super.request(target) { result in
-//                switch result {
-//                case .success(let response):
-//                    do {
-//                        let filterResonse = try response.filterSuccessfulStatusCodes()
-//                        let decodedData = try filterResonse.map(D.self)
-//                        continuation.resume(returning: decodedData)
-//                    } catch let error  {
-//                        
-//                        if let moyaError = error as? MoyaError {
-//                            let networkError = NetworkError(error: moyaError)
-//                            continuation.resume(throwing: networkError)
-//                        } else {
-//                            Logger().error("ProviderError")
-//                            continuation.resume(throwing: NetworkError.unknown)
-//                        }
-//                    }
-//                case .failure(let error):
-//                    continuation.resume(throwing: NetworkError.moyaError(error))
-//                }
-//            }
-//            
-//        }
-//    }
-//}
-
 //
 //  Provider.swift
 //  Pet-ID-iOS
@@ -75,7 +23,7 @@ public class Provider<T>: MoyaProvider<T> where T: TargetType {
     }
     
     func request<D: Decodable>(_ target: T) async throws -> D {
-//        throw MoyaError.statusCode(Response.init(statusCode: 401, data: Data()))
+        //        throw MoyaError.statusCode(Response.init(statusCode: 401, data: Data()))
         return try await withCheckedThrowingContinuation { continuation in
             self.request(target) { result in
                 switch result {
@@ -106,25 +54,36 @@ public class Provider<T>: MoyaProvider<T> where T: TargetType {
                             continuation.resume(throwing: NetworkError.unknown)
                         }
                     }
-                    //                    do {
-                    //                        let filterResonse = try response.filterSuccessfulStatusCodes()
-                    //                        let decodedData = try filterResonse.map(D.self)
-                    //                        continuation.resume(returning: decodedData)
-                    //                    } catch let error  {
-                    //
-                    //                        if let moyaError = error as? MoyaError {
-                    //                            let networkError = NetworkError(error: moyaError)
-                    //                            continuation.resume(throwing: networkError)
-                    //                        } else {
-                    //                            Logger().error("ProviderError")
-                    //                            continuation.resume(throwing: NetworkError.unknown)
-                    //                        }
-                    //                    }
                 case .failure(let error):
                     continuation.resume(throwing: NetworkError.moyaError(error))
                 }
             }
             
+        }
+    }
+}
+
+extension Provider {
+    func requestString(_ target: T) async throws -> String {
+        return try await withCheckedThrowingContinuation { continuation in
+            self.request(target) { result in
+                switch result {
+                case .success(let response):
+                    // 상태 코드 검증
+                    guard (200...299).contains(response.statusCode) else {
+                        continuation.resume(throwing: MoyaError.statusCode(response))
+                        return
+                    }
+                    // 문자열 데이터 반환
+                    if let responseString = String(data: response.data, encoding: .utf8) {
+                        continuation.resume(returning: responseString)
+                    } else {
+                        continuation.resume(throwing: NetworkError.decodingError)
+                    }
+                case .failure(let error):
+                    continuation.resume(throwing: NetworkError.moyaError(error))
+                }
+            }
         }
     }
 }

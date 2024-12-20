@@ -11,10 +11,12 @@ final class ScanCoordinator: Coordinator, ObservableObject {
     var childCoordinators: [String : any Coordinator] = [:]
     private var cancelBag = Set<AnyCancellable>()
     private let image: UIImage
+    var temporaryData: [String: Any]
     
-    init(_ navigationController: UINavigationController, image: UIImage) {
+    init(_ navigationController: UINavigationController, image: UIImage, temporaryData: [String: Any]) {
         self.navigationController = navigationController
         self.image = image
+        self.temporaryData = temporaryData
     }
     
     func start() {
@@ -22,7 +24,15 @@ final class ScanCoordinator: Coordinator, ObservableObject {
     }
     
     private func showScanCheck() {
-        let viewModel = ScanCheckViewModel(image: image)
+        let appearanceData = AppearanceRequestDTO(
+                breed: "DRAGON",
+                hairColor: "azure",
+                weight: 3000,
+                hairLength: "Long"
+            )
+            temporaryData["appearance"] = appearanceData
+        
+        let viewModel = ScanCheckViewModel(image: image, temporaryData: temporaryData)
         let ScanCheckView = ScanCheck(viewModel: viewModel)
         let ScanCheckVC = BaseHostingViewController(rootView: ScanCheckView)
         
@@ -31,14 +41,16 @@ final class ScanCoordinator: Coordinator, ObservableObject {
         
         viewModel.result.subject
             .sink(receiveValue: { [weak self] state in
-                self?.handleStateSelection(state)
+                self?.handleStateSelection(state, updatedData: viewModel.temporaryData)
             })
             .store(in: &cancelBag)
     }
     
-    private func handleStateSelection(_ state: ScanCheckState) {
+    private func handleStateSelection(_ state: ScanCheckState, updatedData: [String: Any]) {
         switch state {
         case .next:
+            Logger().debug("✅ Scan 입력 성공: \(updatedData)")
+            temporaryData.merge(updatedData) { (_, new) in new }
             navigateToIC()
         case .back:
             navigateBack()
@@ -46,7 +58,7 @@ final class ScanCoordinator: Coordinator, ObservableObject {
     }
     
     func navigateToIC() {
-        let InformationCheckCoordinator = InformationCoordinator(/*navigationController: */navigationController)
+        let InformationCheckCoordinator = InformationCoordinator(/*navigationController: */navigationController, temporaryData: temporaryData)
         childCoordinators[InformationCheckCoordinator.id] = InformationCheckCoordinator
         InformationCheckCoordinator.start()
     }

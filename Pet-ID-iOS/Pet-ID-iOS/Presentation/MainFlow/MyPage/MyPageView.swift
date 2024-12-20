@@ -16,15 +16,15 @@ struct MyPageView: View {
     var body: some View {
         Header
         
-        Divider()
-            .frame(height: 8) // 높이로 두께를 설정
-            .background(Color.petid_f5)   // Divider 색상 설정
+        Rectangle()
+            .frame(height: 8)
+            .foregroundColor(.petid_f5)
         
         TopList
         
-        Divider()
-            .frame(height: 8) // 높이로 두께를 설정
-            .background(Color.petid_f5)   // Divider 색상 설정
+        Rectangle()
+            .frame(height: 8)
+            .foregroundColor(.petid_f5)
         
         BottomList
         
@@ -89,7 +89,7 @@ struct MyPageView: View {
             //        .padding()
             
             Button {
-                print("클릭")
+                viewModel.navigateToReservationList()
             } label: {
                 HStack {
                     Text("예약 내역")

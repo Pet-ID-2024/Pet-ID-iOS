@@ -11,8 +11,11 @@ final class PetInfoCoordinator: Coordinator, ObservableObject {
     var childCoordinators: [String : any Coordinator] = [:]
     private var cancelBag = Set<AnyCancellable>()
     
-    init(_ navigationController: UINavigationController) {
+    var temporaryData: [String: Any]
+    
+    init(_ navigationController: UINavigationController, temporaryData: [String: Any]) {
         self.navigationController = navigationController
+        self.temporaryData = temporaryData
     }
     
     func start() {
@@ -20,7 +23,7 @@ final class PetInfoCoordinator: Coordinator, ObservableObject {
     }
     
     private func showPetInfo() {
-        let viewModel = PetInfoViewModel()
+        let viewModel = PetInfoViewModel(temporaryData: temporaryData)
         let petInfoView = PetInfo(viewModel: viewModel)
         let PetInfoVC = BaseHostingViewController(rootView: petInfoView)
         
@@ -29,16 +32,18 @@ final class PetInfoCoordinator: Coordinator, ObservableObject {
         
         viewModel.result.subject
             .sink(receiveValue: { [weak self] state in
-                self?.handleStateSelection(state)
+                self?.handleStateSelection(state, updatedData: viewModel.temporaryData)
             })
             .store(in: &cancelBag)
     }
     
-    private func handleStateSelection(_ state: PetInfoState) {
+    private func handleStateSelection(_ state: PetInfoState, updatedData: [String: Any]) {
         switch state {
         case .back:
             navigateBack()
         case .valid:
+            Logger().debug("✅ PetCaption 입력 성공: \(updatedData)")
+            temporaryData.merge(updatedData) { (_, new) in new }
             showpetCaption()
         case .invalid:
             print("Input is invalid")
@@ -46,7 +51,7 @@ final class PetInfoCoordinator: Coordinator, ObservableObject {
     }
     
     func showpetCaption() {
-        let petCaptionCoordinator = PetCaptionCoordinator(/*navigationController: */navigationController)
+        let petCaptionCoordinator = PetCaptionCoordinator(/*navigationController: */navigationController, temporaryData: temporaryData)
         childCoordinators[petCaptionCoordinator.id] = petCaptionCoordinator
         petCaptionCoordinator.start()
     }

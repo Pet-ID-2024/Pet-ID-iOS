@@ -15,4 +15,11 @@ extension DateFormatter {
         formatter.timeZone = TimeZone.current
         return formatter
     }()
+    
+    static let localizedReservationDate: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR") // 한국어 로케일 설정
+        formatter.dateFormat = "MM월 dd일(E) HH:mm" // 원하는 형식
+        return formatter
+    }()
 }

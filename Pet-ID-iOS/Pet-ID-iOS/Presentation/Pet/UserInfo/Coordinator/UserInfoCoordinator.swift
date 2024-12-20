@@ -10,9 +10,11 @@ final class UserInfoCoordinator: Coordinator, ObservableObject {
     var navigationController: UINavigationController
     var childCoordinators: [String : any Coordinator] = [:]
     private var cancelBag = Set<AnyCancellable>()
+     var temporaryData: [String: Any]
     
-    init(_ navigationController: UINavigationController) {
+    init(_ navigationController: UINavigationController, temporaryData: [String: Any]) {
         self.navigationController = navigationController
+        self.temporaryData = temporaryData
     }
     
     func start() {
@@ -20,7 +22,7 @@ final class UserInfoCoordinator: Coordinator, ObservableObject {
     }
     
     private func showUserInfo() {
-        let viewModel = UserInfoViewModel()
+        let viewModel = UserInfoViewModel(temporaryData: temporaryData)
         let userInfoView = UserInfo(viewModel: viewModel)
         let userInfoVC = BaseHostingViewController(rootView: userInfoView)
         
@@ -29,14 +31,16 @@ final class UserInfoCoordinator: Coordinator, ObservableObject {
         
         viewModel.result.subject
             .sink(receiveValue: { [weak self] state in
-                self?.handleStateSelection(state)
+                self?.handleStateSelection(state, updatedData: viewModel.temporaryData)
             })
             .store(in: &cancelBag)
     }
     
-    private func handleStateSelection(_ state: UserInfoState) {
+    private func handleStateSelection(_ state: UserInfoState, updatedData: [String: Any]) {
         switch state {
         case .valid:
+            Logger().debug("✅ UserInfo 입력 성공: \(updatedData)")
+            temporaryData.merge(updatedData) { (_, new) in new }
             navigateToPetInfo()
         case .invalid:
             print("Input is invalid")
@@ -46,7 +50,8 @@ final class UserInfoCoordinator: Coordinator, ObservableObject {
     }
     
     func navigateToPetInfo() {
-        let petInfoCoordinator = PetInfoCoordinator(/*navigationController:*/ navigationController)
+        Logger().debug("✅ 병합된 데이터 전달: \(temporaryData)")
+        let petInfoCoordinator = PetInfoCoordinator(/*navigationController:*/ navigationController, temporaryData: temporaryData)
         childCoordinators[petInfoCoordinator.id] = petInfoCoordinator
         petInfoCoordinator.start()
     }

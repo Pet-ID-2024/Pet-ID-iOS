@@ -27,7 +27,7 @@ final class MyPageCoordinator: Coordinator, ObservableObject {
 //        myPageVC.hidesBottomBarWhenPushed = true
         
         // 여기서 push 메서드를 호출하여 뷰 컨트롤러를 네비게이션 스택에 추가합니다.
-        push(myPageVC, animate: true/*, isRoot: true*/)  // 애니메이션을 적용하여 화면 전환
+        push(myPageVC, animate: true, isRoot: false)  // 애니메이션을 적용하여 화면 전환
         
         viewModel.result.subject
             .sink(receiveValue: { [weak self] state in
@@ -43,7 +43,7 @@ final class MyPageCoordinator: Coordinator, ObservableObject {
         case .petInfo:
             navigateToPetInfoDetail()
         case .reservation:
-            break
+            navigateToReservationList()
         case .accessibilityRight:
             break
         case .privacyPolicy:
@@ -67,6 +67,12 @@ final class MyPageCoordinator: Coordinator, ObservableObject {
         let petDetailCoordinator = PetInfoDetailCoordinator(/*navigationController:*/ navigationController)
         childCoordinators[petDetailCoordinator.id] = petDetailCoordinator
         petDetailCoordinator.start()
+    }
+    
+    func navigateToReservationList() {
+        let reservationListCoordiator = ReservationListCoordinator(navigationController)
+        childCoordinators[reservationListCoordiator.id] = reservationListCoordiator
+        reservationListCoordiator.start()
     }
     
     func navigateBack() {

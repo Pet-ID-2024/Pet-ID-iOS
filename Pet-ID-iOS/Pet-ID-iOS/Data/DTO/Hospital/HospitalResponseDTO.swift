@@ -9,7 +9,7 @@ import Foundation
 
 struct HospitalResponseDTO: Decodable {
     let id: Int
-    let imageUrl: String?
+    let imageUrl: [String]?
     let address: String
     let name: String
     let hours: String?
@@ -17,6 +17,15 @@ struct HospitalResponseDTO: Decodable {
     let vet: String
     
     func toDomain() -> Hospital {
-        return Hospital(id: self.id, imageUrl: self.imageUrl, address: self.address, name: self.name, hours: self.hours, tel: self.tel, vet: self.vet)
+        return Hospital(
+            id: self.id,
+            imageUrl: self.imageUrl ?? [],
+            address: self.address,
+            name: self.name,
+            hours: self.hours ?? "운영 시간 정보 없음",
+            tel: self.tel,
+            vet: self.vet
+        )
     }
 }
+

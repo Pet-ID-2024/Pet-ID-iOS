@@ -20,6 +20,50 @@
 		0A21CF1E2C0DEFEB005DD8E2 /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21CF1D2C0DEFEB005DD8E2 /* LoginSuccess.swift */; };
 		0A21CF262C0DF131005DD8E2 /* TermsAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21CF252C0DF131005DD8E2 /* TermsAgreementView.swift */; };
 		0A3EE7F12CD9A8A700F7BED6 /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE7F02CD9A8A700F7BED6 /* Hospital.swift */; };
+		0A3EE7F32CDC5CF800F7BED6 /* ReservationTimeResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE7F22CDC5CF800F7BED6 /* ReservationTimeResponseDTO.swift */; };
+		0A3EE7F52CDC5D9B00F7BED6 /* ReservationTimeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE7F42CDC5D9B00F7BED6 /* ReservationTimeAPI.swift */; };
+		0A3EE7F72CDC5FCF00F7BED6 /* ReservationTimeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE7F62CDC5FCF00F7BED6 /* ReservationTimeDataSource.swift */; };
+		0A3EE7F92CDC62EC00F7BED6 /* DefaultReservationTimeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE7F82CDC62EC00F7BED6 /* DefaultReservationTimeRepository.swift */; };
+		0A3EE7FB2CDC633200F7BED6 /* ReservationTimeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE7FA2CDC633200F7BED6 /* ReservationTimeFetcher.swift */; };
+		0A3EE7FE2CDC636700F7BED6 /* ReservationTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE7FD2CDC636700F7BED6 /* ReservationTime.swift */; };
+		0A3EE8002CDC63A100F7BED6 /* ReservationTimeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE7FF2CDC63A100F7BED6 /* ReservationTimeRepository.swift */; };
+		0A3EE8022CDDA01A00F7BED6 /* HolidayResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE8012CDDA01A00F7BED6 /* HolidayResponseDTO.swift */; };
+		0A3EE8042CDDA0A900F7BED6 /* HolidayAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE8032CDDA0A900F7BED6 /* HolidayAPI.swift */; };
+		0A3EE8062CDDA3AF00F7BED6 /* HolidayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE8052CDDA3AF00F7BED6 /* HolidayDataSource.swift */; };
+		0A3EE8082CDDA43F00F7BED6 /* DefaultHolidayRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE8072CDDA43F00F7BED6 /* DefaultHolidayRepository.swift */; };
+		0A3EE80A2CDDA49E00F7BED6 /* HolidayFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE8092CDDA49E00F7BED6 /* HolidayFetcher.swift */; };
+		0A3EE80D2CDDA4E100F7BED6 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE80C2CDDA4E100F7BED6 /* Holiday.swift */; };
+		0A3EE80F2CDDA55800F7BED6 /* HolidayRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE80E2CDDA55800F7BED6 /* HolidayRepository.swift */; };
+		0A3EE8162CDF7B5700F7BED6 /* PetBlogMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE8152CDF7B5600F7BED6 /* PetBlogMainViewModel.swift */; };
+		0A3EE8182CDF7B7500F7BED6 /* PetBlogMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE8172CDF7B7500F7BED6 /* PetBlogMainView.swift */; };
+		0A3EE81A2CDF7B8400F7BED6 /* PetBlogMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE8192CDF7B8400F7BED6 /* PetBlogMainCoordinator.swift */; };
+		0A3EE81C2CDF7BDA00F7BED6 /* PetBlogDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE81B2CDF7BDA00F7BED6 /* PetBlogDetailCoordinator.swift */; };
+		0A3EE81E2CDF7BE900F7BED6 /* PetBlogDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE81D2CDF7BE900F7BED6 /* PetBlogDetailViewModel.swift */; };
+		0A3EE8202CDF7BF800F7BED6 /* PetBlogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE81F2CDF7BF800F7BED6 /* PetBlogDetailView.swift */; };
+		0A3EE8242CE0A79800F7BED6 /* BlogResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE8232CE0A79800F7BED6 /* BlogResponseDTO.swift */; };
+		0A3EE8262CE0A83C00F7BED6 /* BlogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE8252CE0A83C00F7BED6 /* BlogAPI.swift */; };
+		0A3EE8282CE0A95D00F7BED6 /* BlogDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE8272CE0A95D00F7BED6 /* BlogDataSource.swift */; };
+		0A3EE82B2CE0AE6E00F7BED6 /* Blog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE82A2CE0AE6E00F7BED6 /* Blog.swift */; };
+		0A3EE82D2CE0B69D00F7BED6 /* DefaultBlogRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE82C2CE0B69D00F7BED6 /* DefaultBlogRepository.swift */; };
+		0A3EE82F2CE0B6E200F7BED6 /* BlogRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE82E2CE0B6E200F7BED6 /* BlogRepository.swift */; };
+		0A3EE8312CE0BA8E00F7BED6 /* BlogFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE8302CE0BA8E00F7BED6 /* BlogFetcher.swift */; };
+		0A5B026B2CE5B495007DEB36 /* TestResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B026A2CE5B495007DEB36 /* TestResponseDTO.swift */; };
+		0A5B026D2CE5B546007DEB36 /* TestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B026C2CE5B546007DEB36 /* TestAPI.swift */; };
+		0A5B026F2CE5B666007DEB36 /* TestDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B026E2CE5B666007DEB36 /* TestDataSource.swift */; };
+		0A5B02712CE5B89F007DEB36 /* DefaultTestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B02702CE5B89F007DEB36 /* DefaultTestRepository.swift */; };
+		0A5B02732CE5B8C8007DEB36 /* TestFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B02722CE5B8C8007DEB36 /* TestFetcher.swift */; };
+		0A5B02752CE5B8D3007DEB36 /* TestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B02742CE5B8D3007DEB36 /* TestRepository.swift */; };
+		0A5B02772CE5BB61007DEB36 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B02762CE5BB61007DEB36 /* TestViewModel.swift */; };
+		0A5B02792CE5BB6B007DEB36 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B02782CE5BB6B007DEB36 /* TestView.swift */; };
+		0A5B028B2CED6569007DEB36 /* PetIDResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B028A2CED6569007DEB36 /* PetIDResponseDTO.swift */; };
+		0A5B028D2CED6615007DEB36 /* PetIDAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B028C2CED6615007DEB36 /* PetIDAPI.swift */; };
+		0A5B028F2CED669A007DEB36 /* PetID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B028E2CED669A007DEB36 /* PetID.swift */; };
+		0A5B02912CED6D00007DEB36 /* PetIDDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B02902CED6D00007DEB36 /* PetIDDataSource.swift */; };
+		0A5B02932CED6E8E007DEB36 /* DefaultPetIDRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B02922CED6E8E007DEB36 /* DefaultPetIDRepository.swift */; };
+		0A5B02952CED703C007DEB36 /* PetIDRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B02942CED703C007DEB36 /* PetIDRepository.swift */; };
+		0A5B02972CED7168007DEB36 /* PetIDFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B02962CED7168007DEB36 /* PetIDFetcher.swift */; };
+		0A5B02992CED7CF1007DEB36 /* PetIDRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B02982CED7CF1007DEB36 /* PetIDRequestDTO.swift */; };
+		0A5B029B2CF6C233007DEB36 /* PetInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B029A2CF6C233007DEB36 /* PetInfoModel.swift */; };
 		0A5D601E2C58C638009D656D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5D601D2C58C638009D656D /* HomeViewModel.swift */; };
 		0A5D602A2C58CF7E009D656D /* PetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5D60292C58CF7E009D656D /* PetCardView.swift */; };
 		0A5D602C2C58CFB6009D656D /* PetCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5D602B2C58CFB6009D656D /* PetCardViewModel.swift */; };
@@ -89,11 +133,27 @@
 		0A79DB872CD4AC3C004C0888 /* UserInfoDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79DB862CD4AC3C004C0888 /* UserInfoDetailCoordinator.swift */; };
 		0A79DB892CD4AC4B004C0888 /* UserInfoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79DB882CD4AC4B004C0888 /* UserInfoDetail.swift */; };
 		0A79DB8B2CD4AC56004C0888 /* UserInfoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79DB8A2CD4AC56004C0888 /* UserInfoDetailViewModel.swift */; };
+		0AA5BB712D029D6E004CB6E6 /* ReservationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5BB702D029D6E004CB6E6 /* ReservationListView.swift */; };
+		0AA5BB732D029D79004CB6E6 /* ReservationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5BB722D029D79004CB6E6 /* ReservationListViewModel.swift */; };
+		0AA5BB752D029D9B004CB6E6 /* ReservationListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5BB742D029D9B004CB6E6 /* ReservationListCoordinator.swift */; };
+		0AA5BB7D2D02CA68004CB6E6 /* ReservationRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5BB7C2D02CA68004CB6E6 /* ReservationRequestDTO.swift */; };
+		0AA5BB7F2D02CA74004CB6E6 /* ReservationResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5BB7E2D02CA74004CB6E6 /* ReservationResponseDTO.swift */; };
+		0AA5BB832D02CC2D004CB6E6 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5BB822D02CC2D004CB6E6 /* Reservation.swift */; };
+		0AA5BB852D07CC30004CB6E6 /* ReservationListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5BB842D07CC30004CB6E6 /* ReservationListAPI.swift */; };
+		0AA5BB872D07DD3F004CB6E6 /* ReservationListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5BB862D07DD3F004CB6E6 /* ReservationListDataSource.swift */; };
+		0AA5BB892D07E62A004CB6E6 /* DefaultReservationListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5BB882D07E62A004CB6E6 /* DefaultReservationListRepository.swift */; };
+		0AA5BB8B2D07E752004CB6E6 /* ReservationListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5BB8A2D07E752004CB6E6 /* ReservationListRepository.swift */; };
+		0AA5BB8D2D07FBCD004CB6E6 /* ReservationListFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5BB8C2D07FBCD004CB6E6 /* ReservationListFetcher.swift */; };
+		0AA5BB912D094DA0004CB6E6 /* Dialog1Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5BB902D094DA0004CB6E6 /* Dialog1Coordinator.swift */; };
+		0AA5BB932D094DB1004CB6E6 /* Dialog1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5BB922D094DB1004CB6E6 /* Dialog1ViewModel.swift */; };
+		0AA5BB972D095403004CB6E6 /* Dialog3Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5BB962D095403004CB6E6 /* Dialog3Coordinator.swift */; };
+		0AA5BB992D09540F004CB6E6 /* Dialog3ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5BB982D09540F004CB6E6 /* Dialog3ViewModel.swift */; };
 		0AC9B0852C4278B30040FB28 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC9B0842C4278B30040FB28 /* Font+.swift */; };
 		0AC9B0882C4278D30040FB28 /* NotoSansKR-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AC9B0862C4278D30040FB28 /* NotoSansKR-Regular.ttf */; };
 		0AC9B0892C4278D30040FB28 /* NotoSansKR-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AC9B0872C4278D30040FB28 /* NotoSansKR-SemiBold.ttf */; };
 		0AC9B08B2C4278DD0040FB28 /* NotoSansKR-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AC9B08A2C4278DD0040FB28 /* NotoSansKR-Bold.ttf */; };
 		0AC9B08D2C427D660040FB28 /* Image+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC9B08C2C427D660040FB28 /* Image+.swift */; };
+		0AF771882CE43439009D23D8 /* BannerImageView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF771872CE43439009D23D8 /* BannerImageView1.swift */; };
 		90EB6ACA7C1F195944FBBF88 /* Pods_Pet_ID_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3080C53C9751D902789FCA87 /* Pods_Pet_ID_iOS.framework */; };
 		FA136CD52C6B92D6007D7A9E /* ReservationMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA136CD42C6B92D6007D7A9E /* ReservationMainView.swift */; };
 		FA3584E82C49873C0019C46A /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3584E72C49873C0019C46A /* Interface.swift */; };
@@ -209,6 +269,50 @@
 		0A21CF1D2C0DEFEB005DD8E2 /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
 		0A21CF252C0DF131005DD8E2 /* TermsAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAgreementView.swift; sourceTree = "<group>"; };
 		0A3EE7F02CD9A8A700F7BED6 /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
+		0A3EE7F22CDC5CF800F7BED6 /* ReservationTimeResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTimeResponseDTO.swift; sourceTree = "<group>"; };
+		0A3EE7F42CDC5D9B00F7BED6 /* ReservationTimeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTimeAPI.swift; sourceTree = "<group>"; };
+		0A3EE7F62CDC5FCF00F7BED6 /* ReservationTimeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTimeDataSource.swift; sourceTree = "<group>"; };
+		0A3EE7F82CDC62EC00F7BED6 /* DefaultReservationTimeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultReservationTimeRepository.swift; sourceTree = "<group>"; };
+		0A3EE7FA2CDC633200F7BED6 /* ReservationTimeFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTimeFetcher.swift; sourceTree = "<group>"; };
+		0A3EE7FD2CDC636700F7BED6 /* ReservationTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTime.swift; sourceTree = "<group>"; };
+		0A3EE7FF2CDC63A100F7BED6 /* ReservationTimeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTimeRepository.swift; sourceTree = "<group>"; };
+		0A3EE8012CDDA01A00F7BED6 /* HolidayResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayResponseDTO.swift; sourceTree = "<group>"; };
+		0A3EE8032CDDA0A900F7BED6 /* HolidayAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayAPI.swift; sourceTree = "<group>"; };
+		0A3EE8052CDDA3AF00F7BED6 /* HolidayDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDataSource.swift; sourceTree = "<group>"; };
+		0A3EE8072CDDA43F00F7BED6 /* DefaultHolidayRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHolidayRepository.swift; sourceTree = "<group>"; };
+		0A3EE8092CDDA49E00F7BED6 /* HolidayFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayFetcher.swift; sourceTree = "<group>"; };
+		0A3EE80C2CDDA4E100F7BED6 /* Holiday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
+		0A3EE80E2CDDA55800F7BED6 /* HolidayRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayRepository.swift; sourceTree = "<group>"; };
+		0A3EE8152CDF7B5600F7BED6 /* PetBlogMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBlogMainViewModel.swift; sourceTree = "<group>"; };
+		0A3EE8172CDF7B7500F7BED6 /* PetBlogMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBlogMainView.swift; sourceTree = "<group>"; };
+		0A3EE8192CDF7B8400F7BED6 /* PetBlogMainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBlogMainCoordinator.swift; sourceTree = "<group>"; };
+		0A3EE81B2CDF7BDA00F7BED6 /* PetBlogDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBlogDetailCoordinator.swift; sourceTree = "<group>"; };
+		0A3EE81D2CDF7BE900F7BED6 /* PetBlogDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBlogDetailViewModel.swift; sourceTree = "<group>"; };
+		0A3EE81F2CDF7BF800F7BED6 /* PetBlogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBlogDetailView.swift; sourceTree = "<group>"; };
+		0A3EE8232CE0A79800F7BED6 /* BlogResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogResponseDTO.swift; sourceTree = "<group>"; };
+		0A3EE8252CE0A83C00F7BED6 /* BlogAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogAPI.swift; sourceTree = "<group>"; };
+		0A3EE8272CE0A95D00F7BED6 /* BlogDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogDataSource.swift; sourceTree = "<group>"; };
+		0A3EE82A2CE0AE6E00F7BED6 /* Blog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blog.swift; sourceTree = "<group>"; };
+		0A3EE82C2CE0B69D00F7BED6 /* DefaultBlogRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBlogRepository.swift; sourceTree = "<group>"; };
+		0A3EE82E2CE0B6E200F7BED6 /* BlogRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogRepository.swift; sourceTree = "<group>"; };
+		0A3EE8302CE0BA8E00F7BED6 /* BlogFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogFetcher.swift; sourceTree = "<group>"; };
+		0A5B026A2CE5B495007DEB36 /* TestResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResponseDTO.swift; sourceTree = "<group>"; };
+		0A5B026C2CE5B546007DEB36 /* TestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAPI.swift; sourceTree = "<group>"; };
+		0A5B026E2CE5B666007DEB36 /* TestDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataSource.swift; sourceTree = "<group>"; };
+		0A5B02702CE5B89F007DEB36 /* DefaultTestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTestRepository.swift; sourceTree = "<group>"; };
+		0A5B02722CE5B8C8007DEB36 /* TestFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFetcher.swift; sourceTree = "<group>"; };
+		0A5B02742CE5B8D3007DEB36 /* TestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRepository.swift; sourceTree = "<group>"; };
+		0A5B02762CE5BB61007DEB36 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
+		0A5B02782CE5BB6B007DEB36 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		0A5B028A2CED6569007DEB36 /* PetIDResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetIDResponseDTO.swift; sourceTree = "<group>"; };
+		0A5B028C2CED6615007DEB36 /* PetIDAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetIDAPI.swift; sourceTree = "<group>"; };
+		0A5B028E2CED669A007DEB36 /* PetID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetID.swift; sourceTree = "<group>"; };
+		0A5B02902CED6D00007DEB36 /* PetIDDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetIDDataSource.swift; sourceTree = "<group>"; };
+		0A5B02922CED6E8E007DEB36 /* DefaultPetIDRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPetIDRepository.swift; sourceTree = "<group>"; };
+		0A5B02942CED703C007DEB36 /* PetIDRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetIDRepository.swift; sourceTree = "<group>"; };
+		0A5B02962CED7168007DEB36 /* PetIDFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetIDFetcher.swift; sourceTree = "<group>"; };
+		0A5B02982CED7CF1007DEB36 /* PetIDRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetIDRequestDTO.swift; sourceTree = "<group>"; };
+		0A5B029A2CF6C233007DEB36 /* PetInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInfoModel.swift; sourceTree = "<group>"; };
 		0A5D601D2C58C638009D656D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		0A5D60292C58CF7E009D656D /* PetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardView.swift; sourceTree = "<group>"; };
 		0A5D602B2C58CFB6009D656D /* PetCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardViewModel.swift; sourceTree = "<group>"; };
@@ -278,12 +382,28 @@
 		0A79DB862CD4AC3C004C0888 /* UserInfoDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserInfoDetailCoordinator.swift; path = "Pet-ID-iOS/Presentation/MainFlow/MyPage/Pet/Detail/Coordinator/UserInfoDetailCoordinator.swift"; sourceTree = SOURCE_ROOT; };
 		0A79DB882CD4AC4B004C0888 /* UserInfoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDetail.swift; sourceTree = "<group>"; };
 		0A79DB8A2CD4AC56004C0888 /* UserInfoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDetailViewModel.swift; sourceTree = "<group>"; };
+		0AA5BB702D029D6E004CB6E6 /* ReservationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationListView.swift; sourceTree = "<group>"; };
+		0AA5BB722D029D79004CB6E6 /* ReservationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationListViewModel.swift; sourceTree = "<group>"; };
+		0AA5BB742D029D9B004CB6E6 /* ReservationListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationListCoordinator.swift; sourceTree = "<group>"; };
+		0AA5BB7C2D02CA68004CB6E6 /* ReservationRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationRequestDTO.swift; sourceTree = "<group>"; };
+		0AA5BB7E2D02CA74004CB6E6 /* ReservationResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationResponseDTO.swift; sourceTree = "<group>"; };
+		0AA5BB822D02CC2D004CB6E6 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
+		0AA5BB842D07CC30004CB6E6 /* ReservationListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationListAPI.swift; sourceTree = "<group>"; };
+		0AA5BB862D07DD3F004CB6E6 /* ReservationListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationListDataSource.swift; sourceTree = "<group>"; };
+		0AA5BB882D07E62A004CB6E6 /* DefaultReservationListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultReservationListRepository.swift; sourceTree = "<group>"; };
+		0AA5BB8A2D07E752004CB6E6 /* ReservationListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationListRepository.swift; sourceTree = "<group>"; };
+		0AA5BB8C2D07FBCD004CB6E6 /* ReservationListFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationListFetcher.swift; sourceTree = "<group>"; };
+		0AA5BB902D094DA0004CB6E6 /* Dialog1Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog1Coordinator.swift; sourceTree = "<group>"; };
+		0AA5BB922D094DB1004CB6E6 /* Dialog1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog1ViewModel.swift; sourceTree = "<group>"; };
+		0AA5BB962D095403004CB6E6 /* Dialog3Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog3Coordinator.swift; sourceTree = "<group>"; };
+		0AA5BB982D09540F004CB6E6 /* Dialog3ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog3ViewModel.swift; sourceTree = "<group>"; };
 		0AB4E1072C2B14BC006331B4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AC9B0842C4278B30040FB28 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		0AC9B0862C4278D30040FB28 /* NotoSansKR-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.ttf"; sourceTree = "<group>"; };
 		0AC9B0872C4278D30040FB28 /* NotoSansKR-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-SemiBold.ttf"; path = "../NotoSansKR-SemiBold.ttf"; sourceTree = "<group>"; };
 		0AC9B08A2C4278DD0040FB28 /* NotoSansKR-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.ttf"; sourceTree = "<group>"; };
 		0AC9B08C2C427D660040FB28 /* Image+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+.swift"; sourceTree = "<group>"; };
+		0AF771872CE43439009D23D8 /* BannerImageView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageView1.swift; sourceTree = "<group>"; };
 		3080C53C9751D902789FCA87 /* Pods_Pet_ID_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pet_ID_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C7286A000034D1F020526EC /* Pods-Pet-ID-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet-ID-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Pet-ID-iOS/Pods-Pet-ID-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		8BE1E2477EE2103256707795 /* Pods-Pet-ID-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet-ID-iOS.release.xcconfig"; path = "Target Support Files/Pods-Pet-ID-iOS/Pods-Pet-ID-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -389,6 +509,8 @@
 			isa = PBXGroup;
 			children = (
 				0A0EC8BB2CD9A0A4000ABAD8 /* HospitalResponseDTO.swift */,
+				0A3EE7F22CDC5CF800F7BED6 /* ReservationTimeResponseDTO.swift */,
+				0A3EE8012CDDA01A00F7BED6 /* HolidayResponseDTO.swift */,
 			);
 			path = Hospital;
 			sourceTree = "<group>";
@@ -440,6 +562,8 @@
 				0A21CEE82C0DE23A005DD8E2 /* Pet_ID_iOS.entitlements */,
 				0A21CEE92C0DE23A005DD8E2 /* Preview Content */,
 				0A21CF1D2C0DEFEB005DD8E2 /* LoginSuccess.swift */,
+				0A5B02692CE5B483007DEB36 /* Test */,
+				0AF771872CE43439009D23D8 /* BannerImageView1.swift */,
 			);
 			path = "Pet-ID-iOS";
 			sourceTree = "<group>";
@@ -478,6 +602,124 @@
 			path = Hospital;
 			sourceTree = "<group>";
 		};
+		0A3EE7FC2CDC635900F7BED6 /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				0AA5BB822D02CC2D004CB6E6 /* Reservation.swift */,
+				0A3EE7FD2CDC636700F7BED6 /* ReservationTime.swift */,
+			);
+			path = Reservation;
+			sourceTree = "<group>";
+		};
+		0A3EE80B2CDDA4B100F7BED6 /* Holiday */ = {
+			isa = PBXGroup;
+			children = (
+				0A3EE80C2CDDA4E100F7BED6 /* Holiday.swift */,
+			);
+			path = Holiday;
+			sourceTree = "<group>";
+		};
+		0A3EE8102CDF41F500F7BED6 /* PetBlog */ = {
+			isa = PBXGroup;
+			children = (
+				0A3EE8122CDF797A00F7BED6 /* Detail */,
+				0A3EE8112CDF797000F7BED6 /* Main */,
+			);
+			path = PetBlog;
+			sourceTree = "<group>";
+		};
+		0A3EE8112CDF797000F7BED6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0A3EE8132CDF7A5800F7BED6 /* Coordinator */,
+				0A3EE8152CDF7B5600F7BED6 /* PetBlogMainViewModel.swift */,
+				0A3EE8172CDF7B7500F7BED6 /* PetBlogMainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0A3EE8122CDF797A00F7BED6 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				0A3EE8142CDF7A6000F7BED6 /* Coordinator */,
+				0A3EE81D2CDF7BE900F7BED6 /* PetBlogDetailViewModel.swift */,
+				0A3EE81F2CDF7BF800F7BED6 /* PetBlogDetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		0A3EE8132CDF7A5800F7BED6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0A3EE8192CDF7B8400F7BED6 /* PetBlogMainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0A3EE8142CDF7A6000F7BED6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0A3EE81B2CDF7BDA00F7BED6 /* PetBlogDetailCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0A3EE8212CDF96FE00F7BED6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FAFA5D162C7CC3F3003F842C /* ReservationCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0A3EE8222CE0A78400F7BED6 /* Blog */ = {
+			isa = PBXGroup;
+			children = (
+				0A3EE8232CE0A79800F7BED6 /* BlogResponseDTO.swift */,
+			);
+			path = Blog;
+			sourceTree = "<group>";
+		};
+		0A3EE8292CE0AE6400F7BED6 /* Blog */ = {
+			isa = PBXGroup;
+			children = (
+				0A3EE82A2CE0AE6E00F7BED6 /* Blog.swift */,
+			);
+			path = Blog;
+			sourceTree = "<group>";
+		};
+		0A5B02692CE5B483007DEB36 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				0A5B026A2CE5B495007DEB36 /* TestResponseDTO.swift */,
+				0A5B026C2CE5B546007DEB36 /* TestAPI.swift */,
+				0A5B026E2CE5B666007DEB36 /* TestDataSource.swift */,
+				0A5B02702CE5B89F007DEB36 /* DefaultTestRepository.swift */,
+				0A5B02722CE5B8C8007DEB36 /* TestFetcher.swift */,
+				0A5B02742CE5B8D3007DEB36 /* TestRepository.swift */,
+				0A5B02762CE5BB61007DEB36 /* TestViewModel.swift */,
+				0A5B02782CE5BB6B007DEB36 /* TestView.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		0A5B027A2CEB67AA007DEB36 /* PetID */ = {
+			isa = PBXGroup;
+			children = (
+				0A5B028A2CED6569007DEB36 /* PetIDResponseDTO.swift */,
+				0A5B02982CED7CF1007DEB36 /* PetIDRequestDTO.swift */,
+			);
+			path = PetID;
+			sourceTree = "<group>";
+		};
+		0A5B02872CEB6D5A007DEB36 /* PetID */ = {
+			isa = PBXGroup;
+			children = (
+				0A5B028E2CED669A007DEB36 /* PetID.swift */,
+			);
+			path = PetID;
+			sourceTree = "<group>";
+		};
 		0A5D60202C58C7C7009D656D /* Banner */ = {
 			isa = PBXGroup;
 			children = (
@@ -509,9 +751,9 @@
 		0A79DAE62CD48079004C0888 /* CustomDialog */ = {
 			isa = PBXGroup;
 			children = (
-				0A79DAE72CD48088004C0888 /* Dialog1.swift */,
+				0AA5BB942D0953B9004CB6E6 /* Update,Cancel */,
+				0AA5BB8E2D094D58004CB6E6 /* Registration */,
 				0A79DAE92CD4808F004C0888 /* Dialog2.swift */,
-				0A79DAEB2CD48096004C0888 /* Dialog3.swift */,
 				0A79DAED2CD4809F004C0888 /* Dialog4.swift */,
 				0A79DAEF2CD480AA004C0888 /* Dialog5.swift */,
 			);
@@ -561,6 +803,7 @@
 				0A79DB0B2CD49563004C0888 /* Coordinator */,
 				0A79DB332CD49732004C0888 /* PetInfo.swift */,
 				0A79DB352CD49740004C0888 /* PetInfoViewModel.swift */,
+				0A5B029A2CF6C233007DEB36 /* PetInfoModel.swift */,
 			);
 			path = PetInfo;
 			sourceTree = "<group>";
@@ -679,10 +922,10 @@
 			isa = PBXGroup;
 			children = (
 				0A79DB512CD49AC3004C0888 /* Coodinator */,
-				0A79DB492CD49A6A004C0888 /* Choice */,
-				0A79DB412CD499FD004C0888 /* ReservationDone */,
 				0A79DB582CD49BE9004C0888 /* ReservationDetailView.swift */,
 				0A79DB5A2CD49BF7004C0888 /* ReservationDetailViewModel.swift */,
+				0A79DB412CD499FD004C0888 /* ReservationDone */,
+				0A79DB492CD49A6A004C0888 /* Choice */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -750,6 +993,7 @@
 		0A79DB702CD4AA95004C0888 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				0AA5BB6E2D029D51004CB6E6 /* ReservationList */,
 				0A79DB722CD4AAA5004C0888 /* User */,
 				0A79DB712CD4AA9D004C0888 /* Pet */,
 				0A79DB732CD4AAAB004C0888 /* Coordinator */,
@@ -835,6 +1079,69 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		0AA5BB6E2D029D51004CB6E6 /* ReservationList */ = {
+			isa = PBXGroup;
+			children = (
+				0AA5BB6F2D029D60004CB6E6 /* Coordinator */,
+				0AA5BB702D029D6E004CB6E6 /* ReservationListView.swift */,
+				0AA5BB722D029D79004CB6E6 /* ReservationListViewModel.swift */,
+			);
+			path = ReservationList;
+			sourceTree = "<group>";
+		};
+		0AA5BB6F2D029D60004CB6E6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0AA5BB742D029D9B004CB6E6 /* ReservationListCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0AA5BB7B2D02CA57004CB6E6 /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				0AA5BB7C2D02CA68004CB6E6 /* ReservationRequestDTO.swift */,
+				0AA5BB7E2D02CA74004CB6E6 /* ReservationResponseDTO.swift */,
+			);
+			path = Reservation;
+			sourceTree = "<group>";
+		};
+		0AA5BB8E2D094D58004CB6E6 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				0AA5BB8F2D094D8A004CB6E6 /* Coordinator */,
+				0A79DAE72CD48088004C0888 /* Dialog1.swift */,
+				0AA5BB922D094DB1004CB6E6 /* Dialog1ViewModel.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		0AA5BB8F2D094D8A004CB6E6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0AA5BB902D094DA0004CB6E6 /* Dialog1Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0AA5BB942D0953B9004CB6E6 /* Update,Cancel */ = {
+			isa = PBXGroup;
+			children = (
+				0AA5BB952D0953CC004CB6E6 /* Coordinator */,
+				0A79DAEB2CD48096004C0888 /* Dialog3.swift */,
+				0AA5BB982D09540F004CB6E6 /* Dialog3ViewModel.swift */,
+			);
+			path = "Update,Cancel";
+			sourceTree = "<group>";
+		};
+		0AA5BB952D0953CC004CB6E6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0AA5BB962D095403004CB6E6 /* Dialog3Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		1FC2591F97EAEF2423DFA2D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -856,7 +1163,6 @@
 			isa = PBXGroup;
 			children = (
 				0A79DB402CD499EA004C0888 /* Detail */,
-				FAFA5D162C7CC3F3003F842C /* ReservationCoordinator.swift */,
 				FA136CD12C6B9263007D7A9E /* Main */,
 			);
 			path = Reservation;
@@ -865,6 +1171,7 @@
 		FA136CD12C6B9263007D7A9E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				0A3EE8212CDF96FE00F7BED6 /* Coordinator */,
 				FA136CD42C6B92D6007D7A9E /* ReservationMainView.swift */,
 				FAFA5D002C7CAB5F003F842C /* ReservationMainViewModel.swift */,
 			);
@@ -1113,6 +1420,11 @@
 				FAFA5D102C7CB5C4003F842C /* AddressRepository.swift */,
 				0A79DB6A2CD49E7D004C0888 /* BannerRepository.swift */,
 				0A0EC8B22CD872F6000ABAD8 /* HospitalRepository.swift */,
+				0A3EE7FF2CDC63A100F7BED6 /* ReservationTimeRepository.swift */,
+				0A3EE80E2CDDA55800F7BED6 /* HolidayRepository.swift */,
+				0A3EE82E2CE0B6E200F7BED6 /* BlogRepository.swift */,
+				0A5B02942CED703C007DEB36 /* PetIDRepository.swift */,
+				0AA5BB8A2D07E752004CB6E6 /* ReservationListRepository.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1125,6 +1437,11 @@
 				FAFA5D0E2C7CB4EA003F842C /* DefaultAddressRepository.swift */,
 				0A79DB632CD49DEA004C0888 /* DefaultBannerRepository.swift */,
 				0A0EC8B62CD876A3000ABAD8 /* DefaultHospitalRepository.swift */,
+				0A3EE7F82CDC62EC00F7BED6 /* DefaultReservationTimeRepository.swift */,
+				0A3EE8072CDDA43F00F7BED6 /* DefaultHolidayRepository.swift */,
+				0A3EE82C2CE0B69D00F7BED6 /* DefaultBlogRepository.swift */,
+				0A5B02922CED6E8E007DEB36 /* DefaultPetIDRepository.swift */,
+				0AA5BB882D07E62A004CB6E6 /* DefaultReservationListRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -1223,6 +1540,10 @@
 		FADD57172C31913B00770AC6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0A5B02872CEB6D5A007DEB36 /* PetID */,
+				0A3EE8292CE0AE6400F7BED6 /* Blog */,
+				0A3EE80B2CDDA4B100F7BED6 /* Holiday */,
+				0A3EE7FC2CDC635900F7BED6 /* Reservation */,
 				0A3EE7EF2CD9A89A00F7BED6 /* Hospital */,
 				0A79DB672CD49E15004C0888 /* Banner */,
 				FAFA5D022C7CAC7A003F842C /* Address */,
@@ -1236,6 +1557,9 @@
 		FADD571A2C3191AB00770AC6 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				0AA5BB7B2D02CA57004CB6E6 /* Reservation */,
+				0A5B027A2CEB67AA007DEB36 /* PetID */,
+				0A3EE8222CE0A78400F7BED6 /* Blog */,
 				0A0EC8BA2CD99F6D000ABAD8 /* Hospital */,
 				0A79DB5C2CD49D51004C0888 /* Banner */,
 				FAFA5D0B2C7CB3B7003F842C /* Address */,
@@ -1272,6 +1596,7 @@
 		FADD57322C31A09300770AC6 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				0A3EE8102CDF41F500F7BED6 /* PetBlog */,
 				0A79DB702CD4AA95004C0888 /* MyPage */,
 				FAC4CD562C494C4B00A3658A /* Coordinator */,
 				FADD57332C31A09700770AC6 /* HomeView */,
@@ -1426,6 +1751,11 @@
 				FAF8E6F32C40D3C200CA7145 /* AuthAPI.swift */,
 				0A79DB5F2CD49DAE004C0888 /* BannerAPI.swift */,
 				0A0EC8AA2CD86DAD000ABAD8 /* HospitalAPI.swift */,
+				0A3EE7F42CDC5D9B00F7BED6 /* ReservationTimeAPI.swift */,
+				0A3EE8032CDDA0A900F7BED6 /* HolidayAPI.swift */,
+				0A3EE8252CE0A83C00F7BED6 /* BlogAPI.swift */,
+				0A5B028C2CED6615007DEB36 /* PetIDAPI.swift */,
+				0AA5BB842D07CC30004CB6E6 /* ReservationListAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1456,6 +1786,11 @@
 				FAFA5D092C7CB390003F842C /* AddressDataSource.swift */,
 				0A79DB612CD49DC9004C0888 /* BannerDataSource.swift */,
 				0A0EC8B42CD87672000ABAD8 /* HospitalDataSource.swift */,
+				0A3EE7F62CDC5FCF00F7BED6 /* ReservationTimeDataSource.swift */,
+				0A3EE8052CDDA3AF00F7BED6 /* HolidayDataSource.swift */,
+				0A3EE8272CE0A95D00F7BED6 /* BlogDataSource.swift */,
+				0A5B02902CED6D00007DEB36 /* PetIDDataSource.swift */,
+				0AA5BB862D07DD3F004CB6E6 /* ReservationListDataSource.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -1507,6 +1842,11 @@
 				FAFA5D132C7CB5E8003F842C /* AddressFetcher.swift */,
 				0A79DB652CD49E03004C0888 /* BannerFetcher.swift */,
 				0A0EC8B82CD87772000ABAD8 /* HospitalFetcher.swift */,
+				0A3EE7FA2CDC633200F7BED6 /* ReservationTimeFetcher.swift */,
+				0A3EE8092CDDA49E00F7BED6 /* HolidayFetcher.swift */,
+				0A3EE8302CE0BA8E00F7BED6 /* BlogFetcher.swift */,
+				0A5B02962CED7168007DEB36 /* PetIDFetcher.swift */,
+				0AA5BB8C2D07FBCD004CB6E6 /* ReservationListFetcher.swift */,
 			);
 			path = Fetcher;
 			sourceTree = "<group>";
@@ -1656,7 +1996,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A79DB222CD49626004C0888 /* Sign.swift in Sources */,
+				0AF771882CE43439009D23D8 /* BannerImageView1.swift in Sources */,
 				FAFA5D0F2C7CB4EA003F842C /* DefaultAddressRepository.swift in Sources */,
+				0A3EE80D2CDDA4E100F7BED6 /* Holiday.swift in Sources */,
 				0A0EC8B52CD87672000ABAD8 /* HospitalDataSource.swift in Sources */,
 				0A5D602A2C58CF7E009D656D /* PetCardView.swift in Sources */,
 				FAC4CD492C49230000A3658A /* NetworkPlugin.swift in Sources */,
@@ -1665,11 +2007,17 @@
 				FA46F34A2C3ED4C2003CAC02 /* BaseViewModel.swift in Sources */,
 				0A0EC8BC2CD9A0A4000ABAD8 /* HospitalResponseDTO.swift in Sources */,
 				FAC4CD4E2C492D6500A3658A /* JoinRequestDTO.swift in Sources */,
+				0A5B02972CED7168007DEB36 /* PetIDFetcher.swift in Sources */,
 				0A79DAF02CD480AA004C0888 /* Dialog5.swift in Sources */,
+				0A5B02732CE5B8C8007DEB36 /* TestFetcher.swift in Sources */,
 				0A79DB692CD49E1E004C0888 /* Banner.swift in Sources */,
+				0A5B028D2CED6615007DEB36 /* PetIDAPI.swift in Sources */,
 				0A79DB2C2CD496A9004C0888 /* ScanCheckViewModel.swift in Sources */,
+				0A5B026D2CE5B546007DEB36 /* TestAPI.swift in Sources */,
 				FAF8E6EB2C40C84300CA7145 /* NetworkEventLogger.swift in Sources */,
+				0A3EE81C2CDF7BDA00F7BED6 /* PetBlogDetailCoordinator.swift in Sources */,
 				FAE566012C3C365300D77149 /* UserDefaultManager.swift in Sources */,
+				0AA5BB8B2D07E752004CB6E6 /* ReservationListRepository.swift in Sources */,
 				0A79DB802CD4AB2F004C0888 /* PetInfoDetailCoordinator.swift in Sources */,
 				0A79DB5E2CD49D5C004C0888 /* BannerResponseDTO.swift in Sources */,
 				FA6E49F72C2E3FEC00F3C957 /* AppDelegate.swift in Sources */,
@@ -1678,56 +2026,78 @@
 				FAF8E6F12C40D17E00CA7145 /* UserDefault.swift in Sources */,
 				FA3584E82C49873C0019C46A /* Interface.swift in Sources */,
 				FAF8E6E92C40C70A00CA7145 /* Provider.swift in Sources */,
+				0A3EE8202CDF7BF800F7BED6 /* PetBlogDetailView.swift in Sources */,
+				0A3EE8002CDC63A100F7BED6 /* ReservationTimeRepository.swift in Sources */,
+				0AA5BB852D07CC30004CB6E6 /* ReservationListAPI.swift in Sources */,
 				0A21CF262C0DF131005DD8E2 /* TermsAgreementView.swift in Sources */,
 				0A3EE7F12CD9A8A700F7BED6 /* Hospital.swift in Sources */,
 				0A79DB822CD4AB49004C0888 /* PetInfoDetail.swift in Sources */,
 				0A5FE69A2C45419300B95F3C /* AccessibilityRightViewModel.swift in Sources */,
 				0A21CF262C0DF131005DD8E2 /* TermsAgreementView.swift in Sources */,
+				0AA5BB932D094DB1004CB6E6 /* Dialog1ViewModel.swift in Sources */,
 				FAF8E70F2C40E3A200CA7145 /* LoginResponseDTO.swift in Sources */,
 				0A79DB4E2CD49A92004C0888 /* ReservationChoiceView.swift in Sources */,
 				FAC4CD502C492F3C00A3658A /* JoinResponseDTO.swift in Sources */,
+				0A3EE8262CE0A83C00F7BED6 /* BlogAPI.swift in Sources */,
 				0A0EC8B92CD87772000ABAD8 /* HospitalFetcher.swift in Sources */,
+				0A5B02912CED6D00007DEB36 /* PetIDDataSource.swift in Sources */,
 				0A79DB3F2CD497B6004C0888 /* InputField.swift in Sources */,
 				0A21CF1E2C0DEFEB005DD8E2 /* LoginSuccess.swift in Sources */,
 				0A0EC8AB2CD86DAD000ABAD8 /* HospitalAPI.swift in Sources */,
+				0A5B02992CED7CF1007DEB36 /* PetIDRequestDTO.swift in Sources */,
 				FAFA5D142C7CB5E8003F842C /* AddressFetcher.swift in Sources */,
 				FADD57112C318EDF00770AC6 /* KeyChainManager.swift in Sources */,
+				0A5B02712CE5B89F007DEB36 /* DefaultTestRepository.swift in Sources */,
+				0A3EE82B2CE0AE6E00F7BED6 /* Blog.swift in Sources */,
 				FA46F34D2C3F56FA003CAC02 /* UIWindow+.swift in Sources */,
 				FAFA5D072C7CB2C9003F842C /* AddressAPI.swift in Sources */,
+				0AA5BB732D029D79004CB6E6 /* ReservationListViewModel.swift in Sources */,
 				0A79DB502CD49AA1004C0888 /* ReservationChoiceViewModel.swift in Sources */,
 				0A79DB892CD4AC4B004C0888 /* UserInfoDetail.swift in Sources */,
 				0A79DB122CD49592004C0888 /* PetInfoCoordinator.swift in Sources */,
 				0A79DAF22CD480F1004C0888 /* Date+.swift in Sources */,
 				FAF8E7192C41046200CA7145 /* CheckBox.swift in Sources */,
 				FADD57362C31A0A400770AC6 /* HomeView.swift in Sources */,
+				0A3EE7FE2CDC636700F7BED6 /* ReservationTime.swift in Sources */,
 				0A79DB752CD4AABC004C0888 /* MyPageView.swift in Sources */,
+				0A3EE80F2CDDA55800F7BED6 /* HolidayRepository.swift in Sources */,
 				FA3584EA2C49875E0019C46A /* ResultPublisher.swift in Sources */,
 				FAC4CD442C49214D00A3658A /* ErrorModel.swift in Sources */,
 				0A79DB2A2CD4969E004C0888 /* ScanCheck.swift in Sources */,
 				0A79DB3B2CD497A4004C0888 /* CustomField.swift in Sources */,
 				0A0EC8B32CD872F6000ABAD8 /* HospitalRepository.swift in Sources */,
+				0A3EE8162CDF7B5700F7BED6 /* PetBlogMainViewModel.swift in Sources */,
+				0AA5BB7F2D02CA74004CB6E6 /* ReservationResponseDTO.swift in Sources */,
 				0A79DB2E2CD496EA004C0888 /* PetCaptionViewModel.swift in Sources */,
+				0A5B028F2CED669A007DEB36 /* PetID.swift in Sources */,
+				0A3EE81A2CDF7B8400F7BED6 /* PetBlogMainCoordinator.swift in Sources */,
 				FA47EFBB2C53A34A000F6529 /* Configs.swift in Sources */,
 				0A79DB262CD49658004C0888 /* InfomationCheck.swift in Sources */,
+				0A3EE7F92CDC62EC00F7BED6 /* DefaultReservationTimeRepository.swift in Sources */,
 				FAC4CD4B2C4929C100A3658A /* TermsAgreementViewModel.swift in Sources */,
 				FAF8E6FB2C40D58700CA7145 /* BaseTargetType.swift in Sources */,
 				0A79DB1C2CD495E5004C0888 /* PetCardDoneCoordinator.swift in Sources */,
 				0A79DB392CD4978D004C0888 /* CalendarView.swift in Sources */,
+				0A5B026B2CE5B495007DEB36 /* TestResponseDTO.swift in Sources */,
 				FAC4CD472C4921A400A3658A /* LoggAble.swift in Sources */,
 				0A79DB282CD49661004C0888 /* InfomationCheckViewModel.swift in Sources */,
 				0A79DB532CD49AD2004C0888 /* ReservationDetailCoordinator.swift in Sources */,
 				0A79DB342CD49732004C0888 /* PetInfo.swift in Sources */,
+				0A5B029B2CF6C233007DEB36 /* PetInfoModel.swift in Sources */,
 				0A79DB642CD49DEA004C0888 /* DefaultBannerRepository.swift in Sources */,
 				0A79DB622CD49DC9004C0888 /* BannerDataSource.swift in Sources */,
 				0A5D602C2C58CFB6009D656D /* PetCardViewModel.swift in Sources */,
 				FADD57252C3193B200770AC6 /* DIConatiner.swift in Sources */,
+				0AA5BB872D07DD3F004CB6E6 /* ReservationListDataSource.swift in Sources */,
 				0A79DB002CD494A7004C0888 /* UserInfo.swift in Sources */,
 				FAE5660D2C3EB68D00D77149 /* CameraAlbumManager.swift in Sources */,
 				0A5FE6982C45416D00B95F3C /* AccessibilityRightView.swift in Sources */,
+				0A5B02952CED703C007DEB36 /* PetIDRepository.swift in Sources */,
 				0A79DB4C2CD49A82004C0888 /* ReservationChoiceCoordinator.swift in Sources */,
 				0A79DB1A2CD495D6004C0888 /* SignCoordinator.swift in Sources */,
 				0A79DB362CD49740004C0888 /* PetInfoViewModel.swift in Sources */,
 				FADD57312C31A01400770AC6 /* UserRepositoryProtocol.swift in Sources */,
+				0A3EE8242CE0A79800F7BED6 /* BlogResponseDTO.swift in Sources */,
 				0A79DB662CD49E03004C0888 /* BannerFetcher.swift in Sources */,
 				FA6E49F92C2E40A500F3C957 /* SceneDelegate.swift in Sources */,
 				FADD57062C318CD700770AC6 /* SplashViewModel.swift in Sources */,
@@ -1740,10 +2110,13 @@
 				FADD57082C318D1F00770AC6 /* DefaultUserRepository.swift in Sources */,
 				FAC4CD582C494C5600A3658A /* HomeCoordinator.swift in Sources */,
 				FA383EB42C7CA2080071A544 /* KFImage+.swift in Sources */,
+				0AA5BB712D029D6E004CB6E6 /* ReservationListView.swift in Sources */,
+				0A5B02772CE5BB61007DEB36 /* TestViewModel.swift in Sources */,
 				0A21CF1C2C0DEF8D005DD8E2 /* SplashView.swift in Sources */,
 				FAFA5D112C7CB5C4003F842C /* AddressRepository.swift in Sources */,
 				FADD571C2C3191B500770AC6 /* AuthorizationDTO.swift in Sources */,
 				0A79DAF62CD4943D004C0888 /* PetCardCoordinator.swift in Sources */,
+				0AA5BB912D094DA0004CB6E6 /* Dialog1Coordinator.swift in Sources */,
 				FAFA5D0D2C7CB3D6003F842C /* LocationResponseDTO.swift in Sources */,
 				0A79DB182CD495CC004C0888 /* InfomationCheckCoordinator.swift in Sources */,
 				FAF8E6ED2C40CC1000CA7145 /* NetworkInterceptor.swift in Sources */,
@@ -1753,15 +2126,23 @@
 				0A79DB842CD4AB55004C0888 /* PetInfoDetailViewModel.swift in Sources */,
 				FA136CD52C6B92D6007D7A9E /* ReservationMainView.swift in Sources */,
 				0A79DB162CD495A8004C0888 /* ScanCheckCoordinator.swift in Sources */,
+				0A5B02792CE5BB6B007DEB36 /* TestView.swift in Sources */,
+				0A3EE8022CDDA01A00F7BED6 /* HolidayResponseDTO.swift in Sources */,
 				0A79DB6B2CD49E7D004C0888 /* BannerRepository.swift in Sources */,
 				FADD572F2C319ECD00770AC6 /* Logger.swift in Sources */,
+				0A5B02752CE5B8D3007DEB36 /* TestRepository.swift in Sources */,
 				0A79DAFE2CD49497004C0888 /* UserInfoCoordinator.swift in Sources */,
 				FAF8E6FE2C40D68D00CA7145 /* LoginRequestDTO.swift in Sources */,
+				0A3EE82F2CE0B6E200F7BED6 /* BlogRepository.swift in Sources */,
 				0A79DB042CD494B9004C0888 /* UserInfoViewModel.swift in Sources */,
 				FAF8E6F72C40D3FA00CA7145 /* APIConfigs.swift in Sources */,
 				FAF8E7042C40D80100CA7145 /* OAuth.swift in Sources */,
 				FADD57192C31914B00770AC6 /* Authorization.swift in Sources */,
+				0A3EE7F52CDC5D9B00F7BED6 /* ReservationTimeAPI.swift in Sources */,
 				FAE565FB2C3C329700D77149 /* LoginMainViewModel.swift in Sources */,
+				0A3EE8062CDDA3AF00F7BED6 /* HolidayDataSource.swift in Sources */,
+				0AA5BB7D2D02CA68004CB6E6 /* ReservationRequestDTO.swift in Sources */,
+				0AA5BB892D07E62A004CB6E6 /* DefaultReservationListRepository.swift in Sources */,
 				FADD570B2C318DA300770AC6 /* Keychain.swift in Sources */,
 				0A79DB792CD4AAE8004C0888 /* MyPageCoordinator.swift in Sources */,
 				FAC4CD542C49353F00A3658A /* Encodable+.swift in Sources */,
@@ -1778,7 +2159,10 @@
 				FAF8E7092C40E27C00CA7145 /* AuthDataSource.swift in Sources */,
 				FA52CAE02C4F76A3009EC228 /* Coordinator.swift in Sources */,
 				FAE565F62C3C328000D77149 /* LoginCoordinator.swift in Sources */,
+				0A3EE7F72CDC5FCF00F7BED6 /* ReservationTimeDataSource.swift in Sources */,
+				0A3EE8082CDDA43F00F7BED6 /* DefaultHolidayRepository.swift in Sources */,
 				FAF8E7162C40EC7100CA7145 /* LoginUseCase.swift in Sources */,
+				0AA5BB992D09540F004CB6E6 /* Dialog3ViewModel.swift in Sources */,
 				0A5FE69C2C4541A500B95F3C /* AccessibilityItemView.swift in Sources */,
 				0A79DB1E2CD495F7004C0888 /* PetCardDone.swift in Sources */,
 				0A5D601E2C58C638009D656D /* HomeViewModel.swift in Sources */,
@@ -1787,18 +2171,28 @@
 				FAB57C642C49D4F300F471F0 /* PetIdNotificationCenter.swift in Sources */,
 				FA3F56BE2C4575CC0011969A /* IsEnablePetButton.swift in Sources */,
 				0A79DAE82CD48088004C0888 /* Dialog1.swift in Sources */,
+				0A3EE7F32CDC5CF800F7BED6 /* ReservationTimeResponseDTO.swift in Sources */,
+				0AA5BB972D095403004CB6E6 /* Dialog3Coordinator.swift in Sources */,
+				0A5B026F2CE5B666007DEB36 /* TestDataSource.swift in Sources */,
 				FA383EB12C7CA0CF0071A544 /* AppDelegate+Cache.swift in Sources */,
 				FAC4CD522C49309700A3658A /* JoinUseCase.swift in Sources */,
 				FA46F33E2C3EC503003CAC02 /* LoginButton.swift in Sources */,
 				0A79DB5B2CD49BF7004C0888 /* ReservationDetailViewModel.swift in Sources */,
 				FAF8E6E72C40C20600CA7145 /* AppleAuthProvider.swift in Sources */,
+				0AA5BB832D02CC2D004CB6E6 /* Reservation.swift in Sources */,
 				FAF8E7002C40D7A700CA7145 /* OAuthType.swift in Sources */,
+				0A5B02932CED6E8E007DEB36 /* DefaultPetIDRepository.swift in Sources */,
 				FAF8E71F2C410DB800CA7145 /* AggreementType.swift in Sources */,
 				FA6BEF172C60FAD6004AE82D /* BaseHostingViewController.swift in Sources */,
+				0A3EE80A2CDDA49E00F7BED6 /* HolidayFetcher.swift in Sources */,
+				0A3EE82D2CE0B69D00F7BED6 /* DefaultBlogRepository.swift in Sources */,
 				0A79DB142CD4959C004C0888 /* PetCaptionCoordinator.swift in Sources */,
 				FAFA5D012C7CAB5F003F842C /* ReservationMainViewModel.swift in Sources */,
 				FADD571F2C31922700770AC6 /* UserError.swift in Sources */,
 				FADD570F2C318ECB00770AC6 /* KeychainProtocol.swift in Sources */,
+				0A3EE8312CE0BA8E00F7BED6 /* BlogFetcher.swift in Sources */,
+				0AA5BB8D2D07FBCD004CB6E6 /* ReservationListFetcher.swift in Sources */,
+				0A3EE8042CDDA0A900F7BED6 /* HolidayAPI.swift in Sources */,
 				0A79DB602CD49DAE004C0888 /* BannerAPI.swift in Sources */,
 				FAC4CD5B2C4970E600A3658A /* TokenRefreshRequestDTO.swift in Sources */,
 				0A79DB242CD4962E004C0888 /* SignViewModel.swift in Sources */,
@@ -1808,14 +2202,20 @@
 				FAF8E6F42C40D3C200CA7145 /* AuthAPI.swift in Sources */,
 				FAE565ED2C3C275900D77149 /* SplashCoordinator.swift in Sources */,
 				0A79DAEE2CD4809F004C0888 /* Dialog4.swift in Sources */,
+				0A3EE8282CE0A95D00F7BED6 /* BlogDataSource.swift in Sources */,
 				FAFA5D172C7CC3F3003F842C /* ReservationCoordinator.swift in Sources */,
 				FAF8E7062C40E22B00CA7145 /* DefaultAuthRepository.swift in Sources */,
 				0A79DB442CD49A26004C0888 /* ReservationDoneCoordinator.swift in Sources */,
 				FAB57C662C49D5A700F471F0 /* LogoutUseCase.swift in Sources */,
+				0A3EE7FB2CDC633200F7BED6 /* ReservationTimeFetcher.swift in Sources */,
 				0AC9B08D2C427D660040FB28 /* Image+.swift in Sources */,
 				0A79DB6F2CD49F33004C0888 /* BannerViewModel.swift in Sources */,
+				0AA5BB752D029D9B004CB6E6 /* ReservationListCoordinator.swift in Sources */,
 				0A79DAF82CD4944E004C0888 /* PetCardStart.swift in Sources */,
+				0A3EE8182CDF7B7500F7BED6 /* PetBlogMainView.swift in Sources */,
 				0A79DB202CD49603004C0888 /* PetCardDoneViewModel.swift in Sources */,
+				0A3EE81E2CDF7BE900F7BED6 /* PetBlogDetailViewModel.swift in Sources */,
+				0A5B028B2CED6569007DEB36 /* PetIDResponseDTO.swift in Sources */,
 				0A79DB872CD4AC3C004C0888 /* UserInfoDetailCoordinator.swift in Sources */,
 				FAE565E92C3C229600D77149 /* AppCoordinator.swift in Sources */,
 			);

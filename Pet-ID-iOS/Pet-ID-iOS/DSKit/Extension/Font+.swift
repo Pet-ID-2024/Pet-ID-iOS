@@ -49,5 +49,12 @@ extension Font {
     static let caption1_reg = Font.notoSansKR(fontSize: 13, fontWeight: .regular)
     static let popup_med = Font.notoSansKR(fontSize: 20, fontWeight: .medium)
     static let headline15 = Font.notoSansKR(fontSize: 17, fontWeight: .semibold)
+    static let headline25_bold = Font.notoSansKR(fontSize: 25, fontWeight: .bold)
+    static let headline25_med = Font.notoSansKR(fontSize: 15, fontWeight: .medium)
+    static let headline25_reg = Font.notoSansKR(fontSize: 15, fontWeight: .regular)
+    static let body15 = Font.notoSansKR(fontSize: 15, fontWeight: .semibold)
+    static let body25_bold = Font.notoSansKR(fontSize: 15, fontWeight: .bold)
+    static let body25_semi = Font.notoSansKR(fontSize: 15, fontWeight: .semibold)
+    static let body25_reg = Font.notoSansKR(fontSize: 15, fontWeight: .regular)
     
 }

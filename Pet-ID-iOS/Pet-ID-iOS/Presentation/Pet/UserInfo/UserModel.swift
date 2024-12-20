@@ -12,8 +12,14 @@ struct UserModel {
     var phoneNumber: String
     var address: String
     var detailAddress: String
+//    var petAddress: String
+//    var petDetailAddress: String
     
     var fullAddress: String {
         return address + " " + detailAddress
     }
+    
+//    var petFullAddress: String {
+//        return petAddress + " " + petDetailAddress
+//    }
 }

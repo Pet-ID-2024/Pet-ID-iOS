@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
     var coordinator: HomeCoordinator
+    //    private let filePath: String = "petImg/darthVader.jpg"
     
     var body: some View {
         VStack {
@@ -34,7 +35,7 @@ struct HomeView: View {
                 }
             }
             .padding(.horizontal)
-//                        .padding(.bottom, 8)
+            //                        .padding(.bottom, 8)
             
             ScrollView {
                 VStack{
@@ -60,10 +61,11 @@ struct HomeView: View {
                     Spacer()
                     
                     
-//                    BannerView()
+                    BannerView(type: .main)
+                        .frame(width: 350, height: 120)
                     
-                    //                        BannerView()
-                    
+                    BannerView(type: .content)
+                        .frame(width: 350, height: 120)
                 }
             }
             .padding([.leading, .trailing], 20)

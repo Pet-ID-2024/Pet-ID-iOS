@@ -11,8 +11,11 @@ final class PetCardDoneCoordinator: Coordinator, ObservableObject {
     var childCoordinators: [String : any Coordinator] = [:]
     private var cancelBag = Set<AnyCancellable>()
     
-    init(_ navigationController: UINavigationController) {
+    var temporaryData: [String: Any]
+    
+    init(_ navigationController: UINavigationController, temporaryData: [String: Any]) {
         self.navigationController = navigationController
+        self.temporaryData = temporaryData
     }
     
     func start() {

@@ -10,9 +10,11 @@ final class SignCoordinator: Coordinator, ObservableObject {
     var navigationController: UINavigationController
     var childCoordinators: [String : any Coordinator] = [:]
     private var cancelBag = Set<AnyCancellable>()
+    var temporaryData: [String: Any]
     
-    init(_ navigationController: UINavigationController) {
+    init(_ navigationController: UINavigationController, temporaryData: [String: Any]) {
         self.navigationController = navigationController
+        self.temporaryData = temporaryData
     }
     
     func start() {
@@ -20,7 +22,7 @@ final class SignCoordinator: Coordinator, ObservableObject {
     }
     
     private func showSign() {
-        let viewModel = SignViewModel()
+        let viewModel = SignViewModel(temporaryData: temporaryData)
         let signView = Sign(viewModel: viewModel)
         let signVC = BaseHostingViewController(rootView: signView)
         
@@ -29,14 +31,17 @@ final class SignCoordinator: Coordinator, ObservableObject {
         
         viewModel.result.subject
             .sink(receiveValue: { [weak self] state in
-                self?.handleStateSelection(state)
+                self?.handleStateSelection(state, updatedData: viewModel.temporaryData)
             })
             .store(in: &cancelBag)
     }
     
-    private func handleStateSelection(_ state: SignState) {
+    private func handleStateSelection(_ state: SignState, updatedData: [String: Any]) {
         switch state {
         case .completed:
+            Logger().debug("✅ Sign 입력 성공: \(updatedData)")
+            temporaryData.merge(updatedData) { (_, new) in new }
+            Logger().debug("✅ 병합된 temporaryData: \(temporaryData)")
             navigateToPCD()
         case .back:
             navigateBack()
@@ -44,7 +49,7 @@ final class SignCoordinator: Coordinator, ObservableObject {
     }
     
     func navigateToPCD() {
-        let PCDCoordinator = PetCardDoneCoordinator(/*navigationController: */navigationController)
+        let PCDCoordinator = PetCardDoneCoordinator(/*navigationController: */navigationController, temporaryData: temporaryData)
         childCoordinators[PCDCoordinator.id] = PCDCoordinator
         PCDCoordinator.start()
     }

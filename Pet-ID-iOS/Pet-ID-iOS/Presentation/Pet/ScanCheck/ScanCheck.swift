@@ -72,5 +72,5 @@ struct ScanCheck: View {
 }
 
 #Preview {
-    ScanCheck(viewModel: ScanCheckViewModel(image: UIImage()))
+    ScanCheck(viewModel: ScanCheckViewModel(image: UIImage(), temporaryData: [:]))
 }

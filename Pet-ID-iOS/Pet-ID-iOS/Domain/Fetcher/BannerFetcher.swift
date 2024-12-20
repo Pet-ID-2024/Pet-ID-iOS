@@ -1,8 +1,8 @@
 import Foundation
 
 protocol BannerFetcher {
-    func getBanners(type: String) async throws -> [Banner]
-    func getBannerImageURL(filePath: String) async throws -> String
+    func banners(type: BannerType) async throws -> [Banner]
+    func bannerImage(filePath: String) async throws -> URL
 }
 
 struct DefaultBannerFetcher: BannerFetcher {
@@ -15,11 +15,27 @@ struct DefaultBannerFetcher: BannerFetcher {
         self.repository = repository
     }
     
-    func getBanners(type: String) async throws -> [Banner] {
-        try await repository.getBanners(type: type)
+    func banners(type: BannerType) async throws -> [Banner] {
+//        Logger().debug("🟢 BannerFetcher 호출 - type: \(type.rawValue)")
+        do{
+            let banner = try await repository.banners(type: type)
+//            Logger().debug("✅ BannerFetcher 응답 완료 - 배너 데이터 수: \(banner.count)")
+            return banner
+        } catch {
+            Logger().error("❌ BannerFetcher 오류 발생: \(error.localizedDescription)")
+            throw error
+        }
     }
     
-    func getBannerImageURL(filePath: String) async throws -> String {
-        try await repository.getBannerImageURL(filePath: filePath)
+    func bannerImage(filePath: String) async throws -> URL {
+//        Logger().debug("🟢 BannerFetcher 호출 - filePath: \(filePath)")
+        do {
+            let image = try await repository.bannerImage(filePath: filePath)
+//            Logger().debug("✅ BannerFetcher 응답 완료 - URL: \(image.absoluteString)")
+            return image
+        }catch{
+//            Logger().error("❌ BannerFetcher 오류 발생: \(error.localizedDescription)")
+            throw error
+        }
     }
 }

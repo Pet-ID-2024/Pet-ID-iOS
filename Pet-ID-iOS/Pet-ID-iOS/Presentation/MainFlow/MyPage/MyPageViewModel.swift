@@ -26,4 +26,8 @@ class MyPageViewModel: BaseViewModel<MyPageState> {
     func navigateToPet() {
         result.send(.petInfo)
     }
+    
+    func navigateToReservationList() {
+        result.send(.reservation)
+    }
 }

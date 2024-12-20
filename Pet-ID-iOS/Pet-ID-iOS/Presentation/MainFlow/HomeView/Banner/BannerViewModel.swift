@@ -1,79 +1,55 @@
 import Combine
-import SwiftUI
-import Moya
+import Foundation
 
-class BannerViewModel: ObservableObject {
-    private let provider = Provider<BannerAPI>()
+enum BannerState {
+    case back
+    case goToDetail(Banner)
+}
+
+final class BannerViewModel: BaseViewModel<BannerState> {
+    @Published var banners: [Banner] = [] // 배너 리스트
+    private let bannerFetcher: BannerFetcher
     
-    @Published var banners: [Banner] = []
-    @Published var error: Error?
-    @Published var currentPage: Int = 0
+    init(bannerFetcher: BannerFetcher = DefaultBannerFetcher()) {
+        self.bannerFetcher = bannerFetcher
+    }
     
-    
-    func fetchBanners(type: String) {
-        provider.request(.getBanners(type: type)) { result in
-            switch result {
-            case .success(let response):
-                let responseData = String(data: response.data, encoding: .utf8)
-                print("서버 응답 데이터: \(responseData ?? "데이터 없음")")
+    // MARK: - 배너 데이터 로드 함수
+    func loadBanners(type: BannerType) async {
+        do {
+            let fetchedBanners = try await bannerFetcher.banners(type: type)
+            
+            // Task 내부에서 처리
+            let updatedBanners = try await withThrowingTaskGroup(of: Banner.self) { group in
+                for banner in fetchedBanners {
+                    group.addTask {
+                        var updatedBanner = banner
+                        if let imageUrl = banner.imageUrl, !imageUrl.isEmpty {
+                            let presignedURL = try await self.bannerFetcher.bannerImage(filePath: imageUrl)
+                            updatedBanner.imageUrl = presignedURL.absoluteString
+                        }
+                        return updatedBanner
+                    }
+                }
                 
-                if (200...299).contains(response.statusCode) {
-                    do {
-                        let decoder = JSONDecoder()
-                        decoder.keyDecodingStrategy = .convertFromSnakeCase  // 키 변환 설정 추가
-                        let banners = try decoder.decode([Banner].self, from: response.data)
-                        //                        let banners = try JSONDecoder().decode([Banner].self, from: response.data)
-                        DispatchQueue.main.async {
-                            self.banners = banners
-                        }
-                    } catch {
-                        DispatchQueue.main.async {
-                            self.error = error
-                            print("디코딩 오류: \(error.localizedDescription)")
-                        }
-                    }
-                } else {
-                    if response.statusCode == 401 || response.statusCode == 403{
-                        print("토큰이 만료되었습니다. 토큰을 갱신해야 합니다.")
-                        // 토큰 갱신 로직
-                    } else {
-                        print("배너 API 에러: 상태 코드 \(response.statusCode)")
-                    }
-                }
-            case .failure(let moyaError):
-                let logger = Logger()
-                logger.error("Moya 에러: \(moyaError.localizedDescription)")
-                DispatchQueue.main.async {
-                    self.error = moyaError
+                // 결과를 배열로 수집
+                return try await group.reduce(into: [Banner]()) { result, banner in
+                    result.append(banner)
                 }
             }
+            
+            // 메인 스레드에서 업데이트
+            DispatchQueue.main.async {
+                self.banners = updatedBanners
+//                Logger().debug("✅ 배너 데이터 로드 완료 - 총 배너 수: \(updatedBanners.count)")
+            }
+        } catch {
+            Logger().error("❌ 배너 데이터 로드 실패: \(error.localizedDescription)")
         }
     }
     
-    // s3 버킷
-    private func updateBannerImages(banners: [Banner]) async {
-        var updatedBanners = [Banner]()
-        
-        for banner in banners {
-            do {
-                let s3Url = try await fetchS3ImageURL(filePath: banner.imageUrl)
-                var updatedBanner = banner
-                updatedBanner.imageUrl = s3Url // 이미지 URL 업데이트
-                updatedBanners.append(updatedBanner)
-            } catch {
-                let logger = Logger()
-                logger.error("S3 이미지 URL 가져오기 실패: \(error.localizedDescription)")
-                continue
-            }
-        }
-        
-        DispatchQueue.main.async {
-            self.banners = updatedBanners
-        }
-    }
-    
-    // S3 이미지 URL 요청
-    private func fetchS3ImageURL(filePath: String) async throws -> String {
-        try await provider.request(.getBannerImageURL(filePath: filePath))
+    // MARK: - 배너 선택 이벤트 처리
+    func onBannerTapped(banner: Banner) {
+        result.send(.goToDetail(banner))
     }
 }

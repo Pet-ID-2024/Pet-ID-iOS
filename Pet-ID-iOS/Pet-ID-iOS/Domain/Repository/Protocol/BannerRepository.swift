@@ -1,6 +1,6 @@
 import Foundation
 
 protocol BannerRepository {
-    func getBanners(type: String) async throws -> [Banner]
-    func getBannerImageURL(filePath: String) async throws -> String
+    func banners(type: BannerType) async throws -> [Banner]
+    func bannerImage(filePath: String) async throws -> URL
 }

@@ -10,6 +10,7 @@ final class PetCardStartCoordinator: Coordinator, ObservableObject {
     var navigationController: UINavigationController
     var childCoordinators: [String : any Coordinator] = [:]
     private var cancelBag = Set<AnyCancellable>()
+    private var temporaryData: [String: Any] = [:]
     
     init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -26,27 +27,31 @@ final class PetCardStartCoordinator: Coordinator, ObservableObject {
         // TabBar 숨김 설정
             petCardStartVC.hidesBottomBarWhenPushed = true
         
-        // 여기서 push 메서드를 호출하여 뷰 컨트롤러를 네비게이션 스택에 추가합니다.
-        push(petCardStartVC, animate: true/*, isRoot: true*/)  // 애니메이션을 적용하여 화면 전환
+        push(petCardStartVC, animate: true/*, isRoot: true*/)
         
         viewModel.result.subject
             .sink(receiveValue: { [weak self] state in
-                self?.handleStateSelection(state)
+                self?.handleStateSelection(state, chipType: viewModel.temporaryData["chipType"] as? String)
             })
             .store(in: &cancelBag)
     }
     
-    private func handleStateSelection(_ state: PetRegistrationState) {
+    private func handleStateSelection(_ state: PetRegistrationState, chipType: String?) {
         switch state {
         case .unregistered, .externalChip, .internalChip:
-             navigateToUserInfo()
+            if let chipType = chipType {
+                            temporaryData["chipType"] = chipType
+                            navigateToUserInfo()
+                        } else {
+                            Logger().error("❌ 칩 타입이 전달되지 않았습니다.")
+                        }
         case .back:
             navigateBack()
         }
     }
     
     func navigateToUserInfo() {
-        let userInfoCoordinator = UserInfoCoordinator(/*navigationController:*/ navigationController)
+        let userInfoCoordinator = UserInfoCoordinator(/*navigationController:*/ navigationController, temporaryData: temporaryData)
         childCoordinators[userInfoCoordinator.id] = userInfoCoordinator
         userInfoCoordinator.start()
     }

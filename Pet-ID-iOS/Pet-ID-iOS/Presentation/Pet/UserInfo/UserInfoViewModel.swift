@@ -12,88 +12,120 @@ class UserInfoViewModel: BaseViewModel<UserInfoState> {
     @Published var user: UserModel
     @Published var isNextButtonDisabled: Bool = true
     
-    init(user: UserModel = UserModel(name: "", phoneNumber: "", address: "", detailAddress: "")) {
+    var temporaryData: [String: Any]
+    
+    init(temporaryData: [String: Any], user: UserModel = UserModel(name: "", phoneNumber: "", address: "", detailAddress: "")) {
+        self.temporaryData = temporaryData
         self.user = user
         super.init()
+        loadTemporaryData()
         validateInput()
     }
     
+    // 임시 저장된 데이터 로드
+    private func loadTemporaryData() {
+        if let savedName = temporaryData["name"] as? String {
+            user.name = savedName
+        }
+        if let savedPhoneNumber = temporaryData["phoneNumber"] as? String {
+            user.phoneNumber = savedPhoneNumber
+        }
+        if let savedAddress = temporaryData["address"] as? String {
+            user.address = savedAddress
+        }
+        if let savedDetailAddress = temporaryData["detailAddress"] as? String {
+            user.detailAddress = savedDetailAddress
+        }
+        Logger().debug("✅ 임시 저장 데이터 로드 완료: \(temporaryData)")
+    }
+    
+    // 유저 이름 업데이트
     func updateName(_ newName: String) {
         let filtered = newName.filter { $0.isLetter }
         if filtered != user.name {
             user.name = filtered
+            temporaryData["name"] = filtered
             validateInput()
         }
     }
     
+    // 유저 전화번호 업데이트
     func updatePhoneNumber(_ newPhoneNumber: String) {
         let formattedPhoneNumber = formatPhoneNumber(newPhoneNumber)
-        user.phoneNumber = formattedPhoneNumber
-        validateInput()
+        if formattedPhoneNumber != user.phoneNumber {
+            user.phoneNumber = formattedPhoneNumber
+            validateInput()
+        }
     }
     
+    // 유저 주소 업데이트
+    func updateAddress(_ newAddress: String) {
+        if newAddress != user.address {
+            user.address = newAddress
+            temporaryData["address"] = newAddress
+            validateInput()
+        }
+    }
+    
+    // 유저 상세 주소 업데이트
+    func updateDetailAddress(_ newDetailAddress: String) {
+        if newDetailAddress != user.detailAddress {
+            user.detailAddress = newDetailAddress
+            temporaryData["detailAddress"] = newDetailAddress
+            validateInput()
+        }
+    }
+    
+    // 입력 값 유효성 검사
+    func validateInput() {
+        DispatchQueue.main.async {
+            let cleanedPhoneNumber = self.user.phoneNumber.replacingOccurrences(of: "-", with: "")
+            let isAddressValid = !self.user.address.isEmpty && !self.user.detailAddress.isEmpty
+            
+            let isValid = !self.user.name.isEmpty &&
+            cleanedPhoneNumber.count == 11 &&
+            cleanedPhoneNumber.allSatisfy({ $0.isNumber }) &&
+            isAddressValid
+            
+            self.isNextButtonDisabled = !isValid
+        }
+    }
+    
+    // 이전 화면으로 이동
+    func navigateBack() {
+        result.send(.back)
+    }
+    
+    // 다음 버튼 동작 처리
+    func handleNextButtonTapped() {
+        validateInput()
+        if !isNextButtonDisabled {
+            Logger().debug("✅ 유효한 입력 데이터: \(user)")
+            let proposer = ProposerRequestDTO(
+                name: user.name,
+                address: user.address,
+                addressDetails: user.detailAddress,
+                phone: user.phoneNumber
+            )
+            
+            temporaryData["proposer"] = proposer
+            Logger().debug("✅ 저장된 임시 데이터: \(temporaryData)")
+            result.send(.valid)
+        } else {
+            Logger().error("❌ 입력 데이터가 유효하지 않습니다.")
+            result.send(.invalid)
+        }
+    }
+    
+    // 전화번호 포맷팅
     private func formatPhoneNumber(_ number: String) -> String {
-        let cleanedNumber = number.replacingOccurrences(of: "-", with: "") // 기존 하이픈 제거
-        guard cleanedNumber.count == 11 else { return cleanedNumber } // 11자리 전화번호인지 확인
+        let cleanedNumber = number.replacingOccurrences(of: "-", with: "")
+        guard cleanedNumber.count == 11 else { return cleanedNumber }
         
         let areaCode = cleanedNumber.prefix(3)
         let centralOfficeCode = cleanedNumber[cleanedNumber.index(cleanedNumber.startIndex, offsetBy: 3)..<cleanedNumber.index(cleanedNumber.startIndex, offsetBy: 7)]
         let lineNumber = cleanedNumber.suffix(4)
         
-        return "\(areaCode)-\(centralOfficeCode)-\(lineNumber)" // 하이픈 추가 후 반환
-    }
-    
-    func updateAddress(_ newAddress: String) {
-        user.address = newAddress
-        validateInput()
-    }
-    
-    func updateDetailAddress(_ newDetailAddress: String) {
-        user.detailAddress = newDetailAddress
-        validateInput()
-    }
-    
-//    func validateInput() {
-//        let fullAddress = user.address + " " + user.detailAddress
-//
-//        let isValid = !user.name.isEmpty &&
-//        !user.phoneNumber.isEmpty &&
-//        user.phoneNumber.allSatisfy({ $0.isNumber }) &&
-//        !fullAddress.isEmpty
-//        isNextButtonDisabled = !isValid
-//        //        if isValid {
-//        //            result.send(.valid)
-//        //        } else {
-//        //            result.send(.invalid)
-//        //        }
-//        //        isNextButtonDisabled = !isValid
-//    }
-
-    func validateInput() {
-        // 전화번호의 숫자만 포함되었는지 확인
-        let cleanedPhoneNumber = user.phoneNumber.replacingOccurrences(of: "-", with: "")
-        
-        // 주소와 세부 주소를 합쳐서 하나의 주소로 만듦
-        let isAddressValid = !user.address.isEmpty && !user.detailAddress.isEmpty
-        
-        // 이름, 전화번호, 주소가 모두 유효한지 확인
-        let isValid = !user.name.isEmpty &&
-                      cleanedPhoneNumber.count == 11 && // 11자리인지 확인
-                      cleanedPhoneNumber.allSatisfy({ $0.isNumber }) && // 숫자로만 이루어져 있는지 확인
-                      isAddressValid
-        
-        // 버튼 활성화/비활성화 설정
-        isNextButtonDisabled = !isValid
-    }
-    
-    func navigateBack() {
-        result.send(.back)
-    }
-    
-    func handleNextButtonTapped() {
-        validateInput() // 유효성 검사 실행
-        if !isNextButtonDisabled {
-            result.send(.valid) // 다음 페이지로 이동
-        }
+        return "\(areaCode)-\(centralOfficeCode)-\(lineNumber)"
     }
 }

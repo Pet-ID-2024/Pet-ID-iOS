@@ -10,9 +10,11 @@ final class ReservationChoiceCoordinator: Coordinator, ObservableObject {
     var navigationController: UINavigationController
     var childCoordinators: [String : any Coordinator] = [:]
     private var cancelBag = Set<AnyCancellable>()
+    private let hospital: Hospital
     
-    init(_ navigationController: UINavigationController) {
+    init(_ navigationController: UINavigationController, hospital: Hospital) {
         self.navigationController = navigationController
+        self.hospital = hospital
     }
     
     func start() {
@@ -20,7 +22,7 @@ final class ReservationChoiceCoordinator: Coordinator, ObservableObject {
     }
     
     private func showReservationChoiceView() {
-        let viewModel = ReservationChoiceViewModel()
+        let viewModel = ReservationChoiceViewModel(hospital: hospital)
         let reservationChoiceView = ReservationChoiceView(viewModel: viewModel)
         let reservationChoiceVC = BaseHostingViewController(rootView: reservationChoiceView)
         

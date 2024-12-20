@@ -19,8 +19,36 @@ struct DefaultHospitalRepository: HospitalRepository {
             return try await dataSource.hospitals(sidoId: sidoId, sigunguId: sigunguId, eupmundongId: eupmundongId)
                 .map { $0.toDomain() }
         } catch {
-            Logger().error("병원 데이터를 불러오는 중 오류 발생: sidoId: \(sidoId), sigunguId: \(sigunguId), eupmundongId \(eupmundongId ?? -1): \(error.localizedDescription)")
+            let eupmundongDisplay = eupmundongId != nil ? "\(eupmundongId!)" : "nil"
+            
+            Logger().error("병원 데이터를 불러오는 중 오류 발생: sidoId: \(sidoId), sigunguId: \(sigunguId), eupmundongId: \(eupmundongDisplay): \(error.localizedDescription)")
+            
             throw error
         }
+    }
+    
+    func getHospitals(sido: Int, sigungu: Int, eupmundong: Int, lat: Double, lon: Double) async throws -> [Hospital] {
+        
+        do {
+            return try await dataSource.getHospitals(sido: sido, sigungu: sigungu, eupmundong: eupmundong, lat: lat, lon: lon)
+                .map{ $0.toDomain() }
+        } catch {
+            Logger().error("거리순 정렬 데이터를 불러오는 중 오류 발생: sido: \(sido), sigungu: \(sigungu), eupmundong: \(eupmundong), lat: \(lat), lon: \(lon): \(error.localizedDescription)")
+            
+            throw error
+        }
+    }
+    
+    func getHospitalDetails(hospitalId: Int) async throws -> Hospital {
+        do {
+            return try await dataSource.getHospitalDetail(hospitalId: hospitalId)
+        } catch {
+            Logger().error("조회 요청 중 오류 발생: hospitalId: \(hospitalId), 오류: \(error.localizedDescription)")
+            throw error
+        }
+    }
+    
+    func hospitalImage(filePath: String) async throws -> URL? {
+        return try await dataSource.hospitalImage(filePath: filePath)
     }
 }
