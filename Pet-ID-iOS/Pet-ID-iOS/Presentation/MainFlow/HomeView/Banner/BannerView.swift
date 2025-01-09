@@ -2,14 +2,9 @@ import SwiftUI
 import Kingfisher
 
 struct BannerView: View {
-    @StateObject private var viewModel = BannerViewModel()
+    @ObservedObject var viewModel: BannerViewModel
     @State private var currentPage: Int = 0 // 현재 페이지 인덱스
-    private let type: BannerType
     private let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect() // 5초마다 자동 페이지 이동
-    
-    init(type: BannerType) {
-        self.type = type
-    }
     
     var body: some View {
         ZStack {
@@ -23,24 +18,32 @@ struct BannerView: View {
                 TabView(selection: $currentPage) {
                     ForEach(viewModel.banners.indices, id: \.self) { index in
                         let banner = viewModel.banners[index]
-                        ZStack {
-                            if let imageUrl = banner.imageUrl, let url = URL(string: imageUrl) {
-                                KFImage(url)
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(maxWidth: .infinity, maxHeight: 200)
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                                    
-                                    .onAppear {
-//                                        print("🟢 Kingfisher 이미지 로딩 시작: \(url.absoluteString)")
-                                    }
-                            } else {
-                                // 이미지 URL이 없을 경우 기본 Placeholder
-                                Color.gray
-                                    .frame(maxWidth: .infinity, maxHeight: 200)
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                        
+                        // 배너를 버튼으로 감싸기
+                        Button {
+                            viewModel.onBannerTapped(banner: banner)
+                        } label: {
+                            ZStack {
+                                if let imageUrl = banner.imageUrl, let url = URL(string: imageUrl) {
+                                    KFImage(url)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(maxWidth: .infinity, maxHeight: 200)
+                                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                                        .overlay(
+                                                RoundedRectangle(cornerRadius: 10)
+                                                    .stroke(Color.clear, lineWidth: 0)
+                                            )
+                                            .clipped()
+                                } else {
+                                    // 이미지 URL이 없을 경우 기본 Placeholder
+                                    Color.gray
+                                        .frame(maxWidth: .infinity, maxHeight: 200)
+                                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                                }
                             }
                         }
+                        .buttonStyle(PlainButtonStyle()) // 버튼 스타일을 기본으로 설정
                         .tag(index)
                     }
                 }
@@ -70,7 +73,7 @@ struct BannerView: View {
         }
         .onAppear {
             Task {
-                await viewModel.loadBanners(type: type)
+                await viewModel.loadBanners()
             }
         }
     }
@@ -79,6 +82,7 @@ struct BannerView: View {
 // MARK: - Preview
 struct BannerView_Previews: PreviewProvider {
     static var previews: some View {
-        BannerView(type: .main)
+        let bannerViewModel = BannerViewModel(type: .main)
+        BannerView(viewModel: bannerViewModel)
     }
 }

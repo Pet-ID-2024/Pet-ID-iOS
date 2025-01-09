@@ -10,6 +10,7 @@ import Moya
 
 protocol PetIDDataSource {
     func registerType(request: PetIDRequestDTO) async throws -> PetIDResponseDTO
+    func deletePet(petId: Int) async throws
 }
 
 struct DefaultPetIDDataSource: PetIDDataSource {
@@ -24,6 +25,18 @@ struct DefaultPetIDDataSource: PetIDDataSource {
             return response
         } catch {
             Logger().error("❌ PetIDDataSource - 요청 실패: \(error.localizedDescription)")
+            throw error
+        }
+    }
+    
+    func deletePet(petId: Int) async throws {
+        Logger().debug("📡 PetIDDataSource - deletePet 요청 시작: petId=\(petId)")
+        
+        do {
+            try await provider.requestVoid(.deletePet(petId: petId))
+            Logger().debug("✅ PetIDDataSource - 삭제 성공")
+        } catch {
+            Logger().error("❌ PetIDDataSource - 삭제 실패: \(error.localizedDescription)")
             throw error
         }
     }

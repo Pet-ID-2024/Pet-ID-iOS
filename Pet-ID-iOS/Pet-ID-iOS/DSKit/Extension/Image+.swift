@@ -22,7 +22,7 @@ public enum DSImage: String {
     case phoneicon
     case galleryicon
     case notificationicon
-    case callicon
+    case locationicon
     case cameraicon
     case infoicon
     
@@ -50,6 +50,11 @@ public enum DSImage: String {
     case shareicon
     
     case noimageicon
+    
+    case onboardingicon1
+    case onboardingicon2
+    case onboardingicon3
+    case onboardingbackground
     
     var toName: String {
         return self.rawValue

@@ -19,6 +19,11 @@
 		0A21CF1C2C0DEF8D005DD8E2 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21CF1B2C0DEF8D005DD8E2 /* SplashView.swift */; };
 		0A21CF1E2C0DEFEB005DD8E2 /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21CF1D2C0DEFEB005DD8E2 /* LoginSuccess.swift */; };
 		0A21CF262C0DF131005DD8E2 /* TermsAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21CF252C0DF131005DD8E2 /* TermsAgreementView.swift */; };
+		0A28A6452D153C0800ABBD12 /* BannerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A28A6442D153C0800ABBD12 /* BannerCoordinator.swift */; };
+		0A28A6492D1923AA00ABBD12 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A28A6482D1923AA00ABBD12 /* OnboardingView.swift */; };
+		0A28A64B2D1923B400ABBD12 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A28A64A2D1923B400ABBD12 /* OnboardingViewModel.swift */; };
+		0A28A64D2D1923C300ABBD12 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A28A64C2D1923C300ABBD12 /* OnboardingCoordinator.swift */; };
+		0A2DFAA42D2E855200F72FD6 /* CameraLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DFAA32D2E855200F72FD6 /* CameraLauncher.swift */; };
 		0A3EE7F12CD9A8A700F7BED6 /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE7F02CD9A8A700F7BED6 /* Hospital.swift */; };
 		0A3EE7F32CDC5CF800F7BED6 /* ReservationTimeResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE7F22CDC5CF800F7BED6 /* ReservationTimeResponseDTO.swift */; };
 		0A3EE7F52CDC5D9B00F7BED6 /* ReservationTimeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE7F42CDC5D9B00F7BED6 /* ReservationTimeAPI.swift */; };
@@ -268,6 +273,11 @@
 		0A21CF1B2C0DEF8D005DD8E2 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		0A21CF1D2C0DEFEB005DD8E2 /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
 		0A21CF252C0DF131005DD8E2 /* TermsAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAgreementView.swift; sourceTree = "<group>"; };
+		0A28A6442D153C0800ABBD12 /* BannerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCoordinator.swift; sourceTree = "<group>"; };
+		0A28A6482D1923AA00ABBD12 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		0A28A64A2D1923B400ABBD12 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		0A28A64C2D1923C300ABBD12 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		0A2DFAA32D2E855200F72FD6 /* CameraLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLauncher.swift; sourceTree = "<group>"; };
 		0A3EE7F02CD9A8A700F7BED6 /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
 		0A3EE7F22CDC5CF800F7BED6 /* ReservationTimeResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTimeResponseDTO.swift; sourceTree = "<group>"; };
 		0A3EE7F42CDC5D9B00F7BED6 /* ReservationTimeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTimeAPI.swift; sourceTree = "<group>"; };
@@ -594,6 +604,32 @@
 			path = SplashFlow;
 			sourceTree = "<group>";
 		};
+		0A28A6432D153BF700ABBD12 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0A28A6442D153C0800ABBD12 /* BannerCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0A28A6462D19203200ABBD12 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				0A28A6472D19239900ABBD12 /* Coordinator */,
+				0A28A6482D1923AA00ABBD12 /* OnboardingView.swift */,
+				0A28A64A2D1923B400ABBD12 /* OnboardingViewModel.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		0A28A6472D19239900ABBD12 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0A28A64C2D1923C300ABBD12 /* OnboardingCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		0A3EE7EF2CD9A89A00F7BED6 /* Hospital */ = {
 			isa = PBXGroup;
 			children = (
@@ -723,6 +759,7 @@
 		0A5D60202C58C7C7009D656D /* Banner */ = {
 			isa = PBXGroup;
 			children = (
+				0A28A6432D153BF700ABBD12 /* Coordinator */,
 				0A79DB6C2CD49F2B004C0888 /* BannerView.swift */,
 				0A79DB6E2CD49F33004C0888 /* BannerViewModel.swift */,
 			);
@@ -815,6 +852,7 @@
 				0A79DB2D2CD496EA004C0888 /* PetCaptionViewModel.swift */,
 				0A79DB2F2CD496F5004C0888 /* PetCaption.swift */,
 				0A79DB312CD49708004C0888 /* CameraViewController.swift */,
+				0A2DFAA32D2E855200F72FD6 /* CameraLauncher.swift */,
 			);
 			path = PetCaption;
 			sourceTree = "<group>";
@@ -1339,6 +1377,7 @@
 				FADD57322C31A09300770AC6 /* MainFlow */,
 				0A1069F62C1746F00031E230 /* Pet */,
 				FADD57372C31A0DA00770AC6 /* LoginFlow */,
+				0A28A6462D19203200ABBD12 /* Onboarding */,
 				0A21CF1A2C0DEC48005DD8E2 /* SplashFlow */,
 				0A21CF0D2C0DE39D005DD8E2 /* AI */,
 			);
@@ -1598,7 +1637,6 @@
 			children = (
 				0A3EE8102CDF41F500F7BED6 /* PetBlog */,
 				0A79DB702CD4AA95004C0888 /* MyPage */,
-				FAC4CD562C494C4B00A3658A /* Coordinator */,
 				FADD57332C31A09700770AC6 /* HomeView */,
 				FA136CCF2C6B91BE007D7A9E /* Reservation */,
 				FA8175C72C6394FC00C17B90 /* TabBarCoordinator.swift */,
@@ -1611,6 +1649,7 @@
 			children = (
 				0A5D60222C58C7D4009D656D /* PetCard */,
 				0A5D60202C58C7C7009D656D /* Banner */,
+				FAC4CD562C494C4B00A3658A /* Coordinator */,
 				FADD57352C31A0A400770AC6 /* HomeView.swift */,
 				0A5D601D2C58C638009D656D /* HomeViewModel.swift */,
 			);
@@ -2040,6 +2079,8 @@
 				FAC4CD502C492F3C00A3658A /* JoinResponseDTO.swift in Sources */,
 				0A3EE8262CE0A83C00F7BED6 /* BlogAPI.swift in Sources */,
 				0A0EC8B92CD87772000ABAD8 /* HospitalFetcher.swift in Sources */,
+				0A28A64B2D1923B400ABBD12 /* OnboardingViewModel.swift in Sources */,
+				0A2DFAA42D2E855200F72FD6 /* CameraLauncher.swift in Sources */,
 				0A5B02912CED6D00007DEB36 /* PetIDDataSource.swift in Sources */,
 				0A79DB3F2CD497B6004C0888 /* InputField.swift in Sources */,
 				0A21CF1E2C0DEFEB005DD8E2 /* LoginSuccess.swift in Sources */,
@@ -2071,6 +2112,7 @@
 				0A79DB2E2CD496EA004C0888 /* PetCaptionViewModel.swift in Sources */,
 				0A5B028F2CED669A007DEB36 /* PetID.swift in Sources */,
 				0A3EE81A2CDF7B8400F7BED6 /* PetBlogMainCoordinator.swift in Sources */,
+				0A28A6452D153C0800ABBD12 /* BannerCoordinator.swift in Sources */,
 				FA47EFBB2C53A34A000F6529 /* Configs.swift in Sources */,
 				0A79DB262CD49658004C0888 /* InfomationCheck.swift in Sources */,
 				0A3EE7F92CDC62EC00F7BED6 /* DefaultReservationTimeRepository.swift in Sources */,
@@ -2087,6 +2129,7 @@
 				0A79DB642CD49DEA004C0888 /* DefaultBannerRepository.swift in Sources */,
 				0A79DB622CD49DC9004C0888 /* BannerDataSource.swift in Sources */,
 				0A5D602C2C58CFB6009D656D /* PetCardViewModel.swift in Sources */,
+				0A28A6492D1923AA00ABBD12 /* OnboardingView.swift in Sources */,
 				FADD57252C3193B200770AC6 /* DIConatiner.swift in Sources */,
 				0AA5BB872D07DD3F004CB6E6 /* ReservationListDataSource.swift in Sources */,
 				0A79DB002CD494A7004C0888 /* UserInfo.swift in Sources */,
@@ -2096,6 +2139,7 @@
 				0A79DB4C2CD49A82004C0888 /* ReservationChoiceCoordinator.swift in Sources */,
 				0A79DB1A2CD495D6004C0888 /* SignCoordinator.swift in Sources */,
 				0A79DB362CD49740004C0888 /* PetInfoViewModel.swift in Sources */,
+				0A28A64D2D1923C300ABBD12 /* OnboardingCoordinator.swift in Sources */,
 				FADD57312C31A01400770AC6 /* UserRepositoryProtocol.swift in Sources */,
 				0A3EE8242CE0A79800F7BED6 /* BlogResponseDTO.swift in Sources */,
 				0A79DB662CD49E03004C0888 /* BannerFetcher.swift in Sources */,
@@ -2346,20 +2390,21 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Pet-ID-iOS/Pet_ID_iOS.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Pet-ID-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 5QNWYK9LQY;
+				DEVELOPMENT_TEAM = R5LL5WULWS;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Pet-ID-iOS/Resources/Info.plist";
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 접근 권한";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨범 접근 권한";
+				INFOPLIST_KEY_CFBundleDisplayName = "펫아이디";
+				INFOPLIST_KEY_NSCameraUsageDescription = "앱에서 사진을 찍기 위해 카메라 접근 권한이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진을 저장하거나 불러오기 위해 앨범 접근 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -2369,6 +2414,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
@@ -2379,7 +2425,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.3;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -2399,16 +2445,16 @@
 					"-framework",
 					"\"Foundation\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pet-id-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.petid.service;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -2419,9 +2465,10 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Pet-ID-iOS/Pet_ID_iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Pet-ID-iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 5QNWYK9LQY;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -2429,9 +2476,9 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Pet-ID-iOS/Resources/Info.plist";
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 접근 권한";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨범 접근 권한";
+				INFOPLIST_KEY_CFBundleDisplayName = "펫아이디";
+				INFOPLIST_KEY_NSCameraUsageDescription = "앱에서 사진을 찍기 위해 카메라 접근 권한이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진을 저장하거나 불러오기 위해 앨범 접근 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -2441,6 +2488,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
@@ -2451,16 +2499,16 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.3;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pet-id-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

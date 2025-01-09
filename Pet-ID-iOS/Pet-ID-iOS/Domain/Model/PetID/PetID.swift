@@ -11,17 +11,14 @@ struct PetDetails {
     let petId: Int
     let ownerId: Int
     let petRegNo: String
-    let petAddr: String
-    let appearance: Appearance
-    let petImages: [PetImage]
-}
-
-struct PetInfoDetails {
     let petName: String
     let petBirthDate: String
     let petSex: String
     let petNeuteredYn: String
-    let petNeuteredDate: String
+    let petNeuteredDate: String?
+    let petAddr: String
+    let appearance: Appearance
+    let petImages: [PetImage]
 }
 
 struct Appearance {

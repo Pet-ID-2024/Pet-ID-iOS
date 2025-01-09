@@ -12,14 +12,25 @@ struct UserModel {
     var phoneNumber: String
     var address: String
     var detailAddress: String
-//    var petAddress: String
-//    var petDetailAddress: String
+    var rra: String
+    var rraDetails: String
+    var isSameAddress: Bool = false
+    
+    mutating func syncAddresses() {
+        if isSameAddress {
+            rra = address
+            rraDetails = detailAddress
+        } else {
+            rra = ""
+            rraDetails = ""
+        }
+    }
     
     var fullAddress: String {
         return address + " " + detailAddress
     }
     
-//    var petFullAddress: String {
-//        return petAddress + " " + petDetailAddress
-//    }
+    var rraFullAddress: String {
+        return rra + " " + rraDetails
+    }
 }

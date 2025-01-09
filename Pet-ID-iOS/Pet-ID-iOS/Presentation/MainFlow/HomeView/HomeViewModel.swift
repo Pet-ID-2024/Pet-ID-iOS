@@ -8,6 +8,10 @@
 import SwiftUI
 import Combine
 
+
 class HomeViewModel: BaseViewModel<Void> {
     
+    @MainActor func goToPetBlog(coordinator: HomeCoordinator) {
+        coordinator.goToPetBlog()
+    }
 }

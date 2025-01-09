@@ -61,6 +61,25 @@ public class Provider<T>: MoyaProvider<T> where T: TargetType {
             
         }
     }
+    func requestVoid(_ target: T) async throws {
+        return try await withCheckedThrowingContinuation { continuation in
+            self.request(target) { result in
+                switch result {
+                case .success(let response):
+                    // 상태 코드 검증
+                    guard (200...299).contains(response.statusCode) else {
+                        continuation.resume(throwing: MoyaError.statusCode(response))
+                        return
+                    }
+                    // 성공 시 Void 반환
+                    continuation.resume()
+                case .failure(let error):
+                    continuation.resume(throwing: NetworkError.moyaError(error))
+                }
+            }
+        }
+    }
+    
 }
 
 extension Provider {

@@ -180,13 +180,15 @@ extension ReservationMainViewModel {
             print("❌ 병원 ID \(hospital.id): 이미지 배열이 비어있거나 유효하지 않음")
             return
         }
+        
+        print("🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟 병원 ID \(hospital.id): 첫 번째 이미지 경로 - \(firstImagePath)")
 
         do {
             // Presigned URL 생성
             if let presignedUrl = try await hospitalFetcher.hospitalImage(filePath: firstImagePath) {
                 DispatchQueue.main.async {
                     self.processedImageUrls[hospital.id] = presignedUrl.absoluteString
-                    print("✅ 병원 ID \(hospital.id): Presigned URL \(presignedUrl.absoluteString)")
+                    print("✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅ 병원 ID \(hospital.id): Presigned URL \(presignedUrl.absoluteString)")
                 }
             } else {
                 print("❌ 병원 ID \(hospital.id): Presigned URL 생성 실패")

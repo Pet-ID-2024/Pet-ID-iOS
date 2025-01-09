@@ -20,6 +20,7 @@ final class UserDefaultManager {
     private enum Keys: String {
         case isFirstExecute
         case fcmToken
+        case isOnboardingCompleted
     }
     
     /// 앱을 처음 실행한건지
@@ -29,6 +30,14 @@ final class UserDefaultManager {
         }
         set {
             userDefault.setValue(!newValue, forKey: Keys.isFirstExecute.rawValue)
+        }
+    }
+    
+    var isOnboardingCompleted: Bool {
+        get {
+            userDefault.bool(forKey: Keys.isOnboardingCompleted.rawValue)
+        } set {
+            userDefault.setValue(newValue, forKey: Keys.isOnboardingCompleted.rawValue)
         }
     }
     

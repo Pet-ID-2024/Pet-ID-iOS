@@ -18,7 +18,7 @@ struct AccessibilityItem: Identifiable {
 }
 
 enum AccessType {
-    case phone, camera, gallery, notification, call
+    case phone, camera, gallery, notification, location
 }
 
 class AccessibilityRightViewModel: BaseViewModel<Void> {
@@ -29,7 +29,7 @@ class AccessibilityRightViewModel: BaseViewModel<Void> {
         AccessibilityItem(type: .camera, title: "카메라", description: "사진 촬영", isMandatory: false, icon: DSImage.cameraicon.toImage()),
         AccessibilityItem(type: .gallery, title: "사진첩", description: "사진 저장", isMandatory: false, icon: DSImage.galleryicon.toImage()),
         AccessibilityItem(type: .notification, title: "알림", description: "이벤트와 혜택 알림", isMandatory: false, icon: DSImage.notificationicon.toImage()),
-        AccessibilityItem(type: .call, title: "전화", description: "고객센터 등 연결을 위한 통화기능", isMandatory: false, icon: DSImage.callicon.toImage())
+        AccessibilityItem(type: .location, title: "위치", description: "동물 등록 이용 시 가까운 병원 찾기", isMandatory: false, icon: DSImage.locationicon.toImage())
     ]
     
 }

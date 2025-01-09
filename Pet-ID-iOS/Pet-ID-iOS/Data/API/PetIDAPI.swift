@@ -10,17 +10,26 @@ import Moya
 
 enum PetIDAPI {
     case registerType(request: PetIDRequestDTO)
+    case deletePet(petId: Int)
 }
 
 extension PetIDAPI: BaseTargetType {
     var path: String {
-        return "/v1/pet"
+        switch self {
+        case .registerType:
+            return "/v1/pet"
+        case .deletePet(let petId):
+            return "/v1/pet/\(petId)"
+        }
+        
     }
     
     var method: Moya.Method {
         switch self {
         case .registerType:
             return .post
+        case .deletePet:
+            return .delete
         }
     }
     
@@ -29,6 +38,8 @@ extension PetIDAPI: BaseTargetType {
         case .registerType(let req):
             Logger().debug("📡 서버로 보낼 요청: \(req)")
             return .requestJSONEncodable(req)
+        case .deletePet:
+            return .requestPlain
         }
     }
 }

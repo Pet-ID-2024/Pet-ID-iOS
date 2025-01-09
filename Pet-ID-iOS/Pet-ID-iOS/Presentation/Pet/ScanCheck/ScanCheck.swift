@@ -42,7 +42,7 @@ struct ScanCheck: View {
                     InputField(title: "품종", text: $viewModel.productType)
                     InputField(title: "털 색깔", text: $viewModel.furColor)
                     InputField(title: "특징", text: $viewModel.furFeatures)
-                    InputField(title: "몸무게", text: $viewModel.bodyWeight)
+                    InputField(title: "몸무게", text: $viewModel.bodyWeight, unit: "kg")
                 }
                 .padding(.top, 70)
                 

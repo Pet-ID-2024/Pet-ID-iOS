@@ -9,4 +9,5 @@ import Foundation
 
 protocol PetIDRepository {
     func registerType(request: PetIDRequestDTO) async throws -> PetDetails
+    func deletePet(petId: Int) async throws
 }

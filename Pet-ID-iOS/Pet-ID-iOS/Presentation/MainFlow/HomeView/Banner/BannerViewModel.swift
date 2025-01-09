@@ -9,13 +9,15 @@ enum BannerState {
 final class BannerViewModel: BaseViewModel<BannerState> {
     @Published var banners: [Banner] = [] // 배너 리스트
     private let bannerFetcher: BannerFetcher
+    let type: BannerType
     
-    init(bannerFetcher: BannerFetcher = DefaultBannerFetcher()) {
+    init(bannerFetcher: BannerFetcher = DefaultBannerFetcher(), type: BannerType) {
         self.bannerFetcher = bannerFetcher
+        self.type = type
     }
     
     // MARK: - 배너 데이터 로드 함수
-    func loadBanners(type: BannerType) async {
+    func loadBanners() async {
         do {
             let fetchedBanners = try await bannerFetcher.banners(type: type)
             
@@ -50,6 +52,7 @@ final class BannerViewModel: BaseViewModel<BannerState> {
     
     // MARK: - 배너 선택 이벤트 처리
     func onBannerTapped(banner: Banner) {
+        Logger().debug("Banner tapped: \(banner)")
         result.send(.goToDetail(banner))
     }
 }

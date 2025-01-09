@@ -33,6 +33,7 @@ extension Font {
     static let headline2 = Font.notoSansKR(fontSize: 22, fontWeight: .bold)
     static let headline3_bold = Font.notoSansKR(fontSize: 20, fontWeight: .bold)
     static let headline3_med = Font.notoSansKR(fontSize: 20, fontWeight: .medium)
+    static let headline3_reg = Font.notoSansKR(fontSize: 20, fontWeight: .regular)
     static let body1_bold = Font.notoSansKR(fontSize: 18, fontWeight: .bold)
     static let body1_semi = Font.notoSansKR(fontSize: 18, fontWeight: .semibold)
     static let body1_med = Font.notoSansKR(fontSize: 18, fontWeight: .medium)
@@ -56,5 +57,6 @@ extension Font {
     static let body25_bold = Font.notoSansKR(fontSize: 15, fontWeight: .bold)
     static let body25_semi = Font.notoSansKR(fontSize: 15, fontWeight: .semibold)
     static let body25_reg = Font.notoSansKR(fontSize: 15, fontWeight: .regular)
-    
+    static let splash1_semi = Font.notoSansKR(fontSize: 28, fontWeight: .semibold)
+    static let splash2_reg = Font.notoSansKR(fontSize: 26, fontWeight: .regular)
 }

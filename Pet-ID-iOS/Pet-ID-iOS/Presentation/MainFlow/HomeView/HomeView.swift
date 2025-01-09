@@ -49,7 +49,7 @@ struct HomeView: View {
                         Spacer()
                         
                         Button {
-                            
+                            viewModel.goToPetBlog(coordinator: coordinator)
                         } label: {
                             Text("더보기")
                                 .font(.caption1_reg)
@@ -61,10 +61,10 @@ struct HomeView: View {
                     Spacer()
                     
                     
-                    BannerView(type: .main)
+                    BannerView(viewModel: BannerViewModel(type: .main))
                         .frame(width: 350, height: 120)
                     
-                    BannerView(type: .content)
+                    BannerView(viewModel: BannerViewModel(type: .content))
                         .frame(width: 350, height: 120)
                 }
             }

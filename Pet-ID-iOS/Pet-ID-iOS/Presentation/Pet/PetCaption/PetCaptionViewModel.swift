@@ -33,7 +33,7 @@ class PetCaptionViewModel: BaseViewModel<PetCaptionState> {
     }
     
     func navigateToCamera() {
-        result.send(.completed)
+        result.send(.nextStep)
     }
     
     func navigateBack() {
@@ -41,6 +41,6 @@ class PetCaptionViewModel: BaseViewModel<PetCaptionState> {
     }
     
     func navigateToScan() {
-        result.send(.nextStep)
+        result.send(.completed)
     }
 }

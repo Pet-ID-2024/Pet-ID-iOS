@@ -26,7 +26,7 @@ struct AccessibilityRightView: View {
                     .fixedSize(horizontal: false, vertical: true)
                     .font(.body3_reg)
                     .foregroundColor(.petid_subtitle)
-
+                
                 Spacer()
                     .frame(height: 20)
                 
@@ -36,39 +36,39 @@ struct AccessibilityRightView: View {
                 ForEach(viewModel.items) { item in
                     AccessibilityItemView(item: item)
                         .padding(.bottom, 15)
-//                        .background(Color.petid_f5)
+                    //                        .background(Color.petid_f5)
                 }
                 
             }
             
             VStack(spacing: 0){
                 
-                VStack(alignment: .leading){
-                    HStack {
-                        DSImage.infoicon.toImage()
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 14, height: 14)
-                        Text("접근권한 변경 방법")
-                            .foregroundStyle(Color.petid_title)
-                            .font(.body3_med)
-                        
-                        Spacer()
-                    }
-                    Text("설정>애플리케이션관리자>PETID")
-                        .font(.caption1_reg)
-                        .foregroundColor(.petid_subtitle)
-                }
-                .padding()
-                .background(
-                    Rectangle()
-                        .foregroundColor(.petid_f5)
-                        .cornerRadius(10)
-                )
-                .padding(.top, 10)
+//                VStack(alignment: .leading){
+//                    HStack {
+//                        DSImage.infoicon.toImage()
+//                            .resizable()
+//                            .aspectRatio(contentMode: .fit)
+//                            .frame(width: 14, height: 14)
+//                        Text("접근권한 변경 방법")
+//                            .foregroundStyle(Color.petid_title)
+//                            .font(.body3_med)
+//                        
+//                        Spacer()
+//                    }
+//                    Text("설정>애플리케이션관리자>PETID")
+//                        .font(.caption1_reg)
+//                        .foregroundColor(.petid_subtitle)
+//                }
+//                .padding()
+//                .background(
+//                    Rectangle()
+//                        .foregroundColor(.petid_f5)
+//                        .cornerRadius(10)
+//                )
+//                .padding(.top, 10)
                 
                 Spacer()
-                    .frame(height: 14)
+                    .frame(height: 24)
                 
                 Text("선택적 접근권한은 동의하지 않아도 해당기능 외 앱 이용이 가능합니다.")
                     .font(.caption1_med)
@@ -92,6 +92,8 @@ struct AccessibilityRightView: View {
         }
         .padding(.horizontal, 33)
         .padding(.vertical, 15)
+        .navigationBarHidden(true) // 네비게이션 바 숨김
+        .navigationBarBackButtonHidden(true)
     }
 }
 

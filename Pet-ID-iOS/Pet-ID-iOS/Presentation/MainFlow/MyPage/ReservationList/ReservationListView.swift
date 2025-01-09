@@ -111,8 +111,11 @@ struct ReservationRow: View {
                 
                 //                if reservation.status == .confirmed || reservation.status == .pending {
                 Button {
-                    onCancelButtonTapped(reservation)
-                    
+                    if reservation.status == .confirmed || reservation.status == .pending {
+                        onCancelButtonTapped(reservation)
+                    } else if reservation.status == .completed || reservation.status == .cancelled {
+                        
+                    }
                 } label: {
                     Text(buttonTitle(for: reservation.status))
                         .font(.caption1_reg)

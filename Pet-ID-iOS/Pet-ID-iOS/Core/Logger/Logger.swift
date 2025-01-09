@@ -61,11 +61,26 @@ final class Logger {
     }
 
     // File logger
-    DDFileLogger().do {
-      $0.rollingFrequency = TimeInterval(60 * 60 * 24)  // 24 hours
-      $0.logFileManager.maximumNumberOfLogFiles = 7
-      DDLog.add($0)
-    }
+//    DDFileLogger().do {
+//      $0.rollingFrequency = TimeInterval(60 * 60 * 24)  // 24 hours
+//      $0.logFileManager.maximumNumberOfLogFiles = 7
+//      DDLog.add($0)
+//    }
+      
+       // 커스텀 로그 디렉토리 설정
+              let customLogDirectory = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first!
+              let fileManager = DDLogFileManagerDefault(logsDirectory: customLogDirectory)
+              
+              // 파일 로그 설정
+              let fileLogger = DDFileLogger(logFileManager: fileManager).then {
+                  $0.rollingFrequency = TimeInterval(60 * 60 * 24) // 24시간
+                  $0.logFileManager.maximumNumberOfLogFiles = 7
+              }
+              
+              DDLog.add(fileLogger)
+              
+              // 디렉토리 경로 출력 및 확인
+              print("✅ 로그 디렉토리: \(fileManager.logsDirectory)")
   }
 
 

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "callicon.png",
+      "filename" : "onboardingicon3.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "callicon 1.png",
+      "filename" : "onboardingicon3 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "callicon 2.png",
+      "filename" : "onboardingicon3 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

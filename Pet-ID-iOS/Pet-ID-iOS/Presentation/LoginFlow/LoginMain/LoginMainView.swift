@@ -58,3 +58,4 @@ struct LoginMainView: View {
 #Preview {
     LoginMainView(viewModel: LoginMainViewModel())
 }
+

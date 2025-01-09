@@ -26,11 +26,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
         
-        #if DEBUG
+#if DEBUG
         Logger().debug("DEVELOP")
-        #else
+#else
         Logger().debug("Product")
-        #endif
+#endif
         
         configureFirebase()
         configureOAuth()
@@ -55,11 +55,21 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         
+        //        if AuthApi.isKakaoTalkLoginUrl(url) {
+        //            return AuthController.handleOpenUrl(url: url)
+        //        }
+        //
+        //        return GIDSignIn.sharedInstance.handle(url)
+        
+        // return false
         if AuthApi.isKakaoTalkLoginUrl(url) {
             return AuthController.handleOpenUrl(url: url)
+        } else if url.scheme == APIConfigs.Key.urlScheme { // 네이버 로그인 URL 확인
+            NaverThirdPartyLoginConnection.getSharedInstance().receiveAccessToken(url)
+            return true
+        } else if GIDSignIn.sharedInstance.handle(url) {
+            return true
         }
-        
-        return GIDSignIn.sharedInstance.handle(url)
         
         return false
     }
@@ -83,6 +93,8 @@ extension AppDelegate {
 extension AppDelegate {
     func configureOAuth() {
         KakaoSDK.initSDK(appKey: APIConfigs.Key.kakaoAppKey)
+        let kakaoSDKVersion = KakaoSDK.shared.sdkVersion()
+        logger.debug("✅ Kakao SDK Version: \(kakaoSDKVersion)")
         configureOAuthNaver()
     }
     
@@ -140,7 +152,15 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let tokenParts = deviceToken.map { String(format: "%02.2hhx", $0) }
+        let deviceTokenString = tokenParts.joined()
+        
+        // Device Token 출력
+        logger.debug("✅ Device Token: \(deviceTokenString)")
         Messaging.messaging().apnsToken = deviceToken
+        
+        // Device Token 저장
+        UserDefaults.standard.setValue(deviceTokenString, forKey: "deviceToken")
     }
 }
 

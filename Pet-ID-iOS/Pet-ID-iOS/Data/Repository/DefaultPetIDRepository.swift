@@ -26,4 +26,15 @@ struct DefaultPetIDRepository: PetIDRepository {
             throw error
         }
     }
+    
+    func deletePet(petId: Int) async throws {
+        Logger().debug("📡 DefaultPetIDRepository - deletePet 호출: petId=\(petId)")
+        do {
+            try await dataSource.deletePet(petId: petId)
+            Logger().debug("✅ DefaultPetIDRepository - deletePet 성공: petId=\(petId)")
+        } catch {
+            Logger().error("❌ Repository 오류 발생: deletePet 실패: \(error.localizedDescription)")
+            throw error
+        }
+    }
 }

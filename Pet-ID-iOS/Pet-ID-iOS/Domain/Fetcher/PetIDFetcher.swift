@@ -10,6 +10,7 @@ import Foundation
 
 protocol PetIDFetcher {
     func registerType(request: PetIDRequestDTO) async throws -> PetDetails
+    func deletePet(petId: Int) async throws
 }
 
 
@@ -29,6 +30,17 @@ struct DefaultPetIDFetcher: PetIDFetcher {
             return response
         } catch {
             Logger().error("❌ DefaultPetIDFetcher - registerChipType 요청 실패: \(error.localizedDescription)")
+            throw error
+        }
+    }
+    
+    func deletePet(petId: Int) async throws {
+        Logger().debug("📡 DefaultPetIDFetcher - deletePet 요청 시작: petId=\(petId)")
+        do {
+            try await repository.deletePet(petId: petId)
+            Logger().debug("✅ DefaultPetIDFetcher - deletePet 요청 성공")
+        } catch {
+            Logger().error("❌ DefaultPetIDFetcher - deletePet 요청 실패: \(error.localizedDescription)")
             throw error
         }
     }

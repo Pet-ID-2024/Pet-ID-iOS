@@ -13,28 +13,19 @@ struct PetIDResponseDTO: Decodable {
     let ownerId: Int
     let petRegNo: String
     let petAddr: String
-    let petInfo: PetInfoResponseDTO
+    let petName: String
+    let petBirthDate: String
+    let petSex: String
+    let petNeuteredYn: String?
+    let petNeuteredDate: String?
     let appearance: AppearanceResponseDTO
     let petImages: [PetImageResponseDTO]
     
     func toDomain() -> PetDetails {
-        return PetDetails(petId: self.petId, ownerId: self.ownerId, petRegNo: self.petRegNo, petAddr: self.petAddr, appearance: self.appearance.toDomain(), petImages: self.petImages.map { $0.toDomain() }
-            
-        )
+        return PetDetails(petId: self.petId, ownerId: self.ownerId, petRegNo: self.petRegNo, petName: self.petName, petBirthDate: self.petBirthDate, petSex: self.petSex, petNeuteredYn: self.petNeuteredYn ?? "N", petNeuteredDate: self.petNeuteredDate, petAddr: self.petAddr, appearance: self.appearance.toDomain(), petImages: self.petImages.map { $0.toDomain() })
     }
 }
 
-struct PetInfoResponseDTO: Decodable {
-    let petName: String
-    let petBirthDate: String
-    let petSex: String
-    let petNeuteredYn: String
-    let petNeuteredDate: String
-    
-    func toDomain() -> PetInfoDetails {
-        return PetInfoDetails(petName: self.petName, petBirthDate: self.petBirthDate, petSex: self.petSex, petNeuteredYn: self.petNeuteredYn, petNeuteredDate: self.petNeuteredDate)
-    }
-}
 
 // Appearance 데이터
 struct AppearanceResponseDTO: Decodable {
@@ -55,7 +46,7 @@ struct AppearanceResponseDTO: Decodable {
     }
 }
 
-// Pet 이미지 데이터
+
 struct PetImageResponseDTO: Decodable {
     let petImageId: Int
     let petId: Int
@@ -69,4 +60,3 @@ struct PetImageResponseDTO: Decodable {
         )
     }
 }
-

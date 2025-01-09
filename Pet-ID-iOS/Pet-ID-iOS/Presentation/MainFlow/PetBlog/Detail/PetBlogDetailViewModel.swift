@@ -50,7 +50,8 @@ final class PetBlogDetailViewModel: BaseViewModel<PetBlogDetailState> {
                 updateBlogState(isLiked: true, likesCount: response.likeCount)
             }
             // 좋아요 상태 동기화
-            await loadLatestBlogData()
+//            await loadLatestBlogData()
+            await updateImageURL()
         } catch {
             Logger().error("좋아요 상태 변경 요청 실패: \(error.localizedDescription)")
         }
@@ -71,12 +72,24 @@ final class PetBlogDetailViewModel: BaseViewModel<PetBlogDetailState> {
     }
     
     func updateImageURL() async {
-        guard !blog.imageUrl.isEmpty else { return } // 이미지 URL이 비어있는 경우 처리하지 않음
+        guard !blog.imageUrl.isEmpty else {
+            Logger().error("이미지 URL이 비어 있습니다.")
+            return
+        }
+        
+        // Presigned URL이 이미 설정되어 있는지 확인
+        if blog.imageUrl.contains("X-Amz-") {
+            Logger().debug("이미 Presigned URL로 설정되어 있습니다: \(blog.imageUrl)")
+            return
+        }
+        
+        // Presigned URL 생성
         do {
             let presignedURL = try await blogFetcher.contentImage(filePath: blog.imageUrl)
             DispatchQueue.main.async { [weak self] in
-                self?.blog.imageUrl = presignedURL.absoluteString
-                Logger().debug("✅ 블로그 이미지 URL 업데이트 완료: \(presignedURL)")
+                guard let self = self else { return }
+                self.blog.imageUrl = presignedURL.absoluteString
+                Logger().debug("✅ 블로그 이미지 URL 업데이트 완료: \(presignedURL.absoluteString)")
             }
         } catch {
             Logger().error("❌ 블로그 이미지 URL 업데이트 실패: \(error.localizedDescription)")
@@ -85,7 +98,7 @@ final class PetBlogDetailViewModel: BaseViewModel<PetBlogDetailState> {
     
     func loadRecommendBlogs() async {
         do {
-            let allBlogs = try await blogFetcher.blog(category: blog.category)
+            let allBlogs = try await blogFetcher.blog(category: "ALL")
             let filteredBlogs = allBlogs.filter { $0.contentId != blog.contentId }
             let randomBlogs = filteredBlogs.shuffled().prefix(3)
             

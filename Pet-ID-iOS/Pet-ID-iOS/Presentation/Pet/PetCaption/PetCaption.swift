@@ -100,6 +100,7 @@ struct PetCaption: View {
             
             Button(action: {
                 viewModel.navigateToCamera()
+//                viewModel.navigateToScan()
                 print("카메라 눌림")
             }) {
                 Text("촬영 시작")
