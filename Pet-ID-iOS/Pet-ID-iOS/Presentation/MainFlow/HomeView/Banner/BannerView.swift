@@ -31,15 +31,25 @@ struct BannerView: View {
                                         .frame(maxWidth: .infinity, maxHeight: 200)
                                         .clipShape(RoundedRectangle(cornerRadius: 10))
                                         .overlay(
-                                                RoundedRectangle(cornerRadius: 10)
-                                                    .stroke(Color.clear, lineWidth: 0)
-                                            )
-                                            .clipped()
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .stroke(Color.clear, lineWidth: 0)
+                                        )
+                                        .clipped()
                                 } else {
                                     // 이미지 URL이 없을 경우 기본 Placeholder
                                     Color.gray
                                         .frame(maxWidth: .infinity, maxHeight: 200)
                                         .clipShape(RoundedRectangle(cornerRadius: 10))
+                                }
+                                if !banner.text.isEmpty {
+                                    Text(banner.text)
+                                        .font(.body1_semi)
+                                        .foregroundColor(.petid_title)
+                                        .multilineTextAlignment(.leading)
+                                        .padding(8)
+                                        .cornerRadius(8)
+                                        .padding(.horizontal, 16)
+                                        .padding(.bottom, 16)
                                 }
                             }
                         }

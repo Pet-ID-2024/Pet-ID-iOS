@@ -24,6 +24,7 @@
 		0A28A64B2D1923B400ABBD12 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A28A64A2D1923B400ABBD12 /* OnboardingViewModel.swift */; };
 		0A28A64D2D1923C300ABBD12 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A28A64C2D1923C300ABBD12 /* OnboardingCoordinator.swift */; };
 		0A2DFAA42D2E855200F72FD6 /* CameraLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DFAA32D2E855200F72FD6 /* CameraLauncher.swift */; };
+		0A2DFAA62D2FBDD100F72FD6 /* AIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DFAA52D2FBDD100F72FD6 /* AIManager.swift */; };
 		0A3EE7F12CD9A8A700F7BED6 /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE7F02CD9A8A700F7BED6 /* Hospital.swift */; };
 		0A3EE7F32CDC5CF800F7BED6 /* ReservationTimeResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE7F22CDC5CF800F7BED6 /* ReservationTimeResponseDTO.swift */; };
 		0A3EE7F52CDC5D9B00F7BED6 /* ReservationTimeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EE7F42CDC5D9B00F7BED6 /* ReservationTimeAPI.swift */; };
@@ -278,6 +279,8 @@
 		0A28A64A2D1923B400ABBD12 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		0A28A64C2D1923C300ABBD12 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		0A2DFAA32D2E855200F72FD6 /* CameraLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLauncher.swift; sourceTree = "<group>"; };
+		0A2DFAA52D2FBDD100F72FD6 /* AIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIManager.swift; sourceTree = "<group>"; };
+		0A2DFAA92D2FBFDD00F72FD6 /* petid_crop_image_efficientnetb1_v1_4.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = petid_crop_image_efficientnetb1_v1_4.tflite; sourceTree = "<group>"; };
 		0A3EE7F02CD9A8A700F7BED6 /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
 		0A3EE7F22CDC5CF800F7BED6 /* ReservationTimeResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTimeResponseDTO.swift; sourceTree = "<group>"; };
 		0A3EE7F42CDC5D9B00F7BED6 /* ReservationTimeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTimeAPI.swift; sourceTree = "<group>"; };
@@ -848,6 +851,7 @@
 		0A79DB062CD494E1004C0888 /* PetCaption */ = {
 			isa = PBXGroup;
 			children = (
+				0A2DFAA92D2FBFDD00F72FD6 /* petid_crop_image_efficientnetb1_v1_4.tflite */,
 				0A79DB0C2CD4956E004C0888 /* Coordinator */,
 				0A79DB2D2CD496EA004C0888 /* PetCaptionViewModel.swift */,
 				0A79DB2F2CD496F5004C0888 /* PetCaption.swift */,
@@ -1715,6 +1719,7 @@
 			children = (
 				FAE566002C3C365300D77149 /* UserDefaultManager.swift */,
 				FAE5660C2C3EB68D00D77149 /* CameraAlbumManager.swift */,
+				0A2DFAA52D2FBDD100F72FD6 /* AIManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -2079,6 +2084,7 @@
 				FAC4CD502C492F3C00A3658A /* JoinResponseDTO.swift in Sources */,
 				0A3EE8262CE0A83C00F7BED6 /* BlogAPI.swift in Sources */,
 				0A0EC8B92CD87772000ABAD8 /* HospitalFetcher.swift in Sources */,
+				0A2DFAA62D2FBDD100F72FD6 /* AIManager.swift in Sources */,
 				0A28A64B2D1923B400ABBD12 /* OnboardingViewModel.swift in Sources */,
 				0A2DFAA42D2E855200F72FD6 /* CameraLauncher.swift in Sources */,
 				0A5B02912CED6D00007DEB36 /* PetIDDataSource.swift in Sources */,

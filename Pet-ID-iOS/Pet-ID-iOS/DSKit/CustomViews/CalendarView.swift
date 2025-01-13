@@ -157,7 +157,8 @@ struct CalendarView: View {
     
     private func dateCell(for date: Int) -> some View {
         let isToday = date == currentDay && currentMonth == currentCalendarMonth && currentYear == currentCalendarYear
-        
+        let isWithinWeek = isWithinAWeek(from: date)
+
         return ZStack {
             if let selectedDay = Calendar.current.date(from: DateComponents(year: currentYear, month: currentMonth, day: date)),
                selectedDate != nil && Calendar.current.isDate(selectedDate!, inSameDayAs: selectedDay) {
@@ -181,7 +182,7 @@ struct CalendarView: View {
                     .font(.body2_med)
                     .foregroundColor(.petid_clearblue)
                     .frame(width: 32, height: 32)
-            } else if isWithinAWeek(from: date) {
+            } else if isWithinWeek {
                 Text("\(date)")
                     .font(.body2_med)
                     .foregroundColor(.petid_title)
@@ -194,10 +195,12 @@ struct CalendarView: View {
             }
         }
         .onTapGesture {
-            if !isToday, let selected = Calendar.current.date(from: DateComponents(year: currentYear, month: currentMonth, day: date)) {
-                // 오늘 날짜는 선택 불가하도록 설정
-                DispatchQueue.main.async {
-                    self.selectedDate = selected
+            // 일주일 이내 날짜만 클릭 가능하며, 오늘 날짜는 클릭 불가
+            if !isToday && isWithinWeek {
+                if let selected = Calendar.current.date(from: DateComponents(year: currentYear, month: currentMonth, day: date)) {
+                    DispatchQueue.main.async {
+                        self.selectedDate = selected
+                    }
                 }
             }
         }

@@ -189,10 +189,16 @@ struct PetInfo: View {
                                 inputType: .date
                             )
                             .onChange(of: viewModel.neuteringDate) { _ in viewModel.validateInput() }
+                            .disabled(viewModel.neuteredChecked)
                             
                             HStack {
                                 CheckBox(isChecked: $viewModel.neuteredChecked)
-                                    .onChange(of: viewModel.neuteredChecked) { _ in viewModel.validateInput() }
+                                    .onChange(of: viewModel.neuteredChecked) { isChecked in
+                                        if isChecked {
+                                            viewModel.resetNeuteringDate()
+                                        }
+                                        viewModel.validateInput()
+                                    }
                                 Text("중성화 전이에요.")
                                     .font(.caption1_med)
                                     .fontWeight(.medium)
@@ -218,7 +224,7 @@ struct PetInfo: View {
                             .cornerRadius(8)
                             .disabled(viewModel.isNextButtonDisabled)
                     }
-                    .padding(.bottom)
+                    .padding(.top, 20)
                 }
                 .padding()
                 .navigationBarHidden(true)

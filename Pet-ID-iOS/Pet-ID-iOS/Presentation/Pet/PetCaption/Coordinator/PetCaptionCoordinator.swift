@@ -138,7 +138,10 @@ final class PetCaptionCoordinator: Coordinator, ObservableObject {
     }
 
     func navigateToScanCheck() {
-        Logger().debug("✅ 스캔 확인 화면으로 이동")
+        let placeholderImage = UIImage(named: "hearticon") ?? UIImage()
+        let scanCoordinator = ScanCoordinator(navigationController, image: placeholderImage, temporaryData: temporaryData)
+        childCoordinators[scanCoordinator.id] = scanCoordinator
+        scanCoordinator.start()
     }
     
     func navigateToCamera() {

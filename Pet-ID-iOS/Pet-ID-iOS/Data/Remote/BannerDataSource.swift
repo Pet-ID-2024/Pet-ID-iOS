@@ -17,7 +17,7 @@ struct DefaultBannerDataSource: BannerDataSource {
 //        Logger().debug("📡 BannerDataSource 요청 시작 - type: \(type.rawValue)")
         let response: [BannerResponseDTO] = try await provider.request(.banners(type: type.rawValue))
 //        Logger().debug("✅ 응답 완료 - 필터링된 배너 데이터: \(response)")
-        return response
+        return response.filter { $0.status.lowercased() == "active"}
     }
     
     func bannerImage(filePath: String) async throws -> URL {

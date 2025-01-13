@@ -46,8 +46,13 @@ class UserInfoViewModel: BaseViewModel<UserInfoState> {
     
     // 유저 전화번호 업데이트
     func updatePhoneNumber(_ newPhoneNumber: String) {
-        let formattedPhoneNumber = formatPhoneNumber(newPhoneNumber)
-        guard formattedPhoneNumber != user.phoneNumber else { return }
+        // 숫자만 추출하고 11자리로 제한
+        let digits = newPhoneNumber.filter { $0.isNumber }
+        let limitedDigits = String(digits.prefix(11)) // 11자리까지만 허용
+        
+        let formattedPhoneNumber = formatPhoneNumber(limitedDigits) // 포맷팅된 번호
+        guard formattedPhoneNumber != user.phoneNumber else { return } // 동일하면 반환
+        
         user.phoneNumber = formattedPhoneNumber
         temporaryData["phoneNumber"] = formattedPhoneNumber
         validateInput()
@@ -58,6 +63,9 @@ class UserInfoViewModel: BaseViewModel<UserInfoState> {
         guard newAddress != user.address else { return }
         user.address = newAddress
         temporaryData["address"] = newAddress
+        if isSameAddress {
+                handleAddressSync()
+            }
         validateInput()
     }
     
@@ -66,6 +74,9 @@ class UserInfoViewModel: BaseViewModel<UserInfoState> {
         guard newDetailAddress != user.detailAddress else { return }
         user.detailAddress = newDetailAddress
         temporaryData["detailAddress"] = newDetailAddress
+        if isSameAddress {
+                handleAddressSync()
+            }
         validateInput()
     }
     
@@ -87,16 +98,22 @@ class UserInfoViewModel: BaseViewModel<UserInfoState> {
     
     // 주소 동기화 처리
     func handleAddressSync() {
-        if user.isSameAddress {
-            user.rra = user.address
-            user.rraDetails = user.detailAddress
-            temporaryData["rra"] = user.address
-            temporaryData["rraDetails"] = user.detailAddress
+        if isSameAddress {
+            // isSameAddress가 true일 때만 동기화
+            if user.address != user.rra {
+                user.rra = user.address
+                user.rraDetails = user.detailAddress
+                temporaryData["rra"] = user.address
+                temporaryData["rraDetails"] = user.detailAddress
+            }
         } else {
-            user.rra = ""
-            user.rraDetails = ""
-            temporaryData["rra"] = ""
-            temporaryData["rraDetails"] = ""
+            // isSameAddress가 false일 때 초기화
+            if !user.rra.isEmpty || !user.rraDetails.isEmpty {
+                user.rra = ""
+                user.rraDetails = ""
+                temporaryData["rra"] = ""
+                temporaryData["rraDetails"] = ""
+            }
         }
         validateInput()
         Logger().debug("✅ 주소 동기화 처리 완료: \(user)")
@@ -139,11 +156,11 @@ class UserInfoViewModel: BaseViewModel<UserInfoState> {
     
     // 전화번호 포맷팅
     private func formatPhoneNumber(_ number: String) -> String {
-        let cleanedNumber = number.replacingOccurrences(of: "-", with: "")
-        guard cleanedNumber.count == 11 else { return cleanedNumber }
-        let areaCode = cleanedNumber.prefix(3)
-        let centralOfficeCode = cleanedNumber.dropFirst(3).prefix(4)
-        let lineNumber = cleanedNumber.suffix(4)
-        return "\(areaCode)-\(centralOfficeCode)-\(lineNumber)"
+        let cleanedNumber = number.filter { $0.isNumber } // 숫자만 필터링
+        guard cleanedNumber.count == 11 else { return cleanedNumber } // 11자리가 아니면 반환
+        let areaCode = cleanedNumber.prefix(3) // 앞 3자리
+        let centralOfficeCode = cleanedNumber.dropFirst(3).prefix(4) // 중간 4자리
+        let lineNumber = cleanedNumber.suffix(4) // 마지막 4자리
+        return "\(areaCode)-\(centralOfficeCode)-\(lineNumber)" // 형식화된 문자열 반환
     }
 }

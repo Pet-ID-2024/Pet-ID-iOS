@@ -36,7 +36,9 @@ final class BannerViewModel: BaseViewModel<BannerState> {
                 
                 // 결과를 배열로 수집
                 return try await group.reduce(into: [Banner]()) { result, banner in
-                    result.append(banner)
+                    if banner.status.lowercased() == "active" {
+                        result.append(banner)
+                    }
                 }
             }
             

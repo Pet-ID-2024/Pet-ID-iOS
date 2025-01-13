@@ -3,7 +3,7 @@
 //struct UserInfo: View {
 //    @ObservedObject var viewModel: UserInfoViewModel
 //    var coordinator: UserInfoCoordinator?
-//    
+//
 //    var body: some View {
 //        ScrollView {
 //            VStack(alignment: .leading, spacing: 20) {
@@ -17,18 +17,18 @@
 //                    }
 //                    Spacer()
 //                }
-//                
+//
 //                VStack(alignment: .leading) {
 //                    VStack(alignment: .leading, spacing: 10) {
 //                        Text("2/7")
 //                            .font(.body1_bold)
 //                            .foregroundColor(.petid_clearblue)
-//                        
+//
 //                        Text("회원님의 정보를 \n알려주세요")
 //                            .font(.headline1)
 //                    }
 //                    .padding(.bottom, 20)
-//                    
+//
 //                    VStack(spacing: 30) {
 //                        CustomField(
 //                            text: $viewModel.user.name,
@@ -41,7 +41,7 @@
 //                            viewModel.updateName(newValue)
 //                            viewModel.validateInput()
 //                        }
-//                        
+//
 //                        CustomField(
 //                            text: $viewModel.user.phoneNumber,
 //                            field: .phone,
@@ -53,7 +53,7 @@
 //                            viewModel.updatePhoneNumber(newValue)
 //                            viewModel.validateInput()
 //                        }
-//                        
+//
 //                        VStack {
 //                            CustomField(
 //                                text: $viewModel.user.address,
@@ -65,7 +65,7 @@
 //                            .onChange(of: viewModel.user.address) { newValue in
 //                                viewModel.updateAddress(newValue)
 //                            }
-//                            
+//
 //                            CustomField(
 //                                text: $viewModel.user.detailAddress,
 //                                field: .detailAddress,
@@ -79,7 +79,7 @@
 //                                viewModel.validateInput()
 //                            }
 //                        }
-//                        
+//
 //                        HStack {
 //                            CheckBox(isChecked: $viewModel.isSameAddress)
 //                                .onChange(of: viewModel.isSameAddress) { _ in
@@ -92,7 +92,7 @@
 //                            Spacer()
 //                        }
 //                        .padding(.top, -20)
-//                        
+//
 //                        if !viewModel.isSameAddress {
 //                            VStack {
 //                                CustomField(
@@ -105,7 +105,7 @@
 //                                .onChange(of: viewModel.user.rra) { newValue in
 //                                    viewModel.updateAddress(newValue)
 //                                }
-//                                
+//
 //                                CustomField(
 //                                    text: $viewModel.user.rraDetails,
 //                                    field: .detailAddress,
@@ -123,9 +123,9 @@
 //                        }
 //                    }
 //                }
-//                
+//
 //                Spacer()
-//                
+//
 //                Button(action: {
 //                    viewModel.handleNextButtonTapped()
 //                }) {
@@ -204,6 +204,7 @@ struct UserInfo: View {
                             viewModel.updatePhoneNumber(newValue)
                             viewModel.validateInput()
                         }
+                        .keyboardType(.numberPad)
                         
                         VStack {
                             CustomField(
@@ -225,7 +226,7 @@ struct UserInfo: View {
                             .padding(.top, -20)
                             .onChange(of: viewModel.user.detailAddress) { newValue in
                                 viewModel.updateDetailAddress(newValue)
-                                viewModel.validateInput()
+                                //                                viewModel.validateInput()
                             }
                         }
                         
@@ -240,7 +241,7 @@ struct UserInfo: View {
                                 .foregroundColor(.petid_gray)
                             Spacer()
                         }
-                        .padding(.top, -20)
+                        .padding(.top, -10)
                         
                         if !viewModel.isSameAddress {
                             VStack {
@@ -248,22 +249,22 @@ struct UserInfo: View {
                                     text: $viewModel.user.rra,
                                     placeholder: "주소를 입력해 주세요.",
                                     label: "",
-                                    inputType: .address
+                                    inputType: .rra
                                 )
                                 .onChange(of: viewModel.user.rra) { newValue in
-                                    viewModel.updateAddress(newValue)
+                                    viewModel.updateRra(newValue)
                                 }
                                 
                                 CustomField(
                                     text: $viewModel.user.rraDetails,
                                     placeholder: "상세주소를 입력해 주세요.",
                                     label: "",
-                                    inputType: .detailAddress
+                                    inputType: .detailRraAddress
                                 )
                                 .padding(.top, -20)
                                 .onChange(of: viewModel.user.rraDetails) { newValue in
-                                    viewModel.updateDetailAddress(newValue)
-                                    viewModel.validateInput()
+                                    viewModel.updateRraDetails(newValue)
+                                    //                                    viewModel.validateInput()
                                 }
                             }
                             .padding(.top, -30)

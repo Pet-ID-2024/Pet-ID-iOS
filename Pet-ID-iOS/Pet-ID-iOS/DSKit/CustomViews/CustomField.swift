@@ -13,10 +13,10 @@
 //    var placeholder: String
 //    var label: String?
 //    var inputType: InputType
-//    
+//
 //    @State private var showDatePickerSheet: Bool = false
 //    @State private var selectedDate: Date = Date()
-//    
+//
 //    enum InputType {
 //        case text
 //        case date
@@ -24,7 +24,7 @@
 //        case address
 //        case detailAddress
 //    }
-//    
+//
 //    var body: some View {
 //        VStack(alignment: .leading) {
 //            Text(label!)
@@ -32,7 +32,7 @@
 //            //                .fontWeight(.medium)
 //                .foregroundColor(.petid_gray)
 //                .padding(.bottom, 4)
-//            
+//
 //            switch inputType {
 //            case .date:
 //                DatePickerField(
@@ -83,7 +83,7 @@
 //    @Binding var selectedDate: Date
 //    var field: PetInfoViewModel.Field
 //    var placeholder: String
-//    
+//
 //    var body: some View {
 //        HStack {
 //            Text(text.isEmpty ? placeholder : text)
@@ -109,7 +109,7 @@
 //    @Binding var text: String
 //    var placeholder: String
 //    var field: PetInfoViewModel.Field
-//    
+//
 //    var body: some View {
 //        TextField(placeholder, text: $text)
 //            .padding()
@@ -127,7 +127,7 @@
 //    @Binding var text: String
 //    var placeholder: String
 //    var field: PetInfoViewModel.Field
-//    
+//
 //    var body: some View {
 //        HStack {
 //            TextField(placeholder, text: $text)
@@ -135,7 +135,7 @@
 //            Spacer()
 //            Image(systemName: "magnifyingglass")
 //                .foregroundColor(.petid_title)
-//            
+//
 //        }
 //        .padding()
 //        .background(Color.white)
@@ -151,7 +151,7 @@
 //    @Binding var text: String
 //    var placeholder: String
 //    var field: PetInfoViewModel.Field
-//    
+//
 //    var body: some View {
 //        TextField(placeholder, text: $text)
 //            .padding()
@@ -168,7 +168,7 @@
 //    @Binding var text: String
 //    var placeholder: String
 //    var field: PetInfoViewModel.Field
-//    
+//
 //    var body: some View {
 //        HStack {
 //            TextField(placeholder, text: $text)
@@ -176,7 +176,7 @@
 //            Spacer()
 //            Image(systemName: "magnifyingglass")
 //                .foregroundColor(.petid_title)
-//            
+//
 //        }
 //        .padding()
 //        .background(Color.white)
@@ -192,7 +192,7 @@
 //    @Binding var text: String
 //    var placeholder: String
 //    var field: PetInfoViewModel.Field
-//    
+//
 //    var body: some View {
 //        TextField(placeholder, text: $text)
 //            .padding()
@@ -210,7 +210,7 @@
 //    @Binding var text: String
 //    var placeholder: String
 //    var field: PetInfoViewModel.Field
-//    
+//
 //    var body: some View {
 //        TextField(placeholder, text: $text)
 //            .padding()
@@ -226,7 +226,7 @@
 //struct DatePickerSheet: View {
 //    @Binding var selectedDate: Date
 //    var onDone: () -> Void
-//    
+//
 //    var body: some View {
 //        VStack {
 //            DatePicker("Select Date", selection: $selectedDate, displayedComponents: .date)
@@ -256,6 +256,8 @@ struct CustomField: View {
         case phoneNumber
         case address
         case detailAddress
+        case rra
+        case detailRraAddress
     }
     
     var body: some View {
@@ -290,11 +292,22 @@ struct CustomField: View {
                     text: $text,
                     placeholder: placeholder
                 )
+            case .rra:
+                RraAdressField(
+                    text: $text,
+                    placeholder: placeholder
+                )
+            case .detailRraAddress:
+                RraDetailAddressField(
+                    text: $text,
+                    placeholder: placeholder
+                )
             case .text:
                 TextFieldView(
                     text: $text,
                     placeholder: placeholder
                 )
+                
             }
         }
         .sheet(isPresented: $showDatePickerSheet) {
@@ -376,6 +389,44 @@ struct AddressField: View {
 }
 
 struct DetailAddressField: View {
+    @Binding var text: String
+    var placeholder: String
+    
+    var body: some View {
+        TextField(placeholder, text: $text)
+            .padding()
+            .background(Color.white)
+            .cornerRadius(8)
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(Color.petid_d9, lineWidth: 1)
+            )
+    }
+}
+
+struct RraAdressField: View {
+    @Binding var text: String
+    var placeholder: String
+    
+    var body: some View {
+        HStack {
+            TextField(placeholder, text: $text)
+                .foregroundColor(text.isEmpty ? .petid_b4 : .petid_title)
+            Spacer()
+            Image(systemName: "magnifyingglass")
+                .foregroundColor(.petid_title)
+        }
+        .padding()
+        .background(Color.white)
+        .cornerRadius(8)
+        .overlay(
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(Color.petid_d9, lineWidth: 1)
+        )
+    }
+}
+
+struct RraDetailAddressField: View {
     @Binding var text: String
     var placeholder: String
     

@@ -194,6 +194,13 @@ PODS:
   - PromisesSwift (2.4.0):
     - PromisesObjC (= 2.4.0)
   - Swinject (2.8.8)
+  - TensorFlowLiteC (2.14.0):
+    - TensorFlowLiteC/Core (= 2.14.0)
+  - TensorFlowLiteC/Core (2.14.0)
+  - TensorFlowLiteSwift (2.14.0):
+    - TensorFlowLiteSwift/Core (= 2.14.0)
+  - TensorFlowLiteSwift/Core (2.14.0):
+    - TensorFlowLiteC (= 2.14.0)
   - Then (3.0.0)
   - Toast-Swift (5.1.1)
 
@@ -208,6 +215,7 @@ DEPENDENCIES:
   - Moya/Combine (~> 15.0)
   - naveridlogin-sdk-ios
   - Swinject (~> 2.8.0)
+  - TensorFlowLiteSwift
   - Then (~> 3.0.0)
   - Toast-Swift (~> 5.0)
 
@@ -252,6 +260,8 @@ SPEC REPOS:
     - PromisesObjC
     - PromisesSwift
     - Swinject
+    - TensorFlowLiteC
+    - TensorFlowLiteSwift
     - Then
     - Toast-Swift
 
@@ -295,9 +305,11 @@ SPEC CHECKSUMS:
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   PromisesSwift: 9d77319bbe72ebf6d872900551f7eeba9bce2851
   Swinject: 2943463cdd58b49f114213bf1ce4a09f374828e7
+  TensorFlowLiteC: a836de9b6e6018665ccc349538bdd2c3b80dd7a5
+  TensorFlowLiteSwift: f706b143b69d7bf433aba7b08049bdd11c321a10
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
 
-PODFILE CHECKSUM: 8889f9d9a460537c0e31a5b7895cbeac8f01a8e5
+PODFILE CHECKSUM: 25c92eb5e36d32bd3a67f35e0d4dac5f6bb8f88d
 
 COCOAPODS: 1.15.2

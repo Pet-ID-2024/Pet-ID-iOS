@@ -36,6 +36,10 @@ def pods_Storage
     pod 'AWSS3'
 end
 
+def pods_AI
+    pod 'TensorFlowLiteSwift'
+end  
+
 
 platform :ios, '15.0'
 
@@ -49,4 +53,5 @@ target 'Pet-ID-iOS' do
 	pods_Auth
 	pods_Firebase
 	pods_Storage
+	pods_AI
 end
